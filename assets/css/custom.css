@@ -1,0 +1,38 @@
+body {font-family: 'Open Sans', sans-serif;}
+
+.navbar {margin: 10px 0}
+
+.navbar-default {background: transparent; border: none;}
+
+.navbar-nav > li > a {font-weight: bold}
+
+.navbar-brand {font-family: 'Indie Flower', cursive;}
+
+header {padding: 20px 0}
+
+.featured {background: #2ecc71; color: white; padding: 40px; margin-bottom: 40px}
+
+.featured h1 {font-size: 60px; margin-top: 0}
+
+.featrured p {font-size: 20px}
+
+.service {}
+
+.service .glyphicon {font-size: 50px}
+
+.title {margin-bottom: 40px}
+
+.title h2 {margin: 0}
+
+.phone {font-size: 30px}
+
+footer {background: grey; color: white; padding: 40px 0; margin-top: 40px }
+
+.copyright {background: darkgrey; color: white; padding: 10px 0}
+
+.copyrightorgan {background: darkgrey; color: white; padding: 10px 0; margin-top: 20px}
+
+.organ h3 {color: #2ecc71; text-align: left}
+
+.organ p {text-align: left}
+
