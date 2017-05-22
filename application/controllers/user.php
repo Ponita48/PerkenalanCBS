@@ -15,5 +15,12 @@ class User extends CI_Controller
 		$this->load->view('index');
 		$this->load->view('footer');
 	}
+
+	public function login()
+	{
+		$this->load->view('header');
+		$this->load->view('login');
+		$this->load->view('footer');
+	}
 }
  ?>
