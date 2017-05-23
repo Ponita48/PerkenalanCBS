@@ -20,7 +20,7 @@
 	        <span class="icon-bar"></span>
 	        <span class="icon-bar"></span>
 	      </button>
-	      <a class="navbar-brand" href="#">Perkenalan CBS</a>
+	      <a class="navbar-brand" href="<?php echo base_url(); ?>index.php">Perkenalan CBS</a>
 	    </div>
 	    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 		<ul class="nav navbar-nav">
@@ -32,10 +32,17 @@
 		<ul class="nav navbar-nav navbar-right">
 			<!-- TODO: tambahin if udah login -->
 			<li>
-				<a href="#">
+				<a href="<?php echo base_url(); ?>index.php/user/login">
 					<span class="glyphicon glyphicon-log-in"></span> Login
 				</a>
 			</li>
+			<?php if (false): ?>
+				<li>
+					<a href="<?php echo base_url(); ?>index.php/user/logout">
+						<span class="glyphicon glyphicon-log-out"></span> Logout
+					</a>
+				</li>
+			<?php endif ?>
 		</ul>
 		</div>
 	</nav>

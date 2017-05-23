@@ -19,6 +19,7 @@ class User extends CI_Controller
 	}
 
 
+
 	//login function
 	public function login() {
 		//formValidation
@@ -69,7 +70,6 @@ class User extends CI_Controller
 			}
 
 		}
-
 	}
 
 	//logout function
