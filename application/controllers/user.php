@@ -18,6 +18,8 @@ class User extends CI_Controller
 		$this->load->view('footer');
 	}
 
+
+	//login function
 	public function login() {
 		//formValidation
 		$this->form_validation->set_rules('npm', 'NPM', 'required');
@@ -59,12 +61,25 @@ class User extends CI_Controller
 					//masukkan email dan password baru
 					$this->load->view('new_login');
 				}else {
-					
+					//login success
+					//back to home
+					$data['message_display'] = "Successfully login";
+					$this->load->view('home', $data);
 				}
 			}
 
 		}
 
+	}
+
+	//logout function
+	public function logout() {
+		//delete session
+		$this->session->unset_userdata('logged_in');
+
+		//back to home
+		$data['message_display'] = "Successfully Logout";
+		$this->load->view('home', $data);
 	}
 }
  ?>
