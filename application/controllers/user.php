@@ -3,8 +3,7 @@
 class User extends CI_Controller
 {
 	
-	function __construct()
-	{
+	function __construct() {
 		parent::__construct();
 		$this->load->helper('url');
 		$this->load->library(array('form_validation', 'session'));
@@ -12,8 +11,10 @@ class User extends CI_Controller
 		$this->load->model('User_model');
 	}
 
-	public function index()
-	{
+	public function index() {
+		
+		//$this->User_model->aihihi();
+
 		$this->load->view('header');
 		$this->load->view('index');
 		$this->load->view('footer');
@@ -41,9 +42,10 @@ class User extends CI_Controller
 			);
 
 			//check username and password
-			$result = $this->User_model->login($data);
+			$result = $this->User_model->loginNoHash($data);
 
-			if ($result == NULL) {
+
+			if ($result == FALSE) {
 				//when username or password wrong
 				$data['error_message'] = "Username atau password salah";
 				$this->load->view('login', $data);
@@ -52,14 +54,14 @@ class User extends CI_Controller
 				//insert username and password to session
 
 				$session_data = array(
-					'username' => $data['username'],
+					'npm' => $data['npm'],
 					'password' => $data['password']
 				);
 
 				$this->session->set_userdata('logged_in', $session_data);
 
 				//cek email
-				if ($result['email'] == NULL) {
+				if ($result->row('email') == NULL) {
 					//masukkan email dan password baru
 					$this->load->view('new_login');
 				}else {
