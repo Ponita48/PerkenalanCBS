@@ -8,6 +8,7 @@ class User extends CI_Controller
 		parent::__construct();
 		$this->load->helper('url');
 		$this->load->library(array('form_validation', 'session'));
+		$this->load->database();
 		$this->load->model('User_model');
 	}
 
