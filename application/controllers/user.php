@@ -20,7 +20,26 @@ class User extends CI_Controller
 		$this->load->view('footer');
 	}
 
+	public function senior() {
 
+		$this->load->view('header');
+		$this->load->view('kating');
+		$this->load->view('footer');
+	}
+
+	public function profil_senior() {
+
+		$this->load->view('header');
+		$this->load->view('profil_kating');
+		$this->load->view('footer');
+	}
+
+	public function request() {
+
+		$this->load->view('header');
+		$this->load->view('request_perkenalan');
+		$this->load->view('footer');
+	}
 
 	//login function
 	public function login() {
@@ -50,7 +69,9 @@ class User extends CI_Controller
 			if ($result == FALSE) {
 				//when username or password wrong
 				$data['error_message'] = "Username atau password salah";
+				$this->load->view('header');
 				$this->load->view('login', $data);
+				$this->load->view('footer');
 			}else {
 				//when username or password correct
 				//insert username and password to session
