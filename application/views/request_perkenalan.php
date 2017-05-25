@@ -21,7 +21,7 @@
 				<div class="form-group">
 					<label for="foto" class="col-sm-3 control-label">Foto Selfie</label>
 					<div class="col-sm-6">
-						<span class="btn btn-default btn-file"><span>Pilih foto</span><input type="file" class="form-control" id="foto" style="border: none; box-shadow: none"></span>
+						<input type="text" class="form-control" id="foto" placeholder="Masukkan link">
 					</div>
 				</div>
 				<input class="col-sm-offset-1 btn btn-warning" type="submit" value="Submit" >

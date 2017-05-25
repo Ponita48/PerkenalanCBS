@@ -11,7 +11,7 @@
 				<button class="btn btn-warning" type="submit">Request Perkenalan</button><br><br>	
 			</center>
 		</div>
-		<div class="col-sm-3">
+		<div class="col-sm-9">
 			<table class="table table-borderless">
 				<tr>
 					<td><b>Nama</b></td>
