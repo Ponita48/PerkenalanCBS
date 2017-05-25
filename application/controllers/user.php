@@ -32,7 +32,9 @@ class User extends CI_Controller
 		if ($this->form_validation->run() == FALSE) {
 			//When error
 			//load login form
+			$this->load->view('header');
 			$this->load->view('login');
+			$this->load->view('footer');
 		}else {
 
 			//Get data login
@@ -83,6 +85,12 @@ class User extends CI_Controller
 		//back to home
 		$data['message_display'] = "Successfully Logout";
 		$this->load->view('home', $data);
+	}
+
+	public function propil() {
+		$this->load->view('header');
+		$this->load->view('profile');
+		$this->load->view('footer');
 	}
 }
  ?>
