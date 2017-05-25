@@ -20,7 +20,12 @@ class User extends CI_Controller
 		$this->load->view('footer');
 	}
 
+	public function senior() {
 
+		$this->load->view('header');
+		$this->load->view('kating');
+		$this->load->view('footer');
+	}
 
 	//login function
 	public function login() {

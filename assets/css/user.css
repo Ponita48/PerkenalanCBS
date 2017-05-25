@@ -1,14 +1,19 @@
-html body {
+html {
 	min-height: 100% !important;
-	width: 100%;
+	/*width: 100%;
 	height: 100%;
 	left: 0;
-	bottom: 0;
+	bottom: 0;*/
+	position: relative;
+}
+body {
+	margin-bottom: 60px;
 }
 .footer {
 	position: absolute;
 	bottom: 0;
 	width: 100%;
+	height: 60px;
 	padding: 10px;
 	background-color: #DFDFDF;
 }
@@ -21,4 +26,10 @@ a:hover {
 }
 input {
 	padding: 10px;
+}
+.tab-content {
+	margin-top: 10px;
+}
+.photo-tumbnail {
+	margin-bottom: 10px;
 }
