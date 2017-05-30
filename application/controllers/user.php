@@ -84,5 +84,98 @@ class User extends CI_Controller
 		$data['message_display'] = "Successfully Logout";
 		$this->load->view('home', $data);
 	}
+
+	public function new_login() {
+		
+		$this->form_validation->set_rules('email', 'Email', 'required');
+		$this->form_validation->set_rules('new_pass', 'New Password', 'required');
+
+		if ($this->form_validation->run() == FALSE) {
+			$this->load->view('new_login');
+		}else {
+			$password = password_hash($this->input->post('new_pass'), PASSWORD_DEFAULT);
+
+			$data = array(
+				'npm' => $this->session->userdata['logged_in']['npm'], 
+				'password' => $password,
+				'email' => $this->input->post('email'),
+				'role' => $this->session->userdata['logged_in']['role']
+			);
+
+			$this->User_model->new_login($data);
+		}
+	}
+
+	public function edit_profile() {
+		$this->form_validation->set_rules('email', 'Email', 'required');
+		$this->form_validation->set_rules('nama', 'Nama', 'required');
+		$this->form_validation->set_rules('jk', 'Jenis Kelamin', 'required');
+		$this->form_validation->set_rules('tempat_lahir', 'Tempat Lahir', 'required');
+		$this->form_validation->set_rules('tgl_lahir', 'Tanggal Lahir', 'required');
+		$this->form_validation->set_rules('alamat_kos', 'Alamat Kos', 'required');
+		$this->form_validation->set_rules('no_hp', 'No HP', 'required');
+		$this->form_validation->set_rules('id_line', 'ID Line', 'required');
+
+		if ($this->session->userdata['logged_in']['role'] == 'maba') {
+			$this->form_validation->set_rules('link_foto', 'Link Foto', 'required');
+			$this->form_validation->set_rules('motto_hidup', 'Motto Hidup', 'required');
+		}
+
+		if ($this->form_validation->run() == FALSE) {
+			$result = $this->User_model->getProfile();
+
+			$this->load->view('edit_profile', $result);
+		}else {
+			$data1['email'] = $this->input->post('email');
+			$data2 = array(
+				'nama' => $this->input->post('nama'),
+				'jk' => $this->input->post('jk'),
+				'tempat_lahir' => $this->input->post('tempat_lahir'),
+				'tgl_lahir' => $this->input->post('tgl_lahir'),
+				'alamat_kos' => $this->input->post('alamat_kos'),
+				'no_hp' => $this->input->post('no_hp'),
+				'id_line' => $this->input->post('id_line')
+			);
+			if ($this->session->userdata['logged_in']['role'] == 'maba') {
+				$data2 = array(
+					'link_foto' => $this->input->post('link_foto'),
+					'motto_hidup' => $this->input->post('motto_hidup')
+				);
+			}
+
+			$result = $this->User_model->setProfile($data1, $data2);
+
+			if ($result == FALSE) {
+				$data['error_message'] = "Error";
+				$this->load->view('edit_profile', $data);
+			}else {
+				$data['message_display'] = "Success";
+				$this->load->view('edit_profile', $data);
+			}
+		}
+	}
+
+	public function search() {
+
+		$keySearch = $this->post('keySearch');
+		$keyArray = explode(" ",$keySearch);
+
+		$keySearch = '%';
+
+		foreach ($keyArray as $value) {
+			$keySearch = $keySearch.$value.'%';
+		}
+
+		$result = $this->User_model->search($keySearch);
+
+		if ($result) {
+			$data['message_display'] = 'Not Found';
+			$this->load->view('search', $data);
+		}else {
+			$this->load->view('search', $data);
+		}
+		
+	}
+
 }
  ?>
