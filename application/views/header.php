@@ -20,14 +20,14 @@
 	        <span class="icon-bar"></span>
 	        <span class="icon-bar"></span>
 	      </button>
-	      <a class="navbar-brand" href="<?php echo base_url(); ?>index.php">Perkenalan CBS</a>
+	      <a class="navbar-brand" href="<?php echo base_url(); ?>index.php" style="color: #FFD51E">CBS</a>
 	    </div>
 	    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 		<ul class="nav navbar-nav">
-			<li class="active"><a href="#">Home<span class="sr-only">(current)</span></a></li>
+			<li><a href="<?php echo base_url(); ?>index.php">Home<span class="sr-only">(current)</span></a></li>
 			<li><a href="#">Profile</a></li>
-			<li><a href="#">Angkatan</a></li>
-			<li><a href="#">Perkenalan</a></li>
+			<li><a href="<?php echo base_url(); ?>index.php/user/angkatan">Angkatan</a></li>
+			<li><a href="<?php echo base_url(); ?>index.php/user/perkenalan">Perkenalan</a></li>
 		</ul>
 		<ul class="nav navbar-nav navbar-right">
 			<!-- TODO: tambahin if udah login -->
@@ -43,8 +43,26 @@
 					</a>
 				</li>
 			<?php endif ?>
+			<li>
+				<a href="#" data-toggle="search" data-placement="bottom"  data-popover-content="#search" id="search_icon">
+					<span class="glyphicon glyphicon-search"></span>
+				</a>
+			</li>
 		</ul>
 		</div>
 	</nav>
+
+	<div class="hidden" id="search">
+		<div class="popover-body">
+			<form action="#" class="form-inline" id="search_box">
+				<div class="input-group">
+					<input type="text" class="form-control" placeholder="Search... 		">
+					<div class="input-group-btn">
+						<button class="btn btn-default" type="submit">Go!</button>
+					</div>
+				</div>
+			</form>
+		</div>
+	</div>
 
 	<div class="container">

@@ -20,7 +20,31 @@ class User extends CI_Controller
 		$this->load->view('footer');
 	}
 
+	public function angkatan() {
+		$this->load->view('header');
+		$this->load->view('angkatan');
+		$this->load->view('footer');
+	}
 
+	public function perkenalan() {
+		$this->load->view('header');
+		$this->load->view('kating');
+		$this->load->view('footer');
+	}
+
+	public function profil_senior() {
+
+		$this->load->view('header');
+		$this->load->view('profil_kating');
+		$this->load->view('footer');
+	}
+
+	public function request() {
+
+		$this->load->view('header');
+		$this->load->view('request_perkenalan');
+		$this->load->view('footer');
+	}
 
 	//login function
 	public function login() {
@@ -32,7 +56,9 @@ class User extends CI_Controller
 		if ($this->form_validation->run() == FALSE) {
 			//When error
 			//load login form
-			$this->load->view('login');
+			$this->load->view('header');
+			$this->load->view('new_login');
+			$this->load->view('footer');
 		}else {
 
 			//Get data login
@@ -48,7 +74,9 @@ class User extends CI_Controller
 			if ($result == FALSE) {
 				//when username or password wrong
 				$data['error_message'] = "Username atau password salah";
+				$this->load->view('header');
 				$this->load->view('login', $data);
+				$this->load->view('footer');
 			}else {
 				//when username or password correct
 				//insert username and password to session
@@ -84,6 +112,7 @@ class User extends CI_Controller
 		$data['message_display'] = "Successfully Logout";
 		$this->load->view('home', $data);
 	}
+
 
 	public function new_login() {
 		
@@ -175,6 +204,13 @@ class User extends CI_Controller
 			$this->load->view('search', $data);
 		}
 		
+	}
+
+
+	public function propil() {
+		$this->load->view('header');
+		$this->load->view('profile');
+		$this->load->view('footer');
 	}
 
 }
