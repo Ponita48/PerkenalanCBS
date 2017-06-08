@@ -1,33 +1,4 @@
-<? include 'header.php';?>
-<html>
-<head>
-	<title>Layout Kuis Panitia :: Perkenalan CBS</title>
-	<meta charset=utf-8>
-	<meta name=description content="Yakin sudah mengenal panitia dan para anggota LK di Himatif FMIPA Unpad? Isi kuis berikut dengan BAIK dan BENAR">
-	<meta name=viewport content="width=device-width, initial-scale=1">
-	<link rel="stylesheet" type="text/css" href="../../assets/css/bootstrap.css">
-	<script src="../../assets/js/jquery.min.js"></script>
-	<script src="../../assets/js/bootstrap.js"></script>
-	<script type="text/javascript">
-		function allowDrop(ev) {
-		    ev.preventDefault();
-		}
-		function drag(ev) {
-		    ev.dataTransfer.setData("text", ev.target.id);
-		}
-		function drop(ev) {
-		    ev.preventDefault();
-		    var data = ev.dataTransfer.getData("text");
-		    ev.target.appendChild(document.getElementById(data));
-		}
-	</script>
-	<style type="text/css" media="screen">
-		ul li {
-			padding: 0px 0px 0px 10px;
-		}
-	</style>
-</head>
-<body>
+<link rel="stylesheet" type="text/css" href="<? echo base_url(); ?>assets/css/bootstrap.css">
 <div class="row">
 	<div class="col-sm-3 col-md-3 col-lg-3">
 		<div class="container-fluid">
@@ -152,11 +123,29 @@
 			</thead>
 			<tbody>
 				<tr>
-					<td id="foto_person_opsi" ondrop="drop(event)" ondragover="allowDrop(event)" style="height: 155px; width: 115px"><img src="../../img/img1.jpg" id="drag1" draggable="true" ondragstart="drag(event)" style="width: 113.34px; height: 151.18px"></td>
+					<td id="foto_person_opsi" ondrop="drop(event)" ondragover="allowDrop(event)" style="height: 155px; width: 115px"><img src="<? echo base_url(); ?>img/img1.jpg" id="drag1" draggable="true" ondragstart="drag(event)" style="width: 113.34px; height: 151.18px"></td>
 				</tr>
 			</tbody>
 		</table>
 	</div>
 </div>
-</body>
-</html>
+<script src="<? echo base_url(); ?>assets/js/jquery.min.js"></script>
+<script src="<? echo base_url(); ?>assets/js/bootstrap.js"></script>
+<script type="text/javascript">
+	function allowDrop(ev) {
+	    ev.preventDefault();
+	}
+	function drag(ev) {
+	    ev.dataTransfer.setData("text", ev.target.id);
+	}
+	function drop(ev) {
+	    ev.preventDefault();
+	    var data = ev.dataTransfer.getData("text");
+	    ev.target.appendChild(document.getElementById(data));
+	}
+</script>
+<style type="text/css" media="screen">
+	ul li {
+		padding: 0px 0px 0px 10px;
+	}
+</style>
