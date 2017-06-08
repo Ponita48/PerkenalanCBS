@@ -1,4 +1,7 @@
 <link rel="stylesheet" type="text/css" href="<? echo base_url(); ?>assets/css/bootstrap.css">
+<link rel="stylesheet" href="../../Treant.css">
+<link rel="stylesheet" href="custom-color-plus-scrollbar.css">
+<link rel="stylesheet" href="../../vendor/perfect-scrollbar/perfect-scrollbar.css">
 <div class="row">
 	<div class="col-sm-3 col-md-3 col-lg-3">
 		<div class="container-fluid">
@@ -23,7 +26,19 @@
 		    <div id="menu1" class="tab-pane fade in active">
 		    	<h2>Panitia CBS Himatif FMIPA Unpad 2017</h2>
 		    	<hr>
-		    	<table style="width: 100vh;">
+		    	<div class="chart" id="OrganiseChart1"></div>
+			    <script src="../../vendor/raphael.js"></script>
+			    <script src="../../Treant.js"></script>
+			    
+			    <script src="../../vendor/jquery.min.js"></script>
+			    <script src="../../vendor/perfect-scrollbar/jquery.mousewheel.js"></script>
+			    <script src="../../vendor/perfect-scrollbar/perfect-scrollbar.js"></script>
+			    
+			    <script src="custom-color-plus-scrollbar.js"></script>
+			    <script>
+			        new Treant( ALTERNATIVE );
+			    </script>
+		    	<!-- <table style="width: 100vh;">
 		    		<caption>Susunan Anggota Kepanitiaan CBS 2017</caption>
 		    		<thead>
 		    			<tr>
@@ -41,12 +56,24 @@
 		    				<td id="jabatan_person"></td>
 		    			</tr>
 		    		</tbody>
-		    	</table>
+		    	</table> -->
 		    </div>
 		    <div id="menu2" class="tab-pane fade">
 		    	<h2>BE Himatif FMIPA Unpad Kabinet Impresif</h2>
 		    	<hr>
-		    	<table style="width: 100vh;">
+		    	<div class="chart" id="OrganiseChart1"></div>
+			    <script src="../../vendor/raphael.js"></script>
+			    <script src="../../Treant.js"></script>
+			    
+			    <script src="../../vendor/jquery.min.js"></script>
+			    <script src="../../vendor/perfect-scrollbar/jquery.mousewheel.js"></script>
+			    <script src="../../vendor/perfect-scrollbar/perfect-scrollbar.js"></script>
+			    
+			    <script src="custom-color-plus-scrollbar.js"></script>
+			    <script>
+			        new Treant( ALTERNATIVE );
+			    </script>
+		    	<!-- <table style="width: 100vh;">
 		    		<caption>Susunan Anggota BE Himatif FMIPA Unpad Kabinet Impresif</caption>
 		    		<thead>
 		    			<tr>
@@ -64,12 +91,24 @@
 		    				<td id="jabatan_person"></td>
 		    			</tr>
 		    		</tbody>
-		    	</table>
+		    	</table> -->
 		    </div>
 		    <div id="menu3" class="tab-pane fade">
 		    	<h2>DPA Himatif FMIPA Unpad Parlemen Insight</h2>
 		    	<hr>
-		    	<table style="width: 100vh;">
+		    	<div class="chart" id="OrganiseChart1"></div>
+			    <script src="../../vendor/raphael.js"></script>
+			    <script src="../../Treant.js"></script>
+			    
+			    <script src="../../vendor/jquery.min.js"></script>
+			    <script src="../../vendor/perfect-scrollbar/jquery.mousewheel.js"></script>
+			    <script src="../../vendor/perfect-scrollbar/perfect-scrollbar.js"></script>
+			    
+			    <script src="custom-color-plus-scrollbar.js"></script>
+			    <script>
+			        new Treant( ALTERNATIVE );
+			    </script>
+		    	<!-- <table style="width: 100vh;">
 		    		<caption>Susunan Anggota DPA Himatif FMIPA Unpad Parlemen Insight</caption>
 		    		<thead>
 		    			<tr>
@@ -87,12 +126,24 @@
 		    				<td id="jabatan_person"></td>
 		    			</tr>
 		    		</tbody>
-		    	</table>
+		    	</table> -->
 		    </div>
 		    <div id="menu4" class="tab-pane fade">
 		    	<h2>Mubes Himatif FMIPA Unpad 2017</h2>
 		    	<hr>
-		    	<table style="width: 100vh;">
+		    	<div class="chart" id="OrganiseChart1"></div>
+			    <script src="../../vendor/raphael.js"></script>
+			    <script src="../../Treant.js"></script>
+			    
+			    <script src="../../vendor/jquery.min.js"></script>
+			    <script src="../../vendor/perfect-scrollbar/jquery.mousewheel.js"></script>
+			    <script src="../../vendor/perfect-scrollbar/perfect-scrollbar.js"></script>
+			    
+			    <script src="custom-color-plus-scrollbar.js"></script>
+			    <script>
+			        new Treant( ALTERNATIVE );
+			    </script>
+		    	<!-- <table style="width: 100vh;">
 		    		<caption>Susunan Anggota Mubes Himatif FMIPA Unpad 2017</caption>
 		    		<thead>
 		    			<tr>
@@ -110,7 +161,7 @@
 		    				<td id="jabatan_person"></td>
 		    			</tr>
 		    		</tbody>
-		    	</table>
+		    	</table> -->
 		    </div>
 		</div>
 	</div>
