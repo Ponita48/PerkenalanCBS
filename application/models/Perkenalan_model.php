@@ -35,9 +35,15 @@ class Perkenalan_model extends CI_Model {
 				'nama' => $data['nama'],
 				'ciri_khas' => $data['ciri_khas'],
 				'link_foto' => $data['link_foto'],
-				'request_time' => "haha",
-
+				'request_time' => $data['request_time'],
+				'status' => 0,
 			);
+
+			if ($this->db->insert('perkenalan_kating', $input)) {
+				return TRUE;
+			}else {
+				return FALSE;
+			}
 		}
 	}
 
