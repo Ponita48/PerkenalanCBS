@@ -33,7 +33,6 @@ class User extends CI_Controller
 	}
 
 	public function profile() {
-
 		$this->load->view('header');
 		$this->load->view('profil');
 		$this->load->view('footer');
@@ -43,6 +42,32 @@ class User extends CI_Controller
 
 		$this->load->view('header');
 		$this->load->view('request_perkenalan');
+		$this->load->view('footer');
+	}
+
+
+	public function propil() {
+		$this->load->view('header');
+		$this->load->view('profile');
+	}
+
+	public function accept() {
+
+		$this->load->view('header');
+		$this->load->view('accept_perkenalan');
+		$this->load->view('footer');
+	}
+
+	public function request_list() {
+
+		$this->load->view('header');
+		$this->load->view('request_list');
+		$this->load->view('footer');
+	}
+	public function my_request() {
+
+		$this->load->view('header');
+		$this->load->view('my_request');
 		$this->load->view('footer');
 	}
 
@@ -115,9 +140,8 @@ class User extends CI_Controller
 		$this->load->view('home', $data);
 	}
 
-
-	public function new_login() {
-		
+	// login for the first time
+	public function new_login() {		
 		$this->form_validation->set_rules('email', 'Email', 'required');
 		$this->form_validation->set_rules('new_pass', 'New Password', 'required');
 
@@ -137,6 +161,7 @@ class User extends CI_Controller
 		}
 	}
 
+	//edit profile, peserta or keluarga
 	public function edit_profile() {
 		$this->form_validation->set_rules('email', 'Email', 'required');
 		$this->form_validation->set_rules('nama', 'Nama', 'required');
@@ -147,7 +172,7 @@ class User extends CI_Controller
 		$this->form_validation->set_rules('no_hp', 'No HP', 'required');
 		$this->form_validation->set_rules('id_line', 'ID Line', 'required');
 
-		if ($this->session->userdata['logged_in']['role'] == 'maba') {
+		if ($this->session->userdata['logged_in']['role'] == 'peserta') {
 			$this->form_validation->set_rules('link_foto', 'Link Foto', 'required');
 			$this->form_validation->set_rules('motto_hidup', 'Motto Hidup', 'required');
 		}
@@ -167,7 +192,7 @@ class User extends CI_Controller
 				'no_hp' => $this->input->post('no_hp'),
 				'id_line' => $this->input->post('id_line')
 			);
-			if ($this->session->userdata['logged_in']['role'] == 'maba') {
+			if ($this->session->userdata['logged_in']['role'] == 'peserta') {
 				$data2 = array(
 					'link_foto' => $this->input->post('link_foto'),
 					'motto_hidup' => $this->input->post('motto_hidup')
@@ -207,8 +232,6 @@ class User extends CI_Controller
 		}
 		
 	}
-
-
 	public function change_profile() {
 		$this->load->view('header');
 		$this->load->view('change_profile');
