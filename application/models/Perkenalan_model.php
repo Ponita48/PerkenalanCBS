@@ -47,6 +47,28 @@ class Perkenalan_model extends CI_Model {
 		}
 	}
 
+	public function request_angkatan($data) {
+		$id_keluarga = $data['id_user2'];
+		$query = $this->db
+			->select('*')
+			->from('users')
+			->where('id_user = $id_user2')
+			->limit(1)
+			->get();
+
+		if ($query->num_rows() == 0) {
+			return FALSE;
+		}else {
+			$data['id_user1'] = $this->session->userdata['logged_in']['id_user'];
+
+			if ($this->db->insert('perkenalan_angkatan', $data)) {
+				return TRUE;
+			}else {
+				return FALSE;
+			}
+		}
+	}	
+
 }
 
  ?>
