@@ -32,10 +32,10 @@ class User extends CI_Controller
 		$this->load->view('footer');
 	}
 
-	public function profil_senior() {
+	public function profile() {
 
 		$this->load->view('header');
-		$this->load->view('profil_kating');
+		$this->load->view('profil');
 		$this->load->view('footer');
 	}
 
@@ -57,7 +57,7 @@ class User extends CI_Controller
 			//When error
 			//load login form
 			$this->load->view('header');
-			$this->load->view('new_login');
+			$this->load->view('login');
 			$this->load->view('footer');
 		}else {
 
@@ -91,7 +91,9 @@ class User extends CI_Controller
 				//cek email
 				if ($result->row('email') == NULL) {
 					//masukkan email dan password baru
+					$this->load->view('header');
 					$this->load->view('new_login');
+					$this->load->view('footer');
 				}else {
 					//login success
 					//back to home
@@ -207,9 +209,9 @@ class User extends CI_Controller
 	}
 
 
-	public function propil() {
+	public function change_profile() {
 		$this->load->view('header');
-		$this->load->view('profile');
+		$this->load->view('change_profile');
 		$this->load->view('footer');
 	}
 
