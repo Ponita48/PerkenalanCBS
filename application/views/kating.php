@@ -1,6 +1,6 @@
 <!-- TODO: Jadiin foreach (tunggu backend selesai) -->
 	<div>
-		<h1>DAFTAR SENIOR</h1>
+		<h1>ANGGOTA KELUARGA HIMATIF</h1>
 		<br>
 	</div>
 

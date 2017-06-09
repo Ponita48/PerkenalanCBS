@@ -32,10 +32,10 @@ class User extends CI_Controller
 		$this->load->view('footer');
 	}
 
-	public function profil_senior() {
+	public function profil() {
 
 		$this->load->view('header');
-		$this->load->view('profil_kating');
+		$this->load->view('profil');
 		$this->load->view('footer');
 	}
 
@@ -46,9 +46,29 @@ class User extends CI_Controller
 		$this->load->view('footer');
 	}
 
+
 	public function propil() {
 		$this->load->view('header');
 		$this->load->view('profile');
+	}
+
+	public function accept() {
+
+		$this->load->view('header');
+		$this->load->view('accept_perkenalan');
+		$this->load->view('footer');
+	}
+
+	public function request_list() {
+
+		$this->load->view('header');
+		$this->load->view('request_list');
+		$this->load->view('footer');
+	}
+	public function my_request() {
+
+		$this->load->view('header');
+		$this->load->view('my_request');
 		$this->load->view('footer');
 	}
 
