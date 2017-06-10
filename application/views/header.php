@@ -25,7 +25,8 @@
 	    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 		<ul class="nav navbar-nav">
 			<li><a href="<?php echo base_url(); ?>index.php">Home<span class="sr-only">(current)</span></a></li>
-			<li><a href="#">Profile</a></li>
+			<!-- TODO : ganti link profil ke profil sendiri (ambil dari session) -->
+			<li><a href="<?php echo base_url(); ?>index.php/user/profile">Profile</a></li>
 			<li><a href="<?php echo base_url(); ?>index.php/user/angkatan">Angkatan</a></li>
 			<li><a href="<?php echo base_url(); ?>index.php/user/perkenalan">Perkenalan</a></li>
 		</ul>
@@ -56,9 +57,9 @@
 		<div class="popover-body">
 			<form action="#" class="form-inline" id="search_box">
 				<div class="input-group">
-					<input type="text" class="form-control" placeholder="Search... 		">
+					<input type="text" class="form-control" placeholder="Search...		">
 					<div class="input-group-btn">
-						<button class="btn btn-default" type="submit">Go!</button>
+						<button class="btn btn-primary" type="submit">Go!</button>
 					</div>
 				</div>
 			</form>
