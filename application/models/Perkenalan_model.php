@@ -22,13 +22,22 @@ class Perkenalan_model extends CI_Model {
 		$query = $this->db
 			->select('*')
 			->from('users')
-			->where('id_user = $id_keluarga')
+//			->where('id_user = $id_keluarga')
+			->where(array('id_user' => $id_keluarga, ''))
 			->limit(1)
 			->get();
+		$max_angkatan = $this->db->query("SELECT MAX(role) as 'max' FROM users WHERE role != 'admin'")->result()[0]->max;
+		$query = $this->db->query("SELECT * FROM users WHERE id_user = $id_keluarga AND role != $max_angkatan");
 
 		if ($query->num_rows() == 0) {
 			return FALSE;
 		}else {
+
+			echo "<pre>";
+			var_dump($query);
+			echo "</pre>";
+			die();
+
 			$input = array(
 				'id_user_maba' => $this->session->userdata['logged_in']['id_user'],
 				'id_user_kating' => $data['id_keluarga'],

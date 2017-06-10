@@ -12,6 +12,13 @@ class Perkenalan extends CI_Controller
 	}
 
 	public function request_keluarga($id) {
+
+		if ($this->session->userdata['logged_in']['role'] != 'peserta') {
+			$this->load->view('header');
+			$this->load->view('index');
+			$this->load->view('footer');
+		}
+
 		date_default_timezone_set('Asia/Jakarta');
 		//$date = time();
 		//echo date("M D Y H:i:s", $date);
@@ -45,6 +52,13 @@ class Perkenalan extends CI_Controller
 	}
 
 	public function request_peserta($id) {
+
+		if ($this->session->userdata['logged_in']['role'] != 'peserta') {
+			$this->load->view('header');
+			$this->load->view('index');
+			$this->load->view('footer');
+		}
+		
 		date_default_timezone_set('Asia/Jakarta');
 		//$date = time();
 		//echo date("M D Y H:i:s", $date);

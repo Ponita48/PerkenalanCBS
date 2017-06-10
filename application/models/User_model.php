@@ -40,9 +40,11 @@ class User_model extends CI_Model {
 					$role = 'keluarga';
 				}
 
-				$session_data['role'] = $role;
+				/*$session_data['role'] = $role;
 				$session_data['id_user'] = $query->row('id_user');
-				$this->session->set_userdata('role', $session_data);
+				$this->session->set_userdata('logged_in', $session_data);*/
+
+				$query->role = $role;
 
 				return $query;
 			}else {
@@ -76,9 +78,11 @@ class User_model extends CI_Model {
 					$role = 'keluarga';
 				}
 
-				$session_data['role'] = $role;
+				/*$session_data['role'] = $role;
 				$session_data['id_user'] = $query->row('id_user');
-				$this->session->set_userdata('logged_in', $session_data);
+				$this->session->set_userdata('logged_in', $session_data);*/
+
+				$query->role = $role;
 
 				return $query;
 			}else {

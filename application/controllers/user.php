@@ -51,6 +51,11 @@ class User extends CI_Controller
 		$this->load->view('profile');
 	}
 
+	public function hehe() {
+		$this->load->view('header');
+		$this->load->view('new_login');
+	}
+
 	public function accept() {
 
 		$this->load->view('header');
@@ -85,7 +90,7 @@ class User extends CI_Controller
 			$this->load->view('login');
 			$this->load->view('footer');
 		}else {
-
+			
 			//Get data login
 			$data = array(
 				'npm' => $this->input->post('npm'),
@@ -105,14 +110,16 @@ class User extends CI_Controller
 			}else {
 				//when username or password correct
 				//insert username and password to session
-
+				
 				$session_data = array(
 					'npm' => $data['npm'],
-					'password' => $data['password']
+					'password' => $data['password'],
+					'role' => $result->role,
+					'id_user' => $result->row('id_user')
 				);
 
 				$this->session->set_userdata('logged_in', $session_data);
-
+				
 				//cek email
 				if ($result->row('email') == NULL) {
 					//masukkan email dan password baru
@@ -123,7 +130,9 @@ class User extends CI_Controller
 					//login success
 					//back to home
 					$data['message_display'] = "Successfully login";
-					$this->load->view('home', $data);
+					$this->load->view('header');
+					$this->load->view('index', $data);
+					$this->load->view('footer');
 				}
 			}
 
@@ -134,10 +143,13 @@ class User extends CI_Controller
 	public function logout() {
 		//delete session
 		$this->session->unset_userdata('logged_in');
+		//$this->session->unset_userdata('role');
 
 		//back to home
 		$data['message_display'] = "Successfully Logout";
-		$this->load->view('home', $data);
+		$this->load->view('header', $data);
+		$this->load->view('index', $data);
+		$this->load->view('footer', $data);
 	}
 
 	// login for the first time
