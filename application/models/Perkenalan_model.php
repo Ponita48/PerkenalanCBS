@@ -67,7 +67,9 @@ class Perkenalan_model extends CI_Model {
 				return FALSE;
 			}
 		}
-	}	
+	}
+
+	
 
 }
 

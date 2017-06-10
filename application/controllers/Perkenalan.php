@@ -85,7 +85,9 @@ class Perkenalan extends CI_Controller
 		}
 	}
 
-	
+/*	public function approve_perkenalan($id) {
+		
+	}*/	
 
 }
  ?>
