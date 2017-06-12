@@ -1,5 +1,5 @@
+	<h1>KATA SAMBUTAN</h1>
 	<center>
-		<h1>KATA SAMBUTAN</h1>
 		<?php for ($i=0; $i < 5; $i++) {  ?>
 			<hr>
 			<h2>Nama Penyambut</h2>

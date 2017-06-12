@@ -33,15 +33,18 @@ class User_model extends CI_Model {
 				$max_angkatan = $this->db->query("SELECT MAX(role) as 'max' FROM users WHERE role != 'admin'")->result()[0]->max;
 
 				if ($query->row('role') == $max_angkatan) {
-					$role = 'maba';
+					$role = 'peserta';
 				}elseif ($query->row('role') == 'admin') {
 					$role = 'admin';
 				}else {
-					$role = 'kating';
+					$role = 'keluarga';
 				}
 
-				$session_data['role'] = $role;
-				$this->session->set_userdata('role', $session_data);
+				/*$session_data['role'] = $role;
+				$session_data['id_user'] = $query->row('id_user');
+				$this->session->set_userdata('logged_in', $session_data);*/
+
+				$query->role = $role;
 
 				return $query;
 			}else {
@@ -68,16 +71,18 @@ class User_model extends CI_Model {
 				$max_angkatan = $this->db->query("SELECT MAX(role) as 'max' FROM users WHERE role != 'admin'")->result()[0]->max;
 
 				if ($query->row('role') == $max_angkatan) {
-					$role = 'maba';
+					$role = 'perserta';
 				}elseif ($query->row('role') == 'admin') {
 					$role = 'admin';
 				}else {
-					$role = 'kating';
+					$role = 'keluarga';
 				}
 
-				$session_data['role'] = $role;
+				/*$session_data['role'] = $role;
 				$session_data['id_user'] = $query->row('id_user');
-				$this->session->set_userdata('logged_in', $session_data);
+				$this->session->set_userdata('logged_in', $session_data);*/
+
+				$query->role = $role;
 
 				return $query;
 			}else {
@@ -114,7 +119,7 @@ class User_model extends CI_Model {
 	}
 
 	public function getProfile() {
-		if ($this->session->userdata['logged_in']['role'] == 'maba') {
+		if ($this->session->userdata['logged_in']['role'] == 'peserta') {
 			$sel = "u.email, p.nama, p.jk, p.tempat_lahir, p.tgl_lahir, p.alamat_kos, p.no_hp, p.id_line, p.motto_hidup, p.link_foto";
 			$fr = "users u, profile_maba p";
 		}else {
@@ -148,7 +153,7 @@ class User_model extends CI_Model {
 		}else {
 			$this->db->where('id_user', $id_user)->update('users', $data1);
 
-			if ($this->session->userdata['logged_in']['role'] == 'maba') {
+			if ($this->session->userdata['logged_in']['role'] == 'peserta') {
 				$this->db->where('id_user', $id_user)->update('profile_maba', $data2);
 			}else {
 				$this->db->where('id_user', $id_user)->update('profile_kating', $data2);
