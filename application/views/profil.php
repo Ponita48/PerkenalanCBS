@@ -12,12 +12,10 @@
 				<a class="btn btn-primary" type="submit" href="<?php echo base_url(); ?>index.php/user/change_profile">Change Profile</a><br><br>\
 				<!-- MABA MELIHAT KATING -->
 				<button class="btn btn-warning" type="submit">Request Perkenalan</button><br><br>
-				<!-- KATING MELIHAT MABA -->
-				<!-- kosong -->
 				<!-- PROFIL PRIBADI MABA -->
 				<button class="btn btn-success" type="submit">Edit Profil</button><br><br>
 				<button class="btn btn-warning" type="submit">Lihat Daftar Perkenalan</button><br><br>
-				<!-- PROFIL PRIBADI KATING -->
+				<!-- ADMIN MELIHAT KATING -->
 				<button class="btn btn-success" type="submit">Edit Profil</button><br><br>
 				<button class="btn btn-warning" type="submit">Lihat Daftar Request</button><br><br>
 

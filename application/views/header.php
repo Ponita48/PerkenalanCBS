@@ -8,6 +8,7 @@
 	<script src="<?php echo base_url(); ?>assets/js/jquery.min.js"></script>
 	<script src="<?php echo base_url(); ?>assets/js/bootstrap.min.js"></script>
 	<script src="<?php echo base_url(); ?>assets/js/user.js"></script>
+	<script src="<?php echo base_url(); ?>assets/js/sorttable.js"></script>
 </head>
 <body>
 	<!-- TODO: Tambahin link buat navigasi -->
