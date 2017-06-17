@@ -12,8 +12,7 @@
 </head>
 <body>
 	<!-- TODO: Tambahin link buat navigasi -->
-	<!-- TODO: Tambahin padding, urg males -poni -->
-	<nav class="navbar navbar-inverse">
+	<nav class="navbar navbar-inverse" style="margin-bottom: 0px;">
 		<div class="navbar-header">
 	      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
 	        <span class="sr-only">Toggle navigation</span>
@@ -46,7 +45,7 @@
 				</li>
 			<?php endif ?>
 			<li>
-				<a href="#" data-toggle="search" data-placement="bottom"  data-popover-content="#search" id="search_icon">
+				<a href="#" data-toggle="search" data-placement="bottom" id="search_icon">
 					<span class="glyphicon glyphicon-search"></span>
 				</a>
 			</li>
@@ -54,17 +53,18 @@
 		</div>
 	</nav>
 
-	<div class="hidden" id="search">
-		<div class="popover-body">
-			<form action="#" class="form-inline" id="search_box">
-				<div class="input-group">
-					<input type="text" class="form-control" placeholder="Search...		">
-					<div class="input-group-btn">
-						<button class="btn btn-primary" type="submit">Go!</button>
-					</div>
-				</div>
-			</form>
-		</div>
+	<div class="col-md-12 col-sm-12 col-lg-12" id="search" style="background-color: #FFD51E; padding: 10px; margin-top: 0; margin-bottom: 10px; display: none;">
+	<center>
+		<form action="#" class="form-inline" id="searchForm">
+			<div class="input-group">
+				<!-- <label for="searchKey">Keyword :</label> -->
+				<input type="text" class="form-control" id="searchKey" placeholder="Search. . .">
+				<span class="input-group-btn">
+					<button class="btn btn-primary">Search</button>
+				</span>
+			</div>
+		</form>
+	</center>
 	</div>
 
 	<div class="container">

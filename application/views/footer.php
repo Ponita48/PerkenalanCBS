@@ -7,13 +7,9 @@
 </div>
 <script>
 	$(document).ready(function(){
-		$('[data-toggle="search"]').popover({
-			container : "body",
-			html : true,
-			content: function() {
-			  var content = $(this).attr("data-popover-content");
-			  return $(content).children(".popover-body").html();
-			}
+		$('#search_icon').click(function() {
+			$('#search').slideToggle("slow");
+			// $('#search').toggleClass('hidden');
 		});
 	});
 </script>
