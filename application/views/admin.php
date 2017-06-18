@@ -8,17 +8,17 @@
 
   		<!-- Nav tabs -->
 		<ul class="nav nav-tabs" role="tablist">
-			<li role="presentation" class="active"><a href="#1" aria-controls="1" role="tab" data-toggle="tab">2016</a></li>
-			<li role="presentation"><a href="#2" aria-controls="2" role="tab" data-toggle="tab">2015</a></li>
-			<li role="presentation"><a href="#3" aria-controls="3" role="tab" data-toggle="tab">2014</a></li>
-			<li role="presentation"><a href="#4" aria-controls="4" role="tab" data-toggle="tab">2013</a></li>
+			<li role="presentation" class="active"><a href="#1" aria-controls="1" role="tab" data-toggle="tab">2016 <span class="badge">99+</span></a></li>
+			<li role="presentation"><a href="#2" aria-controls="2" role="tab" data-toggle="tab">2015 <span class="badge">99+</span></a></li>
+			<li role="presentation"><a href="#3" aria-controls="3" role="tab" data-toggle="tab">2014 <span class="badge">99+</span></a></li>
+			<li role="presentation"><a href="#4" aria-controls="4" role="tab" data-toggle="tab">2013 <span class="badge">99+</span></a></li>
 		</ul><br>
 
 		<!-- Tab panes -->
 		<div class="tab-content">
 			<div role="tabpanel" class="tab-pane container-fluid active" id="1">
 				<center>
-					<div class="col-sm-9">
+					<div class="col-sm-12">
 						<table class="table">
 							<tr>
 								<th>Nama Keluarga</th>
@@ -105,5 +105,4 @@
 				</center>
 			</div>
 		</div>
-
 	</div>
