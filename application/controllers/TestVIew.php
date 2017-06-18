@@ -83,7 +83,11 @@ class TestView extends CI_Controller
 		$this->load->view('footer');
 	}
 
-	
+	public function admin(){
+		$this->load->view('header');
+		$this->load->view('admin');
+		$this->load->view('footer');
+	}	
 
 
 }

@@ -5,15 +5,13 @@
 	</div>
 
 	<div class="container">
-		<div class="col-sm-3">
+		<div class="col-sm-4">
 			<center>
 				<img src="<?php echo base_url(); ?>img/img1.jpg" alt="" class="img-responsive"><br>
-				<button class="btn btn-warning" type="submit">Lihat Profil</button><br><br>	
-				<button class="btn btn-success" type="submit">Terima Perkenalan</button><br><br>
-				<button class="btn btn-danger" type="submit">Tolak Perkenalan</button><br><br>	
+				<p>Foto Mahasiswa Baru</p>
 			</center>
 		</div>
-		<div class="col-sm-9">
+		<div class="col-sm-4">
 			<table class="table table-borderless">
 				<tr>
 					<td><b>Nama</b></td>
@@ -39,10 +37,17 @@
 					<td><b>Ciri Khas</b></td>
 					<td>Anu</td>
 				</tr>
-				<tr>
-					<td><b>Foto Selfie</b></td>
-					<td><img src="<?php echo base_url(); ?>img/img1.jpg" alt="" class="img-responsive"></td>
-				</tr>
 			</table>
+		</div>
+		<div class="col-sm-4">
+			<center>
+				<img src="<?php echo base_url(); ?>img/img2.jpg" alt="" class="img-responsive"><br>
+				<p>Foto Selfie</p>
+			</center>
+		</div>
+		<div class="col-sm-4">
+				<button class="btn btn-warning btn-block" type="submit">Lihat Profil</button><br><br>	
+				<button class="btn btn-success btn-block" type="submit">Terima Perkenalan</button><br><br>
+				<button class="btn btn-danger btn-block" type="submit">Tolak Perkenalan</button><br><br>
 		</div>
 	</div>
