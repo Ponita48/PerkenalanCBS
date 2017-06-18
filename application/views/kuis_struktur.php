@@ -6,7 +6,7 @@
 <div class="row">
   <div class="col-sm-3 col-md-3 col-lg-3" style="overflow: auto;">
   <!-- Main Model -->
-    <div class="container-fluid">
+    <div class="container-fluid" id="navigate">
       <nav class="navbar-nav">
         <ul class="nav nav-pills">
           <li class="active"><a href="#menu1" class="tab-content" data-toggle="pill">Panitia CBS Himatif FMIPA Unpad 2017</a></li>
@@ -264,8 +264,8 @@
       </thead>
       <tbody>
         <tr>
-          <td id="foto_person_opsi" ondrop="drop(event)" ondragover="allowDrop(event)" style="height: 155px; width: 115px"><img src="img1.jpg" id="drag1" draggable="true" ondragstart="drag(event)" style="width: 90px; height: 120px"></td>
-          <td id="foto_person_opsi" ondrop="drop(event)" ondragover="allowDrop(event)" style="height: 155px; width: 115px"><img src="img2.jpg" id="drag2" draggable="true" ondragstart="drag(event)" style="width: 90px; height: 120px"></td>
+          <td id="foto_person_opsi" ondrop="drop(event)" ondragover="allowDrop(event)" style="height: 155px; width: 115px"><img src="<? echo base_url(); ?>img/img1.jpg" id="drag1" draggable="true" ondragstart="drag(event)" style="width: 90px; height: 120px"></td>
+          <td id="foto_person_opsi" ondrop="drop(event)" ondragover="allowDrop(event)" style="height: 155px; width: 115px"><img src="<? echo base_url(); ?>img/img2.jpg" id="drag2" draggable="true" ondragstart="drag(event)" style="width: 90px; height: 120px"></td>
         </tr>
       </tbody>
     </table>
