@@ -7,7 +7,7 @@
   <div class="col-sm-3 col-md-3 col-lg-3" style="overflow: auto;">
   <!-- Main Model -->
     <div class="container-fluid" id="navigate">
-      <nav class="navbar-nav">
+      <nav class="navbar-nav" style="position: fixed;">
         <ul class="nav nav-pills">
           <li class="active"><a href="#menu1" class="tab-content" data-toggle="pill">Panitia CBS Himatif FMIPA Unpad 2017</a></li>
           <li><a href="#menu2" class="tab-content" data-toggle="pill">BE Himatif FMIPA Unpad Kabinet Impresif</a></li>
