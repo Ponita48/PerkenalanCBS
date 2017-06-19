@@ -1,8 +1,8 @@
 <link rel="stylesheet" type="text/css" href="<? echo base_url(); ?>assets/css/bootstrap.css">
 <link rel="stylesheet" type="text/css" href="<? echo base_url(); ?>assets/css/tree-diagram.css">
 <div class="row">
+  <!-- Navigation Pane : Belum dibikin fixed, belum bisa diminimize -->
   <div class="col-sm-3 col-md-3 col-lg-3" style="overflow: auto;">
-  <!-- Main Model -->
     <div class="container-fluid" id="navigation-pane">
       <nav class="navbar-nav">
         <ul class="nav nav-pills">
@@ -14,6 +14,9 @@
       </nav>
     </div>
   </div>
+  <!-- End of Navigation Pane -->
+
+  <!-- Quiz Layer, dengan tab-content -->
   <div class="col-sm-9 col-md-9 col-lg-9">
     <div class="tab-content">
       <div id="menu1" class="tab-pane fade in active">
@@ -550,102 +553,104 @@
       </div>
       <div id="menu3" class="tab-pane fade">
         <div class="row" style="overflow: auto;">
-          <div class="tree">
-            <ul>
-              <li>
-                <table>
-                  <caption>Ketua DPA</caption>
-                  <tbody>
-                    <tr>
-                      <td id="foto_ketua_dpa" ondrop="drop(event)" ondragover="allowDrop(event)" style="height: 81px; width: 108px"></td>
-                    </tr>
-                    <tr>
-                      <td><input type="text" name="nama_ketua_dpa" placeholder="Nama"></td>
-                    </tr>
-                    <tr>
-                      <td><input type="text" name="npm_ketua_dpa" placeholder="NPM"></td>
-                    </tr>
-                  </tbody>
-                </table>
-              </li><li>
-                <table>
-                  <caption>Sekretaris DPA</caption>
-                  <tbody>
-                    <tr>
-                      <td id="foto_sekretaris_dpa" ondrop="drop(event)" ondragover="allowDrop(event)" style="height: 81px; width: 108px"></td>
-                    </tr>
-                    <tr>
-                      <td><input type="text" name="nama_sekretaris_dpa" placeholder="Nama"></td>
-                    </tr>
-                    <tr>
-                      <td><input type="text" name="npm_sekretaris_dpa" placeholder="NPM"></td>
-                    </tr>
-                  </tbody>
-                </table>
-              </li><li>
-                <table>
-                  <caption>Bendahara DPA</caption>
-                  <tbody>
-                    <tr>
-                      <td id="foto_bendahara_dpa" ondrop="drop(event)" ondragover="allowDrop(event)" style="height: 81px; width: 108px"></td>
-                    </tr>
-                    <tr>
-                      <td><input type="text" name="nama_bendahara_dpa" placeholder="Nama"></td>
-                    </tr>
-                    <tr>
-                      <td><input type="text" name="npm_bendahara_dpa" placeholder="NPM"></td>
-                    </tr>
-                  </tbody>
-                </table>
-              </li><li>
-                <table>
-                  <caption>Ketua Komisi I</caption>
-                  <tbody>
-                    <tr>
-                      <td id="foto_kakom_1" ondrop="drop(event)" ondragover="allowDrop(event)" style="height: 81px; width: 108px"></td>
-                    </tr>
-                    <tr>
-                      <td><input type="text" name="nama_kakom_1" placeholder="Nama"></td>
-                    </tr>
-                    <tr>
-                      <td><input type="text" name="npm_kakom_1" placeholder="NPM"></td>
-                    </tr>
-                  </tbody>
-                </table>
-              </li><li>
-                <table>
-                  <caption>Ketua Komisi II</caption>
-                  <tbody>
-                    <tr>
-                      <td id="foto_kakom_2" ondrop="drop(event)" ondragover="allowDrop(event)" style="height: 81px; width: 108px"></td>
-                    </tr>
-                    <tr>
-                      <td><input type="text" name="nama_kakom_2" placeholder="Nama"></td>
-                    </tr>
-                    <tr>
-                      <td><input type="text" name="npm_kakom_2" placeholder="NPM"></td>
-                    </tr>
-                  </tbody>
-                </table>
-              </li><li>
-                <table>
-                  <caption>Ketua Komisi III</caption>
-                  <tbody>
-                    <tr>
-                      <td id="foto_kakom_3" ondrop="drop(event)" ondragover="allowDrop(event)" style="height: 81px; width: 108px"></td>
-                    </tr>
-                    <tr>
-                      <td><input type="text" name="nama_kakom_3" placeholder="Nama"></td>
-                    </tr>
-                    <tr>
-                      <td><input type="text" name="npm_kakom_3" placeholder="NPM"></td>
-                    </tr>
-                  </tbody>
-                </table>
-              </li>
-            </ul>
-          </div>
-          <input type="submit">
+          <form action="" method="post">
+            <div class="tree">
+              <ul>
+                <li>
+                  <table>
+                    <caption>Ketua DPA</caption>
+                    <tbody>
+                      <tr>
+                        <td id="foto_ketua_dpa" ondrop="drop(event)" ondragover="allowDrop(event)" style="height: 81px; width: 108px"></td>
+                      </tr>
+                      <tr>
+                        <td><input type="text" name="nama_ketua_dpa" placeholder="Nama"></td>
+                      </tr>
+                      <tr>
+                        <td><input type="text" name="npm_ketua_dpa" placeholder="NPM"></td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </li><li>
+                  <table>
+                    <caption>Sekretaris DPA</caption>
+                    <tbody>
+                      <tr>
+                        <td id="foto_sekretaris_dpa" ondrop="drop(event)" ondragover="allowDrop(event)" style="height: 81px; width: 108px"></td>
+                      </tr>
+                      <tr>
+                        <td><input type="text" name="nama_sekretaris_dpa" placeholder="Nama"></td>
+                      </tr>
+                      <tr>
+                        <td><input type="text" name="npm_sekretaris_dpa" placeholder="NPM"></td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </li><li>
+                  <table>
+                    <caption>Bendahara DPA</caption>
+                    <tbody>
+                      <tr>
+                        <td id="foto_bendahara_dpa" ondrop="drop(event)" ondragover="allowDrop(event)" style="height: 81px; width: 108px"></td>
+                      </tr>
+                      <tr>
+                        <td><input type="text" name="nama_bendahara_dpa" placeholder="Nama"></td>
+                      </tr>
+                      <tr>
+                        <td><input type="text" name="npm_bendahara_dpa" placeholder="NPM"></td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </li><li>
+                  <table>
+                    <caption>Ketua Komisi I</caption>
+                    <tbody>
+                      <tr>
+                        <td id="foto_kakom_1" ondrop="drop(event)" ondragover="allowDrop(event)" style="height: 81px; width: 108px"></td>
+                      </tr>
+                      <tr>
+                        <td><input type="text" name="nama_kakom_1" placeholder="Nama"></td>
+                      </tr>
+                      <tr>
+                        <td><input type="text" name="npm_kakom_1" placeholder="NPM"></td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </li><li>
+                  <table>
+                    <caption>Ketua Komisi II</caption>
+                    <tbody>
+                      <tr>
+                        <td id="foto_kakom_2" ondrop="drop(event)" ondragover="allowDrop(event)" style="height: 81px; width: 108px"></td>
+                      </tr>
+                      <tr>
+                        <td><input type="text" name="nama_kakom_2" placeholder="Nama"></td>
+                      </tr>
+                      <tr>
+                        <td><input type="text" name="npm_kakom_2" placeholder="NPM"></td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </li><li>
+                  <table>
+                    <caption>Ketua Komisi III</caption>
+                    <tbody>
+                      <tr>
+                        <td id="foto_kakom_3" ondrop="drop(event)" ondragover="allowDrop(event)" style="height: 81px; width: 108px"></td>
+                      </tr>
+                      <tr>
+                        <td><input type="text" name="nama_kakom_3" placeholder="Nama"></td>
+                      </tr>
+                      <tr>
+                        <td><input type="text" name="npm_kakom_3" placeholder="NPM"></td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </li>
+              </ul>
+            </div>
+            <input type="submit">
+          </form>
         </div>
         <div class="row" style="overflow: auto;">
           <table>
