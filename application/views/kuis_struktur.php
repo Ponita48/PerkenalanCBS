@@ -1,9 +1,7 @@
-<link rel="stylesheet" type="text/css" href="<? echo base_url(); ?>assets/css/bootstrap.css">
-<link rel="stylesheet" type="text/css" href="<? echo base_url(); ?>assets/css/tree-diagram.css">
 <div class="row">
   <!-- Navigation Pane : Belum dibikin fixed, belum bisa diminimize -->
-  <div class="col-sm-3 col-md-3 col-lg-3" style="overflow: auto;">
-    <div class="container-fluid" id="navigation-pane">
+  <div class="col-sm-3 col-md-3 col-lg-3" style="overflow: auto; background-color: #DFDFDF; ">
+    <div class="sidebar-nav" id="navigation-pane">
       <nav class="navbar-nav">
         <ul class="nav nav-pills">
           <li class="active"><a href="#menu1" class="tab-content" data-toggle="pill">Panitia CBS Himatif FMIPA Unpad 2017</a></li>
@@ -17,7 +15,9 @@
   <!-- End of Navigation Pane -->
 
   <!-- Quiz Layer, dengan tab-content -->
+  <div class="col-sm-3 col-md-3 col-lg-3"></div>
   <div class="col-sm-9 col-md-9 col-lg-9">
+  	<h1>KUIS BK/PANITIA</h1>
     <div class="tab-content">
       <div id="menu1" class="tab-pane fade in active">
         <div class="row" style="overflow: auto;">
@@ -29,7 +29,9 @@
                     <caption>Project Officer</caption>
                     <tbody>
                       <tr>
-                        <td id="foto_po_cbs" ondrop="drop(event)" ondragover="allowDrop(event)" style="height: 81px; width: 108px"></td>
+                        <td id="foto_po_cbs" ondrop="drop(event)" ondragover="allowDrop(event)" style="height: 81px; width: 108px">
+                        	<img src="<?php echo base_url(); ?>img/img1.jpg" alt="" class="img-responsive">
+                        </td>
                       </tr>
                       <tr>
                         <td><input type="text" name="nama_po_cbs" placeholder="Nama"></td>
@@ -45,7 +47,9 @@
                         <caption>Sekretaris</caption>
                         <tbody>
                           <tr>
-                            <td id="foto_sekretaris_cbs" ondrop="drop(event)" ondragover="allowDrop(event)" style="height: 81px; width: 108px"></td>
+                            <td id="foto_sekretaris_cbs" ondrop="drop(event)" ondragover="allowDrop(event)" style="height: 81px; width: 108px">
+                            	<img src="<?php echo base_url(); ?>img/img1.jpg" alt="" class="img-responsive">
+                            </td>
                           </tr>
                           <tr>
                             <td><input type="text" name="nama_sekretaris_cbs" placeholder="Nama"></td>
@@ -60,7 +64,9 @@
                         <caption>Bendahara</caption>
                         <tbody>
                           <tr>
-                            <td id="foto_bendahara_cbs" ondrop="drop(event)" ondragover="allowDrop(event)" style="height: 81px; width: 108px"></td>
+                            <td id="foto_bendahara_cbs" ondrop="drop(event)" ondragover="allowDrop(event)" style="height: 81px; width: 108px">
+                            	<img src="<?php echo base_url(); ?>img/img1.jpg" alt="" class="img-responsive">
+                            </td>
                           </tr>
                           <tr>
                             <td><input type="text" name="nama_bendahara_cbs" placeholder="Nama"></td>
@@ -75,7 +81,9 @@
                         <caption>Ketua Bidang I</caption>
                         <tbody>
                           <tr>
-                            <td id="foto_kabid1_cbs" ondrop="drop(event)" ondragover="allowDrop(event)" style="height: 81px; width: 108px"></td>
+                            <td id="foto_kabid1_cbs" ondrop="drop(event)" ondragover="allowDrop(event)" style="height: 81px; width: 108px">
+                            	<img src="<?php echo base_url(); ?>img/img1.jpg" alt="" class="img-responsive">
+                            </td>
                           </tr>
                           <tr>
                             <td><input type="text" name="nama_kabid1_cbs" placeholder="Nama"></td>
@@ -91,7 +99,9 @@
                             <caption>Ketua Divisi Humas</caption>
                             <tbody>
                               <tr>
-                                <td id="foto_kadiv_humas" ondrop="drop(event)" ondragover="allowDrop(event)" style="height: 81px; width: 108px"></td>
+                                <td id="foto_kadiv_humas" ondrop="drop(event)" ondragover="allowDrop(event)" style="height: 81px; width: 108px">
+                                	<img src="<?php echo base_url(); ?>img/img1.jpg" alt="" class="img-responsive">
+                                </td>
                               </tr>
                               <tr>
                                 <td><input type="text" name="nama_kadiv_humas" placeholder="Nama"></td>
@@ -106,7 +116,9 @@
                             <caption>Ketua Divisi Acara</caption>
                             <tbody>
                               <tr>
-                                <td id="foto_kadiv_acara" ondrop="drop(event)" ondragover="allowDrop(event)" style="height: 81px; width: 108px"></td>
+                                <td id="foto_kadiv_acara" ondrop="drop(event)" ondragover="allowDrop(event)" style="height: 81px; width: 108px">
+                                	<img src="<?php echo base_url(); ?>img/img1.jpg" alt="" class="img-responsive">
+                                </td>
                               </tr>
                               <tr>
                                 <td><input type="text" name="nama_kadiv_acara" placeholder="Nama"></td>
@@ -121,7 +133,9 @@
                             <caption>Ketua Divisi PK</caption>
                             <tbody>
                               <tr>
-                                <td id="foto_kadiv_pk" ondrop="drop(event)" ondragover="allowDrop(event)" style="height: 81px; width: 108px"></td>
+                                <td id="foto_kadiv_pk" ondrop="drop(event)" ondragover="allowDrop(event)" style="height: 81px; width: 108px">
+                                	<img src="<?php echo base_url(); ?>img/img1.jpg" alt="" class="img-responsive">
+                                </td>
                               </tr>
                               <tr>
                                 <td><input type="text" name="nama_kadiv_pk" placeholder="Nama"></td>
@@ -138,7 +152,9 @@
                         <caption>Ketua Bidang II</caption>
                         <tbody>
                           <tr>
-                            <td id="foto_kabid2_cbs" ondrop="drop(event)" ondragover="allowDrop(event)" style="height: 81px; width: 108px"></td>
+                            <td id="foto_kabid2_cbs" ondrop="drop(event)" ondragover="allowDrop(event)" style="height: 81px; width: 108px">
+                            	<img src="<?php echo base_url(); ?>img/img1.jpg" alt="" class="img-responsive">
+                            </td>
                           </tr>
                           <tr>
                             <td><input type="text" name="nama_kabid2_cbs" placeholder="Nama"></td>
@@ -154,7 +170,9 @@
                             <caption>Ketua Divisi Medik</caption>
                             <tbody>
                               <tr>
-                                <td id="foto_kadiv_medik" ondrop="drop(event)" ondragover="allowDrop(event)" style="height: 81px; width: 108px"></td>
+                                <td id="foto_kadiv_medik" ondrop="drop(event)" ondragover="allowDrop(event)" style="height: 81px; width: 108px">
+                                	<img src="<?php echo base_url(); ?>img/img1.jpg" alt="" class="img-responsive">
+                                </td>
                               </tr>
                               <tr>
                                 <td><input type="text" name="nama_kadiv_medik" placeholder="Nama"></td>
@@ -169,7 +187,9 @@
                             <caption>Ketua Divisi Akademi</caption>
                             <tbody>
                               <tr>
-                                <td id="foto_kadiv_akademi" ondrop="drop(event)" ondragover="allowDrop(event)" style="height: 81px; width: 108px"></td>
+                                <td id="foto_kadiv_akademi" ondrop="drop(event)" ondragover="allowDrop(event)" style="height: 81px; width: 108px">
+                                	<img src="<?php echo base_url(); ?>img/img1.jpg" alt="" class="img-responsive">
+                                </td>
                               </tr>
                               <tr>
                                 <td><input type="text" name="nama_kadiv_akademi" placeholder="Nama"></td>
@@ -184,7 +204,9 @@
                             <caption>Ketua Divisi Komdis</caption>
                             <tbody>
                               <tr>
-                                <td id="foto_kadiv_komdis" ondrop="drop(event)" ondragover="allowDrop(event)" style="height: 81px; width: 108px"></td>
+                                <td id="foto_kadiv_komdis" ondrop="drop(event)" ondragover="allowDrop(event)" style="height: 81px; width: 108px">
+                                	<img src="<?php echo base_url(); ?>img/img1.jpg" alt="" class="img-responsive">
+                                </td>
                               </tr>
                               <tr>
                                 <td><input type="text" name="nama_kadiv_komdis" placeholder="Nama"></td>
@@ -199,7 +221,9 @@
                             <caption>Ketua Divisi Rohani</caption>
                             <tbody>
                               <tr>
-                                <td id="foto_kadiv_rohani" ondrop="drop(event)" ondragover="allowDrop(event)" style="height: 81px; width: 108px"></td>
+                                <td id="foto_kadiv_rohani" ondrop="drop(event)" ondragover="allowDrop(event)" style="height: 81px; width: 108px">
+                                	<img src="<?php echo base_url(); ?>img/img1.jpg" alt="" class="img-responsive">
+                                </td>
                               </tr>
                               <tr>
                                 <td><input type="text" name="nama_kadiv_rohani" placeholder="Nama"></td>
@@ -216,7 +240,9 @@
                         <caption>Ketua Bidang III</caption>
                         <tbody>
                           <tr>
-                            <td id="foto_kabid3_cbs" ondrop="drop(event)" ondragover="allowDrop(event)" style="height: 81px; width: 108px"></td>
+                            <td id="foto_kabid3_cbs" ondrop="drop(event)" ondragover="allowDrop(event)" style="height: 81px; width: 108px">
+                            	<img src="<?php echo base_url(); ?>img/img1.jpg" alt="" class="img-responsive">
+                            </td>
                           </tr>
                           <tr>
                             <td><input type="text" name="nama_kabid3_cbs" placeholder="Nama"></td>
@@ -232,7 +258,9 @@
                             <caption>Ketua Divisi Logistik</caption>
                             <tbody>
                               <tr>
-                                <td id="foto_kadiv_logistik" ondrop="drop(event)" ondragover="allowDrop(event)" style="height: 81px; width: 108px"></td>
+                                <td id="foto_kadiv_logistik" ondrop="drop(event)" ondragover="allowDrop(event)" style="height: 81px; width: 108px">
+                                	<img src="<?php echo base_url(); ?>img/img1.jpg" alt="" class="img-responsive">
+                                </td>
                               </tr>
                               <tr>
                                 <td><input type="text" name="nama_kadiv_logistik" placeholder="Nama"></td>
@@ -247,7 +275,9 @@
                             <caption>Ketua Divisi Dankom</caption>
                             <tbody>
                               <tr>
-                                <td id="foto_kadiv_dankom" ondrop="drop(event)" ondragover="allowDrop(event)" style="height: 81px; width: 108px"></td>
+                                <td id="foto_kadiv_dankom" ondrop="drop(event)" ondragover="allowDrop(event)" style="height: 81px; width: 108px">
+                                	<img src="<?php echo base_url(); ?>img/img1.jpg" alt="" class="img-responsive">
+                                </td>
                               </tr>
                               <tr>
                                 <td><input type="text" name="nama_kadiv_dankom" placeholder="Nama"></td>
@@ -262,7 +292,9 @@
                             <caption>Ketua Divisi Pubdok</caption>
                             <tbody>
                               <tr>
-                                <td id="foto_kadiv_pubdok" ondrop="drop(event)" ondragover="allowDrop(event)" style="height: 81px; width: 108px"></td>
+                                <td id="foto_kadiv_pubdok" ondrop="drop(event)" ondragover="allowDrop(event)" style="height: 81px; width: 108px">
+                                	<img src="<?php echo base_url(); ?>img/img1.jpg" alt="" class="img-responsive">
+                                </td>
                               </tr>
                               <tr>
                                 <td><input type="text" name="nama_kadiv_pubdok" placeholder="Nama"></td>

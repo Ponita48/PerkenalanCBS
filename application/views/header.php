@@ -5,6 +5,7 @@
 	<title>Perkenalan CBS</title>
 	<link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/bootstrap.min.css">
 	<link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/user.css">
+	<link rel="stylesheet" href="<? echo base_url(); ?>assets/css/tree-diagram.css">
 	<script src="<?php echo base_url(); ?>assets/js/jquery.min.js"></script>
 	<script src="<?php echo base_url(); ?>assets/js/bootstrap.min.js"></script>
 	<script src="<?php echo base_url(); ?>assets/js/user.js"></script>
@@ -67,4 +68,4 @@
 	</center>
 	</div>
 
-	<div class="container">
+	<div class="container-fluid" >

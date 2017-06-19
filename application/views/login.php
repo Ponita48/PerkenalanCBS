@@ -1,9 +1,4 @@
-	 <!-- <?php 
-/*	echo "<pre>";
-	var_dump($this->session->userdata);
-	echo "</pre>";*/
-	 ?>  -->
-
+	<br><br>
 	<center>
 		<div class="col-sm-4"></div>
 		<!-- TODO: Center vertical -->
