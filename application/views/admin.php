@@ -19,6 +19,16 @@
 			<div role="tabpanel" class="tab-pane container-fluid active" id="1">
 				<center>
 					<div class="col-sm-12">
+					<div class="col-md-12 col-sm-12 col-lg-12" id="search" style="background-color: #FFD51E; padding: 10px; margin-top: 0; margin-bottom: 10px; display: none;">
+					<center>
+						<div class="input-group">
+							<input type="text" class="form-control" id="filterKey" placeholder="Filter">
+							<span class="input-group-btn" id="filter">
+								<button class="btn btn-primary">Search</button>
+							</span>
+						</div>
+					</center>
+					</div>
 						<table class="table">
 							<tr>
 								<th>Nama Keluarga</th>
@@ -27,11 +37,18 @@
 								<th>NPM Peserta</th>
 								<th>Halaman Detail</th>
 							</tr>
-							<tr>
+							<tr class="item">
 								<td>Kodoque</td>
 								<td>1408101600XX</td>
 								<td>Oedjank</td>
-								<td>1408101700XX</td>
+								<td class="npm">1408101700XX</td>
+								<td><a href="#">Link</a></td>
+							</tr>
+							<tr class="item">
+								<td>Kodoque</td>
+								<td>1408101600XX</td>
+								<td>Oedjank</td>
+								<td class="npm">1408101700XX</td>
 								<td><a href="#">Link</a></td>
 							</tr>
 						</table>
@@ -40,7 +57,7 @@
 			</div>
 			<div role="tabpanel" class="tab-pane container-fluid" id="2">
 				<center>
-					<div class="col-sm-9">
+					<div class="col-sm-12">
 						<table class="table">
 							<tr>
 								<th>Nama Keluarga</th>
@@ -50,7 +67,7 @@
 								<th>Halaman Detail</th>
 							</tr>
 							<tr>
-								<td>Kodoque</td>
+								<td>Kodoque2</td>
 								<td>1408101600XX</td>
 								<td>Oedjank</td>
 								<td>1408101700XX</td>
@@ -62,7 +79,7 @@
 			</div>
 			<div role="tabpanel" class="tab-pane container-fluid" id="3">
 				<center>
-					<div class="col-sm-9">
+					<div class="col-sm-12">
 						<table class="table">
 							<tr>
 								<th>Nama Keluarga</th>
@@ -72,7 +89,7 @@
 								<th>Halaman Detail</th>
 							</tr>
 							<tr>
-								<td>Kodoque</td>
+								<td>Kodoque3</td>
 								<td>1408101600XX</td>
 								<td>Oedjank</td>
 								<td>1408101700XX</td>
@@ -84,7 +101,7 @@
 			</div>
 			<div role="tabpanel" class="tab-pane container-fluid" id="4">
 				<center>
-					<div class="col-sm-9">
+					<div class="col-sm-12">
 						<table class="table">
 							<tr>
 								<th>Nama Keluarga</th>
@@ -94,7 +111,7 @@
 								<th>Halaman Detail</th>
 							</tr>
 							<tr>
-								<td>Kodoque</td>
+								<td>Kodoque4</td>
 								<td>1408101600XX</td>
 								<td>Oedjank</td>
 								<td>1408101700XX</td>
