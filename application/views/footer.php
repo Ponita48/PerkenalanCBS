@@ -9,7 +9,6 @@
 	$(document).ready(function(){
 		$('#search_icon').click(function() {
 			$('#search').slideToggle("slow");
-			// $('#search').toggleClass('hidden');
 		});
 	});
 </script>
