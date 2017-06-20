@@ -357,7 +357,7 @@
                         <td id="foto_ketua_be" ondrop="drop(event)" ondragover="allowDrop(event)" style="height: 81px; width: 108px"></td>
                       </tr>
                       <tr>
-                        <td><input type="text" name="nama_ketua_be" placeholder="Nama"></td>
+                        <td><input type="text" name="nama_ketua_be" id="nama1" placeholder="Nama"></td>
                       </tr>
                       <tr>
                         <td><input type="text" name="npm_ketua_be" placeholder="NPM"></td>
@@ -373,7 +373,7 @@
                             <td id="foto_waketu_be" ondrop="drop(event)" ondragover="allowDrop(event)" style="height: 81px; width: 108px"></td>
                           </tr>
                           <tr>
-                            <td><input type="text" name="nama_waketu_be" placeholder="Nama"></td>
+                            <td><input type="text" name="nama_waketu_be" id="nama2" placeholder="Nama"></td>
                           </tr>
                           <tr>
                             <td><input type="text" name="npm_waketu_be" placeholder="NPM"></td>
@@ -389,7 +389,7 @@
                                 <td id="foto_kabir_adk" ondrop="drop(event)" ondragover="allowDrop(event)" style="height: 81px; width: 108px"></td>
                               </tr>
                               <tr>
-                                <td><input type="text" name="nama_kabir_adk" placeholder="Nama"></td>
+                                <td><input type="text" name="nama_kabir_adk" id="nama3" placeholder="Nama"></td>
                               </tr>
                               <tr>
                                 <td><input type="text" name="npm_kabir_adk" placeholder="NPM"></td>
@@ -404,7 +404,7 @@
                                 <td id="foto_kabir_uang" ondrop="drop(event)" ondragover="allowDrop(event)" style="height: 81px; width: 108px"></td>
                               </tr>
                               <tr>
-                                <td><input type="text" name="nama_kabir_uang" placeholder="Nama"></td>
+                                <td><input type="text" name="nama_kabir_uang" id="nama4" placeholder="Nama"></td>
                               </tr>
                               <tr>
                                 <td><input type="text" name="npm_kabir_uang" placeholder="NPM"></td>
@@ -413,13 +413,13 @@
                           </table>
                         </li><li>
                           <table>
-                            <caption>Kepala Departemen PSDM</caption>
+                            <caption>Kepala Departemen Kaderisasi</caption>
                             <tbody>
                               <tr>
                                 <td id="foto_kadep_psdm" ondrop="drop(event)" ondragover="allowDrop(event)" style="height: 81px; width: 108px"></td>
                               </tr>
                               <tr>
-                                <td><input type="text" name="nama_kadep_psdm" placeholder="Nama"></td>
+                                <td><input type="text" name="nama_kadep_psdm" id="nama5" placeholder="Nama"></td>
                               </tr>
                               <tr>
                                 <td><input type="text" name="npm_kadep_psdm" placeholder="NPM"></td>
@@ -434,7 +434,7 @@
                                 <td id="foto_kadep_po" ondrop="drop(event)" ondragover="allowDrop(event)" style="height: 81px; width: 108px"></td>
                               </tr>
                               <tr>
-                                <td><input type="text" name="nama_kadep_po" placeholder="Nama"></td>
+                                <td><input type="text" name="nama_kadep_po" id="nama6" placeholder="Nama"></td>
                               </tr>
                               <tr>
                                 <td><input type="text" name="npm_kadep_po" placeholder="NPM"></td>
@@ -449,7 +449,7 @@
                                 <td id="foto_kadep_hubin" ondrop="drop(event)" ondragover="allowDrop(event)" style="height: 81px; width: 108px"></td>
                               </tr>
                               <tr>
-                                <td><input type="text" name="nama_kadep_hubin" placeholder="Nama"></td>
+                                <td><input type="text" name="nama_kadep_hubin" id="nama7" placeholder="Nama"></td>
                               </tr>
                               <tr>
                                 <td><input type="text" name="npm_kadep_hubin" placeholder="NPM"></td>
@@ -464,7 +464,7 @@
                                 <td id="foto_kadep_hubeks" ondrop="drop(event)" ondragover="allowDrop(event)" style="height: 81px; width: 108px"></td>
                               </tr>
                               <tr>
-                                <td><input type="text" name="nama_kadep_hubeks" placeholder="Nama"></td>
+                                <td><input type="text" name="nama_kadep_hubeks" id="nama8" placeholder="Nama"></td>
                               </tr>
                               <tr>
                                 <td><input type="text" name="npm_kadep_hubeks" placeholder="NPM"></td>
@@ -479,7 +479,7 @@
                                 <td id="foto_kadep_litbang" ondrop="drop(event)" ondragover="allowDrop(event)" style="height: 81px; width: 108px"></td>
                               </tr>
                               <tr>
-                                <td><input type="text" name="nama_kadep_litbang" placeholder="Nama"></td>
+                                <td><input type="text" name="nama_kadep_litbang" id="nama9" placeholder="Nama"></td>
                               </tr>
                               <tr>
                                 <td><input type="text" name="npm_kadep_litbang" placeholder="NPM"></td>
@@ -494,7 +494,7 @@
                                 <td id="foto_kadep_medinfo" ondrop="drop(event)" ondragover="allowDrop(event)" style="height: 81px; width: 108px"></td>
                               </tr>
                               <tr>
-                                <td><input type="text" name="nama_kadep_medinfo" placeholder="Nama"></td>
+                                <td><input type="text" name="nama_kadep_medinfo" id="nama10" placeholder="Nama"></td>
                               </tr>
                               <tr>
                                 <td><input type="text" name="npm_kadep_medinfo" placeholder="NPM"></td>
@@ -509,7 +509,7 @@
                                 <td id="foto_kadep_wirus" ondrop="drop(event)" ondragover="allowDrop(event)" style="height: 81px; width: 108px"></td>
                               </tr>
                               <tr>
-                                <td><input type="text" name="nama_kadep_wirus" placeholder="Nama"></td>
+                                <td><input type="text" name="nama_kadep_wirus" id="nama11" placeholder="Nama"></td>
                               </tr>
                               <tr>
                                 <td><input type="text" name="npm_kadep_wirus" placeholder="NPM"></td>
@@ -524,7 +524,7 @@
                                 <td id="foto_kadep_agama" ondrop="drop(event)" ondragover="allowDrop(event)" style="height: 81px; width: 108px"></td>
                               </tr>
                               <tr>
-                                <td><input type="text" name="nama_kadep_agama" placeholder="Nama"></td>
+                                <td><input type="text" name="nama_kadep_agama" id="nama12" placeholder="Nama"></td>
                               </tr>
                               <tr>
                                 <td><input type="text" name="npm_kadep_agama" placeholder="NPM"></td>
@@ -539,7 +539,7 @@
                                 <td id="foto_kadep_keprof" ondrop="drop(event)" ondragover="allowDrop(event)" style="height: 81px; width: 108px"></td>
                               </tr>
                               <tr>
-                                <td><input type="text" name="nama_kadep_keprof" placeholder="Nama"></td>
+                                <td><input type="text" name="nama_kadep_keprof" id="nama13" placeholder="Nama"></td>
                               </tr>
                               <tr>
                                 <td><input type="text" name="npm_kadep_keprof" placeholder="NPM"></td>
