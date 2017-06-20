@@ -34,7 +34,7 @@
                         </td>
                       </tr>
                       <tr>
-                        <td><input type="text" name="nama_po_cbs" placeholder="Nama"></td>
+                        <td><input type="text" name="nama_po_cbs" id="ketua" placeholder="Nama"></td>
                       </tr>
                       <tr>
                         <td><input type="text" name="npm_po_cbs" placeholder="NPM"></td>
@@ -52,7 +52,7 @@
                             </td>
                           </tr>
                           <tr>
-                            <td><input type="text" name="nama_sekretaris_cbs" placeholder="Nama"></td>
+                            <td><input type="text" name="nama_sekretaris_cbs" id="sekre" placeholder="Nama"></td>
                           </tr>
                           <tr>
                             <td><input type="text" name="npm_sekretaris_cbs" placeholder="NPM"></td>
@@ -69,7 +69,7 @@
                             </td>
                           </tr>
                           <tr>
-                            <td><input type="text" name="nama_bendahara_cbs" placeholder="Nama"></td>
+                            <td><input type="text" name="nama_bendahara_cbs" id="bendahara" placeholder="Nama"></td>
                           </tr>
                           <tr>
                             <td><input type="text" name="npm_bendahara_cbs" placeholder="NPM"></td>
@@ -86,7 +86,7 @@
                             </td>
                           </tr>
                           <tr>
-                            <td><input type="text" name="nama_kabid1_cbs" placeholder="Nama"></td>
+                            <td><input type="text" name="nama_kabid1_cbs" id="kabid1" placeholder="Nama"></td>
                           </tr>
                           <tr>
                             <td><input type="text" name="npm_kabid1_cbs" placeholder="NPM"></td>
@@ -104,7 +104,7 @@
                                 </td>
                               </tr>
                               <tr>
-                                <td><input type="text" name="nama_kadiv_humas" placeholder="Nama"></td>
+                                <td><input type="text" name="nama_kadiv_humas" id="humas" placeholder="Nama"></td>
                               </tr>
                               <tr>
                                 <td><input type="text" name="npm_kadiv_humas" placeholder="NPM"></td>
@@ -121,7 +121,7 @@
                                 </td>
                               </tr>
                               <tr>
-                                <td><input type="text" name="nama_kadiv_acara" placeholder="Nama"></td>
+                                <td><input type="text" name="nama_kadiv_acara" id="acara" placeholder="Nama"></td>
                               </tr>
                               <tr>
                                 <td><input type="text" name="npm_kadiv_acara" placeholder="NPM"></td>
@@ -138,7 +138,7 @@
                                 </td>
                               </tr>
                               <tr>
-                                <td><input type="text" name="nama_kadiv_pk" placeholder="Nama"></td>
+                                <td><input type="text" name="nama_kadiv_pk" id="pk" placeholder="Nama"></td>
                               </tr>
                               <tr>
                                 <td><input type="text" name="npm_kadiv_pk" placeholder="NPM"></td>
@@ -157,10 +157,10 @@
                             </td>
                           </tr>
                           <tr>
-                            <td><input type="text" name="nama_kabid2_cbs" placeholder="Nama"></td>
+                            <td><input type="text" name="nama_kabid2_cbs" id="kabid2" placeholder="Nama"></td>
                           </tr>
                           <tr>
-                            <td><input type="text" name="npm_kabid2_cbs" placeholder="NPM"></td>
+                            <td><input type="text" name="npm_kabid2_cbs"  placeholder="NPM"></td>
                           </tr>
                         </tbody>
                       </table>
@@ -175,7 +175,7 @@
                                 </td>
                               </tr>
                               <tr>
-                                <td><input type="text" name="nama_kadiv_medik" placeholder="Nama"></td>
+                                <td><input type="text" name="nama_kadiv_medik" id="medik" placeholder="Nama"></td>
                               </tr>
                               <tr>
                                 <td><input type="text" name="npm_kadiv_medik" placeholder="NPM"></td>
@@ -184,7 +184,7 @@
                           </table>
                         </li><li>
                           <table>
-                            <caption>Ketua Divisi Akademi</caption>
+                            <caption>Ketua Divisi Akademik</caption>
                             <tbody>
                               <tr>
                                 <td id="foto_kadiv_akademi" ondrop="drop(event)" ondragover="allowDrop(event)" style="height: 81px; width: 108px">
@@ -192,7 +192,7 @@
                                 </td>
                               </tr>
                               <tr>
-                                <td><input type="text" name="nama_kadiv_akademi" placeholder="Nama"></td>
+                                <td><input type="text" name="nama_kadiv_akademi" id="akad" placeholder="Nama"></td>
                               </tr>
                               <tr>
                                 <td><input type="text" name="npm_kadiv_akademi" placeholder="NPM"></td>
@@ -209,7 +209,7 @@
                                 </td>
                               </tr>
                               <tr>
-                                <td><input type="text" name="nama_kadiv_komdis" placeholder="Nama"></td>
+                                <td><input type="text" name="nama_kadiv_komdis" id="komdis" placeholder="Nama"></td>
                               </tr>
                               <tr>
                                 <td><input type="text" name="npm_kadiv_komdis" placeholder="NPM"></td>
@@ -226,7 +226,7 @@
                                 </td>
                               </tr>
                               <tr>
-                                <td><input type="text" name="nama_kadiv_rohani" placeholder="Nama"></td>
+                                <td><input type="text" name="nama_kadiv_rohani" id="rohani" placeholder="Nama"></td>
                               </tr>
                               <tr>
                                 <td><input type="text" name="npm_kadiv_rohani" placeholder="NPM"></td>
@@ -245,7 +245,7 @@
                             </td>
                           </tr>
                           <tr>
-                            <td><input type="text" name="nama_kabid3_cbs" placeholder="Nama"></td>
+                            <td><input type="text" name="nama_kabid3_cbs" id="kabid3" placeholder="Nama"></td>
                           </tr>
                           <tr>
                             <td><input type="text" name="npm_kabid3_cbs" placeholder="NPM"></td>
@@ -263,7 +263,7 @@
                                 </td>
                               </tr>
                               <tr>
-                                <td><input type="text" name="nama_kadiv_logistik" placeholder="Nama"></td>
+                                <td><input type="text" name="nama_kadiv_logistik" id="logistik" placeholder="Nama"></td>
                               </tr>
                               <tr>
                                 <td><input type="text" name="npm_kadiv_logistik" placeholder="NPM"></td>
@@ -280,7 +280,7 @@
                                 </td>
                               </tr>
                               <tr>
-                                <td><input type="text" name="nama_kadiv_dankom" placeholder="Nama"></td>
+                                <td><input type="text" name="nama_kadiv_dankom" id="dankom" placeholder="Nama"></td>
                               </tr>
                               <tr>
                                 <td><input type="text" name="npm_kadiv_dankom" placeholder="NPM"></td>
@@ -297,7 +297,7 @@
                                 </td>
                               </tr>
                               <tr>
-                                <td><input type="text" name="nama_kadiv_pubdok" placeholder="Nama"></td>
+                                <td><input type="text" name="nama_kadiv_pubdok" id="pubdok" placeholder="Nama"></td>
                               </tr>
                               <tr>
                                 <td><input type="text" name="npm_kadiv_pubdok" placeholder="NPM"></td>
