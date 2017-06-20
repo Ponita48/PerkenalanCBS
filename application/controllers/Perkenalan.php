@@ -13,6 +13,8 @@ class Perkenalan extends CI_Controller
 
 	public function request_keluarga($id) {
 
+		
+
 		if ($this->session->userdata['logged_in']['role'] != 'peserta') {
 			$this->load->view('header');
 			$this->load->view('index');
@@ -20,14 +22,15 @@ class Perkenalan extends CI_Controller
 		}
 
 		date_default_timezone_set('Asia/Jakarta');
-		//$date = time();
-		//echo date("M D Y H:i:s", $date);
+		$date = date("Y-m-d H:i:s", time());
+		//echo date("Y M D H:i:s", time());
 		//die();
 		$this->form_validation->set_rules('nama', 'Nama Keluarga', 'required');
 		$this->form_validation->set_rules('ciri_khas', 'Ciri Khas', 'required');
 		$this->form_validation->set_rules('link_foto', 'Link Foto', 'required');
 
 		if ($this->form_validation->run() == FALSE) {
+			
 			//redirect();
 		}else {
 			$data = array(
@@ -35,16 +38,22 @@ class Perkenalan extends CI_Controller
 				'nama' => $this->input->post('nama'),
 				'ciri_khas' => $this->input->post('ciri_khas'),
 				'link_foto' => $this->input->post('link_foto'),
-				'request_time' => time()
+				'request_time' => $date
 			);
+
+			//fungsi untuk mengubah datetime menjadi timestamp
+			/*echo strtotime($data['request_time']);
+			die();*/
 			
 			$result = $this->Perkenalan_model->request_keluarga($data);
 
 			if (!$result) {
 				$data['error_message'] = "Error";
+				echo "fail";
 				//redirect();
 			}else {
 				$data['message_display'] = "Success";
+				echo "success";
 				//redirect();
 			}
 
@@ -60,6 +69,7 @@ class Perkenalan extends CI_Controller
 		}
 		
 		date_default_timezone_set('Asia/Jakarta');
+		$date = date("Y-m-d H:i:s", time());
 		//$date = time();
 		//echo date("M D Y H:i:s", $date);
 		//die();
@@ -77,13 +87,13 @@ class Perkenalan extends CI_Controller
 			$data = array(
 				'id_user2' => $id,
 				'nama' => $this->input->post('nama'),
-				'tempat_lahir' => $this->input('tempat_lahir'),
-				'tgl_lahir' => $this->input('tgl_lahir'),
-				'alamat_kos' => $this->input('alamat_kos'),
-				'id_line' => $this->input('id_line'),
-				'no_hp' => $this->input('no_hp'),
+				'tempat_lahir' => $this->input->post('tempat_lahir'),
+				'tgl_lahir' => $this->input->post('tgl_lahir'),
+				'alamat_kos' => $this->input->post('alamat_kos'),
+				'id_line' => $this->input->post('id_line'),
+				'no_hp' => $this->input->post('no_hp'),
 				'link_foto' => $this->input->post('link_foto'),
-				'request_time' => time()
+				'request_time' => $date
 			);
 			
 			$result = $this->Perkenalan_model->request_angkatan($data);
@@ -91,9 +101,11 @@ class Perkenalan extends CI_Controller
 			if (!$result) {
 				$data['error_message'] = "Error";
 				//redirect();
+				echo "fail";
 			}else {
 				$data['message_display'] = "Success";
 				//redirect();
+				echo "success";
 			}
 
 		}

@@ -87,7 +87,14 @@ class TestView extends CI_Controller
 		$this->load->view('header');
 		$this->load->view('admin');
 		$this->load->view('footer');
-	}	
+	}
+
+	//view ini cuma buat testing backend
+	public function test_request_perkenalan_angkatan(){
+		$this->load->view('header');
+		$this->load->view('testing_request_angkatan');
+		$this->load->view('footer');
+	}
 
 
 }
