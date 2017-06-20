@@ -37,7 +37,8 @@ class User_model extends CI_Model {
 				}elseif ($query->row('role') == 'admin') {
 					$role = 'admin';
 				}else {
-					$role = 'keluarga';
+					//$role = 'keluarga';
+					return FALSE;
 				}
 
 				/*$session_data['role'] = $role;
