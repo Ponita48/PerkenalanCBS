@@ -1,7 +1,6 @@
 	<br><br>
 	<center>
 		<div class="col-sm-4"></div>
-		<!-- TODO: Center vertical -->
 		<div class="col-sm-4">
 			<div class="well well-lg" style="vertical-align: middle">
 				<h1 style="padding-bottom: 20px;">LOGIN</h1>

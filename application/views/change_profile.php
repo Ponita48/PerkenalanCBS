@@ -14,10 +14,13 @@
 					<label for="npm">NPM</label>
 					<input type="text" class="form-control" id="npm" placeholder="NPM">
 				</div>
-				<!-- TODO : jadiin dropdown -->
 				<div class="form-group">
 					<label for="jk">Jenis Kelamin</label>
-					<input type="text" class="form-control" id="jk" placeholder="Jenis Kelamin">
+					<select name="jk" id="jk" class="form-control">
+						<option value="Laki-laki">Laki-laki</option>
+						<option value="Perempuan">Perempuan</option>
+						<option value="Lainnya">Lainnya</option>
+					</select>
 				</div>
 				<div class="form-group">
 					<label for="tempat_lahir">Tempat Lahir</label>
@@ -26,7 +29,7 @@
 				<!-- TODO : jadiin date select -->
 				<div class="form-group">
 					<label for="tanggal_lahir">Tanggal Lahir</label>
-					<input type="text" class="form-control" id="tanggal_lahir" placeholder="Tanggal Lahir">
+					<input type="date" class="form-control" id="tanggal_lahir" placeholder="Tanggal Lahir">
 				</div>
 				<div class="form-group">
 					<label for="alamat">Alamat Kos</label>
@@ -43,7 +46,6 @@
 				<center>
 					<input type="submit" class="btn btn-warning">
 				</center>
-				<br><br>
 			</form>
 		</div>
 	</div>

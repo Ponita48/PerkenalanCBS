@@ -12,7 +12,6 @@
 	<script src="<?php echo base_url(); ?>assets/js/sorttable.js"></script>
 </head>
 <body>
-	<!-- TODO: Tambahin link buat navigasi -->
 	<nav class="navbar navbar-inverse" style="margin-bottom: 0px;">
 		<div class="navbar-header">
 	      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
@@ -58,7 +57,6 @@
 	<center>
 		<form action="#" class="form-inline" id="searchForm">
 			<div class="input-group">
-				<!-- <label for="searchKey">Keyword :</label> -->
 				<input type="text" class="form-control" id="searchKey" placeholder="Search. . .">
 				<span class="input-group-btn">
 					<button class="btn btn-primary">Search</button>

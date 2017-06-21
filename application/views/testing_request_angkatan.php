@@ -13,39 +13,40 @@
 					</div>
 				</div>
 				<div class="form-group">
-					<label for="ciri_khas" class="col-sm-3 control-label">tempat lahir</label>
+					<label for="tempat_lahir" class="col-sm-3 control-label">Tempat Lahir</label>
 					<div class="col-sm-6">
-						<input type="text" class="form-control" id="ciri_khas" placeholder="Ciri khas" name="tempat_lahir">
+						<input type="text" class="form-control" id="tempat_lahir" placeholder="Tempat Lahir" name="tempat_lahir">
+					</div>
+				</div>
+				<!-- TODO: ganti jadi datepicker (optional) -->
+				<div class="form-group">
+					<label for="foto" class="col-sm-3 control-label">Tanggal Lahir</label>
+					<div class="col-sm-6">
+						<input type="date" class="form-control" id="foto" placeholder="Tanggal Lahir" name="tgl_lahir">
 					</div>
 				</div>
 				<div class="form-group">
-					<label for="foto" class="col-sm-3 control-label">tgl lahir</label>
+					<label for="alamat_kos" class="col-sm-3 control-label">Alamat Kos</label>
 					<div class="col-sm-6">
-						<input type="date" class="form-control" id="foto" placeholder="Masukkan link" name="tgl_lahir">
+						<input type="text" class="form-control" id="alamat_kos" placeholder="Alamat Kos" name="alamat_kos">
 					</div>
 				</div>
 				<div class="form-group">
-					<label for="ciri_khas" class="col-sm-3 control-label">alamat kos</label>
+					<label for="id_line" class="col-sm-3 control-label">ID LINE</label>
 					<div class="col-sm-6">
-						<input type="text" class="form-control" id="ciri_khas" placeholder="Ciri khas" name="alamat_kos">
+						<input type="text" class="form-control" id="id_line" placeholder="ID LINE" name="id_line">
 					</div>
 				</div>
 				<div class="form-group">
-					<label for="ciri_khas" class="col-sm-3 control-label">id_line</label>
+					<label for="no_hp" class="col-sm-3 control-label">Nomor HP</label>
 					<div class="col-sm-6">
-						<input type="text" class="form-control" id="ciri_khas" placeholder="Ciri khas" name="id_line">
+						<input type="text" class="form-control" id="no_hp" placeholder="Nomor HP" name="no_hp">
 					</div>
 				</div>
 				<div class="form-group">
-					<label for="ciri_khas" class="col-sm-3 control-label">no hp</label>
+					<label for="link_foto" class="col-sm-3 control-label">Link Foto</label>
 					<div class="col-sm-6">
-						<input type="text" class="form-control" id="ciri_khas" placeholder="Ciri khas" name="no_hp">
-					</div>
-				</div>
-				<div class="form-group">
-					<label for="ciri_khas" class="col-sm-3 control-label">lick foto</label>
-					<div class="col-sm-6">
-						<input type="text" class="form-control" id="ciri_khas" placeholder="Ciri khas" name="link_foto">
+						<input type="text" class="form-control" id="link_foto" placeholder="Link Foto" name="link_foto">
 					</div>
 				</div>
 				<input class="col-sm-offset-1 btn btn-warning" type="submit" value="Submit" >
