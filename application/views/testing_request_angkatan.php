@@ -18,11 +18,10 @@
 						<input type="text" class="form-control" id="tempat_lahir" placeholder="Tempat Lahir" name="tempat_lahir">
 					</div>
 				</div>
-				<!-- TODO: ganti jadi datepicker (optional) -->
 				<div class="form-group">
-					<label for="foto" class="col-sm-3 control-label">Tanggal Lahir</label>
+					<label for="tgl_lahir" class="col-sm-3 control-label">Tanggal Lahir</label>
 					<div class="col-sm-6">
-						<input type="date" class="form-control" id="foto" placeholder="Tanggal Lahir" name="tgl_lahir">
+						<input type="text" class="form-control" id="tgl_lahir" placeholder="Tanggal Lahir" name="tgl_lahir">
 					</div>
 				</div>
 				<div class="form-group">

@@ -26,10 +26,9 @@
 					<label for="tempat_lahir">Tempat Lahir</label>
 					<input type="text" class="form-control" id="tempat_lahir" placeholder="Tempat Lahir">
 				</div>
-				<!-- TODO : jadiin date select -->
 				<div class="form-group">
-					<label for="tanggal_lahir">Tanggal Lahir</label>
-					<input type="date" class="form-control" id="tanggal_lahir" placeholder="Tanggal Lahir">
+					<label for="tgl_lahir">Tanggal Lahir</label>
+					<input type="text" class="form-control" id="tgl_lahir" placeholder="Tanggal Lahir">
 				</div>
 				<div class="form-group">
 					<label for="alamat">Alamat Kos</label>
