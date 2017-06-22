@@ -16,6 +16,11 @@ class User_model extends CI_Model {
 
 		return $max_angkatan;
 	}
+
+	public function max_angkatan() {
+		$max_angkatan = $this->db->query("SELECT MAX(role) as 'max' FROM users WHERE role != 'admin'")->result()[0]->max;
+		return $max_angkatan;
+	}
 	
 	public function loginNoHash($data) {
 		$condition = "npm= '".$data['npm']."'";
@@ -30,7 +35,7 @@ class User_model extends CI_Model {
 			$password = $data['password'];
 			if ($password == $query->row('password')) {
 
-				$max_angkatan = $this->db->query("SELECT MAX(role) as 'max' FROM users WHERE role != 'admin'")->result()[0]->max;
+				$max_angkatan = max_angkatan();
 
 				if ($query->row('role') == $max_angkatan) {
 					$role = 'peserta';
@@ -120,15 +125,46 @@ class User_model extends CI_Model {
 		}
 	}
 
-	public function getProfile() {
-		if ($this->session->userdata['logged_in']['role'] == 'peserta') {
-			$sel = "u.email, p.nama, p.jk, p.tempat_lahir, p.tgl_lahir, p.alamat_kos, p.no_hp, p.id_line, p.motto_hidup, p.link_foto";
-			$fr = "users u, profile_maba p";
-		}else {
-			$sel = "u.email, p.nama, p.jk, p.tempat_lahir, p.tgl_lahir, p.alamat_kos, p.no_hp, p.id_line, p.link_foto";
-			$fr = "users u, profile_kating p";
-		}
+	public function getProfile($id = NULL) {
+		
+
+		if ($id == NULL) {
+			if ($this->session->userdata['logged_in']['role'] == 'peserta') {
+				$sel = "u.id_user, u.npm, u.email, u.role, p.nama, p.jk, p.tempat_lahir, p.tgl_lahir, p.alamat_kos, p.no_hp, p.id_line, p.motto_hidup, p.link_foto";
+				$fr = "users u, profile_maba p";
+			}else {
+				$sel = "u.id_user, u.npm, u.email, u.role, p.nama, p.jk, p.tempat_lahir, p.tgl_lahir, p.alamat_kos, p.no_hp, p.id_line, p.link_foto";
+				$fr = "users u, profile_kating p";
+			}
 			$q = "SELECT ".$sel." FROM ".$fr."WHERE p.id_user = ".$this->session->userdata['logged_in']['id_user'];
+		}else {
+
+			$role = $this->db->select('*')
+				->from('users')
+				->where("id_user = ".$id." AND role != 'admin'")
+				->limit(1)
+				->get();
+
+			if ($role->num_rows() == 0) {
+				return FALSE;
+			}else {
+				$role = $role->result()[0]->role;
+			}
+			
+			if ($role == $this->max_angkatan()) {
+				$sel = "u.id_user, u.npm, u.email, u.role, p.nama, p.jk, p.tempat_lahir, p.tgl_lahir, p.alamat_kos, p.no_hp, p.id_line, p.motto_hidup, p.link_foto";
+				$fr = "users u";
+				$j = "profile_maba p";
+			}elseif($role != $this->max_angkatan() && $role != 'admin') {
+				$sel = "u.id_user, u.npm, u.email, u.role, p.nama, p.jk, p.tempat_lahir, p.tgl_lahir, p.alamat_kos, p.no_hp, p.id_line, p.link_foto";
+				$fr = "users u";
+				$j = "profile_kating p";
+			}else {
+				return FALSE;
+			}
+			$q = "SELECT ".$sel." FROM ".$fr." LEFT JOIN ".$j." ON u.id_user = p.id_user WHERE u.id_user = ".$id;
+		}
+
 		$query = $this->db->query($q);
 
 		if ($query->num_rows() == 0) {

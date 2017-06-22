@@ -250,5 +250,22 @@ class User extends CI_Controller
 		$this->load->view('footer');
 	}
 
+	public function lihat_profile($id) {
+		$result = $this->User_model->getProfile($id);
+
+		if ($result == FALSE) {
+			//goto ?
+			echo "false";
+			die();
+		}else {
+			//goto ?
+			echo "true";
+			echo "<pre>";
+			var_dump($result);
+			echo "</pre>";
+			die();
+		}
+	}
+
 }
  ?>
