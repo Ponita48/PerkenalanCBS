@@ -13,9 +13,7 @@
 		$('#search_icon').click(function() {
 			$('#search').slideToggle("slow");
 		});
-		$('#tgl_lahir').datepicker({
-			format: 'dd-mm-yyyy'
-		});
+		$('#tgl_lahir').datepicker();
 	});
 </script>
 </body>
