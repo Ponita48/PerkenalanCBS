@@ -21,7 +21,7 @@
 				<div class="form-group">
 					<label for="tgl_lahir" class="col-sm-3 control-label">Tanggal Lahir</label>
 					<div class="col-sm-6">
-						<input type="text" class="form-control" id="tgl_lahir" placeholder="Tanggal Lahir" name="tgl_lahir">
+						<input type="text" class="form-control" id="tgl_lahir" placeholder="Tanggal Lahir" name="tgl_lahir" readonly="true">
 					</div>
 				</div>
 				<div class="form-group">

@@ -1,6 +1,7 @@
 <!-- TODO: Jadiin foreach (tunggu backend selesai) -->
 	<div>
 		<h1>ADMIN</h1>
+		<hr>
 		<br>
 	</div>
 
@@ -37,19 +38,24 @@
 								<th>NPM Peserta</th>
 								<th>Halaman Detail</th>
 							</tr>
+							<!-- TODO: foreach(backend) -->
 							<tr class="item">
 								<td>Kodoque</td>
 								<td>1408101600XX</td>
 								<td>Oedjank</td>
 								<td class="npm">1408101700XX</td>
-								<td><a href="#">Link</a></td>
+								<td><a href="#">
+									<button class="btn btn-primary">Click Here</button>
+								</a></td>
 							</tr>
 							<tr class="item">
 								<td>Kodoque</td>
 								<td>1408101600XX</td>
 								<td>Oedjank</td>
 								<td class="npm">1408101700XX</td>
-								<td><a href="#">Link</a></td>
+								<td><a href="#">
+									<button class="btn btn-primary">Click Here</button>
+								</a></td>
 							</tr>
 						</table>
 					</div>
@@ -66,12 +72,15 @@
 								<th>NPM Peserta</th>
 								<th>Halaman Detail</th>
 							</tr>
+							<!-- TODO: foreach(backend) -->
 							<tr>
 								<td>Kodoque2</td>
 								<td>1408101600XX</td>
 								<td>Oedjank</td>
 								<td>1408101700XX</td>
-								<td><a href="#">Link</a></td>
+								<td><a href="#">
+									<button class="btn btn-primary">Click Here</button>
+								</a></td>
 							</tr>
 						</table>
 					</div>
@@ -88,12 +97,15 @@
 								<th>NPM Peserta</th>
 								<th>Halaman Detail</th>
 							</tr>
+							<!-- TODO: foreach(backend) -->
 							<tr>
 								<td>Kodoque3</td>
 								<td>1408101600XX</td>
 								<td>Oedjank</td>
 								<td>1408101700XX</td>
-								<td><a href="#">Link</a></td>
+								<td><a href="#">
+									<button class="btn btn-primary">Click Here</button>
+								</a></td>
 							</tr>
 						</table>
 					</div>
@@ -110,12 +122,15 @@
 								<th>NPM Peserta</th>
 								<th>Halaman Detail</th>
 							</tr>
+							<!-- TODO: foreach(backend) -->
 							<tr>
 								<td>Kodoque4</td>
 								<td>1408101600XX</td>
 								<td>Oedjank</td>
 								<td>1408101700XX</td>
-								<td><a href="#">Link</a></td>
+								<td><a href="#">
+									<button class="btn btn-primary">Click Here</button>
+								</a></td>
 							</tr>
 						</table>
 					</div>
