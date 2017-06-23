@@ -13,7 +13,7 @@ class A extends CI_Controller {
 		$this->load->model('Admin_model');
 	}
 
-	public function getPerkenalan($) {
+	public function perkenalanKeluarga() {
 		if (! isset($this->session->userdata['logged_in'])) {
 			//goto home
 			die();
@@ -22,7 +22,7 @@ class A extends CI_Controller {
 				//goto home
 				die();
 			}else {
-				$result = $this->Admin_model->getPerkenalan();
+				$result = $this->Admin_model->getPerkenalanKeluarga();
 			}
 		}
 	}

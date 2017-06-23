@@ -35,7 +35,7 @@ class User_model extends CI_Model {
 			$password = $data['password'];
 			if ($password == $query->row('password')) {
 
-				$max_angkatan = max_angkatan();
+				$max_angkatan = $this->max_angkatan();
 
 				if ($query->row('role') == $max_angkatan) {
 					$role = 'peserta';
