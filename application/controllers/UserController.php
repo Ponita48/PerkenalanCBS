@@ -12,6 +12,7 @@ class UserController extends CI_Controller
 	}
 
 	public function index() {
+		echo "wahahaha";
 		
 		//$this->User_model->aihihi();
 
