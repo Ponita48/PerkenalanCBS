@@ -40,15 +40,22 @@ class A extends CI_Controller {
 		}
 	}
 
-	public function perkenalanAngkatan($id) {
+	public function perkenalanAngkatan($id = NULL) {
 		if (! isset($this->session->userdata['logged_in'])) {
 			//goto home
 			die();
 		}else {
+
 			if ($this->session->userdata['logged_in']['role'] != 'admin') {
-				$result = $this->Admin_model->getPerkenalanAngkatan();
+				$result = $this->Admin_model->getPerkenalanAngkatan($this->session->userdata['logged_in']['id_user']);
 			}else {
-				$result = $this->Admin_model->getPerkenalanKeluarga();
+
+				if ($id == NULL) {
+					echo "parameter tidak boleh kosong";
+					die();
+				}
+
+				$result = $this->Admin_model->getPerkenalanAngkatan($id);
 
 				if ($result == FALSE) {
 					$data['message_display'] = "Perkenalan kosong?";
