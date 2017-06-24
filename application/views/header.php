@@ -23,24 +23,26 @@
 		<ul class="nav navbar-nav">
 			<li><a href="<?php echo base_url(); ?>index.php">Home<span class="sr-only">(current)</span></a></li>
 			<!-- TODO : ganti link profil ke profil sendiri (ambil dari session) -->
-			<li><a href="<?php echo base_url(); ?>index.php/user/profile">Profile</a></li>
-			<li><a href="<?php echo base_url(); ?>index.php/user/angkatan">Angkatan</a></li>
-			<li><a href="<?php echo base_url(); ?>index.php/user/perkenalan">Perkenalan</a></li>
+			<li><a href="<?php echo base_url(); ?>index.php/UserController/profile">Profile</a></li>
+			<li><a href="<?php echo base_url(); ?>index.php/UserController/angkatan">Angkatan</a></li>
+			<li><a href="<?php echo base_url(); ?>index.php/UserController/perkenalan">Perkenalan</a></li>
 		</ul>
 		<ul class="nav navbar-nav navbar-right">
-			<!-- TODO: tambahin if udah login -->
-			<li>
-				<a href="<?php echo base_url(); ?>index.php/user/login">
-					<span class="glyphicon glyphicon-log-in"></span> Login
-				</a>
-			</li>
-			<?php if (false): ?>
+			
+			<?php if (isset($this->session->userdata['logged_in'])) { ?>
 				<li>
-					<a href="<?php echo base_url(); ?>index.php/user/logout">
+					<a href="<?php echo base_url(); ?>index.php/UserController/logout">
 						<span class="glyphicon glyphicon-log-out"></span> Logout
 					</a>
 				</li>
-			<?php endif ?>
+			<?php }else { ?>
+				<!-- TODO: tambahin if udah login -->
+				<li>
+					<a href="<?php echo base_url(); ?>index.php/UserController/login">
+						<span class="glyphicon glyphicon-log-in"></span> Login
+					</a>
+				</li>
+			<?php } ?>
 			<li>
 				<a href="#" data-toggle="search" data-placement="bottom" id="search_icon">
 					<span class="glyphicon glyphicon-search"></span>

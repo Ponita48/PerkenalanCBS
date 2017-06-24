@@ -23,6 +23,45 @@ class A extends CI_Controller {
 				die();
 			}else {
 				$result = $this->Admin_model->getPerkenalanKeluarga();
+
+				if ($result == FALSE) {
+					$data['message_display'] = "Perkenalan kosong?";
+					echo $data['message_display'];
+					die();
+					//goto list perkenalan
+				}else {
+					echo "<pre>";
+					var_dump($result);
+					echo "</pre>";
+					die();
+					//goto list perkenalan
+				}
+			}
+		}
+	}
+
+	public function perkenalanAngkatan($id) {
+		if (! isset($this->session->userdata['logged_in'])) {
+			//goto home
+			die();
+		}else {
+			if ($this->session->userdata['logged_in']['role'] != 'admin') {
+				$result = $this->Admin_model->getPerkenalanAngkatan();
+			}else {
+				$result = $this->Admin_model->getPerkenalanKeluarga();
+
+				if ($result == FALSE) {
+					$data['message_display'] = "Perkenalan kosong?";
+					echo $data['message_display'];
+					die();
+					//goto list perkenalan
+				}else {
+					echo "<pre>";
+					var_dump($result);
+					echo "</pre>";
+					die();
+					//goto list perkenalan
+				}
 			}
 		}
 	}
@@ -36,10 +75,23 @@ class A extends CI_Controller {
 				//goto home
 				die();
 			}else {
-				$result = $this->Admin_model->getPerkenalanKeluarga();
+				$result = $this->Admin_model->getJumlahPerkenalan();
+
+				if ($result == FALSE) {
+					$data['message_display'] = "Perkenalan kosong?";
+					echo $data['message_display'];
+					die();
+					//goto jumlah perkenalan
+				}else {
+					echo "<pre>";
+					var_dump($result);
+					echo "</pre>";
+					die();
+					//goto jumlah perkenalan
+				}
 			}
 		}
-	}	
+	}
 
 }
 

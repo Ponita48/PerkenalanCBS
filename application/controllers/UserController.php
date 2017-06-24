@@ -225,7 +225,7 @@ class UserController extends CI_Controller
 
 	public function search() {
 
-		$keySearch = $this->post('keySearch');
+		$keySearch = $this->input->post('keySearch');
 		$keyArray = explode(" ",$keySearch);
 
 		$keySearch = '%';
@@ -236,11 +236,17 @@ class UserController extends CI_Controller
 
 		$result = $this->User_model->search($keySearch);
 
-		if ($result) {
+		if (! $result) {
 			$data['message_display'] = 'Not Found';
-			$this->load->view('search', $data);
+			//$this->load->view('search', $data);
+			echo $data['message_display'];
+			die();
 		}else {
-			$this->load->view('search', $data);
+			//$this->load->view('search', $result);
+			echo "<pre>";
+			var_dump($result);
+			echo "</pre>";
+			die();
 		}
 		
 	}

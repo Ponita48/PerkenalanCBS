@@ -203,12 +203,26 @@ class User_model extends CI_Model {
 	}
 
 	public function search($keySearch) {
-		$query1 = $this->db->query("SELECT users.npm, profile_kating.nama FROM users, profile_kating WHERE users.id_user = profile_kating.id_user AND (users.npm LIKE '$keySearch' OR profile_kating.nama LIKE '$keySearch'")->result_array();
-		$query2 = $this->db->query("SELECT users.npm, profile_maba.nama FROM users, profile_maba WHERE users.id_user = profile_maba.id_user AND (users.npm LIKE '$keySearch' OR profile_maba.nama LIKE '$keySearch'")->result_array();
+		$query1 = $this->db->query("SELECT users.npm, profile_kating.nama FROM users, profile_kating WHERE users.id_user = profile_kating.id_user AND (users.npm LIKE '$keySearch' OR profile_kating.nama LIKE '$keySearch')");
 
-		$result = array_merge($query1, $query2);
+		/*SELECT users.npm, profile_kating.nama FROM users LEFT JOIN profile_kating ON users.id_user = profile_kating.id_user WHERE (users.npm LIKE '$keySearch' OR profile_kating.nama LIKE '$keySearch')*/
 
-		return $result;
+	
+
+		$query2 = $this->db->query("SELECT users.npm, profile_maba.nama FROM users, profile_maba WHERE users.id_user = profile_maba.id_user AND (users.npm LIKE '$keySearch' OR profile_maba.nama LIKE '$keySearch')");
+
+
+		if ($query1->num_rows() == 0 && $query2->num_rows() == 0) {
+			echo "ini";
+			return FALSE;
+		}else {
+
+			$result = array_merge($query1->result_array(), $query2->result_array());
+
+
+			return $result;
+		}
+
 	}
 
 
