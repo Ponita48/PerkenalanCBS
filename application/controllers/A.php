@@ -27,6 +27,20 @@ class A extends CI_Controller {
 		}
 	}
 
+	public function jumlahPerkenalan() {
+		if (! isset($this->session->userdata['logged_in'])) {
+			//goto home
+			die();
+		}else {
+			if ($this->session->userdata['logged_in']['role'] != 'admin') {
+				//goto home
+				die();
+			}else {
+				$result = $this->Admin_model->getPerkenalanKeluarga();
+			}
+		}
+	}	
+
 }
 
  ?>
