@@ -37,6 +37,25 @@ class Admin_model extends CI_Model {
 		}
 	}
 
+	public function approvePerkenalan($id_perkenalan, $data) {
+		$q = $this->db
+			->select('*')
+			->from('perkenalan_kating')
+			->where('id_perkenalan_kating', $id_perkenalan)
+			->limit(1)
+			->get();
+
+		if ($q->num_rows() == 0) {
+			return FALSE;
+		}else {
+			$result = $this->db
+				->where('id_perkenalan_kating', $id_perkenalan)
+				->update('perkenalan_kating', $data);
+
+			return $result;
+		}
+	}
+
 }
 
  ?>

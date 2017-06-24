@@ -100,6 +100,45 @@ class A extends CI_Controller {
 		}
 	}
 
+	public function approvePerkenalan($id_perkenalan) {
+		if (! isset($this->session->userdata['logged_in'])) {
+			//goto home
+			echo "belum login";
+			die();
+		}else {
+			if ($this->session->userdata['logged_in']['role'] != 'admin') {
+				//goto home
+				echo "harus admin";
+				die();
+			}else {
+
+				date_default_timezone_set('Asia/Jakarta');
+				$date = date("Y-m-d H:i:s", time());
+
+				$data = array(
+					'status' => 1,
+					'approve_time' => $date
+				);
+
+				$result = $this->Admin_model->approvePerkenalan($id_perkenalan, $data);
+
+				if ($result == FALSE) {
+					$data['message_display'] = "gagal? tidak ada ip perkenalan tersebut?";
+					echo $data['message_display'];
+					die();
+					//goto jumlah perkenalan
+				}else {
+					echo "<pre>";
+					var_dump($result);
+					echo "</pre>";
+					echo "telah diapprove";
+					die();
+					//goto jumlah perkenalan
+				}
+			}
+		}	
+	}
+
 }
 
  ?>
