@@ -235,36 +235,34 @@ class UserController extends CI_Controller
 
 		if (! isset($this->session->userdata['logged_in'])) {
 			$data['error_message'] = "login dulu cuk!";
-			echo $data['error_message'];
-			die();
+			// echo $data['error_message'];
+			// die();
 		}else {
-			if ($key == NULL) {
-				$data['error_message'] = "Key Search kosong";
-			}else {
-				$keySearch = $key;
-				$keyArray = explode(" ",$keySearch);
+			$keySearch = $_GET['keySearch'];
+			$keyArray = explode(" ",$keySearch);
 
-				$keySearch = '%';
+			$keySearch = '%';
 
-				foreach ($keyArray as $value) {
-					$keySearch = $keySearch.$value.'%';
-				}
-
-				$result = $this->User_model->search($keySearch);
-
-				if (! $result) {
-					$data['message_display'] = 'Not Found';
-					//$this->load->view('search', $data);
-					echo $data['message_display'];
-					die();
-				}else {
-					//$this->load->view('search', $result);
-					echo "<pre>";
-					var_dump($result);
-					echo "</pre>";
-					die();
-				}
+			foreach ($keyArray as $value) {
+				$keySearch = $keySearch.$value.'%';
 			}
+
+			$result = $this->User_model->search($keySearch);
+
+			if (! $result) {
+				$data['message_display'] = 'Not Found';
+				// echo $data['message_display'];
+				// die();
+			}else {
+				$data['hasil'] = $result;
+				// echo "<pre>";
+				// var_dump($result);
+				// echo "</pre>";
+				// die();
+			}
+			$this->load->view('header');
+			$this->load->view('search', $data);
+			$this->load->view('footer');
 		}
 
 

@@ -17,28 +17,28 @@
 	        <span class="icon-bar"></span>
 	        <span class="icon-bar"></span>
 	      </button>
-	      <a class="navbar-brand" href="<?php echo base_url(); ?>index.php" style="color: #FFD51E">CBS</a>
+	      <a class="navbar-brand" href="<?php echo base_url(); ?>" style="color: #FFD51E">CBS</a>
 	    </div>
 	    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 		<ul class="nav navbar-nav">
-			<li><a href="<?php echo base_url(); ?>index.php">Home<span class="sr-only">(current)</span></a></li>
+			<li><a href="<?php echo base_url(); ?>">Home<span class="sr-only">(current)</span></a></li>
 			<!-- TODO : ganti link profil ke profil sendiri (ambil dari session) -->
-			<li><a href="<?php echo base_url(); ?>index.php/UserController/profile">Profile</a></li>
-			<li><a href="<?php echo base_url(); ?>index.php/UserController/angkatan">Angkatan</a></li>
-			<li><a href="<?php echo base_url(); ?>index.php/UserController/perkenalan">Perkenalan</a></li>
+			<li><a href="<?php echo base_url().'UserController/lihat_profile/'; ?>">Profile</a></li>
+			<li><a href="<?php echo base_url(); ?>UserController/angkatan">Angkatan</a></li>
+			<li><a href="<?php echo base_url(); ?>UserController/perkenalan">Perkenalan</a></li>
 		</ul>
 		<ul class="nav navbar-nav navbar-right">
 			
 			<?php if (isset($this->session->userdata['logged_in'])) { ?>
 				<li>
-					<a href="<?php echo base_url(); ?>index.php/UserController/logout">
+					<a href="<?php echo base_url(); ?>UserController/logout">
 						<span class="glyphicon glyphicon-log-out"></span> Logout
 					</a>
 				</li>
 			<?php }else { ?>
 				<!-- TODO: tambahin if udah login -->
 				<li>
-					<a href="<?php echo base_url(); ?>index.php/UserController/login">
+					<a href="<?php echo base_url(); ?>UserController/login">
 						<span class="glyphicon glyphicon-log-in"></span> Login
 					</a>
 				</li>
@@ -54,9 +54,9 @@
 
 	<div class="col-md-12 col-sm-12 col-lg-12" id="search" style="background-color: #FFD51E; padding: 10px; margin-top: 0; margin-bottom: 10px; display: none;">
 	<center>
-		<form action="<?php echo base_url(); ?>index.php/UserController/search" class="form-inline" id="searchForm" method="POST">
+		<form action="<?php echo base_url(); ?>UserController/search" class="form-inline" id="searchForm" method="GET">
 			<div class="input-group">
-				<input type="text" class="form-control" id="searchKey" placeholder="Search. . .">
+				<input type="text" class="form-control" id="keySearch" placeholder="Search. . ." name="keySearch">
 				<span class="input-group-btn">
 					<button class="btn btn-primary" type="submit">Search</button>
 				</span>

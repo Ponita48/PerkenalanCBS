@@ -5,7 +5,7 @@
 
 	<div class="container">
 		<div class="col-sm-6">
-			<form method="POST" class="form-horizontal" action="<?php echo site_url(); ?>/Perkenalan/request_peserta/4">
+			<form method="POST" class="form-horizontal" action="<?php echo site_url(); ?>Perkenalan/request_peserta/4">
 				<div class="form-group">
 					<label for="nama" class="col-sm-3 control-label">Nama</label>
 					<div class="col-sm-6">
