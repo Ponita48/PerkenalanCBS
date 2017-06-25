@@ -213,7 +213,6 @@ class User_model extends CI_Model {
 
 
 		if ($query1->num_rows() == 0 && $query2->num_rows() == 0) {
-			echo "ini";
 			return FALSE;
 		}else {
 
