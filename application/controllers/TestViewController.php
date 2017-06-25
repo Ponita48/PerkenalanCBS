@@ -21,6 +21,11 @@ class TestViewController extends CI_Controller {
 		$this->load->view('admin_request');
 		$this->load->view('footer');
 	}
+	public function search() {
+		$this->load->view('header');
+		$this->load->view('search');
+		$this->load->view('footer');
+	}
 
 }
 

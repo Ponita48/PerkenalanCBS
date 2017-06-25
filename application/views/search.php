@@ -15,16 +15,16 @@
 <div class="col-sm-3 col-md-3 col-lg-3"></div>
 <div class="col-sm-6 col-md-6 col-lg-6">
 	<ul class="list-group">
-		<?php for ($i=0; $i < 5; $i++) { ?>
-		<a class="list-group-item clearfix" href="#">
+		<?php foreach ($hasil as $key): ?>
+		<a class="list-group-item clearfix" href="<?php echo base_url().'index.php/UserController/lihat_profile/'.$key['id_user']; ?>">
 			<img src="<?php echo base_url(); ?>img/img1.jpg" alt="" id="poto" class="img-thumbnail" style="max-width:150px;">
 			<div class="pull-right">
 				<br><br><br>
-				<p id="npm">NPM</p><br>
-				<p id="nama">NAMA</p>
+				<p id="npm"><?php echo $key['npm']; ?></p><br>
+				<p id="nama"><?php echo $key['nama']; ?></p><br>
 			</div>
 		</a>
-		<?php } ?>
+		<?php endforeach ?>
 	</ul>
 </div>
 <div class="col-sm-3 col-md-3 col-lg-3"></div>

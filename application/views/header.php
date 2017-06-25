@@ -54,11 +54,11 @@
 
 	<div class="col-md-12 col-sm-12 col-lg-12" id="search" style="background-color: #FFD51E; padding: 10px; margin-top: 0; margin-bottom: 10px; display: none;">
 	<center>
-		<form action="#" class="form-inline" id="searchForm">
+		<form action="<?php echo base_url(); ?>index.php/UserController/search" class="form-inline" id="searchForm" method="POST">
 			<div class="input-group">
 				<input type="text" class="form-control" id="searchKey" placeholder="Search. . .">
 				<span class="input-group-btn">
-					<button class="btn btn-primary">Search</button>
+					<button class="btn btn-primary" type="submit">Search</button>
 				</span>
 			</div>
 		</form>

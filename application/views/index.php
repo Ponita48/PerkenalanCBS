@@ -1,3 +1,10 @@
+	<?php if (isset($message_display)): ?>
+		<br>
+		<div class="alert alert-success alert-dismissable">
+			<a href="#" class="close" data-dismiss="alert" aria-label="close">x</a>
+			<?php echo $message_display; ?>
+		</div>
+	<?php endif ?>
 	<h1>KATA SAMBUTAN</h1>
 	<center>
 		<?php for ($i=0; $i < 5; $i++) {  ?>
