@@ -175,83 +175,98 @@ class UserController extends CI_Controller
 
 	//edit profile, peserta or keluarga
 	public function edit_profile() {
-		$this->form_validation->set_rules('email', 'Email', 'required');
-		$this->form_validation->set_rules('nama', 'Nama', 'required');
-		$this->form_validation->set_rules('jk', 'Jenis Kelamin', 'required');
-		$this->form_validation->set_rules('tempat_lahir', 'Tempat Lahir', 'required');
-		$this->form_validation->set_rules('tgl_lahir', 'Tanggal Lahir', 'required');
-		$this->form_validation->set_rules('alamat_kos', 'Alamat Kos', 'required');
-		$this->form_validation->set_rules('no_hp', 'No HP', 'required');
-		$this->form_validation->set_rules('id_line', 'ID Line', 'required');
 
-		if ($this->session->userdata['logged_in']['role'] == 'peserta') {
-			$this->form_validation->set_rules('link_foto', 'Link Foto', 'required');
-			$this->form_validation->set_rules('motto_hidup', 'Motto Hidup', 'required');
-		}
-
-		if ($this->form_validation->run() == FALSE) {
-			$result = $this->User_model->getProfile();
-
-			$this->load->view('edit_profile', $result);
+		if (! isset($this->session->userdata['logged_in'])) {
+			$data['error_message'] = "login dulu cuk!";
+			echo $data['error_message'];
+			die();
 		}else {
-			$data1['email'] = $this->input->post('email');
-			$data2 = array(
-				'nama' => $this->input->post('nama'),
-				'jk' => $this->input->post('jk'),
-				'tempat_lahir' => $this->input->post('tempat_lahir'),
-				'tgl_lahir' => $this->input->post('tgl_lahir'),
-				'alamat_kos' => $this->input->post('alamat_kos'),
-				'no_hp' => $this->input->post('no_hp'),
-				'id_line' => $this->input->post('id_line')
-			);
+			$this->form_validation->set_rules('email', 'Email', 'required');
+			$this->form_validation->set_rules('nama', 'Nama', 'required');
+			$this->form_validation->set_rules('jk', 'Jenis Kelamin', 'required');
+			$this->form_validation->set_rules('tempat_lahir', 'Tempat Lahir', 'required');
+			$this->form_validation->set_rules('tgl_lahir', 'Tanggal Lahir', 'required');
+			$this->form_validation->set_rules('alamat_kos', 'Alamat Kos', 'required');
+			$this->form_validation->set_rules('no_hp', 'No HP', 'required');
+			$this->form_validation->set_rules('id_line', 'ID Line', 'required');
+
 			if ($this->session->userdata['logged_in']['role'] == 'peserta') {
-				$data2 = array(
-					'link_foto' => $this->input->post('link_foto'),
-					'motto_hidup' => $this->input->post('motto_hidup')
-				);
+				$this->form_validation->set_rules('link_foto', 'Link Foto', 'required');
+				$this->form_validation->set_rules('motto_hidup', 'Motto Hidup', 'required');
 			}
 
-			$result = $this->User_model->setProfile($data1, $data2);
+			if ($this->form_validation->run() == FALSE) {
+				$result = $this->User_model->getProfile();
 
-			if ($result == FALSE) {
-				$data['error_message'] = "Error";
-				$this->load->view('edit_profile', $data);
+				$this->load->view('edit_profile', $result);
 			}else {
-				$data['message_display'] = "Success";
-				$this->load->view('edit_profile', $data);
+				$data1['email'] = $this->input->post('email');
+				$data2 = array(
+					'nama' => $this->input->post('nama'),
+					'jk' => $this->input->post('jk'),
+					'tempat_lahir' => $this->input->post('tempat_lahir'),
+					'tgl_lahir' => $this->input->post('tgl_lahir'),
+					'alamat_kos' => $this->input->post('alamat_kos'),
+					'no_hp' => $this->input->post('no_hp'),
+					'id_line' => $this->input->post('id_line')
+				);
+				if ($this->session->userdata['logged_in']['role'] == 'peserta') {
+					$data2 = array(
+						'link_foto' => $this->input->post('link_foto'),
+						'motto_hidup' => $this->input->post('motto_hidup')
+					);
+				}
+
+				$result = $this->User_model->setProfile($data1, $data2);
+
+				if ($result == FALSE) {
+					$data['error_message'] = "Error";
+					$this->load->view('edit_profile', $data);
+				}else {
+					$data['message_display'] = "Success";
+					$this->load->view('edit_profile', $data);
+				}
 			}
 		}
+
 	}
 
 	public function search($key = NULL) {
 
-		if ($key == NULL) {
-			$data['error_message'] = "Key Search kosong";
+		if (! isset($this->session->userdata['logged_in'])) {
+			$data['error_message'] = "login dulu cuk!";
+			echo $data['error_message'];
+			die();
 		}else {
-			$keySearch = $key;
-			$keyArray = explode(" ",$keySearch);
-
-			$keySearch = '%';
-
-			foreach ($keyArray as $value) {
-				$keySearch = $keySearch.$value.'%';
-			}
-
-			$result = $this->User_model->search($keySearch);
-
-			if (! $result) {
-				$data['message_display'] = 'Not Found';
-				//$this->load->view('search', $data);
-				echo $data['message_display'];
-				die();
+			if ($key == NULL) {
+				$data['error_message'] = "Key Search kosong";
 			}else {
-				//$this->load->view('search', $result);
-				echo "<pre>";
-				var_dump($result);
-				echo "</pre>";
-				die();
+				$keySearch = $key;
+				$keyArray = explode(" ",$keySearch);
+
+				$keySearch = '%';
+
+				foreach ($keyArray as $value) {
+					$keySearch = $keySearch.$value.'%';
+				}
+
+				$result = $this->User_model->search($keySearch);
+
+				if (! $result) {
+					$data['message_display'] = 'Not Found';
+					//$this->load->view('search', $data);
+					echo $data['message_display'];
+					die();
+				}else {
+					//$this->load->view('search', $result);
+					echo "<pre>";
+					var_dump($result);
+					echo "</pre>";
+					die();
+				}
 			}
 		}
+
 
 		
 	}
@@ -262,20 +277,28 @@ class UserController extends CI_Controller
 	}
 
 	public function lihat_profile($id = NULL) {
-		$result = $this->User_model->getProfile($id);
 
-		if ($result == FALSE) {
-			//goto ?
-			echo "profile tidak ditemukan";
+		if (! isset($this->session->userdata['logged_in'])) {
+			$data['error_message'] = "login dulu cuk!";
+			echo $data['error_message'];
 			die();
 		}else {
-			//goto ?
-			echo "true";
-			echo "<pre>";
-			var_dump($result);
-			echo "</pre>";
-			die();
+			$result = $this->User_model->getProfile($id);
+
+			if ($result == FALSE) {
+				//goto ?
+				echo "profile tidak ditemukan";
+				die();
+			}else {
+				//goto ?
+				
+				echo "<pre>";
+				var_dump($result);
+				echo "</pre>";
+				die();
+			}
 		}
+
 	}
 
 }
