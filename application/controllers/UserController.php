@@ -223,31 +223,36 @@ class UserController extends CI_Controller
 		}
 	}
 
-	public function search() {
+	public function search($key = NULL) {
 
-		$keySearch = $this->input->post('keySearch');
-		$keyArray = explode(" ",$keySearch);
-
-		$keySearch = '%';
-
-		foreach ($keyArray as $value) {
-			$keySearch = $keySearch.$value.'%';
-		}
-
-		$result = $this->User_model->search($keySearch);
-
-		if (! $result) {
-			$data['message_display'] = 'Not Found';
-			//$this->load->view('search', $data);
-			echo $data['message_display'];
-			die();
+		if ($key == NULL) {
+			$data['error_message'] = "Key Search kosong";
 		}else {
-			//$this->load->view('search', $result);
-			echo "<pre>";
-			var_dump($result);
-			echo "</pre>";
-			die();
+			$keySearch = $key;
+			$keyArray = explode(" ",$keySearch);
+
+			$keySearch = '%';
+
+			foreach ($keyArray as $value) {
+				$keySearch = $keySearch.$value.'%';
+			}
+
+			$result = $this->User_model->search($keySearch);
+
+			if (! $result) {
+				$data['message_display'] = 'Not Found';
+				//$this->load->view('search', $data);
+				echo $data['message_display'];
+				die();
+			}else {
+				//$this->load->view('search', $result);
+				echo "<pre>";
+				var_dump($result);
+				echo "</pre>";
+				die();
+			}
 		}
+
 		
 	}
 	public function change_profile() {
@@ -261,7 +266,7 @@ class UserController extends CI_Controller
 
 		if ($result == FALSE) {
 			//goto ?
-			echo "false";
+			echo "profile tidak ditemukan";
 			die();
 		}else {
 			//goto ?
