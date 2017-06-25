@@ -15,7 +15,9 @@ class A extends CI_Controller {
 
 	public function perkenalanKeluarga() {
 		if (! isset($this->session->userdata['logged_in'])) {
-			//goto home
+			
+			$data['error_message'] = "Login dulu cuk!";
+			echo $data['error_message'];
 			die();
 		}else {
 			if ($this->session->userdata['logged_in']['role'] != 'admin') {
@@ -43,6 +45,8 @@ class A extends CI_Controller {
 	public function perkenalanAngkatan($id = NULL) {
 		if (! isset($this->session->userdata['logged_in'])) {
 			//goto home
+			$data['error_message'] = "Login dulu cuk!";
+			echo $data['error_message'];
 			die();
 		}else {
 
@@ -76,6 +80,8 @@ class A extends CI_Controller {
 	public function jumlahPerkenalan() {
 		if (! isset($this->session->userdata['logged_in'])) {
 			//goto home
+			$data['error_message'] = "Login dulu cuk!";
+			echo $data['error_message'];
 			die();
 		}else {
 			if ($this->session->userdata['logged_in']['role'] != 'admin') {
@@ -103,7 +109,8 @@ class A extends CI_Controller {
 	public function approvePerkenalan($id_perkenalan) {
 		if (! isset($this->session->userdata['logged_in'])) {
 			//goto home
-			echo "belum login";
+			$data['error_message'] = "Login dulu cuk!";
+			echo $data['error_message'];
 			die();
 		}else {
 			if ($this->session->userdata['logged_in']['role'] != 'admin') {
