@@ -256,7 +256,7 @@ class UserController extends CI_Controller
 		$this->load->view('footer');
 	}
 
-	public function lihat_profile($id) {
+	public function lihat_profile($id = NULL) {
 		$result = $this->User_model->getProfile($id);
 
 		if ($result == FALSE) {
