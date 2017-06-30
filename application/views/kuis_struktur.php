@@ -596,7 +596,7 @@
                         <td id="foto_ketua_dpa" ondrop="drop(event)" ondragover="allowDrop(event)" style="height: 81px; width: 108px"></td>
                       </tr>
                       <tr>
-                        <td><input type="text" name="nama_ketua_dpa" placeholder="Nama"></td>
+                        <td><input type="text" name="nama_ketua_dpa" id="kdpa" placeholder="Nama"></td>
                       </tr>
                       <tr>
                         <td><input type="text" name="npm_ketua_dpa" placeholder="NPM"></td>
@@ -611,7 +611,7 @@
                         <td id="foto_sekretaris_dpa" ondrop="drop(event)" ondragover="allowDrop(event)" style="height: 81px; width: 108px"></td>
                       </tr>
                       <tr>
-                        <td><input type="text" name="nama_sekretaris_dpa" placeholder="Nama"></td>
+                        <td><input type="text" name="nama_sekretaris_dpa" id="sdpa" placeholder="Nama"></td>
                       </tr>
                       <tr>
                         <td><input type="text" name="npm_sekretaris_dpa" placeholder="NPM"></td>
@@ -626,10 +626,10 @@
                         <td id="foto_bendahara_dpa" ondrop="drop(event)" ondragover="allowDrop(event)" style="height: 81px; width: 108px"></td>
                       </tr>
                       <tr>
-                        <td><input type="text" name="nama_bendahara_dpa" placeholder="Nama"></td>
+                        <td><input type="text" name="nama_bendahara_dpa" id="bdpa" placeholder="Nama"></td>
                       </tr>
                       <tr>
-                        <td><input type="text" name="npm_bendahara_dpa" placeholder="NPM"></td>
+                        <td><input type="text" name="npm_bendahara_dpa"  placeholder="NPM"></td>
                       </tr>
                     </tbody>
                   </table>
@@ -641,7 +641,7 @@
                         <td id="foto_kakom_1" ondrop="drop(event)" ondragover="allowDrop(event)" style="height: 81px; width: 108px"></td>
                       </tr>
                       <tr>
-                        <td><input type="text" name="nama_kakom_1" placeholder="Nama"></td>
+                        <td><input type="text" name="nama_kakom_1" id="k1dpa" placeholder="Nama"></td>
                       </tr>
                       <tr>
                         <td><input type="text" name="npm_kakom_1" placeholder="NPM"></td>
@@ -656,7 +656,7 @@
                         <td id="foto_kakom_2" ondrop="drop(event)" ondragover="allowDrop(event)" style="height: 81px; width: 108px"></td>
                       </tr>
                       <tr>
-                        <td><input type="text" name="nama_kakom_2" placeholder="Nama"></td>
+                        <td><input type="text" name="nama_kakom_2" id="k2dpa" placeholder="Nama"></td>
                       </tr>
                       <tr>
                         <td><input type="text" name="npm_kakom_2" placeholder="NPM"></td>
@@ -671,7 +671,7 @@
                         <td id="foto_kakom_3" ondrop="drop(event)" ondragover="allowDrop(event)" style="height: 81px; width: 108px"></td>
                       </tr>
                       <tr>
-                        <td><input type="text" name="nama_kakom_3" placeholder="Nama"></td>
+                        <td><input type="text" name="nama_kakom_3" id="k3dpa" placeholder="Nama"></td>
                       </tr>
                       <tr>
                         <td><input type="text" name="npm_kakom_3" placeholder="NPM"></td>
@@ -717,7 +717,7 @@
                         <td id="foto_presidium_1" ondrop="drop(event)" ondragover="allowDrop(event)" style="height: 81px; width: 108px"></td>
                       </tr>
                       <tr>
-                        <td><input type="text" name="nama_presidium_1" placeholder="Nama"></td>
+                        <td><input type="text" name="nama_presidium_1" id="p1" placeholder="Nama"></td>
                       </tr>
                       <tr>
                         <td><input type="text" name="npm_presidium_1" placeholder="NPM"></td>
@@ -732,7 +732,7 @@
                         <td id="foto_presidium_2" ondrop="drop(event)" ondragover="allowDrop(event)" style="height: 81px; width: 108px"></td>
                       </tr>
                       <tr>
-                        <td><input type="text" name="nama_presidium_2" placeholder="Nama"></td>
+                        <td><input type="text" name="nama_presidium_2" id="p2" placeholder="Nama"></td>
                       </tr>
                       <tr>
                         <td><input type="text" name="npm_presidium_2" placeholder="NPM"></td>
@@ -747,7 +747,7 @@
                         <td id="foto_presidium_3" ondrop="drop(event)" ondragover="allowDrop(event)" style="height: 81px; width: 108px"></td>
                       </tr>
                       <tr>
-                        <td><input type="text" name="nama_presidium_3" placeholder="Nama"></td>
+                        <td><input type="text" name="nama_presidium_3" id="p3" placeholder="Nama"></td>
                       </tr>
                       <tr>
                         <td><input type="text" name="npm_presidium_3" placeholder="NPM"></td>
