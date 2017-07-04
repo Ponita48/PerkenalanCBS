@@ -15,7 +15,6 @@
   <!-- End of Navigation Pane -->
 
   <!-- Quiz Layer, dengan tab-content -->
-  <div class="col-sm-3 col-md-3 col-lg-3"></div>
   <div class="col-sm-9 col-md-9 col-lg-9">
   	<h1>KUIS BK/PANITIA</h1>
     <div class="tab-content">
@@ -30,14 +29,10 @@
                     <tbody>
                       <tr>
                         <td id="foto_po_cbs" ondrop="drop(event)" ondragover="allowDrop(event)" style="height: 81px; width: 108px">
-                        	<img src="<?php echo base_url(); ?>img/img1.jpg" alt="" class="img-responsive">
                         </td>
                       </tr>
                       <tr>
                         <td><input type="text" name="nama_po_cbs" id="ketua" placeholder="Nama"></td>
-                      </tr>
-                      <tr>
-                        <td><input type="text" name="npm_po_cbs" placeholder="NPM"></td>
                       </tr>
                     </tbody>
                   </table>
@@ -48,14 +43,10 @@
                         <tbody>
                           <tr>
                             <td id="foto_sekretaris_cbs" ondrop="drop(event)" ondragover="allowDrop(event)" style="height: 81px; width: 108px">
-                            	<img src="<?php echo base_url(); ?>img/img1.jpg" alt="" class="img-responsive">
                             </td>
                           </tr>
                           <tr>
                             <td><input type="text" name="nama_sekretaris_cbs" id="sekre" placeholder="Nama"></td>
-                          </tr>
-                          <tr>
-                            <td><input type="text" name="npm_sekretaris_cbs" placeholder="NPM"></td>
                           </tr>
                         </tbody>
                       </table>
@@ -65,14 +56,10 @@
                         <tbody>
                           <tr>
                             <td id="foto_bendahara_cbs" ondrop="drop(event)" ondragover="allowDrop(event)" style="height: 81px; width: 108px">
-                            	<img src="<?php echo base_url(); ?>img/img1.jpg" alt="" class="img-responsive">
                             </td>
                           </tr>
                           <tr>
                             <td><input type="text" name="nama_bendahara_cbs" id="bendahara" placeholder="Nama"></td>
-                          </tr>
-                          <tr>
-                            <td><input type="text" name="npm_bendahara_cbs" placeholder="NPM"></td>
                           </tr>
                         </tbody>
                       </table>
@@ -82,14 +69,10 @@
                         <tbody>
                           <tr>
                             <td id="foto_kabid1_cbs" ondrop="drop(event)" ondragover="allowDrop(event)" style="height: 81px; width: 108px">
-                            	<img src="<?php echo base_url(); ?>img/img1.jpg" alt="" class="img-responsive">
                             </td>
                           </tr>
                           <tr>
                             <td><input type="text" name="nama_kabid1_cbs" id="kabid1" placeholder="Nama"></td>
-                          </tr>
-                          <tr>
-                            <td><input type="text" name="npm_kabid1_cbs" placeholder="NPM"></td>
                           </tr>
                         </tbody>
                       </table>
@@ -100,14 +83,10 @@
                             <tbody>
                               <tr>
                                 <td id="foto_kadiv_humas" ondrop="drop(event)" ondragover="allowDrop(event)" style="height: 81px; width: 108px">
-                                	<img src="<?php echo base_url(); ?>img/img1.jpg" alt="" class="img-responsive">
                                 </td>
                               </tr>
                               <tr>
                                 <td><input type="text" name="nama_kadiv_humas" id="humas" placeholder="Nama"></td>
-                              </tr>
-                              <tr>
-                                <td><input type="text" name="npm_kadiv_humas" placeholder="NPM"></td>
                               </tr>
                             </tbody>
                           </table>
@@ -117,14 +96,10 @@
                             <tbody>
                               <tr>
                                 <td id="foto_kadiv_acara" ondrop="drop(event)" ondragover="allowDrop(event)" style="height: 81px; width: 108px">
-                                	<img src="<?php echo base_url(); ?>img/img1.jpg" alt="" class="img-responsive">
                                 </td>
                               </tr>
                               <tr>
                                 <td><input type="text" name="nama_kadiv_acara" id="acara" placeholder="Nama"></td>
-                              </tr>
-                              <tr>
-                                <td><input type="text" name="npm_kadiv_acara" placeholder="NPM"></td>
                               </tr>
                             </tbody>
                           </table>
@@ -134,14 +109,10 @@
                             <tbody>
                               <tr>
                                 <td id="foto_kadiv_pk" ondrop="drop(event)" ondragover="allowDrop(event)" style="height: 81px; width: 108px">
-                                	<img src="<?php echo base_url(); ?>img/img1.jpg" alt="" class="img-responsive">
                                 </td>
                               </tr>
                               <tr>
                                 <td><input type="text" name="nama_kadiv_pk" id="pk" placeholder="Nama"></td>
-                              </tr>
-                              <tr>
-                                <td><input type="text" name="npm_kadiv_pk" placeholder="NPM"></td>
                               </tr>
                             </tbody>
                           </table>
@@ -153,14 +124,10 @@
                         <tbody>
                           <tr>
                             <td id="foto_kabid2_cbs" ondrop="drop(event)" ondragover="allowDrop(event)" style="height: 81px; width: 108px">
-                            	<img src="<?php echo base_url(); ?>img/img1.jpg" alt="" class="img-responsive">
                             </td>
                           </tr>
                           <tr>
                             <td><input type="text" name="nama_kabid2_cbs" id="kabid2" placeholder="Nama"></td>
-                          </tr>
-                          <tr>
-                            <td><input type="text" name="npm_kabid2_cbs"  placeholder="NPM"></td>
                           </tr>
                         </tbody>
                       </table>
@@ -171,14 +138,10 @@
                             <tbody>
                               <tr>
                                 <td id="foto_kadiv_medik" ondrop="drop(event)" ondragover="allowDrop(event)" style="height: 81px; width: 108px">
-                                	<img src="<?php echo base_url(); ?>img/img1.jpg" alt="" class="img-responsive">
                                 </td>
                               </tr>
                               <tr>
                                 <td><input type="text" name="nama_kadiv_medik" id="medik" placeholder="Nama"></td>
-                              </tr>
-                              <tr>
-                                <td><input type="text" name="npm_kadiv_medik" placeholder="NPM"></td>
                               </tr>
                             </tbody>
                           </table>
@@ -188,14 +151,10 @@
                             <tbody>
                               <tr>
                                 <td id="foto_kadiv_akademi" ondrop="drop(event)" ondragover="allowDrop(event)" style="height: 81px; width: 108px">
-                                	<img src="<?php echo base_url(); ?>img/img1.jpg" alt="" class="img-responsive">
                                 </td>
                               </tr>
                               <tr>
                                 <td><input type="text" name="nama_kadiv_akademi" id="akad" placeholder="Nama"></td>
-                              </tr>
-                              <tr>
-                                <td><input type="text" name="npm_kadiv_akademi" placeholder="NPM"></td>
                               </tr>
                             </tbody>
                           </table>
@@ -205,14 +164,10 @@
                             <tbody>
                               <tr>
                                 <td id="foto_kadiv_komdis" ondrop="drop(event)" ondragover="allowDrop(event)" style="height: 81px; width: 108px">
-                                	<img src="<?php echo base_url(); ?>img/img1.jpg" alt="" class="img-responsive">
                                 </td>
                               </tr>
                               <tr>
                                 <td><input type="text" name="nama_kadiv_komdis" id="komdis" placeholder="Nama"></td>
-                              </tr>
-                              <tr>
-                                <td><input type="text" name="npm_kadiv_komdis" placeholder="NPM"></td>
                               </tr>
                             </tbody>
                           </table>
@@ -222,14 +177,10 @@
                             <tbody>
                               <tr>
                                 <td id="foto_kadiv_rohani" ondrop="drop(event)" ondragover="allowDrop(event)" style="height: 81px; width: 108px">
-                                	<img src="<?php echo base_url(); ?>img/img1.jpg" alt="" class="img-responsive">
                                 </td>
                               </tr>
                               <tr>
                                 <td><input type="text" name="nama_kadiv_rohani" id="rohani" placeholder="Nama"></td>
-                              </tr>
-                              <tr>
-                                <td><input type="text" name="npm_kadiv_rohani" placeholder="NPM"></td>
                               </tr>
                             </tbody>
                           </table>
@@ -241,14 +192,10 @@
                         <tbody>
                           <tr>
                             <td id="foto_kabid3_cbs" ondrop="drop(event)" ondragover="allowDrop(event)" style="height: 81px; width: 108px">
-                            	<img src="<?php echo base_url(); ?>img/img1.jpg" alt="" class="img-responsive">
                             </td>
                           </tr>
                           <tr>
                             <td><input type="text" name="nama_kabid3_cbs" id="kabid3" placeholder="Nama"></td>
-                          </tr>
-                          <tr>
-                            <td><input type="text" name="npm_kabid3_cbs" placeholder="NPM"></td>
                           </tr>
                         </tbody>
                       </table>
@@ -259,14 +206,10 @@
                             <tbody>
                               <tr>
                                 <td id="foto_kadiv_logistik" ondrop="drop(event)" ondragover="allowDrop(event)" style="height: 81px; width: 108px">
-                                	<img src="<?php echo base_url(); ?>img/img1.jpg" alt="" class="img-responsive">
                                 </td>
                               </tr>
                               <tr>
                                 <td><input type="text" name="nama_kadiv_logistik" id="logistik" placeholder="Nama"></td>
-                              </tr>
-                              <tr>
-                                <td><input type="text" name="npm_kadiv_logistik" placeholder="NPM"></td>
                               </tr>
                             </tbody>
                           </table>
@@ -276,14 +219,10 @@
                             <tbody>
                               <tr>
                                 <td id="foto_kadiv_dankom" ondrop="drop(event)" ondragover="allowDrop(event)" style="height: 81px; width: 108px">
-                                	<img src="<?php echo base_url(); ?>img/img1.jpg" alt="" class="img-responsive">
                                 </td>
                               </tr>
                               <tr>
                                 <td><input type="text" name="nama_kadiv_dankom" id="dankom" placeholder="Nama"></td>
-                              </tr>
-                              <tr>
-                                <td><input type="text" name="npm_kadiv_dankom" placeholder="NPM"></td>
                               </tr>
                             </tbody>
                           </table>
@@ -293,14 +232,10 @@
                             <tbody>
                               <tr>
                                 <td id="foto_kadiv_pubdok" ondrop="drop(event)" ondragover="allowDrop(event)" style="height: 81px; width: 108px">
-                                	<img src="<?php echo base_url(); ?>img/img1.jpg" alt="" class="img-responsive">
                                 </td>
                               </tr>
                               <tr>
                                 <td><input type="text" name="nama_kadiv_pubdok" id="pubdok" placeholder="Nama"></td>
-                              </tr>
-                              <tr>
-                                <td><input type="text" name="npm_kadiv_pubdok" placeholder="NPM"></td>
                               </tr>
                             </tbody>
                           </table>
@@ -359,9 +294,6 @@
                       <tr>
                         <td><input type="text" name="nama_ketua_be" id="nama1" placeholder="Nama"></td>
                       </tr>
-                      <tr>
-                        <td><input type="text" name="npm_ketua_be" placeholder="NPM"></td>
-                      </tr>
                     </tbody>
                   </table>
                   <ul>
@@ -374,9 +306,6 @@
                           </tr>
                           <tr>
                             <td><input type="text" name="nama_waketu_be" id="nama2" placeholder="Nama"></td>
-                          </tr>
-                          <tr>
-                            <td><input type="text" name="npm_waketu_be" placeholder="NPM"></td>
                           </tr>
                         </tbody>
                       </table>
@@ -391,9 +320,6 @@
                               <tr>
                                 <td><input type="text" name="nama_kabir_adk" id="nama3" placeholder="Nama"></td>
                               </tr>
-                              <tr>
-                                <td><input type="text" name="npm_kabir_adk" placeholder="NPM"></td>
-                              </tr>
                             </tbody>
                           </table>
                         </li><li>
@@ -405,9 +331,6 @@
                               </tr>
                               <tr>
                                 <td><input type="text" name="nama_kabir_uang" id="nama4" placeholder="Nama"></td>
-                              </tr>
-                              <tr>
-                                <td><input type="text" name="npm_kabir_uang" placeholder="NPM"></td>
                               </tr>
                             </tbody>
                           </table>
@@ -421,9 +344,6 @@
                               <tr>
                                 <td><input type="text" name="nama_kadep_psdm" id="nama5" placeholder="Nama"></td>
                               </tr>
-                              <tr>
-                                <td><input type="text" name="npm_kadep_psdm" placeholder="NPM"></td>
-                              </tr>
                             </tbody>
                           </table>
                         </li><li>
@@ -435,9 +355,6 @@
                               </tr>
                               <tr>
                                 <td><input type="text" name="nama_kadep_po" id="nama6" placeholder="Nama"></td>
-                              </tr>
-                              <tr>
-                                <td><input type="text" name="npm_kadep_po" placeholder="NPM"></td>
                               </tr>
                             </tbody>
                           </table>
@@ -451,9 +368,6 @@
                               <tr>
                                 <td><input type="text" name="nama_kadep_hubin" id="nama7" placeholder="Nama"></td>
                               </tr>
-                              <tr>
-                                <td><input type="text" name="npm_kadep_hubin" placeholder="NPM"></td>
-                              </tr>
                             </tbody>
                           </table>
                         </li><li>
@@ -465,9 +379,6 @@
                               </tr>
                               <tr>
                                 <td><input type="text" name="nama_kadep_hubeks" id="nama8" placeholder="Nama"></td>
-                              </tr>
-                              <tr>
-                                <td><input type="text" name="npm_kadep_hubeks" placeholder="NPM"></td>
                               </tr>
                             </tbody>
                           </table>
@@ -481,9 +392,6 @@
                               <tr>
                                 <td><input type="text" name="nama_kadep_litbang" id="nama9" placeholder="Nama"></td>
                               </tr>
-                              <tr>
-                                <td><input type="text" name="npm_kadep_litbang" placeholder="NPM"></td>
-                              </tr>
                             </tbody>
                           </table>
                         </li><li>
@@ -495,9 +403,6 @@
                               </tr>
                               <tr>
                                 <td><input type="text" name="nama_kadep_medinfo" id="nama10" placeholder="Nama"></td>
-                              </tr>
-                              <tr>
-                                <td><input type="text" name="npm_kadep_medinfo" placeholder="NPM"></td>
                               </tr>
                             </tbody>
                           </table>
@@ -511,9 +416,6 @@
                               <tr>
                                 <td><input type="text" name="nama_kadep_wirus" id="nama11" placeholder="Nama"></td>
                               </tr>
-                              <tr>
-                                <td><input type="text" name="npm_kadep_wirus" placeholder="NPM"></td>
-                              </tr>
                             </tbody>
                           </table>
                         </li><li>
@@ -525,9 +427,6 @@
                               </tr>
                               <tr>
                                 <td><input type="text" name="nama_kadep_agama" id="nama12" placeholder="Nama"></td>
-                              </tr>
-                              <tr>
-                                <td><input type="text" name="npm_kadep_agama" placeholder="NPM"></td>
                               </tr>
                             </tbody>
                           </table>
@@ -541,8 +440,17 @@
                               <tr>
                                 <td><input type="text" name="nama_kadep_keprof" id="nama13" placeholder="Nama"></td>
                               </tr>
+                            </tbody>
+                          </table>
+                        </li><li>
+                          <table>
+                            <caption>Kepala Departemen Minat dan Bakat</caption>
+                            <tbody>
                               <tr>
-                                <td><input type="text" name="npm_kadep_keprof" placeholder="NPM"></td>
+                                <td id="foto_kadep_miba" ondrop="drop(event)" ondragover="allowDrop(event)" style="height: 81px; width: 108px"></td>
+                              </tr>
+                              <tr>
+                                <td><input type="text" name="nama_kadep_miba" id="nama14" placeholder="Nama"></td>
                               </tr>
                             </tbody>
                           </table>
@@ -578,6 +486,7 @@
                 <td id="foto_be_11" ondrop="drop(event)" ondragover="allowDrop(event)" style="height: 155px; width: 115px"><img src="<? echo base_url(); ?>img/img2.jpg" id="drag_be_11" draggable="true" ondragstart="drag(event)" style="width: 90px; height: 120px"></td>
                 <td id="foto_be_12" ondrop="drop(event)" ondragover="allowDrop(event)" style="height: 155px; width: 115px"><img src="<? echo base_url(); ?>img/img2.jpg" id="drag_be_12" draggable="true" ondragstart="drag(event)" style="width: 90px; height: 120px"></td>
                 <td id="foto_be_13" ondrop="drop(event)" ondragover="allowDrop(event)" style="height: 155px; width: 115px"><img src="<? echo base_url(); ?>img/img2.jpg" id="drag_be_13" draggable="true" ondragstart="drag(event)" style="width: 90px; height: 120px"></td>
+                <td id="foto_be_14" ondrop="drop(event)" ondragover="allowDrop(event)" style="height: 155px; width: 115px"><img src="<? echo base_url(); ?>img/img2.jpg" id="drag_be_14" draggable="true" ondragstart="drag(event)" style="width: 90px; height: 120px"></td>
               </tr>
             </tbody>
           </table>
@@ -598,9 +507,6 @@
                       <tr>
                         <td><input type="text" name="nama_ketua_dpa" id="kdpa" placeholder="Nama"></td>
                       </tr>
-                      <tr>
-                        <td><input type="text" name="npm_ketua_dpa" placeholder="NPM"></td>
-                      </tr>
                     </tbody>
                   </table>
                 </li><li>
@@ -612,9 +518,6 @@
                       </tr>
                       <tr>
                         <td><input type="text" name="nama_sekretaris_dpa" id="sdpa" placeholder="Nama"></td>
-                      </tr>
-                      <tr>
-                        <td><input type="text" name="npm_sekretaris_dpa" placeholder="NPM"></td>
                       </tr>
                     </tbody>
                   </table>
@@ -628,9 +531,6 @@
                       <tr>
                         <td><input type="text" name="nama_bendahara_dpa" id="bdpa" placeholder="Nama"></td>
                       </tr>
-                      <tr>
-                        <td><input type="text" name="npm_bendahara_dpa"  placeholder="NPM"></td>
-                      </tr>
                     </tbody>
                   </table>
                 </li><li>
@@ -642,9 +542,6 @@
                       </tr>
                       <tr>
                         <td><input type="text" name="nama_kakom_1" id="k1dpa" placeholder="Nama"></td>
-                      </tr>
-                      <tr>
-                        <td><input type="text" name="npm_kakom_1" placeholder="NPM"></td>
                       </tr>
                     </tbody>
                   </table>
@@ -658,9 +555,6 @@
                       <tr>
                         <td><input type="text" name="nama_kakom_2" id="k2dpa" placeholder="Nama"></td>
                       </tr>
-                      <tr>
-                        <td><input type="text" name="npm_kakom_2" placeholder="NPM"></td>
-                      </tr>
                     </tbody>
                   </table>
                 </li><li>
@@ -672,9 +566,6 @@
                       </tr>
                       <tr>
                         <td><input type="text" name="nama_kakom_3" id="k3dpa" placeholder="Nama"></td>
-                      </tr>
-                      <tr>
-                        <td><input type="text" name="npm_kakom_3" placeholder="NPM"></td>
                       </tr>
                     </tbody>
                   </table>
@@ -719,9 +610,6 @@
                       <tr>
                         <td><input type="text" name="nama_presidium_1" id="p1" placeholder="Nama"></td>
                       </tr>
-                      <tr>
-                        <td><input type="text" name="npm_presidium_1" placeholder="NPM"></td>
-                      </tr>
                     </tbody>
                   </table>
                 </li><li>
@@ -734,9 +622,6 @@
                       <tr>
                         <td><input type="text" name="nama_presidium_2" id="p2" placeholder="Nama"></td>
                       </tr>
-                      <tr>
-                        <td><input type="text" name="npm_presidium_2" placeholder="NPM"></td>
-                      </tr>
                     </tbody>
                   </table>
                 </li><li>
@@ -748,9 +633,6 @@
                       </tr>
                       <tr>
                         <td><input type="text" name="nama_presidium_3" id="p3" placeholder="Nama"></td>
-                      </tr>
-                      <tr>
-                        <td><input type="text" name="npm_presidium_3" placeholder="NPM"></td>
                       </tr>
                     </tbody>
                   </table>
