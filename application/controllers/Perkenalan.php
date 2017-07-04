@@ -22,44 +22,43 @@ class Perkenalan extends CI_Controller
 				$this->load->view('header');
 				$this->load->view('index');
 				$this->load->view('footer');
-			}
-
-			date_default_timezone_set('Asia/Jakarta');
-			$date = date("Y-m-d H:i:s", time());
-			//echo date("Y M D H:i:s", time());
-			//die();
-			$this->form_validation->set_rules('nama', 'Nama Keluarga', 'required');
-			$this->form_validation->set_rules('ciri_khas', 'Ciri Khas', 'required');
-			$this->form_validation->set_rules('link_foto', 'Link Foto', 'required');
-
-			if ($this->form_validation->run() == FALSE) {
-				
-				//redirect();
 			}else {
-				$data = array(
-					'id_keluarga' => $id,
-					'nama' => $this->input->post('nama'),
-					'ciri_khas' => $this->input->post('ciri_khas'),
-					'link_foto' => $this->input->post('link_foto'),
-					'request_time' => $date
-				);
+				date_default_timezone_set('Asia/Jakarta');
+				$date = date("Y-m-d H:i:s", time());
+				//echo date("Y M D H:i:s", time());
+				//die();
+				$this->form_validation->set_rules('nama', 'Nama Keluarga', 'required');
+				$this->form_validation->set_rules('ciri_khas', 'Ciri Khas', 'required');
+				$this->form_validation->set_rules('link_foto', 'Link Foto', 'required');
 
-				//fungsi untuk mengubah datetime menjadi timestamp
-				/*echo strtotime($data['request_time']);
-				die();*/
-				
-				$result = $this->Perkenalan_model->request_keluarga($data);
-
-				if (!$result) {
-					$data['error_message'] = "Error";
-					echo "fail";
+				if ($this->form_validation->run() == FALSE) {
+					
 					//redirect();
 				}else {
-					$data['message_display'] = "Success";
-					echo "success";
-					//redirect();
-				}
+					$data = array(
+						'id_keluarga' => $id,
+						'nama' => $this->input->post('nama'),
+						'ciri_khas' => $this->input->post('ciri_khas'),
+						'link_foto' => $this->input->post('link_foto'),
+						'request_time' => $date
+					);
 
+					//fungsi untuk mengubah datetime menjadi timestamp
+					/*echo strtotime($data['request_time']);
+					die();*/
+					
+					$result = $this->Perkenalan_model->request_keluarga($data);
+
+					if (!$result) {
+						$data['error_message'] = "Error";
+						echo "fail";
+						//redirect();
+					}else {
+						$data['message_display'] = "Success";
+						echo "success";
+						//redirect();
+					}
+				}
 			}
 		}
 	}

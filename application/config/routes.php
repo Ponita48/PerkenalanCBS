@@ -52,3 +52,27 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 $route['default_controller'] = 'UserController';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
+
+//UserController
+$route['login'] = 'UserController/login';
+$route['home'] = 'UserController/index';
+$route['profile'] = 'UserController/lihat_profile';
+$route['angkatan'] = 'UserController/angkatan';
+$route['logout'] = 'UserController/logout';
+$route['new_login'] = 'UserController/new_login';
+$route['edit_profile'] = 'UserController/edit_profile';
+$route['search/:any'] = 'UserController/search/$1'; //$1 = $keysearch
+$route['change_profile'] = 'UserController/change_profile';
+$route['login'] = 'UserController/login';
+
+
+//Perkenalan
+$route['request_keluarga/:any'] = 'Perkenalan/request_keluarga/$1'; //$1 = $id
+$route['request_peserta/:any'] = 'Perkenalan/request_peserta/$1'; //$1 = $id
+
+
+//A
+$route['perkenalan_keluarga'] = 'A/perkenalanKeluarga';
+$route['perkenalan_angkatan/:any'] = 'A/perkenalanAngkatan/$1'; //$1 = $id
+$route['jumlah_perkenalan'] = 'A/jumlahPerkenalan';
+$route['approve_perkenalan/:any'] = 'A/approvePerkenalan/$1'; //$1 = $id_perkenalan
