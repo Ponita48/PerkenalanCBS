@@ -131,12 +131,15 @@ class User_model extends CI_Model {
 		if ($id == NULL) {
 			if ($this->session->userdata['logged_in']['role'] == 'peserta') {
 				$sel = "u.id_user, u.npm, u.email, u.role, p.nama, p.jk, p.tempat_lahir, p.tgl_lahir, p.alamat_kos, p.no_hp, p.id_line, p.motto_hidup, p.link_foto";
-				$fr = "users u, profile_maba p";
+				$fr = "users u";
+				$j = "profile_maba p";
 			}else {
 				$sel = "u.id_user, u.npm, u.email, u.role, p.nama, p.jk, p.tempat_lahir, p.tgl_lahir, p.alamat_kos, p.no_hp, p.id_line, p.link_foto";
-				$fr = "users u, profile_kating p";
+				$fr = "users u";
+				$j = "profile_kating p";
 			}
-			$q = "SELECT ".$sel." FROM ".$fr." WHERE p.id_user = ".$this->session->userdata['logged_in']['id_user'];
+			$id = $this->session->userdata['logged_in']['id_user'];
+			/*$q = "SELECT ".$sel." FROM ".$fr." WHERE p.id_user = ".$this->session->userdata['logged_in']['id_user'];*/
 		}else {
 
 			$role = $this->db->select('*')
@@ -162,8 +165,8 @@ class User_model extends CI_Model {
 			}else {
 				return FALSE;
 			}
-			$q = "SELECT ".$sel." FROM ".$fr." LEFT JOIN ".$j." ON u.id_user = p.id_user WHERE u.id_user = ".$id;
 		}
+			$q = "SELECT ".$sel." FROM ".$fr." LEFT JOIN ".$j." ON u.id_user = p.id_user WHERE u.id_user = ".$id;
 
 		$query = $this->db->query($q);
 
