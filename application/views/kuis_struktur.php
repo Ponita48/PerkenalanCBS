@@ -12,10 +12,10 @@
     <div class="container-fluid" id="navigation-pane">
       <nav class="navbar-nav">
         <ul class="nav nav-pills">
-          <li class="active"><a href="#menu1" class="tab-content" data-toggle="pill">Panitia CBS Himatif FMIPA Unpad 2017</a></li>
-          <li><a href="#menu2" class="tab-content" data-toggle="pill">BE Himatif FMIPA Unpad Kabinet Impresif</a></li>
-          <li><a href="#menu3" class="tab-content" data-toggle="pill">DPA Himatif FMIPA Unpad Parlemen Insight</a></li>
-          <li><a href="#menu4" class="tab-content" data-toggle="pill">Mubes Himatif FMIPA Unpad 2017</a></li>
+          <li class="active"><a href="#menu1" data-toggle="pill">Panitia CBS Himatif FMIPA Unpad 2017</a></li>
+          <li><a href="#menu2" data-toggle="pill">BE Himatif FMIPA Unpad Kabinet Impresif</a></li>
+          <li><a href="#menu3" data-toggle="pill">DPA Himatif FMIPA Unpad Parlemen Insight</a></li>
+          <li><a href="#menu4" data-toggle="pill">Mubes Himatif FMIPA Unpad 2017</a></li>
         </ul>
       </nav>
     </div>
