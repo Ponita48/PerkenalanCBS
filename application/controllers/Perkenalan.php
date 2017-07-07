@@ -104,7 +104,7 @@ class Perkenalan extends CI_Controller
 					'request_time' => $date
 				);
 				
-				$result = $this->Perkenalan_model->request_angkatan($data);
+				$result = $this->Perkenalan_model	->request_angkatan($data);
 
 				if (!$result) {
 					$data['error_message'] = "Error";
