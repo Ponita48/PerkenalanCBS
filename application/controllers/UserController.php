@@ -153,15 +153,18 @@ class UserController extends CI_Controller
 	// login for the first time
 	public function new_login() {		
 		$this->form_validation->set_rules('email', 'Email', 'required|valid_email');
-		$this->form_validation->set_rules('new_pass', 'New Password', 'required|min_length[6]');
-		$this->form_validation->set_rules('conf_pwd', 'New Password', 'required|min_length[6]|matches[new_pass]');
+		$this->form_validation->set_rules('new_pwd', 'New Password', 'required|min_length[6]');
+		$this->form_validation->set_rules('conf_pwd', 'New Password', 'required|min_length[6]|matches[new_pwd]');
 
 		if ($this->form_validation->run() == FALSE) {
+			//echo $this->input->post('new_pwd')."</br>";
+			//echo $this->input->post('conf_pwd')."</br>";
+			//echo validation_errors();
 			$this->load->view('header');
 			$this->load->view('new_login');
 			$this->load->view('footer');
 		}else {
-			$password = password_hash($this->input->post('new_pass'), PASSWORD_DEFAULT);
+			$password = password_hash($this->input->post('new_pwd'), PASSWORD_DEFAULT);
 
 			$data = array(
 				'npm' => $this->session->userdata['logged_in']['npm'], 
