@@ -136,7 +136,7 @@ class User_model extends CI_Model {
 				$sel = "u.id_user, u.npm, u.email, u.role, p.nama, p.jk, p.tempat_lahir, p.tgl_lahir, p.alamat_kos, p.no_hp, p.id_line, p.link_foto";
 				$fr = "users u, profile_kating p";
 			}
-			$q = "SELECT ".$sel." FROM ".$fr."WHERE p.id_user = ".$this->session->userdata['logged_in']['id_user'];
+			$q = "SELECT ".$sel." FROM ".$fr." WHERE p.id_user = ".$this->session->userdata['logged_in']['id_user'];
 		}else {
 
 			$role = $this->db->select('*')
