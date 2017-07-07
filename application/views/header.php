@@ -23,7 +23,10 @@
 		<ul class="nav navbar-nav">
 			<li><a href="<?php echo base_url(); ?>">Home<span class="sr-only">(current)</span></a></li>
 			<!-- TODO : ganti link profil ke profil sendiri (ambil dari session) -->
-			<li><a href="<?php echo base_url().'UserController/lihat_profile/'; ?>">Profile</a></li>
+			<?php if (isset($this->session->userdata['logged_in'])): ?>
+				<li><a href="<?php echo base_url().'UserController/lihat_profile/'.
+					$this->session->userdata['logged_in']['id_user']; ?>">Profile</a></li>
+			<?php endif ?>
 			<li><a href="<?php echo base_url(); ?>UserController/angkatan">Angkatan</a></li>
 			<li><a href="<?php echo base_url(); ?>UserController/perkenalan">Perkenalan</a></li>
 		</ul>
