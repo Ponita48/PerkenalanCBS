@@ -278,23 +278,33 @@ class UserController extends CI_Controller
 	public function lihat_profile($id = NULL) {
 
 		if (! isset($this->session->userdata['logged_in'])) {
-			$data['error_message'] = "login dulu cuk!";
-			echo $data['error_message'];
-			die();
+			$data['message_display'] = "Silahkan login terlebih dahulu";
+			$this->load->view('header');
+			$this->load->view('index', $data);
+			$this->load->view('footer');
+			// echo $data['message_display'];
+			// die();
 		}else {
 			$result = $this->User_model->getProfile($id);
 
 			if ($result == FALSE) {
+				$data['message_display'] = "Maaf, Profile tidak ditemukan";
+				$this->load->view('header');
+				$this->load->view('index', $data);
+				$this->load->view('footer');
 				//goto ?
-				echo "profile tidak ditemukan";
-				die();
+				// echo "profile tidak ditemukan";
+				// die();
 			}else {
 				//goto ?
-				
-				echo "<pre>";
-				var_dump($result);
-				echo "</pre>";
-				die();
+				$data['result'] = $result[0];
+				$this->load->view('header');
+				$this->load->view('profil', $data);
+				$this->load->view('footer');
+				// echo "<pre>";
+				// var_dump($result);
+				// echo "</pre>";
+				// die();
 			}
 		}
 
