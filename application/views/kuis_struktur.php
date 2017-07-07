@@ -1,3 +1,6 @@
+<link rel=stylesheet href="<? echo base_url(); ?>assets/css/bootstrap.css">
+<link rel=stylesheet href="<? echo base_url(); ?>assets/css/tree-diagram.css">
+
 <div class="row">
   <!-- Navigation Pane : Belum dibikin fixed, belum bisa diminimize -->
   <div class="col-sm-3 col-md-3 col-lg-3" style="overflow: auto; background-color: #DFDFDF; ">
