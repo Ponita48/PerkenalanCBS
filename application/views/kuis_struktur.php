@@ -1,10 +1,15 @@
 <link rel=stylesheet href="<? echo base_url(); ?>assets/css/bootstrap.css">
 <link rel=stylesheet href="<? echo base_url(); ?>assets/css/tree-diagram.css">
+<style type="text/css" media="screen">
+  ul li {
+    padding: 0px 0px 0px 10px;
+  }
+</style>
 
 <div class="row">
   <!-- Navigation Pane : Belum dibikin fixed, belum bisa diminimize -->
   <div class="col-sm-3 col-md-3 col-lg-3" style="overflow: auto; background-color: #DFDFDF; ">
-    <div class="sidebar-nav" id="navigation-pane">
+    <div class="container-fluid" id="navigation-pane">
       <nav class="navbar-nav">
         <ul class="nav nav-pills">
           <li class="active"><a href="#menu1" class="tab-content" data-toggle="pill">Panitia CBS Himatif FMIPA Unpad 2017</a></li>
@@ -19,10 +24,10 @@
 
   <!-- Quiz Layer, dengan tab-content -->
   <div class="col-sm-9 col-md-9 col-lg-9">
-  	<h1>KUIS BK/PANITIA</h1>
+  	<h3>KUIS BK/PANITIA</h3>
     <div class="tab-content">
       <div id="menu1" class="tab-pane fade in active">
-        <div class="row" style="overflow: auto;">
+        <div class="row" style="overflow: auto; height: 60vh;">
           <form action="" method="post">
             <div class="tree">
               <ul>
@@ -254,11 +259,6 @@
         </div>
         <div class="row" style="overflow: auto;">
           <table>
-            <thead>
-              <tr>
-                <th>Foto</th>
-              </tr>
-            </thead>
             <tbody>
               <tr>
                 <td id="foto_cbs_1" ondrop="drop(event)" ondragover="allowDrop(event)" style="height: 155px; width: 115px"><img src="<? echo base_url(); ?>img/img1.jpg" id="drag_cbs_1" draggable="true" ondragstart="drag(event)" style="width: 90px; height: 120px"></td>
@@ -283,7 +283,7 @@
         </div>
       </div>
       <div id="menu2" class="tab-pane fade">
-        <div class="row" style="overflow: auto;">
+        <div class="row" style="overflow: auto; height: 60vh;">
           <form action="" method="post">
             <div class="tree">
               <ul>
@@ -469,11 +469,6 @@
         </div>
         <div class="row" style="overflow: auto;">
           <table>
-            <thead>
-              <tr>
-                <th>Foto</th>
-              </tr>
-            </thead>
             <tbody>
               <tr>
                 <td id="foto_be_1" ondrop="drop(event)" ondragover="allowDrop(event)" style="height: 155px; width: 115px"><img src="<? echo base_url(); ?>img/img1.jpg" id="drag_be_1" draggable="true" ondragstart="drag(event)" style="width: 90px; height: 120px"></td>
@@ -496,7 +491,7 @@
         </div>
       </div>
       <div id="menu3" class="tab-pane fade">
-        <div class="row" style="overflow: auto;">
+        <div class="row" style="overflow: auto; height: 60vh;">
           <form action="" method="post">
             <div class="tree">
               <ul>
@@ -580,11 +575,6 @@
         </div>
         <div class="row" style="overflow: auto;">
           <table>
-            <thead>
-              <tr>
-                <th>Foto</th>
-              </tr>
-            </thead>
             <tbody>
               <tr>
                 <td id="foto_dpa_1" ondrop="drop(event)" ondragover="allowDrop(event)" style="height: 155px; width: 115px"><img src="<? echo base_url(); ?>img/img1.jpg" id="drag_dpa_1" draggable="true" ondragstart="drag(event)" style="width: 90px; height: 120px"></td>
@@ -599,7 +589,7 @@
         </div>
       </div>
       <div id="menu4" class="tab-pane fade">
-        <div class="row" style="overflow: auto;">
+        <div class="row" style="overflow: auto; height: 60vh;">
           <form action="" method="post">
             <div class="tree">
               <ul>
@@ -647,11 +637,6 @@
         </div>
         <div class="row" style="overflow: auto;">
           <table>
-            <thead>
-              <tr>
-                <th>Foto</th>
-              </tr>
-            </thead>
             <tbody>
               <tr>
                 <td id="foto_mubes_1" ondrop="drop(event)" ondragover="allowDrop(event)" style="height: 155px; width: 115px"><img src="<? echo base_url(); ?>img/img1.jpg" id="drag_mubes_1" draggable="true" ondragstart="drag(event)" style="width: 90px; height: 120px"></td>
@@ -680,8 +665,3 @@
 	    ev.target.appendChild(document.getElementById(data));
 	}
 </script>
-<style type="text/css" media="screen">
-	ul li {
-		padding: 0px 0px 0px 10px;
-	}
-</style>
