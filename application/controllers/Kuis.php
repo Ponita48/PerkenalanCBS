@@ -12,6 +12,7 @@ class Kuis extends CI_Controller
 		$this->load->model('Kuis_model');
 		//$this->load->session();
 		$this->load->database();
+		$this->load->helper('url');
 	}
 
 	public function view_kuis()
