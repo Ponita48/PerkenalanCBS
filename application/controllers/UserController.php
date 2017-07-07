@@ -233,12 +233,15 @@ class UserController extends CI_Controller
 
 	public function search($key = NULL) {
 
+		//echo $this->input->get('keySearch');
+
 		if (! isset($this->session->userdata['logged_in'])) {
 			$data['error_message'] = "login dulu cuk!";
-			// echo $data['error_message'];
-			// die();
+			echo $data['error_message'];
+			die();
 		}else {
-			$keySearch = $_GET['keySearch'];
+			//$keySearch = $_GET['keySearch'];
+			$keySearch = $this->input->get('keySearch');
 			$keyArray = explode(" ",$keySearch);
 
 			$keySearch = '%';
@@ -246,7 +249,6 @@ class UserController extends CI_Controller
 			foreach ($keyArray as $value) {
 				$keySearch = $keySearch.$value.'%';
 			}
-
 			$result = $this->User_model->search($keySearch);
 
 			if (! $result) {
