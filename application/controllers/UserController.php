@@ -123,9 +123,7 @@ class UserController extends CI_Controller
 				//cek email
 				if ($result->row('email') == NULL) {
 					//masukkan email dan password baru
-					$this->load->view('header');
-					$this->load->view('new_login');
-					$this->load->view('footer');
+					$this->new_login();
 				}else {
 					//login success
 					//back to home
@@ -154,11 +152,14 @@ class UserController extends CI_Controller
 
 	// login for the first time
 	public function new_login() {		
-		$this->form_validation->set_rules('email', 'Email', 'required');
-		$this->form_validation->set_rules('new_pass', 'New Password', 'required');
+		$this->form_validation->set_rules('email', 'Email', 'required|valid_email');
+		$this->form_validation->set_rules('new_pass', 'New Password', 'required|min_length[6]');
+		$this->form_validation->set_rules('conf_pwd', 'New Password', 'required|min_length[6]|matches[new_pass]');
 
 		if ($this->form_validation->run() == FALSE) {
+			$this->load->view('header');
 			$this->load->view('new_login');
+			$this->load->view('footer');
 		}else {
 			$password = password_hash($this->input->post('new_pass'), PASSWORD_DEFAULT);
 
