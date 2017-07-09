@@ -165,7 +165,7 @@ class UserController extends CI_Controller
 			$this->load->view('new_login');
 			$this->load->view('footer');
 		}else {
-			echo "bisa(?)";
+
 			$password = password_hash($this->input->post('new_pwd'), PASSWORD_DEFAULT);
 
 			$data = array(
@@ -272,9 +272,6 @@ class UserController extends CI_Controller
 			$this->load->view('search', $data);
 			$this->load->view('footer');
 		}
-
-
-		
 	}
 	public function change_profile() {
 		$this->load->view('header');
@@ -312,6 +309,28 @@ class UserController extends CI_Controller
 				// var_dump($result);
 				// echo "</pre>";
 				// die();
+			}
+		}
+
+	}
+
+	public function get_angkatan($angkatan = 2017) {
+		
+		if (! isset($this->session->userdata['logged_in'])) {
+			$data['message_display'] = "Silahkan login terlebih dahulu";
+			$this->load->view('header');
+			$this->load->view('index', $data);
+			$this->load->view('footer');
+		}else {
+			$result = $this->User_model->get_angkatan($angkatan);
+
+			if ($result == FALSE) {
+				echo "angkatan ga ada coeg";
+			}else {
+				echo "<pre>";
+				var_dump($result);
+				echo "</pre>";
+				die();
 			}
 		}
 
