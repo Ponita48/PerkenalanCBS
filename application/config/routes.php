@@ -65,6 +65,7 @@ $route['edit_profile'] = 'UserController/edit_profile';
 $route['search/(:any)'] = 'UserController/search/$1'; //$1 = $keysearch
 $route['change_profile'] = 'UserController/change_profile';
 $route['login'] = 'UserController/login';
+$route['perkenalan'] = 'UserController/get_angkatan/all';
 
 
 //Perkenalan

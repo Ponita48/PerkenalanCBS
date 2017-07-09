@@ -333,15 +333,20 @@ class UserController extends CI_Controller
 			$result = $this->User_model->get_angkatan($angkatan);
 
 			if ($result == FALSE) {
-				echo "angkatan ga ada coeg";
+				$data['error_message'] = "Maaf, angkatan tidak dapat ditemukan";
+				$this->load->view('header');
+				$this->load->view('index', $data);
+				$this->load->view('footer');
 			}else {
-
 				//TODO : load view get perangkatan
-
-				echo "<pre>";
-				var_dump($result);
-				echo "</pre>";
-				die();
+				$data['result'] = $result;
+				$this->load->view('header');
+				$this->load->view('kating', $data);
+				$this->load->view('footer');
+				// echo "<pre>";
+				// var_dump($result);
+				// echo "</pre>";
+				// die();
 			}
 		}
 	}
@@ -360,7 +365,11 @@ class UserController extends CI_Controller
 			$result = $this->User_model->get_angkatan($angkatan);
 
 			if ($result == FALSE) {
-				echo "angkatan ga ada coeg";
+				// echo "angkatan ga ada coeg";
+				$data['error_message'] = "Maaf, angkatan tidak dapat ditemukan";
+				$this->load->view('header');
+				$this->load->view('index', $data);
+				$this->load->view('footer');
 			}else {
 				$data['result'] = $result;
 				$this->load->view('header');
