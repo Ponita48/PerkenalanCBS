@@ -19,13 +19,7 @@ class UserController extends CI_Controller
 		$this->load->view('index');
 		$this->load->view('footer');
 	}
-
-	public function angkatan() {
-		$this->load->view('header');
-		$this->load->view('angkatan');
-		$this->load->view('footer');
-	}
-
+	
 	public function perkenalan() {
 		$this->load->view('header');
 		$this->load->view('kating');

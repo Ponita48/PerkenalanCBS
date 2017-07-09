@@ -230,17 +230,25 @@ class User_model extends CI_Model {
 	public function get_angkatan($angkatan) {
 
 		if ($angkatan == "all") {
-			$q = $this->db
+			/*$q = $this->db
 				->select('*')
 				->from('users')
 				->where("role != '2017' AND role != 'admin'")
-				->get();
+				->get();*/
+
+			$q = $this->db->query("SELECT u.id_user, u.npm, p.nama, p.link_foto FROM users u LEFT JOIN profile_kating p ON u.id_user = p.id_user WHERE u.role != '2017' AND u.role != 'admin'");
+
+		}elseif($angkatan == "2017") {
+			$q = $this->db->query("SELECT u.id_user, u.npm, p.nama, p.link_foto FROM users u LEFT JOIN profile_maba p ON u.id_user = p.id_user WHERE u.role = '2017'");
+			
 		}else {
-			$q = $this->db
+			/*$q = $this->db
 				->select('*')
 				->from('users')
 				->where('role',$angkatan)
-				->get();
+				->get();*/
+
+			$q = $this->db->query("SELECT u.id_user, u.npm, p.nama, p.link_foto FROM users u LEFT JOIN profile_kating p ON u.id_user = p.id_user WHERE u.role = '$angkatan'");
 		}
 
 		if ($q->num_rows() == 0) {
