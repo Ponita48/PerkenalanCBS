@@ -236,10 +236,10 @@ class User_model extends CI_Model {
 				->where("role != '2017' AND role != 'admin'")
 				->get();*/
 
-			$q = $this->db->query("SELECT u.id_user, u.npm, p.nama, p.link_foto FROM users u LEFT JOIN profile_kating p ON u.id_user = p.id_user WHERE u.role != '2017' AND u.role != 'admin'");
+			$q = $this->db->query("SELECT u.id_user, u.npm, p.nama, p.link_foto, u.role FROM users u LEFT JOIN profile_kating p ON u.id_user = p.id_user WHERE u.role != '2017' AND u.role != 'admin'");
 
 		}elseif($angkatan == "2017") {
-			$q = $this->db->query("SELECT u.id_user, u.npm, p.nama, p.link_foto FROM users u LEFT JOIN profile_maba p ON u.id_user = p.id_user WHERE u.role = '2017'");
+			$q = $this->db->query("SELECT u.id_user, u.npm, p.nama, p.link_foto, u.role FROM users u LEFT JOIN profile_maba p ON u.id_user = p.id_user WHERE u.role = '2017'");
 			
 		}else {
 			/*$q = $this->db
@@ -248,7 +248,7 @@ class User_model extends CI_Model {
 				->where('role',$angkatan)
 				->get();*/
 
-			$q = $this->db->query("SELECT u.id_user, u.npm, p.nama, p.link_foto FROM users u LEFT JOIN profile_kating p ON u.id_user = p.id_user WHERE u.role = '$angkatan'");
+			$q = $this->db->query("SELECT u.id_user, u.npm, p.nama, p.link_foto, u.role FROM users u LEFT JOIN profile_kating p ON u.id_user = p.id_user WHERE u.role = '$angkatan'");
 		}
 
 		if ($q->num_rows() == 0) {
