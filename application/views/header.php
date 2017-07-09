@@ -24,28 +24,29 @@
 			<li><a href="<?php echo base_url(); ?>">Home<span class="sr-only">(current)</span></a></li>
 			<!-- TODO : ganti link profil ke profil sendiri (ambil dari session) -->
 			<?php if (isset($this->session->userdata['logged_in'])): ?>
-				<li><a href="<?php echo base_url().'UserController/lihat_profile/'.
+				<?php if ($this->session->userdata['logged_in']['role'] == "admin"): ?>
+					<li><a href="<?php echo base_url().'admin'; ?>">Admin</a></li>
+				<?php endif ?>
+				<li><a href="<?php echo base_url().'profile/'.
 					$this->session->userdata['logged_in']['id_user']; ?>">Profile</a></li>
 			<?php endif ?>
-			<li><a href="<?php echo base_url(); ?>UserController/angkatan">Angkatan</a></li>
+			<li><a href="<?php echo base_url().'angkatan'; ?>">Angkatan</a></li>
 			<li><a href="<?php echo base_url(); ?>UserController/perkenalan">Perkenalan</a></li>
 		</ul>
 		<ul class="nav navbar-nav navbar-right">
-			
-			<?php if (isset($this->session->userdata['logged_in'])) { ?>
+			<?php if ($this->session->userdata['logged_in']): ?>
 				<li>
-					<a href="<?php echo base_url(); ?>UserController/logout">
+					<a href="<?php echo base_url().'logout'; ?>">
 						<span class="glyphicon glyphicon-log-out"></span> Logout
 					</a>
 				</li>
-			<?php }else { ?>
-				<!-- TODO: tambahin if udah login -->
+			<?php else: ?>
 				<li>
-					<a href="<?php echo base_url(); ?>UserController/login">
+					<a href="<?php echo base_url().'login'; ?>">
 						<span class="glyphicon glyphicon-log-in"></span> Login
 					</a>
 				</li>
-			<?php } ?>
+			<?php endif ?>
 			<li>
 				<a href="#" data-toggle="search" data-placement="bottom" id="search_icon">
 					<span class="glyphicon glyphicon-search"></span>

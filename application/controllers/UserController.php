@@ -181,9 +181,13 @@ class UserController extends CI_Controller
 	public function edit_profile() {
 
 		if (! isset($this->session->userdata['logged_in'])) {
-			$data['error_message'] = "login dulu cuk!";
-			echo $data['error_message'];
-			die();
+			$data['error_message'] = "Silahkan login terlebih dahulu";
+			$this->load->view('header');
+			$this->load->view('index', $data);
+			$this->load->view('footer');
+			// $data['error_message'] = "login dulu cuk!";
+			// echo $data['error_message'];
+			// die();
 		}else {
 			$this->form_validation->set_rules('email', 'Email', 'required');
 			$this->form_validation->set_rules('nama', 'Nama', 'required');
@@ -283,7 +287,7 @@ class UserController extends CI_Controller
 	public function lihat_profile($id = NULL) {
 
 		if (! isset($this->session->userdata['logged_in'])) {
-			$data['message_display'] = "Silahkan login terlebih dahulu";
+			$data['error_message'] = "Silahkan login terlebih dahulu";
 			$this->load->view('header');
 			$this->load->view('index', $data);
 			$this->load->view('footer');
@@ -293,7 +297,7 @@ class UserController extends CI_Controller
 			$result = $this->User_model->getProfile($id);
 
 			if ($result == FALSE) {
-				$data['message_display'] = "Maaf, Profile tidak ditemukan";
+				$data['error_message'] = "Maaf, Profile tidak ditemukan";
 				$this->load->view('header');
 				$this->load->view('index', $data);
 				$this->load->view('footer');
