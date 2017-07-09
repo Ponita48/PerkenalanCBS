@@ -31,7 +31,7 @@
 				<?php endif ?>
 			<?php endif ?>
 			<li><a href="<?php echo base_url().'angkatan'; ?>">Angkatan</a></li>
-			<li><a href="<?php echo base_url(); ?>UserController/perkenalan">Perkenalan</a></li>
+			<li><a href="<?php echo base_url().'perkenalan'; ?>">Perkenalan</a></li>
 		</ul>
 		<ul class="nav navbar-nav navbar-right">
 			<?php if (isset($this->session->userdata['logged_in'])): ?>

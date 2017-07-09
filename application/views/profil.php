@@ -13,9 +13,9 @@
 				<!-- Kalau udah login -->
 				<?php if (isset($this->session->userdata['logged_in'])): ?>
 					<!-- Login = peserta & dilihat != Peserta -->
-					<?php if ($this->session->userdata['logged_in']['role'] == "peserta"): ?>
+					<?php if ($this->session->userdata['logged_in']['role'] != "admin"): ?>
 						<!-- MABA MELIHAT KATING -->
-						<?php if ($result->role != "peserta"): ?>
+						<?php if ($result->role != "2017"): ?>
 							<button class="btn btn-warning" type="submit">Request Perkenalan</button><br><br>
 						<?php endif ?>
 						<!-- npm di session = npm yang dilihat -->
@@ -28,7 +28,7 @@
 					<!-- admin ngeliat -->
 					<?php if ($this->session->userdata['logged_in']['role'] == "admin"): ?>
 						<!-- cek apakah yang dilihat peserta atau kating -->
-						<?php if ($result->role == "peserta"): ?>
+						<?php if ($result->role == "2017"): ?>
 							<!-- ADMIN MELIHAT MABA -->
 							<button class="btn btn-warning" type="submit">Lihat Daftar Perkenalan</button><br><br>
 						<?php else: ?>
