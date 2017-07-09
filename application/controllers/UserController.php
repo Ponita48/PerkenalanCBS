@@ -252,9 +252,7 @@ class UserController extends CI_Controller
 	}
 
 	public function search($key = NULL) {
-
 		
-
 		//echo $this->input->get('keySearch');
 
 		if (! isset($this->session->userdata['logged_in'])) {
@@ -343,10 +341,37 @@ class UserController extends CI_Controller
 			if ($result == FALSE) {
 				echo "angkatan ga ada coeg";
 			}else {
+
+				//TODO : load view get perangkatan
+
 				echo "<pre>";
 				var_dump($result);
 				echo "</pre>";
 				die();
+			}
+		}
+	}
+
+	public function get_angkatan_2017() {
+		
+		if (! isset($this->session->userdata['logged_in'])) {
+			$data['message_display'] = "Silahkan login terlebih dahulu";
+			$this->load->view('header');
+			$this->load->view('index', $data);
+			$this->load->view('footer');
+		}else {
+
+			$angkatan = 2017;
+
+			$result = $this->User_model->get_angkatan($angkatan);
+
+			if ($result == FALSE) {
+				echo "angkatan ga ada coeg";
+			}else {
+				$data['result'] = $result;
+				$this->load->view('header');
+				$this->load->view('angkatan',$data);
+				$this->load->view('footer');
 			}
 		}
 
