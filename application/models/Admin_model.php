@@ -37,7 +37,7 @@ class Admin_model extends CI_Model {
 		}
 	}
 
-	public function approvePerkenalan($id_perkenalan, $data) {
+	public function approveRejectPerkenalan($id_perkenalan, $data) {
 		$q = $this->db
 			->select('*')
 			->from('perkenalan_kating')

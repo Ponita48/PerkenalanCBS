@@ -253,6 +253,8 @@ class UserController extends CI_Controller
 
 	public function search($key = NULL) {
 
+		
+
 		//echo $this->input->get('keySearch');
 
 		if (! isset($this->session->userdata['logged_in'])) {
