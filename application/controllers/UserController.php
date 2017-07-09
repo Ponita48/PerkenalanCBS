@@ -160,10 +160,12 @@ class UserController extends CI_Controller
 			//echo $this->input->post('new_pwd')."</br>";
 			//echo $this->input->post('conf_pwd')."</br>";
 			//echo validation_errors();
+			echo validation_errors();
 			$this->load->view('header');
 			$this->load->view('new_login');
 			$this->load->view('footer');
 		}else {
+			echo "bisa(?)";
 			$password = password_hash($this->input->post('new_pwd'), PASSWORD_DEFAULT);
 
 			$data = array(
