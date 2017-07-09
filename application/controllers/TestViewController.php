@@ -33,6 +33,12 @@ class TestViewController extends CI_Controller {
 		$this->load->view('footer');
 	}
 
+	public function my_request() {
+		$this->load->view('header');
+		$this->load->view('my_request');
+		$this->load->view('footer');	
+	}
+
 }
 
  ?>
