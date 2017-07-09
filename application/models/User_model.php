@@ -227,7 +227,19 @@ class User_model extends CI_Model {
 
 	}
 
+	public function get_angkatan($angkatan) {
+		$q = $this->db
+			->select('*')
+			->from('users')
+			->where('role',$angkatan)
+			->get();
 
+		if ($q->num_rows() == 0) {
+			return FALSE;
+		}else {
+			return $q->result();
+		}
+	}
 
 }
 
