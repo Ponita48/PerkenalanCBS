@@ -22,7 +22,7 @@
 						<a href="<?php echo base_url().'profile/'.$key->id_user; ?>">
 							<div class="col-md-3">
 								<img src="" alt="" class="img-responsive">
-								<p id="nama">wahaha</p>
+								<p id="nama"><?php echo $key->nama; ?></p>
 								<p id="npm"><?php echo $key->npm; ?></p>
 							</div>
 						</a>
@@ -37,7 +37,7 @@
 						<a href="<?php echo base_url().'profile/'.$key->id_user; ?>">
 							<div class="col-md-3">
 								<img src="" alt="" class="img-responsive">
-								<p id="nama">wahaha</p>
+								<p id="nama"><?php echo $key->nama; ?></p>
 								<p id="npm"><?php echo $key->npm; ?></p>
 							</div>
 						</a>
@@ -52,7 +52,7 @@
 						<a href="<?php echo base_url().'profile/'.$key->id_user; ?>">
 							<div class="col-md-3">
 								<img src="" alt="" class="img-responsive">
-								<p id="nama">wahaha</p>
+								<p id="nama"><?php echo $key->nama; ?></p>
 								<p id="npm"><?php echo $key->npm; ?></p>
 							</div>
 						</a>
@@ -67,7 +67,7 @@
 						<a href="<?php echo base_url().'profile/'.$key->id_user; ?>">
 							<div class="col-md-3">
 								<img src="" alt="" class="img-responsive">
-								<p id="nama">wahaha</p>
+								<p id="nama"><?php echo $key->nama; ?></p>
 								<p id="npm"><?php echo $key->npm; ?></p>
 							</div>
 						</a>

@@ -98,15 +98,6 @@
 								<th>Halaman Detail</th>
 							</tr>
 							<!-- TODO: foreach(backend) -->
-							<!-- <tr>
-								<td>Kodoque3</td>
-								<td>1408101600XX</td>
-								<td>Oedjank</td>
-								<td>1408101700XX</td>
-								<td><a href="#">
-									<button class="btn btn-primary">Click Here</button>
-								</a></td>
-							</tr> -->
 							<?php foreach ($result as $key) : ?>
 								<?php if ($key->angkatan_keluarga == 2014) : ?>
 									<tr class="item">
@@ -136,15 +127,6 @@
 								<th>Halaman Detail</th>
 							</tr>
 							<!-- TODO: foreach(backend) -->
-							<!-- <tr>
-								<td>Kodoque4</td>
-								<td>1408101600XX</td>
-								<td>Oedjank</td>
-								<td>1408101700XX</td>
-								<td><a href="#">
-									<button class="btn btn-primary">Click Here</button>
-								</a></td>
-							</tr> -->
 							<?php foreach ($result as $key) : ?>
 								<?php if ($key->angkatan_keluarga == 2013) : ?>
 									<tr class="item">

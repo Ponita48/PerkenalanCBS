@@ -299,10 +299,6 @@ class UserController extends CI_Controller
 				$this->load->view('header');
 				$this->load->view('kating', $data);
 				$this->load->view('footer');
-				// echo "<pre>";
-				// var_dump($result);
-				// echo "</pre>";
-				// die();
 			}
 		}
 	}
