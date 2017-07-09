@@ -40,6 +40,7 @@
 								<th>Halaman Detail</th>
 							</tr>
 							<!-- TODO: foreach(backend) -->
+						<?php if (isset($result)) : ?>
 							<?php foreach ($result as $key) : ?>
 								<?php if ($key->angkatan_keluarga == 2016) : ?>
 									<tr class="item">
@@ -53,6 +54,7 @@
 									</tr>
 								<?php endif; ?>
 							<?php endforeach; ?>
+						<?php endif; ?>
 						</table>
 					</div>
 				</center>
@@ -69,6 +71,7 @@
 								<th>Halaman Detail</th>
 							</tr>
 							<!-- TODO: foreach(backend) -->
+						<?php if (isset($result)) : ?>
 							<?php foreach ($result as $key) : ?>
 								<?php if ($key->angkatan_keluarga == 2015) : ?>
 									<tr class="item">
@@ -82,6 +85,7 @@
 									</tr>
 								<?php endif; ?>
 							<?php endforeach; ?>
+						<?php endif; ?>
 						</table>
 					</div>
 				</center>
@@ -98,6 +102,7 @@
 								<th>Halaman Detail</th>
 							</tr>
 							<!-- TODO: foreach(backend) -->
+						<?php if (isset($result)) : ?>
 							<?php foreach ($result as $key) : ?>
 								<?php if ($key->angkatan_keluarga == 2014) : ?>
 									<tr class="item">
@@ -111,6 +116,7 @@
 									</tr>
 								<?php endif; ?>
 							<?php endforeach; ?>
+						<?php endif; ?>
 						</table>
 					</div>
 				</center>
@@ -127,6 +133,7 @@
 								<th>Halaman Detail</th>
 							</tr>
 							<!-- TODO: foreach(backend) -->
+						<?php if (isset($result)) : ?>
 							<?php foreach ($result as $key) : ?>
 								<?php if ($key->angkatan_keluarga == 2013) : ?>
 									<tr class="item">
@@ -140,6 +147,7 @@
 									</tr>
 								<?php endif; ?>
 							<?php endforeach; ?>
+						<?php endif; ?>
 						</table>
 					</div>
 				</center>
