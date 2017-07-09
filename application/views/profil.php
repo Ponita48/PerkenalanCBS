@@ -1,4 +1,3 @@
-<!-- TODO: pake id untuk tiap mahasiswa -->
 	<div>
 		<h1>PROFIL</h1>
 		<hr>

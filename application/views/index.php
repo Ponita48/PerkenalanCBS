@@ -5,6 +5,13 @@
 			<?php echo $message_display; ?>
 		</div>
 	<?php endif ?>
+	<?php if (isset($error_message)): ?>
+		<br>
+		<div class="alert alert-danger alert-dismissable">
+			<a href="#" class="close" data-dismiss="alert" aria-label="close">x</a>
+			<?php echo $error_message; ?>
+		</div>
+	<?php endif ?>
 	<h1>KATA SAMBUTAN</h1>
 	<center>
 		<?php for ($i=0; $i < 5; $i++) {  ?>
