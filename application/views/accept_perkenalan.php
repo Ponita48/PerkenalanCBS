@@ -8,7 +8,7 @@
 	<div class="container">
 		<div class="col-sm-4">
 			<center>
-				<img src="<?php echo base_url(); ?>img/img1.jpg" alt="" class="img-responsive"><br>
+				<img src="http://i1.kym-cdn.com/entries/icons/facebook/000/019/749/catroomguardian.jpg" alt="" width="300" class="myImg img-thumbnail"><br>
 				<p>Foto Mahasiswa Baru</p>
 			</center>
 		</div>
@@ -30,13 +30,19 @@
 		</div>
 		<div class="col-sm-4">
 			<center>
-				<img src="<?php echo base_url(); ?>img/img2.jpg" alt="" class="img-responsive"><br>
+				<img src="<?php echo base_url().'img/img2.jpg'; ?>" alt="" width="300" class="myImg img-thumbnail"><br>
 				<p>Foto Selfie</p>
 			</center>
 		</div>
+		<div class="col-sm-4"></div>
 		<div class="col-sm-4">
-				<a href="#"><button class="btn btn-warning btn-block" type="submit">Lihat Profil</button></a><br><br>	
-				<a href="<?php echo base_url(); ?>approve_perkenalan/<?php echo $result->id_perkenalan_kating; ?>"><button class="btn btn-success btn-block" type="submit">Terima Perkenalan</button></a><br><br>
-				<a href="<?php echo base_url(); ?>reject_perkenalan/<?php echo $result->id_perkenalan_kating; ?>"><button class="btn btn-danger btn-block" type="submit">Tolak Perkenalan</button></a><br><br>
+				<a href="<?php echo base_url().'profile/'.$result->id_user_maba; ?>" 
+					class="btn btn-warning btn-block" type="submit">Lihat Profil</a>
+				<br><br>	
+				<a href="<?php echo base_url().'approve_perkenalan/'.$result->id_perkenalan_kating; ?>" 
+					class="btn btn-success btn-block" type="submit">Terima Perkenalan</a>
+				<br><br>
+				<a href="<?php echo base_url().'reject_perkenalan/'.$result->id_perkenalan_kating; ?>" 
+					class="btn btn-danger btn-block" type="submit">Tolak Perkenalan</a><br><br>
 		</div>
 	</div>

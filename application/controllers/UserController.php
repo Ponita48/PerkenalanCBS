@@ -222,7 +222,7 @@ class UserController extends CI_Controller
 			$result = $this->User_model->search($keySearch);
 
 			if (! $result) {
-				$data['message_display'] = 'Not Found';
+				$data['error_message'] = 'Not Found';
 				// echo $data['message_display'];
 				// die();
 			}else {
@@ -237,12 +237,7 @@ class UserController extends CI_Controller
 			$this->load->view('footer');
 		}
 	}
-	public function change_profile() {
-		$this->load->view('header');
-		$this->load->view('change_profile');
-		$this->load->view('footer');
-	}
-
+	
 	public function lihat_profile($id) {
 
 		if (! isset($this->session->userdata['logged_in'])) {
@@ -281,7 +276,7 @@ class UserController extends CI_Controller
 	public function get_angkatan($angkatan = 2017) {
 		
 		if (! isset($this->session->userdata['logged_in'])) {
-			$data['message_display'] = "Silahkan login terlebih dahulu";
+			$data['error_message'] = "Silahkan login terlebih dahulu";
 			$this->load->view('header');
 			$this->load->view('index', $data);
 			$this->load->view('footer');
@@ -294,7 +289,6 @@ class UserController extends CI_Controller
 				$this->load->view('index', $data);
 				$this->load->view('footer');
 			}else {
-				//TODO : load view get perangkatan
 				$data['result'] = $result;
 				$this->load->view('header');
 				$this->load->view('kating', $data);
@@ -306,7 +300,7 @@ class UserController extends CI_Controller
 	public function get_angkatan_2017() {
 		
 		if (! isset($this->session->userdata['logged_in'])) {
-			$data['message_display'] = "Silahkan login terlebih dahulu";
+			$data['error_message'] = "Silahkan login terlebih dahulu";
 			$this->load->view('header');
 			$this->load->view('index', $data);
 			$this->load->view('footer');
@@ -332,34 +326,11 @@ class UserController extends CI_Controller
 
 	}
 
-	public function perkenalan() {
-		$this->load->view('header');
-		$this->load->view('kating');
-		$this->load->view('footer');
-	}
-
-	public function profile() {
-		$this->load->view('header');
-		$this->load->view('profil');
-		$this->load->view('footer');
-	}
-
 	public function request() {
 
 		$this->load->view('header');
 		$this->load->view('request_perkenalan');
 		$this->load->view('footer');
-	}
-
-
-	public function propil() {
-		$this->load->view('header');
-		$this->load->view('profile');
-	}
-
-	public function hehe() {
-		$this->load->view('header');
-		$this->load->view('new_login');
 	}
 
 	public function accept() {

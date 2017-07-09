@@ -1,7 +1,3 @@
-
-
-<!-- TODO: Jadiin foreach (tunggu backend selesai) -->
-
 	<div>
 		<h1>DELPHI 2017</h1>
 		<hr>

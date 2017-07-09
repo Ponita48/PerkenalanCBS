@@ -63,3 +63,9 @@ input {
     cursor: inherit;
     display: block;
 }
+
+.myImg {
+	height: 400px;
+	width: auto;
+	max-width: 300px;
+}
