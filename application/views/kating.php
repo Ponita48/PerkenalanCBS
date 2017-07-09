@@ -14,6 +14,7 @@
 			<li role="presentation"><a href="#2016" aria-controls="2016" role="tab" data-toggle="tab">2016</a></li>
 		</ul><br>
 		<!-- Tab panes -->
+	<?php if (isset($result)) : ?>
 		<div class="tab-content">
 			<div role="tabpanel" class="tab-pane container-fluid active" id="2013">
 				<center>
@@ -77,5 +78,6 @@
 			</div>
 			
 		</div>
+	<?php endif; ?>
 
 	</div>
