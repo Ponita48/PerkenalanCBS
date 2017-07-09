@@ -8,7 +8,7 @@
 	<div class="container">
 		<div class="col-sm-4">
 			<center>
-				<img src="<?php echo base_url(); ?>img/img1.jpg" alt="" class="img-responsive"><br>
+				<img src="<?php echo $result->link_foto_peserta; ?>" alt="" class="img-responsive"><br>
 				<p>Foto Mahasiswa Baru</p>
 			</center>
 		</div>
@@ -30,7 +30,7 @@
 		</div>
 		<div class="col-sm-4">
 			<center>
-				<img src="<?php echo base_url(); ?>img/img2.jpg" alt="" class="img-responsive"><br>
+				<img src="<?php echo $result->link_foto; ?>" alt="" class="img-responsive"><br>
 				<p>Foto Selfie</p>
 			</center>
 		</div>
