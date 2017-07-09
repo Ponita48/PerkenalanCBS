@@ -1,3 +1,4 @@
+
 <!-- TODO: pake id untuk tiap mahasiswa -->
 	<div>
 		<h1>TERIMA PERKENALAN?</h1>
@@ -15,27 +16,15 @@
 			<table class="table table-borderless">
 				<tr>
 					<td><b>Nama</b></td>
-					<td>Anu</td>
+					<td><?php echo $result->nama; ?></td>
 				</tr>
 				<tr>
 					<td><b>NPM</b></td>
-					<td>Anu</td>
-				</tr>
-				<tr>
-					<td><b>Jenis Kelamin</b></td>
-					<td>Anu</td>
-				</tr>
-				<tr>
-					<td><b>No HP</b></td>
-					<td>Anu</td>
-				</tr>
-				<tr>
-					<td><b>ID Line</b></td>
-					<td>Anu</td>
+					<td><?php echo $result->npm_keluarga; ?></td>
 				</tr>
 				<tr>
 					<td><b>Ciri Khas</b></td>
-					<td>Anu</td>
+					<td><?php echo $result->ciri_khas; ?></td>
 				</tr>
 			</table>
 		</div>

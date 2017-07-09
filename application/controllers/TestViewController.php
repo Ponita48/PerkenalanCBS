@@ -27,6 +27,12 @@ class TestViewController extends CI_Controller {
 		$this->load->view('footer');
 	}
 
+	public function accept_perkenalan() {
+		$this->load->view('header');
+		$this->load->view('accept_perkenalan');
+		$this->load->view('footer');
+	}
+
 }
 
  ?>

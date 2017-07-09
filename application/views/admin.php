@@ -1,3 +1,4 @@
+
 <!-- TODO: Jadiin foreach (tunggu backend selesai) -->
 	<div>
 		<h1>ADMIN</h1>
@@ -39,7 +40,7 @@
 								<th>Halaman Detail</th>
 							</tr>
 							<!-- TODO: foreach(backend) -->
-							<tr class="item">
+							<!-- <tr class="item">
 								<td>Kodoque</td>
 								<td>1408101600XX</td>
 								<td>Oedjank</td>
@@ -56,7 +57,20 @@
 								<td><a href="#">
 									<button class="btn btn-primary">Click Here</button>
 								</a></td>
-							</tr>
+							</tr> -->
+							<?php foreach ($result as $key) : ?>
+								<?php if ($key->angkatan_keluarga == 2016) : ?>
+									<tr class="item">
+										<td><?php echo $key->nama; ?></td>
+										<td><?php echo $key->npm_keluarga; ?></td>
+										<td><?php echo $key->nama_peserta; ?></td>
+										<td class="npm"><?php echo $key->npm_peserta; ?></td>
+										<td><a href="<?php echo base_url().'detail_perkenalan/'.$key->id_perkenalan_kating; ?>">
+											<button class="btn btn-primary">Click Here</button>
+										</a></td>
+									</tr>
+								<?php endif; ?>
+							<?php endforeach; ?>
 						</table>
 					</div>
 				</center>
@@ -73,7 +87,7 @@
 								<th>Halaman Detail</th>
 							</tr>
 							<!-- TODO: foreach(backend) -->
-							<tr>
+							<!-- <tr>
 								<td>Kodoque2</td>
 								<td>1408101600XX</td>
 								<td>Oedjank</td>
@@ -81,7 +95,20 @@
 								<td><a href="#">
 									<button class="btn btn-primary">Click Here</button>
 								</a></td>
-							</tr>
+							</tr> -->
+							<?php foreach ($result as $key) : ?>
+								<?php if ($key->angkatan_keluarga == 2015) : ?>
+									<tr class="item">
+										<td><?php echo $key->nama; ?></td>
+										<td><?php echo $key->npm_keluarga; ?></td>
+										<td><?php echo $key->nama_peserta; ?></td>
+										<td class="npm"><?php echo $key->npm_peserta; ?></td>
+										<td><a href="<?php echo base_url().'detail_perkenalan/'.$key->id_perkenalan_kating; ?>">
+											<button class="btn btn-primary">Click Here</button>
+										</a></td>
+									</tr>
+								<?php endif; ?>
+							<?php endforeach; ?>
 						</table>
 					</div>
 				</center>
@@ -98,7 +125,7 @@
 								<th>Halaman Detail</th>
 							</tr>
 							<!-- TODO: foreach(backend) -->
-							<tr>
+							<!-- <tr>
 								<td>Kodoque3</td>
 								<td>1408101600XX</td>
 								<td>Oedjank</td>
@@ -106,7 +133,20 @@
 								<td><a href="#">
 									<button class="btn btn-primary">Click Here</button>
 								</a></td>
-							</tr>
+							</tr> -->
+							<?php foreach ($result as $key) : ?>
+								<?php if ($key->angkatan_keluarga == 2014) : ?>
+									<tr class="item">
+										<td><?php echo $key->nama; ?></td>
+										<td><?php echo $key->npm_keluarga; ?></td>
+										<td><?php echo $key->nama_peserta; ?></td>
+										<td class="npm"><?php echo $key->npm_peserta; ?></td>
+										<td><a href="<?php echo base_url().'detail_perkenalan/'.$key->id_perkenalan_kating; ?>">
+											<button class="btn btn-primary">Click Here</button>
+										</a></td>
+									</tr>
+								<?php endif; ?>
+							<?php endforeach; ?>
 						</table>
 					</div>
 				</center>
@@ -123,7 +163,7 @@
 								<th>Halaman Detail</th>
 							</tr>
 							<!-- TODO: foreach(backend) -->
-							<tr>
+							<!-- <tr>
 								<td>Kodoque4</td>
 								<td>1408101600XX</td>
 								<td>Oedjank</td>
@@ -131,7 +171,20 @@
 								<td><a href="#">
 									<button class="btn btn-primary">Click Here</button>
 								</a></td>
-							</tr>
+							</tr> -->
+							<?php foreach ($result as $key) : ?>
+								<?php if ($key->angkatan_keluarga == 2013) : ?>
+									<tr class="item">
+										<td><?php echo $key->nama; ?></td>
+										<td><?php echo $key->npm_keluarga; ?></td>
+										<td><?php echo $key->nama_peserta; ?></td>
+										<td class="npm"><?php echo $key->npm_peserta; ?></td>
+										<td><a href="<?php echo base_url().'detail_perkenalan/'.$key->id_perkenalan_kating; ?>">
+											<button class="btn btn-primary">Click Here</button>
+										</a></td>
+									</tr>
+								<?php endif; ?>
+							<?php endforeach; ?>
 						</table>
 					</div>
 				</center>

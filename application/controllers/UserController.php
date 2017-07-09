@@ -20,55 +20,7 @@ class UserController extends CI_Controller
 		$this->load->view('footer');
 	}
 	
-	public function perkenalan() {
-		$this->load->view('header');
-		$this->load->view('kating');
-		$this->load->view('footer');
-	}
-
-	public function profile() {
-		$this->load->view('header');
-		$this->load->view('profil');
-		$this->load->view('footer');
-	}
-
-	public function request() {
-
-		$this->load->view('header');
-		$this->load->view('request_perkenalan');
-		$this->load->view('footer');
-	}
-
-
-	public function propil() {
-		$this->load->view('header');
-		$this->load->view('profile');
-	}
-
-	public function hehe() {
-		$this->load->view('header');
-		$this->load->view('new_login');
-	}
-
-	public function accept() {
-
-		$this->load->view('header');
-		$this->load->view('accept_perkenalan');
-		$this->load->view('footer');
-	}
-
-	public function request_list() {
-
-		$this->load->view('header');
-		$this->load->view('request_list');
-		$this->load->view('footer');
-	}
-	public function my_request() {
-
-		$this->load->view('header');
-		$this->load->view('my_request');
-		$this->load->view('footer');
-	}
+	
 
 	//login function
 	public function login() {
@@ -154,7 +106,7 @@ class UserController extends CI_Controller
 			//echo $this->input->post('new_pwd')."</br>";
 			//echo $this->input->post('conf_pwd')."</br>";
 			//echo validation_errors();
-			// echo validation_errors();
+			
 			$this->load->view('header');
 			$this->load->view('new_login');
 			$this->load->view('footer');
@@ -250,9 +202,13 @@ class UserController extends CI_Controller
 		//echo $this->input->get('keySearch');
 
 		if (! isset($this->session->userdata['logged_in'])) {
-			$data['error_message'] = "login dulu cuk!";
+			/*$data['error_message'] = "login dulu cuk!";
 			echo $data['error_message'];
-			die();
+			die();*/
+			$data['error_message'] = "Silahkan login terlebih dahulu";
+			$this->load->view('header');
+			$this->load->view('index', $data);
+			$this->load->view('footer');
 		}else {
 			//$keySearch = $_GET['keySearch'];
 			$keySearch = $this->input->get('keySearch');
@@ -378,6 +334,56 @@ class UserController extends CI_Controller
 			}
 		}
 
+	}
+
+	public function perkenalan() {
+		$this->load->view('header');
+		$this->load->view('kating');
+		$this->load->view('footer');
+	}
+
+	public function profile() {
+		$this->load->view('header');
+		$this->load->view('profil');
+		$this->load->view('footer');
+	}
+
+	public function request() {
+
+		$this->load->view('header');
+		$this->load->view('request_perkenalan');
+		$this->load->view('footer');
+	}
+
+
+	public function propil() {
+		$this->load->view('header');
+		$this->load->view('profile');
+	}
+
+	public function hehe() {
+		$this->load->view('header');
+		$this->load->view('new_login');
+	}
+
+	public function accept() {
+
+		$this->load->view('header');
+		$this->load->view('accept_perkenalan');
+		$this->load->view('footer');
+	}
+
+	public function request_list() {
+
+		$this->load->view('header');
+		$this->load->view('request_list');
+		$this->load->view('footer');
+	}
+	public function my_request() {
+
+		$this->load->view('header');
+		$this->load->view('my_request');
+		$this->load->view('footer');
 	}
 
 }

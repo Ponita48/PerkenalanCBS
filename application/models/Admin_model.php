@@ -6,8 +6,8 @@
 class Admin_model extends CI_Model {
 	
 	public function getPerkenalanKeluarga() {
-		$q = $this->db->query("SELECT p.id_perkenalan_kating, (SELECT u.npm FROM users u WHERE u.id_user = p.id_user_maba) AS 'npm_peserta', (SELECT u.npm FROM users u WHERE u.id_user = p.id_user_kating) AS 'npm_keluarga', p.nama, p.ciri_khas, p.link_foto, p.request_time FROM users u, perkenalan_kating p WHERE status = 0 GROUP BY p.id_perkenalan_kating");
-
+		$q = $this->db->query("SELECT p.id_perkenalan_kating, (SELECT u.npm FROM users u WHERE u.id_user = p.id_user_maba) AS 'npm_peserta', (SELECT u.npm FROM users u WHERE u.id_user = p.id_user_kating) AS 'npm_keluarga', p.nama, p.ciri_khas, p.link_foto, p.request_time, (SELECT u.role FROM users u WHERE u.id_user = p.id_user_kating) AS 'angkatan_keluarga', (SELECT prof.nama FROM users u, profile_maba prof WHERE prof.id_user = u.id_user) AS 'nama_peserta' FROM users u, perkenalan_kating p WHERE status = 0 GROUP BY p.id_perkenalan_kating");
+		
 		if ($q->num_rows() == 0) {
 			return FALSE;
 		}else {
@@ -53,6 +53,37 @@ class Admin_model extends CI_Model {
 				->update('perkenalan_kating', $data);
 
 			return $result;
+		}
+	}
+
+	public function getDetailPerkenalan($id_perkenalan) {
+		$q = $this->db
+			->select('*')
+			->from('perkenalan_kating', $id_perkenalan)
+			->limit(1)
+			->get();
+
+		if ($q->num_rows() == 0) {
+			return FALSE;
+		}else {
+			$res = $q->result()[0];
+			$peserta = $this->db->query("SELECT link_foto FROM profile_maba WHERE id_user = $res->id_user_maba");
+			$kating = $this->db->query("SELECT npm FROM users WHERE id_user = $res->id_user_kating");
+			
+			if ($peserta->num_rows() == 0) {
+				$res->link_foto_peserta = NULL;
+			}else {
+				$res->link_foto_peserta = $peserta->result()[0]->link_foto;
+			}
+
+			if ($kating->num_rows() == 0) {
+				$res->npm_keluarga = NULL;
+			}else {
+				$res->npm_keluarga = $kating->result()[0]->npm;
+			}
+
+			return $res;
+
 		}
 	}
 
