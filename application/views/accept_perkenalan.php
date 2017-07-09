@@ -8,7 +8,7 @@
 	<div class="container">
 		<div class="col-sm-4">
 			<center>
-				<img src="http://i1.kym-cdn.com/entries/icons/facebook/000/019/749/catroomguardian.jpg" alt="" width="300" class="myImg img-thumbnail"><br>
+				<img src="$result->link_foto_peserta;" alt="" width="300" class="myImg img-thumbnail"><br>
 				<p>Foto Mahasiswa Baru</p>
 			</center>
 		</div>
@@ -30,7 +30,7 @@
 		</div>
 		<div class="col-sm-4">
 			<center>
-				<img src="<?php echo base_url().'img/img2.jpg'; ?>" alt="" width="300" class="myImg img-thumbnail"><br>
+				<img src="<?php echo $result->link_foto; ?>" alt="" width="300" class="myImg img-thumbnail"><br>
 				<p>Foto Selfie</p>
 			</center>
 		</div>
