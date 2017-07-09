@@ -56,7 +56,7 @@ $route['translate_uri_dashes'] = FALSE;
 //UserController
 $route['login'] = 'UserController/login';
 $route['home'] = 'UserController/index';
-$route['profile'] = 'UserController/lihat_profile';
+$route['profile/(:num)'] = 'UserController/lihat_profile/$1'; //$1 = $id
 $route['angkatan'] = 'UserController/angkatan';
 $route['logout'] = 'UserController/logout';
 $route['new_login'] = 'UserController/new_login';

@@ -154,16 +154,18 @@ class UserController extends CI_Controller
 	public function new_login() {		
 		$this->form_validation->set_rules('email', 'Email', 'required|valid_email');
 		$this->form_validation->set_rules('new_pwd', 'New Password', 'required|min_length[6]');
-		$this->form_validation->set_rules('conf_pwd', 'New Password', 'required|min_length[6]|matches[new_pwd]');
+		$this->form_validation->set_rules('conf_pwd', 'Confirm Password', 'required|min_length[6]|matches[new_pwd]');
 
 		if ($this->form_validation->run() == FALSE) {
 			//echo $this->input->post('new_pwd')."</br>";
 			//echo $this->input->post('conf_pwd')."</br>";
 			//echo validation_errors();
+			// echo validation_errors();
 			$this->load->view('header');
 			$this->load->view('new_login');
 			$this->load->view('footer');
 		}else {
+			// echo "bisa(?)";
 			$password = password_hash($this->input->post('new_pwd'), PASSWORD_DEFAULT);
 
 			$data = array(
@@ -174,6 +176,10 @@ class UserController extends CI_Controller
 			);
 
 			$this->User_model->new_login($data);
+			$data['message_display'] = "Password berhasil diganti";
+			$this->load->view('header');
+			$this->load->view('index', $data);
+			$this->load->view('footer');
 		}
 	}
 
@@ -206,7 +212,9 @@ class UserController extends CI_Controller
 			if ($this->form_validation->run() == FALSE) {
 				$result = $this->User_model->getProfile();
 
+				$this->load->view('header');
 				$this->load->view('edit_profile', $result);
+				$this->load->view('footer');
 			}else {
 				$data1['email'] = $this->input->post('email');
 				$data2 = array(
@@ -229,10 +237,14 @@ class UserController extends CI_Controller
 
 				if ($result == FALSE) {
 					$data['error_message'] = "Error";
+					$this->load->view('header');
 					$this->load->view('edit_profile', $data);
+					$this->load->view('footer');
 				}else {
 					$data['message_display'] = "Success";
+					$this->load->view('header');
 					$this->load->view('edit_profile', $data);
+					$this->load->view('footer');
 				}
 			}
 		}
@@ -284,7 +296,7 @@ class UserController extends CI_Controller
 		$this->load->view('footer');
 	}
 
-	public function lihat_profile($id = NULL) {
+	public function lihat_profile($id) {
 
 		if (! isset($this->session->userdata['logged_in'])) {
 			$data['error_message'] = "Silahkan login terlebih dahulu";
