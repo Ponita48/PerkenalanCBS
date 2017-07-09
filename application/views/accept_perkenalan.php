@@ -35,8 +35,8 @@
 			</center>
 		</div>
 		<div class="col-sm-4">
-				<button class="btn btn-warning btn-block" type="submit">Lihat Profil</button><br><br>	
-				<button class="btn btn-success btn-block" type="submit">Terima Perkenalan</button><br><br>
-				<button class="btn btn-danger btn-block" type="submit">Tolak Perkenalan</button><br><br>
+				<a href="#"><button class="btn btn-warning btn-block" type="submit">Lihat Profil</button></a><br><br>	
+				<a href="<?php echo base_url(); ?>approve_perkenalan/<?php echo $result->id_perkenalan_kating; ?>"><button class="btn btn-success btn-block" type="submit">Terima Perkenalan</button></a><br><br>
+				<a href="<?php echo base_url(); ?>reject_perkenalan/<?php echo $result->id_perkenalan_kating; ?>"><button class="btn btn-danger btn-block" type="submit">Tolak Perkenalan</button></a><br><br>
 		</div>
 	</div>

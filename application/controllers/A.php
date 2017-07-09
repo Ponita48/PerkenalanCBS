@@ -109,7 +109,11 @@ class A extends CI_Controller {
 		}else {
 			if ($this->session->userdata['logged_in']['role'] != 'admin') {
 				//goto home
-				die();
+				/*die();*/
+				$data['error_message'] = "Hanya admin yang dapat melihat konten ini";
+				$this->load->view('header');
+				$this->load->view('index', $data);
+				$this->load->view('footer');
 			}else {
 				$result = $this->Admin_model->getJumlahPerkenalan();
 
@@ -119,11 +123,11 @@ class A extends CI_Controller {
 					die();
 					//goto jumlah perkenalan
 				}else {
-					echo "<pre>";
-					var_dump($result);
-					echo "</pre>";
-					die();
 					//goto jumlah perkenalan
+					$data['result'] = $result;
+					$this->load->view('header');
+					$this->load->view('admin_request', $data);
+					$this->load->view('footer');
 				}
 			}
 		}
@@ -133,9 +137,6 @@ class A extends CI_Controller {
 
 		if (! isset($this->session->userdata['logged_in'])) {
 			//goto home
-			/*$data['error_message'] = "Login dulu cuk!";
-			echo $data['error_message'];
-			die();*/
 			$data['error_message'] = "Silahkan login terlebih dahulu";
 			$this->load->view('header');
 			$this->load->view('index', $data);
@@ -143,8 +144,10 @@ class A extends CI_Controller {
 		}else {
 			if ($this->session->userdata['logged_in']['role'] != 'admin') {
 				//goto home
-				echo "harus admin";
-				die();
+				$data['error_message'] = "Hanya admin yang dapat melihat konten ini";
+				$this->load->view('header');
+				$this->load->view('index', $data);
+				$this->load->view('footer');
 			}else {
 
 				date_default_timezone_set('Asia/Jakarta');
@@ -158,17 +161,13 @@ class A extends CI_Controller {
 				$result = $this->Admin_model->approveRejectPerkenalan($id_perkenalan, $data);
 
 				if ($result == FALSE) {
+					//goto jumlah perkenalan
 					$data['message_display'] = "gagal? tidak ada id perkenalan tersebut?";
 					echo $data['message_display'];
 					die();
-					//goto jumlah perkenalan
 				}else {
-					echo "<pre>";
-					var_dump($result);
-					echo "</pre>";
-					echo "telah diapprove";
-					die();
 					//goto jumlah perkenalan
+					redirect('../admin');
 				}
 			}
 		}	
@@ -187,8 +186,12 @@ class A extends CI_Controller {
 		}else {
 			if ($this->session->userdata['logged_in']['role'] != 'admin') {
 				//goto home
-				echo "harus admin";
-				die();
+				/*echo "harus admin";
+				die();*/
+				$data['error_message'] = "Hanya admin yang dapat melihat konten ini";
+				$this->load->view('header');
+				$this->load->view('index', $data);
+				$this->load->view('footer');
 			}else {
 
 				date_default_timezone_set('Asia/Jakarta');
@@ -207,12 +210,8 @@ class A extends CI_Controller {
 					die();
 					//goto jumlah perkenalan
 				}else {
-					echo "<pre>";
-					var_dump($result);
-					echo "</pre>";
-					echo "telah direject";
-					die();
 					//goto jumlah perkenalan
+					redirect('../admin');
 				}
 			}
 		}	

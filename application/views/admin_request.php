@@ -10,12 +10,12 @@
 			</tr>
 		</thead>
 		<tbody>
-		<?php for ($i=0; $i < 5; $i++) { ?>
+		<?php foreach ($result as $key) : ?>
 			<tr>
-				<td>1408101500XX</td>
-				<td>5 juta. Masalah?</td>
+				<td><?php echo $key->npm_peserta; ?></td>
+				<td><?php echo $key->jumlah; ?></td>
 			</tr>
-		<?php } ?>
+		<?php endforeach; ?>
 		</tbody>
 	</table>
 </div>

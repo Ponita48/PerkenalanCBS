@@ -59,7 +59,8 @@ class Admin_model extends CI_Model {
 	public function getDetailPerkenalan($id_perkenalan) {
 		$q = $this->db
 			->select('*')
-			->from('perkenalan_kating', $id_perkenalan)
+			->from('perkenalan_kating')
+			->where('id_perkenalan_kating', $id_perkenalan)
 			->limit(1)
 			->get();
 
@@ -81,7 +82,7 @@ class Admin_model extends CI_Model {
 			}else {
 				$res->npm_keluarga = $kating->result()[0]->npm;
 			}
-
+			
 			return $res;
 
 		}
