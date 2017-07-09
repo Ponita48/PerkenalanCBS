@@ -8,6 +8,7 @@
 	<div class="container">
 		<div class="col-sm-4">
 			<center>
+				<!-- TODO : ukuran image dibuat fix -->
 				<img src="<?php echo $result->link_foto_peserta; ?>" alt="" class="img-responsive"><br>
 				<p>Foto Mahasiswa Baru</p>
 			</center>
@@ -30,6 +31,7 @@
 		</div>
 		<div class="col-sm-4">
 			<center>
+				<!-- TODO : ukuran image dibuat fix -->
 				<img src="<?php echo $result->link_foto; ?>" alt="" class="img-responsive"><br>
 				<p>Foto Selfie</p>
 			</center>
