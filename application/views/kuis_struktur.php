@@ -1,30 +1,23 @@
+<!-- Beginning of Header -->
 <link rel=stylesheet href="<?php echo base_url(); ?>assets/css/bootstrap.css">
 <link rel=stylesheet href="<?php echo base_url(); ?>assets/css/tree-diagram.css">
 <style type="text/css" media="screen">
-  ul li {
-    padding: 0px 0px 0px 10px;
+  #navigasi {
+    z-index: 100;
+    position: absolute;
   }
+  
 </style>
-<script src="<?php echo base_url(); ?>assets/js/jquery.min.js"></script>
-<script src="<?php echo base_url(); ?>assets/js/bootstrap.js"></script>
-<script type="text/javascript">
-  function allowDrop(ev) {
-      ev.preventDefault();
-  }
-  function drag(ev) {
-      ev.dataTransfer.setData("text", ev.target.id);
-  }
-  function drop(ev) {
-      ev.preventDefault();
-      var data = ev.dataTransfer.getData("text");
-      ev.target.appendChild(document.getElementById(data));
-  }
-</script>
+<!-- End of Header -->
 
 <div class="row">
-  <!-- Navigation Pane : Belum dibikin fixed, belum bisa diminimize -->
-  <div class="col-sm-3 col-md-3 col-lg-3" style="overflow: auto; background-color: #DFDFDF; ">
-    <div class="container-fluid" id="navigation-pane">
+  <!-- Navigation Pane: Fixed, Collapsible -->
+  <div id="navigasi" style="background-color: #DFDFDF; max-width: 40vh; max-height: 50vh">
+    <button type="button" class="close" aria-label="Close" data-toggle="collapse" data-target="#navigation-pane" style="padding: 5px">
+      <span aria-hidden="true">&times;</span>
+    </button>
+    <br><br>
+    <div class="container-fluid" id="navigation-pane" class="collapse">
       <nav class="navbar-nav">
         <ul class="nav nav-pills">
           <li class="active"><a href="#menu1" data-toggle="pill">Panitia CBS Himatif FMIPA Unpad 2017</a></li>
@@ -38,8 +31,8 @@
   <!-- End of Navigation Pane -->
 
   <!-- Quiz Layer, dengan tab-content -->
-  <div class="col-sm-9 col-md-9 col-lg-9">
-  	<h3>KUIS BK/PANITIA</h3>
+  <div id="konten" class="container-fluid">
+    <center><h3>KUIS BK/PANITIA</h3></center>
     <div class="tab-content">
       <div id="menu1" class="tab-pane fade in active">
         <div class="row" style="overflow: auto; height: 60vh;">
@@ -272,26 +265,26 @@
             <input type="submit">
           </form>
         </div>
-        <div class="row" style="overflow: auto;">
+        <div class="row" style="overflow: auto">
           <table>
             <tbody>
               <tr>
-                <td id="foto_cbs_1" ondrop="drop(event)" ondragover="allowDrop(event)" style="height: 155px; width: 115px"><img src="<?php echo base_url(); ?>img/img1.jpg" id="drag_cbs_1" draggable="true" ondragstart="drag(event)" style="width: 90px; height: 120px"></td>
-                <td id="foto_cbs_2" ondrop="drop(event)" ondragover="allowDrop(event)" style="height: 155px; width: 115px"><img src="<?php echo base_url(); ?>img/img2.jpg" id="drag_cbs_2" draggable="true" ondragstart="drag(event)" style="width: 90px; height: 120px"></td>
-                <td id="foto_cbs_3" ondrop="drop(event)" ondragover="allowDrop(event)" style="height: 155px; width: 115px"><img src="<?php echo base_url(); ?>img/img2.jpg" id="drag_cbs_3" draggable="true" ondragstart="drag(event)" style="width: 90px; height: 120px"></td>
-                <td id="foto_cbs_4" ondrop="drop(event)" ondragover="allowDrop(event)" style="height: 155px; width: 115px"><img src="<?php echo base_url(); ?>img/img2.jpg" id="drag_cbs_4" draggable="true" ondragstart="drag(event)" style="width: 90px; height: 120px"></td>
-                <td id="foto_cbs_5" ondrop="drop(event)" ondragover="allowDrop(event)" style="height: 155px; width: 115px"><img src="<?php echo base_url(); ?>img/img2.jpg" id="drag_cbs_5" draggable="true" ondragstart="drag(event)" style="width: 90px; height: 120px"></td>
-                <td id="foto_cbs_6" ondrop="drop(event)" ondragover="allowDrop(event)" style="height: 155px; width: 115px"><img src="<?php echo base_url(); ?>img/img2.jpg" id="drag_cbs_6" draggable="true" ondragstart="drag(event)" style="width: 90px; height: 120px"></td>
-                <td id="foto_cbs_7" ondrop="drop(event)" ondragover="allowDrop(event)" style="height: 155px; width: 115px"><img src="<?php echo base_url(); ?>img/img2.jpg" id="drag_cbs_7" draggable="true" ondragstart="drag(event)" style="width: 90px; height: 120px"></td>
-                <td id="foto_cbs_8" ondrop="drop(event)" ondragover="allowDrop(event)" style="height: 155px; width: 115px"><img src="<?php echo base_url(); ?>img/img2.jpg" id="drag_cbs_8" draggable="true" ondragstart="drag(event)" style="width: 90px; height: 120px"></td>
-                <td id="foto_cbs_9" ondrop="drop(event)" ondragover="allowDrop(event)" style="height: 155px; width: 115px"><img src="<?php echo base_url(); ?>img/img2.jpg" id="drag_cbs_9" draggable="true" ondragstart="drag(event)" style="width: 90px; height: 120px"></td>
-                <td id="foto_cbs_10" ondrop="drop(event)" ondragover="allowDrop(event)" style="height: 155px; width: 115px"><img src="<?php echo base_url(); ?>img/img2.jpg" id="drag_cbs_10" draggable="true" ondragstart="drag(event)" style="width: 90px; height: 120px"></td>
-                <td id="foto_cbs_11" ondrop="drop(event)" ondragover="allowDrop(event)" style="height: 155px; width: 115px"><img src="<?php echo base_url(); ?>img/img2.jpg" id="drag_cbs_11" draggable="true" ondragstart="drag(event)" style="width: 90px; height: 120px"></td>
-                <td id="foto_cbs_12" ondrop="drop(event)" ondragover="allowDrop(event)" style="height: 155px; width: 115px"><img src="<?php echo base_url(); ?>img/img2.jpg" id="drag_cbs_12" draggable="true" ondragstart="drag(event)" style="width: 90px; height: 120px"></td>
-                <td id="foto_cbs_13" ondrop="drop(event)" ondragover="allowDrop(event)" style="height: 155px; width: 115px"><img src="<?php echo base_url(); ?>img/img2.jpg" id="drag_cbs_13" draggable="true" ondragstart="drag(event)" style="width: 90px; height: 120px"></td>
-                <td id="foto_cbs_14" ondrop="drop(event)" ondragover="allowDrop(event)" style="height: 155px; width: 115px"><img src="<?php echo base_url(); ?>img/img2.jpg" id="drag_cbs_14" draggable="true" ondragstart="drag(event)" style="width: 90px; height: 120px"></td>
-                <td id="foto_cbs_15" ondrop="drop(event)" ondragover="allowDrop(event)" style="height: 155px; width: 115px"><img src="<?php echo base_url(); ?>img/img2.jpg" id="drag_cbs_16" draggable="true" ondragstart="drag(event)" style="width: 90px; height: 120px"></td>
-                <td id="foto_cbs_16" ondrop="drop(event)" ondragover="allowDrop(event)" style="height: 155px; width: 115px"><img src="<?php echo base_url(); ?>img/img2.jpg" id="drag_cbs_16" draggable="true" ondragstart="drag(event)" style="width: 90px; height: 120px"></td>
+                <td id="foto_cbs_1" ondrop="drop(event)" ondragover="allowDrop(event)" style="height: 155px; min-width: 115px"><img src="<?php echo base_url(); ?>img/img1.jpg" id="drag_cbs_1" draggable="true" ondragstart="drag(event)" style="width: 90px; height: 120px"></td>
+                <td id="foto_cbs_2" ondrop="drop(event)" ondragover="allowDrop(event)" style="height: 155px; min-width: 115px"><img src="<?php echo base_url(); ?>img/img2.jpg" id="drag_cbs_2" draggable="true" ondragstart="drag(event)" style="width: 90px; height: 120px"></td>
+                <td id="foto_cbs_3" ondrop="drop(event)" ondragover="allowDrop(event)" style="height: 155px; min-width: 115px"><img src="<?php echo base_url(); ?>img/img2.jpg" id="drag_cbs_3" draggable="true" ondragstart="drag(event)" style="width: 90px; height: 120px"></td>
+                <td id="foto_cbs_4" ondrop="drop(event)" ondragover="allowDrop(event)" style="height: 155px; min-width: 115px"><img src="<?php echo base_url(); ?>img/img2.jpg" id="drag_cbs_4" draggable="true" ondragstart="drag(event)" style="width: 90px; height: 120px"></td>
+                <td id="foto_cbs_5" ondrop="drop(event)" ondragover="allowDrop(event)" style="height: 155px; min-width: 115px"><img src="<?php echo base_url(); ?>img/img2.jpg" id="drag_cbs_5" draggable="true" ondragstart="drag(event)" style="width: 90px; height: 120px"></td>
+                <td id="foto_cbs_6" ondrop="drop(event)" ondragover="allowDrop(event)" style="height: 155px; min-width: 115px"><img src="<?php echo base_url(); ?>img/img2.jpg" id="drag_cbs_6" draggable="true" ondragstart="drag(event)" style="width: 90px; height: 120px"></td>
+                <td id="foto_cbs_7" ondrop="drop(event)" ondragover="allowDrop(event)" style="height: 155px; min-width: 115px"><img src="<?php echo base_url(); ?>img/img2.jpg" id="drag_cbs_7" draggable="true" ondragstart="drag(event)" style="width: 90px; height: 120px"></td>
+                <td id="foto_cbs_8" ondrop="drop(event)" ondragover="allowDrop(event)" style="height: 155px; min-width: 115px"><img src="<?php echo base_url(); ?>img/img2.jpg" id="drag_cbs_8" draggable="true" ondragstart="drag(event)" style="width: 90px; height: 120px"></td>
+                <td id="foto_cbs_9" ondrop="drop(event)" ondragover="allowDrop(event)" style="height: 155px; min-width: 115px"><img src="<?php echo base_url(); ?>img/img2.jpg" id="drag_cbs_9" draggable="true" ondragstart="drag(event)" style="width: 90px; height: 120px"></td>
+                <td id="foto_cbs_10" ondrop="drop(event)" ondragover="allowDrop(event)" style="height: 155px; min-width: 115px"><img src="<?php echo base_url(); ?>img/img2.jpg" id="drag_cbs_10" draggable="true" ondragstart="drag(event)" style="width: 90px; height: 120px"></td>
+                <td id="foto_cbs_11" ondrop="drop(event)" ondragover="allowDrop(event)" style="height: 155px; min-width: 115px"><img src="<?php echo base_url(); ?>img/img2.jpg" id="drag_cbs_11" draggable="true" ondragstart="drag(event)" style="width: 90px; height: 120px"></td>
+                <td id="foto_cbs_12" ondrop="drop(event)" ondragover="allowDrop(event)" style="height: 155px; min-width: 115px"><img src="<?php echo base_url(); ?>img/img2.jpg" id="drag_cbs_12" draggable="true" ondragstart="drag(event)" style="width: 90px; height: 120px"></td>
+                <td id="foto_cbs_13" ondrop="drop(event)" ondragover="allowDrop(event)" style="height: 155px; min-width: 115px"><img src="<?php echo base_url(); ?>img/img2.jpg" id="drag_cbs_13" draggable="true" ondragstart="drag(event)" style="width: 90px; height: 120px"></td>
+                <td id="foto_cbs_14" ondrop="drop(event)" ondragover="allowDrop(event)" style="height: 155px; min-width: 115px"><img src="<?php echo base_url(); ?>img/img2.jpg" id="drag_cbs_14" draggable="true" ondragstart="drag(event)" style="width: 90px; height: 120px"></td>
+                <td id="foto_cbs_15" ondrop="drop(event)" ondragover="allowDrop(event)" style="height: 155px; min-width: 115px"><img src="<?php echo base_url(); ?>img/img2.jpg" id="drag_cbs_16" draggable="true" ondragstart="drag(event)" style="width: 90px; height: 120px"></td>
+                <td id="foto_cbs_16" ondrop="drop(event)" ondragover="allowDrop(event)" style="height: 155px; min-width: 115px"><img src="<?php echo base_url(); ?>img/img2.jpg" id="drag_cbs_16" draggable="true" ondragstart="drag(event)" style="width: 90px; height: 120px"></td>
               </tr>
             </tbody>
           </table>
@@ -486,20 +479,20 @@
           <table>
             <tbody>
               <tr>
-                <td id="foto_be_1" ondrop="drop(event)" ondragover="allowDrop(event)" style="height: 155px; width: 115px"><img src="<?php echo base_url(); ?>img/img1.jpg" id="drag_be_1" draggable="true" ondragstart="drag(event)" style="width: 90px; height: 120px"></td>
-                <td id="foto_be_2" ondrop="drop(event)" ondragover="allowDrop(event)" style="height: 155px; width: 115px"><img src="<?php echo base_url(); ?>img/img2.jpg" id="drag_be_2" draggable="true" ondragstart="drag(event)" style="width: 90px; height: 120px"></td>
-                <td id="foto_be_3" ondrop="drop(event)" ondragover="allowDrop(event)" style="height: 155px; width: 115px"><img src="<?php echo base_url(); ?>img/img2.jpg" id="drag_be_3" draggable="true" ondragstart="drag(event)" style="width: 90px; height: 120px"></td>
-                <td id="foto_be_4" ondrop="drop(event)" ondragover="allowDrop(event)" style="height: 155px; width: 115px"><img src="<?php echo base_url(); ?>img/img2.jpg" id="drag_be_4" draggable="true" ondragstart="drag(event)" style="width: 90px; height: 120px"></td>
-                <td id="foto_be_5" ondrop="drop(event)" ondragover="allowDrop(event)" style="height: 155px; width: 115px"><img src="<?php echo base_url(); ?>img/img2.jpg" id="drag_be_5" draggable="true" ondragstart="drag(event)" style="width: 90px; height: 120px"></td>
-                <td id="foto_be_6" ondrop="drop(event)" ondragover="allowDrop(event)" style="height: 155px; width: 115px"><img src="<?php echo base_url(); ?>img/img2.jpg" id="drag_be_6" draggable="true" ondragstart="drag(event)" style="width: 90px; height: 120px"></td>
-                <td id="foto_be_7" ondrop="drop(event)" ondragover="allowDrop(event)" style="height: 155px; width: 115px"><img src="<?php echo base_url(); ?>img/img2.jpg" id="drag_be_7" draggable="true" ondragstart="drag(event)" style="width: 90px; height: 120px"></td>
-                <td id="foto_be_8" ondrop="drop(event)" ondragover="allowDrop(event)" style="height: 155px; width: 115px"><img src="<?php echo base_url(); ?>img/img2.jpg" id="drag_be_8" draggable="true" ondragstart="drag(event)" style="width: 90px; height: 120px"></td>
-                <td id="foto_be_9" ondrop="drop(event)" ondragover="allowDrop(event)" style="height: 155px; width: 115px"><img src="<?php echo base_url(); ?>img/img2.jpg" id="drag_be_9" draggable="true" ondragstart="drag(event)" style="width: 90px; height: 120px"></td>
-                <td id="foto_be_10" ondrop="drop(event)" ondragover="allowDrop(event)" style="height: 155px; width: 115px"><img src="<?php echo base_url(); ?>img/img2.jpg" id="drag_be_10" draggable="true" ondragstart="drag(event)" style="width: 90px; height: 120px"></td>
-                <td id="foto_be_11" ondrop="drop(event)" ondragover="allowDrop(event)" style="height: 155px; width: 115px"><img src="<?php echo base_url(); ?>img/img2.jpg" id="drag_be_11" draggable="true" ondragstart="drag(event)" style="width: 90px; height: 120px"></td>
-                <td id="foto_be_12" ondrop="drop(event)" ondragover="allowDrop(event)" style="height: 155px; width: 115px"><img src="<?php echo base_url(); ?>img/img2.jpg" id="drag_be_12" draggable="true" ondragstart="drag(event)" style="width: 90px; height: 120px"></td>
-                <td id="foto_be_13" ondrop="drop(event)" ondragover="allowDrop(event)" style="height: 155px; width: 115px"><img src="<?php echo base_url(); ?>img/img2.jpg" id="drag_be_13" draggable="true" ondragstart="drag(event)" style="width: 90px; height: 120px"></td>
-                <td id="foto_be_14" ondrop="drop(event)" ondragover="allowDrop(event)" style="height: 155px; width: 115px"><img src="<?php echo base_url(); ?>img/img2.jpg" id="drag_be_14" draggable="true" ondragstart="drag(event)" style="width: 90px; height: 120px"></td>
+                <td id="foto_be_1" ondrop="drop(event)" ondragover="allowDrop(event)" style="height: 155px; min-width: 115px"><img src="<?php echo base_url(); ?>img/img1.jpg" id="drag_be_1" draggable="true" ondragstart="drag(event)" style="width: 90px; height: 120px"></td>
+                <td id="foto_be_2" ondrop="drop(event)" ondragover="allowDrop(event)" style="height: 155px; min-width: 115px"><img src="<?php echo base_url(); ?>img/img2.jpg" id="drag_be_2" draggable="true" ondragstart="drag(event)" style="width: 90px; height: 120px"></td>
+                <td id="foto_be_3" ondrop="drop(event)" ondragover="allowDrop(event)" style="height: 155px; min-width: 115px"><img src="<?php echo base_url(); ?>img/img2.jpg" id="drag_be_3" draggable="true" ondragstart="drag(event)" style="width: 90px; height: 120px"></td>
+                <td id="foto_be_4" ondrop="drop(event)" ondragover="allowDrop(event)" style="height: 155px; min-width: 115px"><img src="<?php echo base_url(); ?>img/img2.jpg" id="drag_be_4" draggable="true" ondragstart="drag(event)" style="width: 90px; height: 120px"></td>
+                <td id="foto_be_5" ondrop="drop(event)" ondragover="allowDrop(event)" style="height: 155px; min-width: 115px"><img src="<?php echo base_url(); ?>img/img2.jpg" id="drag_be_5" draggable="true" ondragstart="drag(event)" style="width: 90px; height: 120px"></td>
+                <td id="foto_be_6" ondrop="drop(event)" ondragover="allowDrop(event)" style="height: 155px; min-width: 115px"><img src="<?php echo base_url(); ?>img/img2.jpg" id="drag_be_6" draggable="true" ondragstart="drag(event)" style="width: 90px; height: 120px"></td>
+                <td id="foto_be_7" ondrop="drop(event)" ondragover="allowDrop(event)" style="height: 155px; min-width: 115px"><img src="<?php echo base_url(); ?>img/img2.jpg" id="drag_be_7" draggable="true" ondragstart="drag(event)" style="width: 90px; height: 120px"></td>
+                <td id="foto_be_8" ondrop="drop(event)" ondragover="allowDrop(event)" style="height: 155px; min-width: 115px"><img src="<?php echo base_url(); ?>img/img2.jpg" id="drag_be_8" draggable="true" ondragstart="drag(event)" style="width: 90px; height: 120px"></td>
+                <td id="foto_be_9" ondrop="drop(event)" ondragover="allowDrop(event)" style="height: 155px; min-width: 115px"><img src="<?php echo base_url(); ?>img/img2.jpg" id="drag_be_9" draggable="true" ondragstart="drag(event)" style="width: 90px; height: 120px"></td>
+                <td id="foto_be_10" ondrop="drop(event)" ondragover="allowDrop(event)" style="height: 155px; min-width: 115px"><img src="<?php echo base_url(); ?>img/img2.jpg" id="drag_be_10" draggable="true" ondragstart="drag(event)" style="width: 90px; height: 120px"></td>
+                <td id="foto_be_11" ondrop="drop(event)" ondragover="allowDrop(event)" style="height: 155px; min-width: 115px"><img src="<?php echo base_url(); ?>img/img2.jpg" id="drag_be_11" draggable="true" ondragstart="drag(event)" style="width: 90px; height: 120px"></td>
+                <td id="foto_be_12" ondrop="drop(event)" ondragover="allowDrop(event)" style="height: 155px; min-width: 115px"><img src="<?php echo base_url(); ?>img/img2.jpg" id="drag_be_12" draggable="true" ondragstart="drag(event)" style="width: 90px; height: 120px"></td>
+                <td id="foto_be_13" ondrop="drop(event)" ondragover="allowDrop(event)" style="height: 155px; min-width: 115px"><img src="<?php echo base_url(); ?>img/img2.jpg" id="drag_be_13" draggable="true" ondragstart="drag(event)" style="width: 90px; height: 120px"></td>
+                <td id="foto_be_14" ondrop="drop(event)" ondragover="allowDrop(event)" style="height: 155px; min-width: 115px"><img src="<?php echo base_url(); ?>img/img2.jpg" id="drag_be_14" draggable="true" ondragstart="drag(event)" style="width: 90px; height: 120px"></td>
               </tr>
             </tbody>
           </table>
@@ -592,12 +585,12 @@
           <table>
             <tbody>
               <tr>
-                <td id="foto_dpa_1" ondrop="drop(event)" ondragover="allowDrop(event)" style="height: 155px; width: 115px"><img src="<?php echo base_url(); ?>img/img1.jpg" id="drag_dpa_1" draggable="true" ondragstart="drag(event)" style="width: 90px; height: 120px"></td>
-                <td id="foto_dpa_2" ondrop="drop(event)" ondragover="allowDrop(event)" style="height: 155px; width: 115px"><img src="<?php echo base_url(); ?>img/img2.jpg" id="drag_dpa_2" draggable="true" ondragstart="drag(event)" style="width: 90px; height: 120px"></td>
-                <td id="foto_dpa_3" ondrop="drop(event)" ondragover="allowDrop(event)" style="height: 155px; width: 115px"><img src="<?php echo base_url(); ?>img/img2.jpg" id="drag_dpa_3" draggable="true" ondragstart="drag(event)" style="width: 90px; height: 120px"></td>
-                <td id="foto_dpa_4" ondrop="drop(event)" ondragover="allowDrop(event)" style="height: 155px; width: 115px"><img src="<?php echo base_url(); ?>img/img2.jpg" id="drag_dpa_4" draggable="true" ondragstart="drag(event)" style="width: 90px; height: 120px"></td>
-                <td id="foto_dpa_5" ondrop="drop(event)" ondragover="allowDrop(event)" style="height: 155px; width: 115px"><img src="<?php echo base_url(); ?>img/img2.jpg" id="drag_dpa_5" draggable="true" ondragstart="drag(event)" style="width: 90px; height: 120px"></td>
-                <td id="foto_dpa_6" ondrop="drop(event)" ondragover="allowDrop(event)" style="height: 155px; width: 115px"><img src="<?php echo base_url(); ?>img/img2.jpg" id="drag_dpa_6" draggable="true" ondragstart="drag(event)" style="width: 90px; height: 120px"></td>
+                <td id="foto_dpa_1" ondrop="drop(event)" ondragover="allowDrop(event)" style="height: 155px; min-width: 115px"><img src="<?php echo base_url(); ?>img/img1.jpg" id="drag_dpa_1" draggable="true" ondragstart="drag(event)" style="width: 90px; height: 120px"></td>
+                <td id="foto_dpa_2" ondrop="drop(event)" ondragover="allowDrop(event)" style="height: 155px; min-width: 115px"><img src="<?php echo base_url(); ?>img/img2.jpg" id="drag_dpa_2" draggable="true" ondragstart="drag(event)" style="width: 90px; height: 120px"></td>
+                <td id="foto_dpa_3" ondrop="drop(event)" ondragover="allowDrop(event)" style="height: 155px; min-width: 115px"><img src="<?php echo base_url(); ?>img/img2.jpg" id="drag_dpa_3" draggable="true" ondragstart="drag(event)" style="width: 90px; height: 120px"></td>
+                <td id="foto_dpa_4" ondrop="drop(event)" ondragover="allowDrop(event)" style="height: 155px; min-width: 115px"><img src="<?php echo base_url(); ?>img/img2.jpg" id="drag_dpa_4" draggable="true" ondragstart="drag(event)" style="width: 90px; height: 120px"></td>
+                <td id="foto_dpa_5" ondrop="drop(event)" ondragover="allowDrop(event)" style="height: 155px; min-width: 115px"><img src="<?php echo base_url(); ?>img/img2.jpg" id="drag_dpa_5" draggable="true" ondragstart="drag(event)" style="width: 90px; height: 120px"></td>
+                <td id="foto_dpa_6" ondrop="drop(event)" ondragover="allowDrop(event)" style="height: 155px; min-width: 115px"><img src="<?php echo base_url(); ?>img/img2.jpg" id="drag_dpa_6" draggable="true" ondragstart="drag(event)" style="width: 90px; height: 120px"></td>
               </tr>
             </tbody>
           </table>
@@ -654,9 +647,9 @@
           <table>
             <tbody>
               <tr>
-                <td id="foto_mubes_1" ondrop="drop(event)" ondragover="allowDrop(event)" style="height: 155px; width: 115px"><img src="<?php echo base_url(); ?>img/img1.jpg" id="drag_mubes_1" draggable="true" ondragstart="drag(event)" style="width: 90px; height: 120px"></td>
-                <td id="foto_mubes_2" ondrop="drop(event)" ondragover="allowDrop(event)" style="height: 155px; width: 115px"><img src="<?php echo base_url(); ?>img/img2.jpg" id="drag_mubes_2" draggable="true" ondragstart="drag(event)" style="width: 90px; height: 120px"></td>
-                <td id="foto_mubes_3" ondrop="drop(event)" ondragover="allowDrop(event)" style="height: 155px; width: 115px"><img src="<?php echo base_url(); ?>img/img2.jpg" id="drag_mubes_3" draggable="true" ondragstart="drag(event)" style="width: 90px; height: 120px"></td>
+                <td id="foto_mubes_1" ondrop="drop(event)" ondragover="allowDrop(event)" style="height: 155px; min-width: 115px"><img src="<?php echo base_url(); ?>img/img1.jpg" id="drag_mubes_1" draggable="true" ondragstart="drag(event)" style="width: 90px; height: 120px"></td>
+                <td id="foto_mubes_2" ondrop="drop(event)" ondragover="allowDrop(event)" style="height: 155px; min-width: 115px"><img src="<?php echo base_url(); ?>img/img2.jpg" id="drag_mubes_2" draggable="true" ondragstart="drag(event)" style="width: 90px; height: 120px"></td>
+                <td id="foto_mubes_3" ondrop="drop(event)" ondragover="allowDrop(event)" style="height: 155px; min-width: 115px"><img src="<?php echo base_url(); ?>img/img2.jpg" id="drag_mubes_3" draggable="true" ondragstart="drag(event)" style="width: 90px; height: 120px"></td>
               </tr>
             </tbody>
           </table>
@@ -665,3 +658,19 @@
     </div>
   </div>
 </div>
+
+<script src="<?php echo base_url(); ?>assets/js/jquery.min.js"></script>
+<script src="<?php echo base_url(); ?>assets/js/bootstrap.js"></script>
+<script type="text/javascript">
+  function allowDrop(ev) {
+      ev.preventDefault();
+  }
+  function drag(ev) {
+      ev.dataTransfer.setData("text", ev.target.id);
+  }
+  function drop(ev) {
+      ev.preventDefault();
+      var data = ev.dataTransfer.getData("text");
+      ev.target.appendChild(document.getElementById(data));
+  }
+</script>
