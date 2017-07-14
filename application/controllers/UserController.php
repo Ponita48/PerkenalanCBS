@@ -20,8 +20,6 @@ class UserController extends CI_Controller
 		$this->load->view('footer');
 	}
 	
-	
-
 	//login function
 	public function login() {
 		//formValidation
