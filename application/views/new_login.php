@@ -1,4 +1,4 @@
-		<?php if (isset($error_message)): ?>
+	<?php if (isset($error_message)): ?>
 		<br>
 		<div class="alert alert-danger alert-dismissable">
 			<a href="#" class="close" data-dismiss="alert" aria-label="close">x</a>
@@ -22,7 +22,12 @@
 		<div class="col-sm-4">
 			<div class="well well-lg" style="vertical-align: middle">
 				<h1 style="padding-bottom: 20px;">NEW USER LOGIN</h1>
-				<form action="<?php echo site_url(); ?>/new_login" class="form-horizontal" method="POST">
+				<!-- <form action="/new_login" class="form-horizontal" method="POST"> -->
+				<?php echo form_open_multipart(base_url().'new_login', array('class' => 'form-horizontal')); ?>
+					<div class="form-group">
+						<label for="pp">Photo Profile</label>
+						<input type="file" class="form-control" name="pp" placeholder="Chose your photo profile">
+					</div>
 					<div class="form-group">
 						<label for="email">Email</label>
 						<input type="email" class="form-control" name="email" placeholder="Type your email">
