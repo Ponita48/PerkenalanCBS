@@ -10,73 +10,32 @@
 	<div class="tab-content">
 		<div role="tabpanel" class="tab-pane container-fluid active" id="1">
 			<center>
-				<a href="#">
-					<div class="col-md-3">
-						<img src="<?php echo base_url(); ?>img/img1.jpg" alt="" class="img-responsive">
-							<p id="nama">ini nama</p>
-							<p id="npm">ini npm</p>
-					</div>
-				</a>
-				<a href="#">
-					<div class="col-md-3">
-						<img src="<?php echo base_url(); ?>img/img1.jpg" alt="" class="img-responsive">
-							<p id="nama">ini nama</p>
-							<p id="npm">ini npm</p>
-					</div>
-				</a>
-				<a href="#">
-					<div class="col-md-3">
-						<img src="<?php echo base_url(); ?>img/img1.jpg" alt="" class="img-responsive">
-							<p id="nama">ini nama</p>
-							<p id="npm">ini npm</p>
-					</div>
-				</a>
-				<a href="#">
-					<div class="col-md-3">
-						<img src="<?php echo base_url(); ?>img/img1.jpg" alt="" class="img-responsive">
-							<p id="nama">ini nama</p>
-							<p id="npm">ini npm</p>
-					</div>
-				</a>
+			<?php if($pending != NULL) : ?>
+				<?php foreach ($pending as $value) : ?>
+					<a href="#">
+						<div class="col-md-3">
+							<img src="<?php echo $value->link_foto; ?>" alt="" class="img-responsive">
+								<p id="nama"><?php echo $value->nama; ?></p>
+								<p id="npm"><?php echo $value->npm_keluarga; ?></p>
+						</div>
+					</a>
+				<?php endforeach; ?>
+			<?php endif; ?>
 			</center>
 		</div>
 		<div role="tabpanel" class="tab-pane container-fluid" id="2">
 			<center>
-				<a href="#">
-					<div class="col-md-3">
-						<img src="<?php echo base_url(); ?>img/img2.jpg" alt="" class="img-responsive">
-							<p id="nama">ini nama</p>
-							<p id="npm">ini npm</p>
-					</div>
-				</a>
-				<a href="#">
-					<div class="col-md-3">
-						<img src="<?php echo base_url(); ?>img/img2.jpg" alt="" class="img-responsive">
-							<p id="nama">ini nama</p>
-							<p id="npm">ini npm</p>
-					</div>
-				</a>
-				<a href="#">
-					<div class="col-md-3">
-						<img src="<?php echo base_url(); ?>img/img2.jpg" alt="" class="img-responsive">
-							<p id="nama">ini nama</p>
-							<p id="npm">ini npm</p>
-					</div>
-				</a>
-				<a href="#">
-					<div class="col-md-3">
-						<img src="<?php echo base_url(); ?>img/img2.jpg" alt="" class="img-responsive">
-							<p id="nama">ini nama</p>
-							<p id="npm">ini npm</p>
-					</div>
-				</a>
-				<a href="#">
-					<div class="col-md-3">
-						<img src="<?php echo base_url(); ?>img/img2.jpg" alt="" class="img-responsive">
-							<p id="nama">ini nama</p>
-							<p id="npm">ini npm</p>
-					</div>
-				</a>
+				<?php if($accepted != NULL) : ?>
+					<?php foreach ($accepted as $value) : ?>
+						<a href="#">
+							<div class="col-md-3">
+								<img src="<?php echo $value->link_foto; ?>" alt="" class="img-responsive">
+									<p id="nama"><?php echo $value->nama; ?></p>
+									<p id="npm"><?php echo $value->npm_keluarga; ?></p>
+							</div>
+						</a>
+					<?php endforeach; ?>
+				<?php endif; ?>
 			</center>
 		</div>
 	</div>

@@ -13,7 +13,6 @@ class Admin_model extends CI_Model {
 		}else {
 			return $q->result();
 		}
-
 	}
 
 	public function getPerkenalanAngkatan($id) {

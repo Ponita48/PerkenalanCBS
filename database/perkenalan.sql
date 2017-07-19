@@ -13,10 +13,10 @@ CREATE TABLE kuis_bk(id_jawaban int PRIMARY KEY AUTO_INCREMENT, npm_maba char(12
 ALTER TABLE kuis_bk ADD  FOREIGN KEY (npm_maba) REFERENCES users(npm);
 CREATE TABLE kuis_panitia(id_jawaban int PRIMARY KEY AUTO_INCREMENT, npm_maba char(12), nama varchar(50), jabatan varchar(20), link_foto text, fill_time timestamp, status int);
 ALTER TABLE kuis_panitia ADD  FOREIGN KEY (npm_maba) REFERENCES users(npm);
-CREATE TABLE perkenalan_kating(id_perkenalan_kating int PRIMARY KEY AUTO_INCREMENT, id_user_maba int, id_user_kating int, nama varchar(50), ciri_khas text, link_foto text, request_time timestamp, status int, approve_time datetime);
+CREATE TABLE perkenalan_kating(id_perkenalan_kating int PRIMARY KEY AUTO_INCREMENT, id_user_maba int, id_user_kating int, nama varchar(50), ciri_khas text, link_foto text, request_time datetime, status int, approve_time datetime);
 ALTER TABLE perkenalan_kating ADD  FOREIGN KEY (id_user_maba) REFERENCES users(id_user);
 ALTER TABLE perkenalan_kating ADD  FOREIGN KEY (id_user_kating) REFERENCES users(id_user);
-CREATE TABLE perkenalan_angkatan(id_perkenalan_angkatan int PRIMARY KEY AUTO_INCREMENT, id_user1 int, id_user2 int, nama varchar(50), tempat_lahir varchar(20), tgl_lahir date, alamat_kos text, id_line varchar(20), no_hp varchar(12), link_foto text, request_time timestamp);
+CREATE TABLE perkenalan_angkatan(id_perkenalan_angkatan int PRIMARY KEY AUTO_INCREMENT, id_user1 int, id_user2 int, nama varchar(50), tempat_lahir varchar(20), tgl_lahir date, alamat_kos text, id_line varchar(20), no_hp varchar(12), link_foto text, request_time datetime);
 ALTER TABLE perkenalan_angkatan ADD  FOREIGN KEY (id_user1) REFERENCES users(id_user);
 ALTER TABLE perkenalan_angkatan ADD  FOREIGN KEY (id_user2) REFERENCES users(id_user);
 

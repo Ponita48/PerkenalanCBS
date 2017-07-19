@@ -20,8 +20,6 @@ class UserController extends CI_Controller
 		$this->load->view('footer');
 	}
 	
-	
-
 	//login function
 	public function login() {
 		//formValidation
@@ -97,7 +95,12 @@ class UserController extends CI_Controller
 	}
 
 	// login for the first time
-	public function new_login() {		
+	public function new_login() {
+
+		if (empty($_FILES['pp']['name'])) {
+			$this->form_validation->set_rules('pp', 'Photo Profile', 'required');	
+		}
+		
 		$this->form_validation->set_rules('email', 'Email', 'required|valid_email');
 		$this->form_validation->set_rules('new_pwd', 'New Password', 'required|min_length[6]');
 		$this->form_validation->set_rules('conf_pwd', 'Confirm Password', 'required|min_length[6]|matches[new_pwd]');
@@ -112,20 +115,52 @@ class UserController extends CI_Controller
 			$this->load->view('footer');
 		}else {
 			// echo "bisa(?)";
-			$password = password_hash($this->input->post('new_pwd'), PASSWORD_DEFAULT);
 
-			$data = array(
-				'npm' => $this->session->userdata['logged_in']['npm'], 
-				'password' => $password,
-				'email' => $this->input->post('email'),
-				'role' => $this->session->userdata['logged_in']['role']
+			$id_user = $this->session->userdata['logged_in']['id_user'];
+
+			$config = array(
+				'upload_path' => './Photos/PP/',
+				'allowed_types' => 'jpg|png',
+				'max_size' => 300,
+				'file_name' => $id_user,
+				'overwrite' => TRUE,
 			);
 
-			$this->User_model->new_login($data);
-			$data['message_display'] = "Password berhasil diganti";
-			$this->load->view('header');
-			$this->load->view('index', $data);
-			$this->load->view('footer');
+			$this->load->library('upload', $config);
+
+			if ( ! $this->upload->do_upload('pp')) {
+				$data['error_message'] = $this->upload->display_errors();
+				$this->load->view('header');
+				$this->load->view('new_login', $data);
+				$this->load->view('footer');
+			}else {
+
+				$file_name = base_url()."Photos/PP/".$this->upload->data('file_name');
+
+				$result = $this->User_model->assign_photo($file_name, $id_user);
+
+				if ( ! $result) {
+					$data['error_message'] = "There are errors";
+					$this->load->view('header');
+					$this->load->view('new_login', $data);
+					$this->load->view('footer');
+				}else {
+					$password = password_hash($this->input->post('new_pwd'), PASSWORD_DEFAULT);
+
+					$data = array(
+						'id_user' => $this->session->userdata['logged_in']['id_user'], 
+						'password' => $password,
+						'email' => $this->input->post('email'),
+						'role' => $this->session->userdata['logged_in']['role'],
+					);
+
+					$this->User_model->new_login($data);
+					$data['message_display'] = "Password berhasil diganti";
+					$this->load->view('header');
+					$this->load->view('index', $data);
+					$this->load->view('footer');
+				}
+			}
 		}
 	}
 
@@ -151,15 +186,19 @@ class UserController extends CI_Controller
 			$this->form_validation->set_rules('id_line', 'ID Line', 'required');
 
 			if ($this->session->userdata['logged_in']['role'] == 'peserta') {
-				$this->form_validation->set_rules('link_foto', 'Link Foto', 'required');
+				//$this->form_validation->set_rules('link_foto', 'Link Foto', 'required');
 				$this->form_validation->set_rules('motto_hidup', 'Motto Hidup', 'required');
 			}
 
+			$result = $this->User_model->getProfile();
+
+			$data['result'] = $result[0];
+
 			if ($this->form_validation->run() == FALSE) {
-				$result = $this->User_model->getProfile();
+
 
 				$this->load->view('header');
-				$this->load->view('edit_profile', $result);
+				$this->load->view('change_profile', $data);
 				$this->load->view('footer');
 			}else {
 				$data1['email'] = $this->input->post('email');
@@ -173,23 +212,21 @@ class UserController extends CI_Controller
 					'id_line' => $this->input->post('id_line')
 				);
 				if ($this->session->userdata['logged_in']['role'] == 'peserta') {
-					$data2 = array(
-						'link_foto' => $this->input->post('link_foto'),
-						'motto_hidup' => $this->input->post('motto_hidup')
-					);
+					$data2['motto_hidup'] = $this->input->post('motto_hidup');
 				}
 
 				$result = $this->User_model->setProfile($data1, $data2);
 
 				if ($result == FALSE) {
+					echo "disini";
 					$data['error_message'] = "Error";
 					$this->load->view('header');
-					$this->load->view('edit_profile', $data);
+					$this->load->view('change_profile', $data);
 					$this->load->view('footer');
 				}else {
 					$data['message_display'] = "Success";
 					$this->load->view('header');
-					$this->load->view('edit_profile', $data);
+					$this->load->view('change_profile', $data);
 					$this->load->view('footer');
 				}
 			}

@@ -33,20 +33,13 @@ class A extends CI_Controller {
 			}else {
 				$result = $this->Admin_model->getPerkenalanKeluarga();
 
-
 				if ($result == FALSE) {
 					$data['message_display'] = "Perkenalan kosong?";
-					/*echo $data['message_display'];
-					die();*/
 					//goto list perkenalan
 					$this->load->view('header');
 					$this->load->view('admin',$data);
 					$this->load->view('footer');
 				}else {
-					/*echo "<pre>";
-					var_dump($result);
-					echo "</pre>";
-					die();*/
 					//goto list perkenalan
 					$data['result'] = $result;
 					$this->load->view('header');
@@ -80,18 +73,18 @@ class A extends CI_Controller {
 
 				$result = $this->Admin_model->getPerkenalanAngkatan($id);
 
-				if ($result == FALSE) {
-					$data['message_display'] = "Perkenalan kosong?";
-					echo $data['message_display'];
-					die();
-					//goto list perkenalan
-				}else {
-					echo "<pre>";
-					var_dump($result);
-					echo "</pre>";
-					die();
-					//goto list perkenalan
-				}
+			}
+			if ($result == FALSE) {
+				$data['message_display'] = "Perkenalan kosong?";
+				echo $data['message_display'];
+				die();
+				//goto list perkenalan
+			}else {
+				echo "<pre>";
+				var_dump($result);
+				echo "</pre>";
+				die();
+				//goto list perkenalan
 			}
 		}
 	}

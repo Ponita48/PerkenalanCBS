@@ -102,12 +102,12 @@ class User_model extends CI_Model {
 
 	public function new_login($data) {
 
-		$npm = $data['npm'];
+		$id_user = $data['id_user'];
 
 		$query = $this->db
 			->select('*')
 			->from('users')
-			->where("npm = '$npm'")
+			->where("id_user = '$id_user'")
 			->limit(1)
 			->get();
 
@@ -115,13 +115,37 @@ class User_model extends CI_Model {
 			return FALSE;
 		}else {	
 			$this->db
-				->where('npm', $data['npm'])
+				->where('id_user', $id_user)
 				->update('users', array(
-						'email' => $data['email'], 
-						'password' => $data['password'])
+							'email' => $data['email'], 
+							'password' => $data['password']
+						)
 					);
 
 			return TRUE;
+		}
+	}
+
+	public function assign_photo($file_name, $id_user) {
+		$q = $this->db
+			->select('*')
+			->from('profile_maba')
+			->where('id_user', $id_user)
+			->get();
+
+		if ($q->num_rows() != 0) {
+			$q = $this->db
+				->where('id_user', $id_user)
+				->update('profile_maba', array(
+							'link_foto' => $file_name
+						)
+					);
+			return $q;
+		}else {
+			$q = $this->db
+				->insert('profile_maba', array('id_user' => $id_user, 'link_foto' => $file_name));
+
+			return $q;
 		}
 	}
 
@@ -192,15 +216,20 @@ class User_model extends CI_Model {
 		if ($query->num_rows() == 0) {
 			return FALSE;
 		}else {
-			$this->db->where('id_user', $id_user)->update('users', $data1);
+			$q = $this->db->where('id_user', $id_user)->update('users', $data1);
 
-			if ($this->session->userdata['logged_in']['role'] == 'peserta') {
-				$this->db->where('id_user', $id_user)->update('profile_maba', $data2);
+			if ( ! $q) {
+				return $q;
 			}else {
-				$this->db->where('id_user', $id_user)->update('profile_kating', $data2);
+				if ($this->session->userdata['logged_in']['role'] == 'peserta') {
+					$q = $this->db->where('id_user', $id_user)->update('profile_maba', $data2);
+				}else {
+					$q = $this->db->where('id_user', $id_user)->update('profile_kating', $data2);
+				}
+
+				return $q;
 			}
-			
-			return TRUE;
+
 		}
 
 	}

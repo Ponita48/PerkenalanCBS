@@ -119,5 +119,36 @@ class Perkenalan extends CI_Controller
 		}
 	}
 
+	public function my_request() {
+		if (! isset($this->session->userdata['logged_in'])) {
+			$data['error_message'] = "Silahkan login terlebih dahulu";
+			$this->load->view('header');
+			$this->load->view('index', $data);
+			$this->load->view('footer');
+		}else {
+		
+			$id_user = $this->session->userdata['logged_in']['id_user'];
+
+			$pending = $this->Perkenalan_model->getPendingRequest($id_user);
+			$accepted = $this->Perkenalan_model->getAcceptedRequest($id_user);
+
+			if ($pending == FALSE) {
+				$pending = NULL;
+			}
+
+			if ($accepted == FALSE) {
+				$accepted = NULL;
+			}
+
+			$data['pending'] = $pending;
+			$data['accepted'] = $accepted;
+
+			$this->load->view('header');
+			$this->load->view('my_request', $data);
+			$this->load->view('footer');
+			
+		}
+	}
+
 }
  ?>

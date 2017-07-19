@@ -21,8 +21,8 @@
 						<!-- npm di session = npm yang dilihat -->
 						<?php if ($this->session->userdata['logged_in']['npm'] == $result->npm): ?>
 							<!-- PROFIL PRIBADI MABA -->
-							<button class="btn btn-success" type="submit">Edit Profil</button><br><br>
-							<button class="btn btn-warning" type="submit">Lihat Daftar Perkenalan</button><br><br>
+							<a href="<?php echo base_url(); ?>edit_profile"><button class="btn btn-success" type="submit">Edit Profil</button></a><br><br>
+							<a href="<?php echo base_url(); ?>my_request"><button class="btn btn-warning" type="submit">Lihat Daftar Perkenalan</button></a><br><br>
 						<?php endif ?>
 					<?php endif ?>
 					<!-- admin ngeliat -->
