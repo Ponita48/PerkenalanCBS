@@ -68,6 +68,9 @@ class Kuis extends CI_Controller
 						'jabatan14' => '',
 						'lembaga14' => '',
  					);
+
+		
+
 		$this->Kuis_model()->insert_answer($data);
 	}
 
@@ -107,6 +110,12 @@ class Kuis extends CI_Controller
 			'nama16' => $this->input->post('pubdok') , 
 			'jabatan16' => 'Kadiv Pubdok',
 			);
+
+		echo "<pre>";
+		var_dump($this->input->post());
+		echo "</pre>";
+		die();
+
 		$this->Kuis_model()->insert_panti($data_panti);
 	}
 
