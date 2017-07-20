@@ -82,3 +82,9 @@ $route['approve_perkenalan/(:any)'] = 'A/approvePerkenalan/$1'; //$1 = $id_perke
 $route['reject_perkenalan/(:any)'] = 'A/rejectPerkenalan/$1'; //$1 = $id_perkenalan
 $route['admin'] = 'A/perkenalanKeluarga';
 $route['detail_perkenalan/(:any)'] = 'A/detailPerkenalan/$1';
+
+//Kuis
+$route['kuis'] = 'Kuis/view_kuis';
+$route['kuis/submit'] = 'Kuis/kuis_struktur_submit';
+$route['kuis/jawaban'] = 'Kuis/get_kuis';
+$route['kuis/jawaban/(:any)'] = 'Kuis/get_kuis/$1';

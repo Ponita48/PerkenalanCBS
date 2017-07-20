@@ -19,7 +19,7 @@
 		<div class="col-sm-4">
 			<div class="well well-lg" style="vertical-align: middle">
 				<h1 style="padding-bottom: 20px;">LOGIN</h1>
-				<form action="<?php echo site_url() ?>/UserController/login" class="form-horizontal" method="POST">
+				<form action="<?php echo base_url() ?>login" class="form-horizontal" method="POST">
 					<div class="form-group">
 						<label for="npm">NPM</label>
 						<input type="text" class="form-control" id="npm" placeholder="NPM" name="npm">

@@ -24,7 +24,7 @@
 </style>
 <!-- End of Header -->
 
-<form action="kuis_struktur_submit" method="post" accept-charset="utf-8">
+<form action="kuis/submit" method="post" accept-charset="utf-8">
 	<!-- Navigation Pane: Fixed, Collapsible -->
 	<div class="row">
 		<div id="navigasi" style="background-color: #DFDFDF; max-width: 40vh; max-height: 50vh">

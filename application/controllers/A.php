@@ -10,7 +10,7 @@ class A extends CI_Controller {
 		$this->load->helper('url');
 		$this->load->library(array('form_validation', 'session'));
 		$this->load->database();
-		$this->load->model('Admin_model');
+		$this->load->model(array('Admin_model'));
 	}
 
 	public function perkenalanKeluarga() {

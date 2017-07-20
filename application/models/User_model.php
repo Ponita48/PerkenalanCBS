@@ -287,6 +287,21 @@ class User_model extends CI_Model {
 		}
 	}
 
+	public function get_npm($id_user) {
+		$q = $this->db
+			->select('npm')
+			->from('users')
+			->where('id_user', $id_user)
+			->limit(1)
+			->get();
+
+		if ($q->num_rows() == 0) {
+			return NULL;
+		}else {
+			return $q->result()[0]->npm;
+		}
+	}
+
 }
 
  ?>
