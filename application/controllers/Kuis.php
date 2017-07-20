@@ -23,9 +23,21 @@ class Kuis extends CI_Controller
 			$this->load->view('index', $data);
 			$this->load->view('footer');
 		}else {
+
+			if ($this->session->userdata['logged_in']['role'] == 'admin') {
+				$data['error_message'] = "Hanya peserta yang dapat melihat konten ini";
+				$this->load->view('header');
+				$this->load->view('index', $data);
+				$this->load->view('footer');
+			}
+
+			$npm = $this->User_model->get_npm($this->session->userdata['logged_in']['id_user']);
+
+			$data['npm'] = $npm;
+
 			$this->load->view('header');
-			$this->load->view('kuis_struktur');
-			$this->load->view('footer');
+			$this->load->view('kuis_struktur', $data);
+			//$this->load->view('footer');
 		}
 		
 	}
@@ -58,7 +70,7 @@ class Kuis extends CI_Controller
 			$this->Kuis_model->insert_bk($npm_maba, $info['nama'], $jabatan, 'presidium', $info['link_foto']);
 		}
 
-		redirect('../jawaban_kuis');
+		redirect('../kuis/jawaban');
 
 	}
 

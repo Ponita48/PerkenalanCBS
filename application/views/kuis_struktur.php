@@ -50,10 +50,19 @@
 	<div id="konten" class="container-fluid">
 		<div id="header_content" class="row" style="padding-top: 5px;">
 			<div class="col-sm-10 col-md-10 col-lg-10">
-				<center><h3>KUIS BK/PANITIA</h3></center>
+				<center>
+					<h3>KUIS BK/PANITIA (<?php echo $npm; ?>)</h3>
+					<a href="<?php echo base_url(); ?>kuis/jawaban" class="btn btn-info" target="_blank">Lihat Jawaban Kuis Sebelumnya</a>
+				</center>
+
 			</div>
 			<div class="col-sm-2 col-md-2 col-lg-2">
-				<center><input class="btn btn-success" type="submit" name="Kirim"></center>
+				<center>
+					
+					<br>
+					<br>
+					<input class="btn btn-success" type="submit" name="Kirim">
+				</center>
 			</div>
 		</div>
 		<div class="tab-content">
