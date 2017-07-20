@@ -193,5 +193,9 @@ class Kuis extends CI_Controller
 
 	}
 
+	public function get_kuis() {
+		$this->load->view('dummy_kuis_kejawab');
+	}
+
 }	
  ?>
