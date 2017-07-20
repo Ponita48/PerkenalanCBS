@@ -6,7 +6,7 @@
 class Kuis_model extends CI_Model
 {
 
-	public function insert_be($data)
+	public function insert_be_ai($data)
 	{	
 
 		$npm = $this->session->userdata['logged_in']['npm'];
@@ -33,7 +33,7 @@ class Kuis_model extends CI_Model
 		($this->session->userdata['logged_in']['npm'],$data['nama14'],$data['jabatan14'],$data['lembaga14'])");*/
 	}
 
-	public function insert_panti($data_panti)
+	public function insert_panti_ai($data_panti)
 	{
 		/*$this->db->query("INSERT INTO kuis_panitia (npm_maba,nama,jabatan) VALUES 
 			($this->session->userdata['logged_in']['npm'],$data_panti['nama1'],$data_panti['jabatan1']),
@@ -55,7 +55,7 @@ class Kuis_model extends CI_Model
 			die();
 	}
 
-	public function insert_dpa($data_dpa)
+	public function insert_dpa_ai($data_dpa)
 	{
 		/*$this->db->query("INSERT INTO kuis_bk (npm_maba,nama,jabatan) VALUES 
 			($this->session->userdata['logged_in']['npm'],$data_dpa['nama1'],$data_dpa['jabatan1']),
@@ -67,7 +67,7 @@ class Kuis_model extends CI_Model
 			die();
 	}
 
-	public function insert_mubes($data_mubes)
+	public function insert_mubes_ai($data_mubes)
 	{
 		/*$this->db->query("INSERT INTO kuis_bk (npm_maba,nama,jabatan) VALUES 
 			($this->session->userdata['logged_in']['npm'],$data_mubes['nama1'],$data_mubes['jabatan1']),
@@ -75,6 +75,60 @@ class Kuis_model extends CI_Model
 			($this->session->userdata['logged_in']['npm'],$data_mubes['nama3'],$data_mubes['jabatan3'])");*/
 		die();
 	}
+
+	public function insert_panitia($npm_maba, $nama, $jabatan, $link_foto, $status = 0) {
+		$q = $this->db
+			->select('*')
+			->from('kuis_panitia')
+			->where(array('npm_maba' => $npm_maba, 'jabatan' => $jabatan))
+			->limit(1)
+			->get();
+
+		$data = array(
+			'npm_maba' => $npm_maba,
+			'nama' => $nama,
+			'jabatan' => $jabatan,
+			'link_foto' => $link_foto,
+			'status' => $status
+		);
+
+		if ($q->num_rows() == 0) {
+			$this->db->insert('kuis_panitia', $data);
+		}else {
+			$this->db
+				->where('npm_maba', $npm_maba)
+				->update('kuis_panitia', $data);
+		}
+
+	}
+
+	public function insert_bk($npm_maba, $nama, $jabatan, $lembaga, $link_foto, $status = 0) {
+		$q = $this->db
+			->select('*')
+			->from('kuis_bk')
+			->where(array('npm_maba' => $npm_maba, 'jabatan' => $jabatan, 'lembaga' => $lembaga))
+			->limit(1)
+			->get();
+
+		$data = array(
+			'npm_maba' => $npm_maba,
+			'nama' => $nama,
+			'jabatan' => $jabatan,
+			'lembaga' => $lembaga,
+			'link_foto' => $link_foto,
+			'status' => $status
+		);
+
+		if ($q->num_rows() == 0) {
+			$this->db->insert('kuis_bk', $data);
+		}else {
+			$this->db
+				->where('npm_maba', $npm_maba)
+				->update('kuis_bk', $data);
+		}
+
+	}
+
 }
 
  ?>

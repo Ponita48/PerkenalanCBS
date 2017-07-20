@@ -66,10 +66,10 @@
 	                				<caption>Project Officer</caption>
 	                				<tbody>
 		                  				<tr>
-		                  					<td ondrop="drop1(event, this)" ondragover="allowDrop(event)" style="height: 155px; width: 115px"><input type="hidden" name="Link Foto" value="" id="foto_po_cbs"></td>
+		                  					<td ondrop="drop1(event, this)" ondragover="allowDrop(event)" style="height: 155px; width: 115px"><input type="hidden" name="panitia[po_cbs][link_foto]" value="" id="foto_po_cbs"></td>
 		                  				</tr>
 		                  				<tr>
-		                  					<td><input type="text" name="nama_po_cbs" id="ketua" placeholder="Nama"></td>
+		                  					<td><input type="text" name="panitia[po_cbs][nama]" id="ketua" placeholder="Nama"></td>
 		                  				</tr>
 	                				</tbody>
 	              				</table>
@@ -79,10 +79,10 @@
 	                    					<caption>Sekretaris</caption>
 	                    					<tbody>
 												<tr>
-													<td ondrop="drop2(event, this)" ondragover="allowDrop(event)" style="height: 155px; width: 115px"><input type="hidden" name="Link Foto" value="" id="foto_sekretaris_cbs"></td>
+													<td ondrop="drop2(event, this)" ondragover="allowDrop(event)" style="height: 155px; width: 115px"><input type="hidden" name="panitia[sekretaris_cbs][link_foto]" value="" id="foto_sekretaris_cbs"></td>
 												</tr>
 												<tr>
-													<td><input type="text" name="nama_sekretaris_cbs" id="sekre" placeholder="Nama"></td>
+													<td><input type="text" name="panitia[sekretaris_cbs][nama]" id="sekre" placeholder="Nama"></td>
 												</tr>
 											</tbody>
 	                  					</table>
@@ -91,10 +91,10 @@
 											<caption>Bendahara</caption>
 											<tbody>
 												<tr>
-													<td ondrop="drop3(event, this)" ondragover="allowDrop(event)" style="height: 155px; width: 115px"><input type="hidden" name="Link Foto" value="" id="foto_bendahara_cbs"></td>
+													<td ondrop="drop3(event, this)" ondragover="allowDrop(event)" style="height: 155px; width: 115px"><input type="hidden" name="panitia[bendahara_cbs][link_foto]" value="" id="foto_bendahara_cbs"></td>
 												</tr>
 												<tr>
-													<td><input type="text" name="nama_bendahara_cbs" id="bendahara" placeholder="Nama"></td>
+													<td><input type="text" name="panitia[bendahara_cbs][nama]" id="bendahara" placeholder="Nama"></td>
 												</tr>
 											</tbody>
 										</table>
@@ -103,10 +103,10 @@
 											<caption>Ketua Bidang I</caption>
 											<tbody>
 												<tr>
-													<td ondrop="drop4(event, this)" ondragover="allowDrop(event)" style="height: 155px; width: 115px"><input type="hidden" name="Link Foto" value="" id="foto_kabid1_cbs"></td>
+													<td ondrop="drop4(event, this)" ondragover="allowDrop(event)" style="height: 155px; width: 115px"><input type="hidden" name="panitia[kabid1_cbs][link_foto]" value="" id="foto_kabid1_cbs"></td>
 												</tr>
 												<tr>
-													<td><input type="text" name="nama_kabid1_cbs" id="kabid1" placeholder="Nama"></td>
+													<td><input type="text" name="panitia[kabid1_cbs][nama]" id="kabid1" placeholder="Nama"></td>
 												</tr>
 											</tbody>
 										</table>
@@ -116,10 +116,10 @@
 													<caption>Ketua Divisi Humas</caption>
 													<tbody>
 														<tr>
-															<td ondrop="drop5(event, this)" ondragover="allowDrop(event)" style="height: 155px; width: 115px"><input type="hidden" name="Link Foto" value="" id="foto_kadiv_humas"></td>
+															<td ondrop="drop5(event, this)" ondragover="allowDrop(event)" style="height: 155px; width: 115px"><input type="hidden" name="panitia[kadiv_humas_cbs][link_foto]" value="" id="foto_kadiv_humas"></td>
 														</tr>
 														<tr>
-															<td><input type="text" name="nama_kadiv_humas" id="humas" placeholder="Nama"></td>
+															<td><input type="text" name="panitia[kadiv_humas_cbs][nama]" id="humas" placeholder="Nama"></td>
 														</tr>
 													</tbody>
 												</table>
@@ -128,10 +128,10 @@
 													<caption>Ketua Divisi Acara</caption>
 													<tbody>
 														<tr>
-															<td ondrop="drop6(event, this)" ondragover="allowDrop(event)" style="height: 155px; width: 115px"><input type="hidden" name="Link Foto" value="" id="foto_kadiv_acara"></td>
+															<td ondrop="drop6(event, this)" ondragover="allowDrop(event)" style="height: 155px; width: 115px"><input type="hidden" name="panitia[kadiv_acara_cbs][link_foto]" value="" id="foto_kadiv_acara"></td>
 														</tr>
 														<tr>
-															<td><input type="text" name="nama_kadiv_acara" id="acara" placeholder="Nama"></td>
+															<td><input type="text" name="panitia[kadiv_acara_cbs][nama]" id="acara" placeholder="Nama"></td>
 														</tr>
 													</tbody>
 												</table>
@@ -140,10 +140,10 @@
 													<caption>Ketua Divisi PK</caption>
 													<tbody>
 														<tr>
-															<td ondrop="drop7(event, this)" ondragover="allowDrop(event)" style="height: 155px; width: 115px"><input type="hidden" name="Link Foto" value="" id="foto_kadiv_pk"></td>
+															<td ondrop="drop7(event, this)" ondragover="allowDrop(event)" style="height: 155px; width: 115px"><input type="hidden" name="panitia[kadiv_pk_cbs][link_foto]" value="" id="foto_kadiv_pk"></td>
 														</tr>
 														<tr>
-															<td><input type="text" name="nama_kadiv_pk" id="pk" placeholder="Nama"></td>
+															<td><input type="text" name="panitia[kadiv_pk_cbs][nama]" id="pk" placeholder="Nama"></td>
 														</tr>
 													</tbody>
 												</table>
@@ -154,10 +154,10 @@
 											<caption>Ketua Bidang II</caption>
 											<tbody>
 												<tr>
-													<td ondrop="drop8(event, this)" ondragover="allowDrop(event)" style="height: 155px; width: 115px"><input type="hidden" name="Link Foto" value="" id="foto_kabid2_cbs"></td>
+													<td ondrop="drop8(event, this)" ondragover="allowDrop(event)" style="height: 155px; width: 115px"><input type="hidden" name="panitia[kabid2_cbs][link_foto]" value="" id="foto_kabid2_cbs"></td>
 												</tr>
 												<tr>
-													<td><input type="text" name="nama_kabid2_cbs" id="kabid2" placeholder="Nama"></td>
+													<td><input type="text" name="panitia[kabid2_cbs][nama]" id="kabid2" placeholder="Nama"></td>
 												</tr>
 											</tbody>
 										</table>
@@ -167,10 +167,10 @@
 													<caption>Ketua Divisi Medik</caption>
 													<tbody>
 														<tr>
-															<td ondrop="drop9(event, this)" ondragover="allowDrop(event)" style="height: 155px; width: 115px"><input type="hidden" name="Link Foto" value="" id="foto_kadiv_medik"></td>
+															<td ondrop="drop9(event, this)" ondragover="allowDrop(event)" style="height: 155px; width: 115px"><input type="hidden" name="panitia[kadiv_medik_cbs][link_foto]" value="" id="foto_kadiv_medik"></td>
 														</tr>
 														<tr>
-															<td><input type="text" name="nama_kadiv_medik" id="medik" placeholder="Nama"></td>
+															<td><input type="text" name="panitia[kadiv_medik_cbs][nama]" id="medik" placeholder="Nama"></td>
 														</tr>
 													</tbody>
 												</table>
@@ -179,10 +179,10 @@
 													<caption>Ketua Divisi Akademik</caption>
 													<tbody>
 														<tr>
-															<td ondrop="drop10(event, this)" ondragover="allowDrop(event)" style="height: 155px; width: 115px"><input type="hidden" name="Link Foto" value="" id="foto_kadiv_akademik"></td>
+															<td ondrop="drop10(event, this)" ondragover="allowDrop(event)" style="height: 155px; width: 115px"><input type="hidden" name="panitia[kadiv_akademik_cbs][link_foto]" value="" id="foto_kadiv_akademik"></td>
 														</tr>
 														<tr>
-															<td><input type="text" name="nama_kadiv_akademik" id="akad" placeholder="Nama"></td>
+															<td><input type="text" name="panitia[kadiv_akademik_cbs][nama]" id="akad" placeholder="Nama"></td>
 														</tr>
 													</tbody>
 												</table>
@@ -191,10 +191,10 @@
 													<caption>Ketua Divisi Komdis</caption>
 													<tbody>
 														<tr>
-															<td ondrop="drop11(event, this)" ondragover="allowDrop(event)" style="height: 155px; width: 115px"><input type="hidden" name="Link Foto" value="" id="foto_kadiv_komdis"></td>
+															<td ondrop="drop11(event, this)" ondragover="allowDrop(event)" style="height: 155px; width: 115px"><input type="hidden" name="panitia[kadiv_komdis_cbs][link_foto]" value="" id="foto_kadiv_komdis"></td>
 														</tr>
 														<tr>
-															<td><input type="text" name="nama_kadiv_komdis" id="komdis" placeholder="Nama"></td>
+															<td><input type="text" name="panitia[kadiv_komdis_cbs][nama]" id="komdis" placeholder="Nama"></td>
 														</tr>
 													</tbody>
 												</table>
@@ -203,10 +203,10 @@
 													<caption>Ketua Divisi Rohani</caption>
 													<tbody>
 														<tr>
-															<td ondrop="drop12(event, this)" ondragover="allowDrop(event)" style="height: 155px; width: 115px"><input type="hidden" name="Link Foto" value="" id="foto_kadiv_rohani"></td>
+															<td ondrop="drop12(event, this)" ondragover="allowDrop(event)" style="height: 155px; width: 115px"><input type="hidden" name="panitia[kadiv_rohani_cbs][link_foto]" value="" id="foto_kadiv_rohani"></td>
 														</tr>
 														<tr>
-															<td><input type="text" name="nama_kadiv_rohani" id="rohani" placeholder="Nama"></td>
+															<td><input type="text" name="panitia[kadiv_rohani_cbs][nama]" id="rohani" placeholder="Nama"></td>
 														</tr>
 													</tbody>
 												</table>
@@ -217,10 +217,10 @@
 											<caption>Ketua Bidang III</caption>
 											<tbody>
 												<tr>
-													<td ondrop="drop13(event, this)" ondragover="allowDrop(event)" style="height: 155px; width: 115px"><input type="hidden" name="Link Foto" value="" id="foto_kabid3_cbs"></td>
+													<td ondrop="drop13(event, this)" ondragover="allowDrop(event)" style="height: 155px; width: 115px"><input type="hidden" name="panitia[kabid3_cbs][link_foto]" value="" id="foto_kabid3_cbs"></td>
 												</tr>
 												<tr>
-													<td><input type="text" name="nama_kabid3_cbs" id="kabid3" placeholder="Nama"></td>
+													<td><input type="text" name="panitia[kabid3_cbs][nama]" id="kabid3" placeholder="Nama"></td>
 												</tr>
 											</tbody>
 										</table>
@@ -230,10 +230,10 @@
 													<caption>Ketua Divisi Logistik</caption>
 													<tbody>
 														<tr>
-															<td ondrop="drop14(event, this)" ondragover="allowDrop(event)" style="height: 155px; width: 115px"><input type="hidden" name="Link Foto" value="" id="foto_kadiv_logistik"></td>
+															<td ondrop="drop14(event, this)" ondragover="allowDrop(event)" style="height: 155px; width: 115px"><input type="hidden" name="panitia[kadiv_logistik_cbs][link_foto]" value="" id="foto_kadiv_logistik"></td>
 														</tr>
 														<tr>
-															<td><input type="text" name="nama_kadiv_logistik" id="logistik" placeholder="Nama"></td>
+															<td><input type="text" name="panitia[kadiv_logistik_cbs][nama]" id="logistik" placeholder="Nama"></td>
 														</tr>
 													</tbody>
 												</table>
@@ -242,10 +242,10 @@
 													<caption>Ketua Divisi Dankom</caption>
 													<tbody>
 														<tr>
-															<td ondrop="drop15(event, this)" ondragover="allowDrop(event)" style="height: 155px; width: 115px"><input type="hidden" name="Link Foto" value="" id="foto_kadiv_dankom"></td>
+															<td ondrop="drop15(event, this)" ondragover="allowDrop(event)" style="height: 155px; width: 115px"><input type="hidden" name="panitia[kadiv_dankom_cbs][link_foto]" value="" id="foto_kadiv_dankom"></td>
 														</tr>
 														<tr>
-															<td><input type="text" name="nama_kadiv_dankom" id="dankom" placeholder="Nama"></td>
+															<td><input type="text" name="panitia[kadiv_dankom_cbs][nama]" id="dankom" placeholder="Nama"></td>
 														</tr>
 													</tbody>
 												</table>
@@ -254,10 +254,10 @@
 													<caption>Ketua Divisi Pubdok</caption>
 													<tbody>
 														<tr>
-															<td ondrop="drop16(event, this)" ondragover="allowDrop(event)" style="height: 155px; width: 115px"><input type="hidden" name="Link Foto" value="" id="foto_kadiv_pubdok"></td>
+															<td ondrop="drop16(event, this)" ondragover="allowDrop(event)" style="height: 155px; width: 115px"><input type="hidden" name="panitia[kadiv_pubdok_cbs][link_foto]" value="" id="foto_kadiv_pubdok"></td>
 														</tr>
 														<tr>
-															<td><input type="text" name="nama_kadiv_pubdok" id="pubdok" placeholder="Nama"></td>
+															<td><input type="text" name="panitia[kadiv_pubdok_cbs][nama]" id="pubdok" placeholder="Nama"></td>
 														</tr>
 													</tbody>
 												</table>
@@ -303,10 +303,10 @@
 									<caption>Ketua BE</caption>
 									<tbody>
 										<tr>
-											<td ondrop="drop17(event, this)" ondragover="allowDrop(event)" style="height: 155px; width: 115px"><input type="hidden" name="Link Foto" value="" id="foto_ketua_be"></td>
+											<td ondrop="drop17(event, this)" ondragover="allowDrop(event)" style="height: 155px; width: 115px"><input type="hidden" name="be[ketua_be][link_foto]" value="" id="foto_ketua_be"></td>
 										</tr>
 										<tr>
-											<td><input type="text" name="nama_ketua_be" id="nama1" placeholder="Nama"></td>
+											<td><input type="text" name="be[ketua_be][nama]" id="nama1" placeholder="Nama"></td>
 										</tr>
 									</tbody>
 								</table>
@@ -316,10 +316,10 @@
 											<caption>Wakil Ketua BE</caption>
 											<tbody>
 												<tr>
-													<td ondrop="drop18(event, this)" ondragover="allowDrop(event)" style="height: 155px; width: 115px"><input type="hidden" name="Link Foto" value="" id="foto_waketu_be"></td>
+													<td ondrop="drop18(event, this)" ondragover="allowDrop(event)" style="height: 155px; width: 115px"><input type="hidden" name="be[waketu_be][link_foto]" value="" id="foto_waketu_be"></td>
 												</tr>
 												<tr>
-													<td><input type="text" name="nama_waketu_be" id="nama2" placeholder="Nama"></td>
+													<td><input type="text" name="be[waketu_be][nama]" id="nama2" placeholder="Nama"></td>
 												</tr>
 											</tbody>
 										</table>
@@ -329,10 +329,10 @@
 													<caption>Kepala Biro ADK</caption>
 													<tbody>
 														<tr>
-															<td ondrop="drop19(event, this)" ondragover="allowDrop(event)" style="height: 155px; width: 115px"><input type="hidden" name="Link Foto" value="" id="foto_kabir_adk"></td>
+															<td ondrop="drop19(event, this)" ondragover="allowDrop(event)" style="height: 155px; width: 115px"><input type="hidden" name="be[kabir_adk][link_foto]" value="" id="foto_kabir_adk"></td>
 														</tr>
 														<tr>
-															<td><input type="text" name="nama_kabir_adk" id="nama3" placeholder="Nama"></td>
+															<td><input type="text" name="be[kabir_adk][nama]" id="nama3" placeholder="Nama"></td>
 														</tr>
 													</tbody>
 												</table>
@@ -341,10 +341,10 @@
 													<caption>Kepala Biro Keuangan</caption>
 													<tbody>
 														<tr>
-															<td ondrop="drop20(event, this)" ondragover="allowDrop(event)" style="height: 155px; width: 115px"><input type="hidden" name="Link Foto" value="" id="foto_kabir_uang"></td>
+															<td ondrop="drop20(event, this)" ondragover="allowDrop(event)" style="height: 155px; width: 115px"><input type="hidden" name="be[kabir_uang][link_foto]" value="" id="foto_kabir_uang"></td>
 														</tr>
 														<tr>
-															<td><input type="text" name="nama_kabir_uang" id="nama4" placeholder="Nama"></td>
+															<td><input type="text" name="be[kabir_uang][nama]" id="nama4" placeholder="Nama"></td>
 														</tr>
 													</tbody>
 												</table>
@@ -353,10 +353,10 @@
 													<caption>Kepala Departemen Kaderisasi</caption>
 													<tbody>
 														<tr>
-															<td ondrop="drop21(event, this)" ondragover="allowDrop(event)" style="height: 155px; width: 115px"><input type="hidden" name="Link Foto" value="" id="foto_kadep_psdm"></td>
+															<td ondrop="drop21(event, this)" ondragover="allowDrop(event)" style="height: 155px; width: 115px"><input type="hidden" name="be[kadep_psdm][link_foto]" value="" id="foto_kadep_psdm"></td>
 														</tr>
 														<tr>
-															<td><input type="text" name="nama_kadep_psdm" id="nama5" placeholder="Nama"></td>
+															<td><input type="text" name="be[kadep_psdm][nama]" id="nama5" placeholder="Nama"></td>
 														</tr>
 													</tbody>
 												</table>
@@ -365,10 +365,10 @@
 													<caption>Kepala Departemen PO</caption>
 													<tbody>
 														<tr>
-															<td ondrop="drop22(event, this)" ondragover="allowDrop(event)" style="height: 155px; width: 115px"><input type="hidden" name="Link Foto" value="" id="foto_kadep_po"></td>
+															<td ondrop="drop22(event, this)" ondragover="allowDrop(event)" style="height: 155px; width: 115px"><input type="hidden" name="be[kadep_po][link_foto]" value="" id="foto_kadep_po"></td>
 														</tr>
 														<tr>
-															<td><input type="text" name="nama_kadep_po" id="nama6" placeholder="Nama"></td>
+															<td><input type="text" name="be[kadep_po][nama]" id="nama6" placeholder="Nama"></td>
 														</tr>
 													</tbody>
 												</table>
@@ -377,10 +377,10 @@
 													<caption>Kepala Departemen Hubin</caption>
 													<tbody>
 														<tr>
-															<td ondrop="drop23(event, this)" ondragover="allowDrop(event)" style="height: 155px; width: 115px"><input type="hidden" name="Link Foto" value="" id="foto_kadep_hubin"></td>
+															<td ondrop="drop23(event, this)" ondragover="allowDrop(event)" style="height: 155px; width: 115px"><input type="hidden" name="be[kadep_hubin][link_foto]" value="" id="foto_kadep_hubin"></td>
 														</tr>
 														<tr>
-															<td><input type="text" name="nama_kadep_hubin" id="nama7" placeholder="Nama"></td>
+															<td><input type="text" name="be[kadep_hubin][nama]" id="nama7" placeholder="Nama"></td>
 														</tr>
 													</tbody>
 												</table>
@@ -389,10 +389,10 @@
 													<caption>Kepala Departemen Hubeks</caption>
 													<tbody>
 														<tr>
-															<td ondrop="drop24(event, this)" ondragover="allowDrop(event)" style="height: 155px; width: 115px"><input type="hidden" name="Link Foto" value="" id="foto_kadep_hubeks"></td>
+															<td ondrop="drop24(event, this)" ondragover="allowDrop(event)" style="height: 155px; width: 115px"><input type="hidden" name="be[kadep_hubeks][link_foto]" value="" id="foto_kadep_hubeks"></td>
 														</tr>
 														<tr>
-															<td><input type="text" name="nama_kadep_hubeks" id="nama8" placeholder="Nama"></td>
+															<td><input type="text" name="be[kadep_hubeks][nama]" id="nama8" placeholder="Nama"></td>
 														</tr>
 													</tbody>
 												</table>
@@ -401,10 +401,10 @@
 													<caption>Kepala Departemen Litbang</caption>
 													<tbody>
 														<tr>
-															<td ondrop="drop25(event, this)" ondragover="allowDrop(event)" style="height: 155px; width: 115px"><input type="hidden" name="Link Foto" value="" id="foto_kadep_litbang"></td>
+															<td ondrop="drop25(event, this)" ondragover="allowDrop(event)" style="height: 155px; width: 115px"><input type="hidden" name="be[kadep_litbang][link_foto]" value="" id="foto_kadep_litbang"></td>
 														</tr>
 														<tr>
-															<td><input type="text" name="nama_kadep_litbang" id="nama9" placeholder="Nama"></td>
+															<td><input type="text" name="be[kadep_litbang][nama]" id="nama9" placeholder="Nama"></td>
 														</tr>
 													</tbody>
 												</table>
@@ -413,10 +413,10 @@
 													<caption>Kepala Departemen Medinfo</caption>
 													<tbody>
 														<tr>
-															<td ondrop="drop26(event, this)" ondragover="allowDrop(event)" style="height: 155px; width: 115px"><input type="hidden" name="Link Foto" value="" id="foto_kadep_medinfo"></td>
+															<td ondrop="drop26(event, this)" ondragover="allowDrop(event)" style="height: 155px; width: 115px"><input type="hidden" name="be[kadep_medinfo][link_foto]" value="" id="foto_kadep_medinfo"></td>
 														</tr>
 														<tr>
-															<td><input type="text" name="nama_kadep_medinfo" id="nama10" placeholder="Nama"></td>
+															<td><input type="text" name="be[kadep_medinfo][nama]" id="nama10" placeholder="Nama"></td>
 														</tr>
 													</tbody>
 												</table>
@@ -425,10 +425,10 @@
 													<caption>Kepala Departemen Kewirausahaan</caption>
 													<tbody>
 														<tr>
-															<td ondrop="drop27(event, this)" ondragover="allowDrop(event)" style="height: 155px; width: 115px"><input type="hidden" name="Link Foto" value="" id="foto_kadep_wirus"></td>
+															<td ondrop="drop27(event, this)" ondragover="allowDrop(event)" style="height: 155px; width: 115px"><input type="hidden" name="be[kadep_wirus][link_foto]" value="" id="foto_kadep_wirus"></td>
 														</tr>
 														<tr>
-															<td><input type="text" name="nama_kadep_wirus" id="nama11" placeholder="Nama"></td>
+															<td><input type="text" name="be[kadep_wirus][nama]" id="nama11" placeholder="Nama"></td>
 														</tr>
 													</tbody>
 												</table>
@@ -437,10 +437,10 @@
 													<caption>Kepala Departemen Agama</caption>
 													<tbody>
 														<tr>
-															<td ondrop="drop28(event, this)" ondragover="allowDrop(event)" style="height: 155px; width: 115px"><input type="hidden" name="Link Foto" value="" id="foto_kadep_agama"></td>
+															<td ondrop="drop28(event, this)" ondragover="allowDrop(event)" style="height: 155px; width: 115px"><input type="hidden" name="be[kadep_agama][link_foto]" value="" id="foto_kadep_agama"></td>
 														</tr>
 														<tr>
-															<td><input type="text" name="nama_kadep_agama" id="nama12" placeholder="Nama"></td>
+															<td><input type="text" name="be[kadep_agama][nama]" id="nama12" placeholder="Nama"></td>
 														</tr>
 													</tbody>
 												</table>
@@ -449,10 +449,10 @@
 													<caption>Kepala Departemen Keprofesian</caption>
 													<tbody>
 														<tr>
-															<td ondrop="drop29(event, this)" ondragover="allowDrop(event)" style="height: 155px; width: 115px"><input type="hidden" name="Link Foto" value="" id="foto_kadep_keprof"></td>
+															<td ondrop="drop29(event, this)" ondragover="allowDrop(event)" style="height: 155px; width: 115px"><input type="hidden" name="be[kadep_keprof][link_foto]" value="" id="foto_kadep_keprof"></td>
 														</tr>
 														<tr>
-															<td><input type="text" name="nama_kadep_keprof" id="nama13" placeholder="Nama"></td>
+															<td><input type="text" name="be[kadep_keprof][nama]" id="nama13" placeholder="Nama"></td>
 														</tr>
 													</tbody>
 												</table>
@@ -461,10 +461,10 @@
 													<caption>Kepala Departemen Minat dan Bakat</caption>
 													<tbody>
 														<tr>
-															<td ondrop="drop30(event, this)" ondragover="allowDrop(event)" style="height: 155px; width: 115px"><input type="hidden" name="Link Foto" value="" id="foto_kadep_miba"></td>
+															<td ondrop="drop30(event, this)" ondragover="allowDrop(event)" style="height: 155px; width: 115px"><input type="hidden" name="be[kadep_miba][link_foto]" value="" id="foto_kadep_miba"></td>
 														</tr>
 														<tr>
-															<td><input type="text" name="nama_kadep_miba" id="nama14" placeholder="Nama"></td>
+															<td><input type="text" name="be[kadep_miba][nama]" id="nama14" placeholder="Nama"></td>
 														</tr>
 													</tbody>
 												</table>
@@ -508,10 +508,10 @@
 									<caption>Ketua DPA</caption>
 									<tbody>
 										<tr>
-											<td ondrop="drop31(event, this)" ondragover="allowDrop(event)" style="height: 155px; width: 115px"><input type="hidden" name="Link Foto" value="" id="foto_ketua_dpa"></td>
+											<td ondrop="drop31(event, this)" ondragover="allowDrop(event)" style="height: 155px; width: 115px"><input type="hidden" name="dpa[ketua_dpa][link_foto]" value="" id="foto_ketua_dpa"></td>
 										</tr>
 										<tr>
-											<td><input type="text" name="nama_ketua_dpa" id="kdpa" placeholder="Nama"></td>
+											<td><input type="text" name="dpa[ketua_dpa][nama]" id="kdpa" placeholder="Nama"></td>
 										</tr>
 									</tbody>
 								</table>
@@ -520,10 +520,10 @@
 									<caption>Sekretaris DPA</caption>
 									<tbody>
 										<tr>
-											<td ondrop="drop32(event, this)" ondragover="allowDrop(event)" style="height: 155px; width: 115px"><input type="hidden" name="Link Foto" value="" id="foto_sekretaris_dpa"></td>
+											<td ondrop="drop32(event, this)" ondragover="allowDrop(event)" style="height: 155px; width: 115px"><input type="hidden" name="dpa[sekretaris_dpa][link_foto]" value="" id="foto_sekretaris_dpa"></td>
 										</tr>
 										<tr>
-											<td><input type="text" name="nama_sekretaris_dpa" id="sdpa" placeholder="Nama"></td>
+											<td><input type="text" name="dpa[sekretaris_dpa][nama]" id="sdpa" placeholder="Nama"></td>
 										</tr>
 									</tbody>
 								</table>
@@ -532,10 +532,10 @@
 									<caption>Bendahara DPA</caption>
 									<tbody>
 										<tr>
-											<td ondrop="drop33(event, this)" ondragover="allowDrop(event)" style="height: 155px; width: 115px"><input type="hidden" name="Link Foto" value="" id="foto_bendahara_dpa"></td>
+											<td ondrop="drop33(event, this)" ondragover="allowDrop(event)" style="height: 155px; width: 115px"><input type="hidden" name="dpa[bendahara_dpa][link_foto]" value="" id="foto_bendahara_dpa"></td>
 										</tr>
 										<tr>
-											<td><input type="text" name="nama_bendahara_dpa" id="bdpa" placeholder="Nama"></td>
+											<td><input type="text" name="dpa[bendahara_dpa][nama]" id="bdpa" placeholder="Nama"></td>
 										</tr>
 									</tbody>
 								</table>
@@ -544,10 +544,10 @@
 									<caption>Ketua Komisi I</caption>
 									<tbody>
 										<tr>
-											<td ondrop="drop34(event, this)" ondragover="allowDrop(event)" style="height: 155px; width: 115px"><input type="hidden" name="Link Foto" value="" id="foto_kakom_1"></td>
+											<td ondrop="drop34(event, this)" ondragover="allowDrop(event)" style="height: 155px; width: 115px"><input type="hidden" name="dpa[kakom_1][link_foto]" value="" id="foto_kakom_1"></td>
 										</tr>
 										<tr>
-											<td><input type="text" name="nama_kakom_1" id="k1dpa" placeholder="Nama"></td>
+											<td><input type="text" name="dpa[kakom_1][nama]" id="k1dpa" placeholder="Nama"></td>
 										</tr>
 									</tbody>
 								</table>
@@ -556,10 +556,10 @@
 									<caption>Ketua Komisi II</caption>
 									<tbody>
 										<tr>
-											<td ondrop="drop35(event, this)" ondragover="allowDrop(event)" style="height: 155px; width: 115px"><input type="hidden" name="Link Foto" value="" id="foto_kakom_2"></td>
+											<td ondrop="drop35(event, this)" ondragover="allowDrop(event)" style="height: 155px; width: 115px"><input type="hidden" name="dpa[kakom_2][link_foto]" value="" id="foto_kakom_2"></td>
 										</tr>
 										<tr>
-											<td><input type="text" name="nama_kakom_2" id="k2dpa" placeholder="Nama"></td>
+											<td><input type="text" name="dpa[kakom_2][nama]" id="k2dpa" placeholder="Nama"></td>
 										</tr>
 									</tbody>
 								</table>
@@ -568,10 +568,10 @@
 									<caption>Ketua Komisi III</caption>
 									<tbody>
 										<tr>
-											<td ondrop="drop36(event, this)" ondragover="allowDrop(event)" style="height: 155px; width: 115px"><input type="hidden" name="Link Foto" value="" id="foto_kakom_3"></td>
+											<td ondrop="drop36(event, this)" ondragover="allowDrop(event)" style="height: 155px; width: 115px"><input type="hidden" name="dpa[kakom_3][link_foto]" value="" id="foto_kakom_3"></td>
 										</tr>
 										<tr>
-											<td><input type="text" name="nama_kakom_3" id="k3dpa" placeholder="Nama"></td>
+											<td><input type="text" name="dpa[kakom_3][nama]" id="k3dpa" placeholder="Nama"></td>
 										</tr>
 									</tbody>
 								</table>
@@ -603,10 +603,10 @@
 									<caption>Presidium 1</caption>
 									<tbody>
 										<tr>
-											<td ondrop="drop37(event, this)" ondragover="allowDrop(event)" style="height: 155px; width: 115px"><input type="hidden" name="Link Foto" value="" id="foto_presidium_1"></td>
+											<td ondrop="drop37(event, this)" ondragover="allowDrop(event)" style="height: 155px; width: 115px"><input type="hidden" name="presidium[presidium_1][link_foto]" value="" id="foto_presidium_1"></td>
 										</tr>
 										<tr>
-											<td><input type="text" name="nama_presidium_1" id="p1" placeholder="Nama"></td>
+											<td><input type="text" name="presidium[presidium_1][nama]" id="p1" placeholder="Nama"></td>
 										</tr>
 									</tbody>
 								</table>
@@ -615,10 +615,10 @@
 									<caption>Presidium 2</caption>
 									<tbody>
 										<tr>
-											<td ondrop="drop38(event, this)" ondragover="allowDrop(event)" style="height: 155px; width: 115px"><input type="hidden" name="Link Foto" value="" id="foto_presidium_2"></td>
+											<td ondrop="drop38(event, this)" ondragover="allowDrop(event)" style="height: 155px; width: 115px"><input type="hidden" name="presidium[presidium_2][link_foto]" value="" id="foto_presidium_2"></td>
 										</tr>
 										<tr>
-											<td><input type="text" name="nama_presidium_2" id="p2" placeholder="Nama"></td>
+											<td><input type="text" name="presidium[presidium_2][nama]" id="p2" placeholder="Nama"></td>
 										</tr>
 									</tbody>
 								</table>
@@ -627,10 +627,10 @@
 									<caption>Presidium 3</caption>
 									<tbody>
 										<tr>
-											<td ondrop="drop39(event, this)" ondragover="allowDrop(event)" style="height: 155px; width: 115px"><input type="hidden" name="Link Foto" value="" id="foto_presidium_3"></td>
+											<td ondrop="drop39(event, this)" ondragover="allowDrop(event)" style="height: 155px; width: 115px"><input type="hidden" name="presidium[presidium_3][link_foto]" value="" id="foto_presidium_3"></td>
 										</tr>
 										<tr>
-											<td><input type="text" name="nama_presidium_3" id="p3" placeholder="Nama"></td>
+											<td><input type="text" name="presidium[presidium_3][nama]" id="p3" placeholder="Nama"></td>
 										</tr>
 									</tbody>
 								</table>

@@ -10,15 +10,17 @@ class Kuis extends CI_Controller
 	{
 		parent::__construct();
 		$this->load->model('Kuis_model');
-		//$this->load->session();
+		$this->load->library('session');
 		$this->load->database();
 		$this->load->helper('url');
 	}
 
 	public function view_kuis()
 	{
+
 		$this->load->view('header');
 		$this->load->view('kuis_struktur');
+		//$this->load->view('footer');
 		
 	}
 
@@ -157,6 +159,39 @@ class Kuis extends CI_Controller
  					);
 		$this->Kuis_model()->insert_answer($data_mubes);
 	}
-}	
 
+	public function kuis_struktur_submit() {
+
+		$npm_maba = $this->session->userdata['logged_in']['npm'];
+
+		$panitia = $this->input->post('panitia');
+
+		$be = $this->input->post('be');
+
+		$dpa = $this->input->post('dpa');
+
+		$presidium = $this->input->post('presidium');
+
+		foreach ($panitia as $jabatan => $info) {
+			$this->Kuis_model->insert_panitia($npm_maba, $info['nama'], $jabatan, $info['link_foto']);
+		}
+
+		foreach ($be as $jabatan => $info) {
+			$this->Kuis_model->insert_bk($npm_maba, $info['nama'], $jabatan, 'be', $info['link_foto']);
+		}
+
+		foreach ($dpa as $jabatan => $info) {
+			$this->Kuis_model->insert_bk($npm_maba, $info['nama'], $jabatan, 'dpa', $info['link_foto']);
+		}
+
+		foreach ($presidium as $jabatan => $info) {
+			$this->Kuis_model->insert_bk($npm_maba, $info['nama'], $jabatan, 'presidium', $info['link_foto']);
+		}
+
+		echo "berhasil(?)";
+		die();
+
+	}
+
+}	
  ?>
