@@ -185,7 +185,7 @@ class Perkenalan extends CI_Controller
 				if ($angkatan == $max_angkatan) {
 					$cek = $this->Perkenalan_model->check_perkenalan($id_user_maba, $id_user, 'perkenalan_angkatan');
 					if ($cek == TRUE) {
-						$data['error_message'] = "request telah dikirim";
+						$data['error_message'] = "request telah diapprove";
 						$this->load->view('header');
 						$this->load->view('index',$data);
 						$this->load->view('footer');	

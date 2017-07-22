@@ -101,7 +101,7 @@ class Perkenalan_model extends CI_Model {
 			$q = $this->db
 			->select('*')
 			->from($tabel)
-			->where(array('id_user_maba' => $id_user_maba, 'id_user_kating' => $id_user, 'status' => 0))
+			->where(array('id_user_maba' => $id_user_maba, 'id_user_kating' => $id_user, 'status' => 1))
 			->limit(1)
 			->get();
 		}else {
