@@ -363,12 +363,7 @@ class UserController extends CI_Controller
 
 	}
 
-	public function request() {
-
-		$this->load->view('header');
-		$this->load->view('request_perkenalan');
-		$this->load->view('footer');
-	}
+	
 
 	public function accept() {
 

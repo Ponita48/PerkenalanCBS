@@ -1,4 +1,19 @@
-	
+	<?php if (isset($message_display)): ?>
+		<br>
+		<div class="alert alert-success alert-dismissable">
+			<a href="#" class="close" data-dismiss="alert" aria-label="close">x</a>
+			<?php echo $message_display; ?>
+		</div>
+	<?php endif ?>
+	<?php if (isset($error_message)): ?>
+		<br>
+		<div class="alert alert-danger alert-dismissable">
+			<a href="#" class="close" data-dismiss="alert" aria-label="close">x</a>
+			<?php echo $error_message; ?>
+		</div>
+	<?php endif ?>
+
+
 	<div>
 		<h1>ANGGOTA KELUARGA HIMATIF</h1>
 		<br>

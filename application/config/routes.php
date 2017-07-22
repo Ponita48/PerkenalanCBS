@@ -72,6 +72,7 @@ $route['perkenalan'] = 'UserController/get_angkatan/all';
 $route['request_keluarga/(:any)'] = 'Perkenalan/request_keluarga/$1'; //$1 = $id
 $route['request_peserta/(:any)'] = 'Perkenalan/request_peserta/$1'; //$1 = $id
 $route['my_request'] = 'Perkenalan/my_request';
+$route['request/(:any)'] = 'Perkenalan/request/$1'; //$1 = $id_user keluarga / peserta (yang akan dimintai request)
 
 
 //A

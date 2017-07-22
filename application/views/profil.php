@@ -16,7 +16,7 @@
 					<?php if ($this->session->userdata['logged_in']['role'] != "admin"): ?>
 						<!-- MABA MELIHAT KATING -->
 						<?php if ($result->role != "2017"): ?>
-							<button class="btn btn-warning" type="submit">Request Perkenalan</button><br><br>
+							<a href="<?php echo base_url(); ?>request/<?php echo $result->id_user; ?>"><button class="btn btn-warning" type="submit">Request Perkenalan</button></a><br><br>
 						<?php endif ?>
 						<!-- npm di session = npm yang dilihat -->
 						<?php if ($this->session->userdata['logged_in']['npm'] == $result->npm): ?>

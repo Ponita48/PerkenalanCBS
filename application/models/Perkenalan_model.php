@@ -95,6 +95,34 @@ class Perkenalan_model extends CI_Model {
 		}
 	}
 
+	public function check_perkenalan($id_user_maba, $id_user, $tabel) {
+
+		if ($tabel == 'perkenalan_kating') {
+			$q = $this->db
+			->select('*')
+			->from($tabel)
+			->where(array('id_user_maba' => $id_user_maba, 'id_user_kating' => $id_user, 'status' => 0))
+			->limit(1)
+			->get();
+		}else {
+			$q = $this->db
+			->select('*')
+			->from($tabel)
+			->where(array('id_user1' => $id_user_maba, 'id_user2' => $id_user))
+			->limit(1)
+			->get();
+		}
+
+		if ($q->num_rows() == 0) {
+			return FALSE;
+		}else {
+			return TRUE;
+		}
+
+		
+
+	}
+
 }
 
  ?>
