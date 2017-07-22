@@ -74,6 +74,13 @@ class TestViewController extends CI_Controller {
 
 	}	
 
+	public function req_ang()
+	{
+		$this->load->view('header');
+		$this->load->view('request_angkatan');
+		$this->load->view('footer');
+	}
+
 }
 
  ?>
