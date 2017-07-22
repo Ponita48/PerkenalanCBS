@@ -25,7 +25,7 @@
 </div>
 <div class="col-md-9">
 	<div class="well well-lg" style="vertical-align: middle">
-	<form action="" method="POST"></form>
+	<form action="<?php echo base_url(); ?>request_peserta/<?php echo $id_user; ?>" method="POST"></form>
 			<div class="form-group">
 				<label for="nama">Nama</label>
 				<input type="nama" class="form-control" name="nama" placeholder="Nama teman anda">

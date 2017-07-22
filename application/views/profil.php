@@ -14,15 +14,14 @@
 				<?php if (isset($this->session->userdata['logged_in'])): ?>
 					<!-- Login = peserta & dilihat != Peserta -->
 					<?php if ($this->session->userdata['logged_in']['role'] != "admin"): ?>
-						<!-- MABA MELIHAT KATING -->
-						<?php if ($result->role != "2017"): ?>
-							<a href="<?php echo base_url(); ?>request/<?php echo $result->id_user; ?>"><button class="btn btn-warning" type="submit">Request Perkenalan</button></a><br><br>
-						<?php endif ?>
+						
 						<!-- npm di session = npm yang dilihat -->
 						<?php if ($this->session->userdata['logged_in']['npm'] == $result->npm): ?>
 							<!-- PROFIL PRIBADI MABA -->
 							<a href="<?php echo base_url(); ?>edit_profile"><button class="btn btn-success" type="submit">Edit Profil</button></a><br><br>
 							<a href="<?php echo base_url(); ?>my_request"><button class="btn btn-warning" type="submit">Lihat Daftar Perkenalan</button></a><br><br>
+						<?php else : ?>
+							<a href="<?php echo base_url(); ?>request/<?php echo $result->id_user; ?>"><button class="btn btn-warning" type="submit">Request Perkenalan</button></a><br><br>
 						<?php endif ?>
 					<?php endif ?>
 					<!-- admin ngeliat -->

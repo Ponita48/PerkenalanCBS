@@ -190,8 +190,9 @@ class Perkenalan extends CI_Controller
 						$this->load->view('index',$data);
 						$this->load->view('footer');	
 					}
-					//load view request angkatan
-					die();
+					$this->load->view('header');
+					$this->load->view('request_angkatan', $data);
+					$this->load->view('footer');
 				}else {
 					$cek = $this->Perkenalan_model->check_perkenalan($id_user_maba, $id_user, 'perkenalan_kating');
 					if ($cek == TRUE) {
