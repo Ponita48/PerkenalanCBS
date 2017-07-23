@@ -50,6 +50,10 @@
 				<label for="no_hp">No. HP</label>
 				<input type="text" class="form-control" name="no_hp" placeholder="Nomor HP teman anda">
 			</div>
+			<div class="form-group">
+				<label for="link_foto">Link Foto</label>
+				<input type="text" class="form-control" name="link_foto" placeholder="link foto teman anda">
+			</div>
 			<input type="submit" value="Submit" class="btn btn-warning">
 		</form>
 	</div>

@@ -44,7 +44,6 @@ class UserController extends CI_Controller
 			//check username and password
 			$result = $this->User_model->loginNoHash($data);
 
-
 			if ($result == FALSE) {
 				//when username or password wrong
 				$data['error_message'] = "Username atau password salah";
@@ -195,8 +194,6 @@ class UserController extends CI_Controller
 			$data['result'] = $result[0];
 
 			if ($this->form_validation->run() == FALSE) {
-
-
 				$this->load->view('header');
 				$this->load->view('change_profile', $data);
 				$this->load->view('footer');
@@ -206,7 +203,7 @@ class UserController extends CI_Controller
 					'nama' => $this->input->post('nama'),
 					'jk' => $this->input->post('jk'),
 					'tempat_lahir' => $this->input->post('tempat_lahir'),
-					'tgl_lahir' => $this->input->post('tgl_lahir'),
+					'tgl_lahir' => date("Y-m-d", strtotime($this->input->post('tgl_lahir'))),
 					'alamat_kos' => $this->input->post('alamat_kos'),
 					'no_hp' => $this->input->post('no_hp'),
 					'id_line' => $this->input->post('id_line')
@@ -224,6 +221,8 @@ class UserController extends CI_Controller
 					$this->load->view('change_profile', $data);
 					$this->load->view('footer');
 				}else {
+					$result = $this->User_model->getProfile();
+					$data['result'] = $result[0];
 					$data['message_display'] = "Success";
 					$this->load->view('header');
 					$this->load->view('change_profile', $data);

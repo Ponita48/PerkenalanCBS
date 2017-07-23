@@ -74,10 +74,10 @@ class User_model extends CI_Model {
 			$password = $data['password'];
 			if (password_verify($password, $query->row('password'))) {
 
-				$max_angkatan = $this->db->query("SELECT MAX(role) as 'max' FROM users WHERE role != 'admin'")->result()[0]->max;
+				$max_angkatan = $this->max_angkatan();
 
 				if ($query->row('role') == $max_angkatan) {
-					$role = 'perserta';
+					$role = 'peserta';
 				}elseif ($query->row('role') == 'admin') {
 					$role = 'admin';
 				}else {

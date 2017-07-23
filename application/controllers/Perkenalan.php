@@ -30,13 +30,15 @@ class Perkenalan extends CI_Controller
 				$date = date("Y-m-d H:i:s", time());
 				//echo date("Y M D H:i:s", time());
 				//die();
-				$this->form_validation->set_rules('nama', 'Nama Keluarga', 'required');
+				$this->form_validation->set_rules('nama', 'Nama', 'required');
 				$this->form_validation->set_rules('ciri_khas', 'Ciri Khas', 'required');
 				$this->form_validation->set_rules('link_foto', 'Link Foto', 'required');
 
 				if ($this->form_validation->run() == FALSE) {
-					
-					//redirect();
+					//redirect('../request/'.$id);
+					$this->load->view('header');
+					$this->load->view('index');
+					$this->load->view('footer');
 				}else {
 					$data = array(
 						'id_keluarga' => $id,
@@ -89,7 +91,7 @@ class Perkenalan extends CI_Controller
 			//$date = time();
 			//echo date("M D Y H:i:s", $date);
 			//die();
-			$this->form_validation->set_rules('nama', 'Nama Keluarga', 'required');
+			$this->form_validation->set_rules('nama', 'Nama', 'required');
 			$this->form_validation->set_rules('tempat_lahir', 'Tempat Lahir', 'required');
 			$this->form_validation->set_rules('tgl_lahir', 'Tanggal Lahir', 'required');
 			$this->form_validation->set_rules('alamat_kos', 'Alamat Kos', 'required');
@@ -98,13 +100,15 @@ class Perkenalan extends CI_Controller
 			$this->form_validation->set_rules('link_foto', 'Link Foto', 'required');
 
 			if ($this->form_validation->run() == FALSE) {
-				//redirect();
+				$this->load->view('header');
+				$this->load->view('index');
+				$this->load->view('footer');
 			}else {
 				$data = array(
 					'id_user2' => $id,
 					'nama' => $this->input->post('nama'),
 					'tempat_lahir' => $this->input->post('tempat_lahir'),
-					'tgl_lahir' => $this->input->post('tgl_lahir'),
+					'tgl_lahir' => date("Y-m-d", strtotime($this->input->post('tgl_lahir'))),
 					'alamat_kos' => $this->input->post('alamat_kos'),
 					'id_line' => $this->input->post('id_line'),
 					'no_hp' => $this->input->post('no_hp'),
@@ -112,16 +116,18 @@ class Perkenalan extends CI_Controller
 					'request_time' => $date
 				);
 				
-				$result = $this->Perkenalan_model	->request_angkatan($data);
+				$result = $this->Perkenalan_model->request_angkatan($data);
 
 				if (!$result) {
-					$data['error_message'] = "Error";
-					//redirect();
-					echo "fail";
+					$data['error_message'] = "Request error";
+					$this->load->view('header');
+					$this->load->view('index', $data);
+					$this->load->view('footer');
 				}else {
-					$data['message_display'] = "Success";
-					//redirect();
-					echo "success";
+					$data['message_display'] = "Request telah dikirim";
+					$this->load->view('header');
+					$this->load->view('index', $data);
+					$this->load->view('footer');
 				}
 			}
 		}
@@ -185,7 +191,7 @@ class Perkenalan extends CI_Controller
 				if ($angkatan == $max_angkatan) {
 					$cek = $this->Perkenalan_model->check_perkenalan($id_user_maba, $id_user, 'perkenalan_angkatan');
 					if ($cek == TRUE) {
-						$data['error_message'] = "request telah diapprove";
+						$data['error_message'] = "request telah dikirim";
 						$this->load->view('header');
 						$this->load->view('index',$data);
 						$this->load->view('footer');	
@@ -196,7 +202,7 @@ class Perkenalan extends CI_Controller
 				}else {
 					$cek = $this->Perkenalan_model->check_perkenalan($id_user_maba, $id_user, 'perkenalan_kating');
 					if ($cek == TRUE) {
-						$data['error_message'] = "request telah dikirim";
+						$data['error_message'] = "request telah diapprove";
 						$this->load->view('header');
 						$this->load->view('index',$data);
 						$this->load->view('footer');
