@@ -99,6 +99,16 @@ class Kuis_model extends CI_Model
 
 	}
 
+	public function get_filled_kuis() {
+		$q = $this->db->query("SELECT users.id_user, users.npm, profile_maba.nama from users JOIN kuis_bk on users.npm = kuis_bk.npm_maba JOIN kuis_panitia ON users.npm = kuis_panitia.npm_maba LEFT JOIN profile_maba ON users.id_user = profile_maba.id_user GROUP BY users.id_user");
+
+		if ($q->num_rows() == 0) {
+			return NULL;
+		}else {
+			return $q->result();
+		}
+	}
+
 }
 
  ?>
