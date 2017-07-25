@@ -30,13 +30,40 @@ class Kuis extends CI_Controller
 
 			$npm = $this->User_model->get_npm($this->session->userdata['logged_in']['id_user']);
 
+			$filled = $this->Kuis_model->cek_filled_kuis($npm);
+
+			if ($filled == NULL) {
+				$data['npm'] = $npm;
+
+				$this->load->view('header');
+				$this->load->view('kuis_struktur', $data);
+				$this->load->view('footer');
+			}else {
+				redirect('/kuis/jawaban');
+			}
+		}
+	}
+
+	public function isi_kuis() {
+		if ( ! isset($this->session->userdata['logged_in'])) {
+			$data['error_message'] = "Silahkan login terlebih dahulu";
+			$this->load->view('header');
+			$this->load->view('index', $data);
+			$this->load->view('footer');
+		}else {
+
+			if ($this->session->userdata['logged_in']['role'] == 'admin') {
+				redirect('/kuis/filled');
+			}
+
+			$npm = $this->User_model->get_npm($this->session->userdata['logged_in']['id_user']);
+		
 			$data['npm'] = $npm;
 
 			$this->load->view('header');
 			$this->load->view('kuis_struktur', $data);
-			$this->load->view('footer');
+			$this->load->view('footer');			
 		}
-		
 	}
 
 	public function kuis_struktur_submit() {

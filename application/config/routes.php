@@ -90,3 +90,4 @@ $route['kuis/submit'] = 'Kuis/kuis_struktur_submit';
 $route['kuis/jawaban'] = 'Kuis/get_kuis';
 $route['kuis/jawaban/(:any)'] = 'Kuis/get_kuis/$1';
 $route['kuis/filled'] = 'Kuis/filled_kuis';
+$route['kuis/isi'] = 'Kuis/isi_kuis';

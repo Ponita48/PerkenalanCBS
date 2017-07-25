@@ -41,7 +41,10 @@
 	<!-- Quiz Layer, dengan tab-content -->
 	<div id="konten" class="container-fluid">
 		<div id="header_content" class="row" style="padding-top: 5px;">
-			<center><h3>HASIL KUIS BK/PANITIA (<?php echo $npm; ?>)</h3></center>
+			<center>
+				<h3>HASIL KUIS BK/PANITIA (<?php echo $npm; ?>)</h3>
+				<a href="<?php echo base_url(); ?>kuis/isi" class="btn btn-info" target="_blank">Isi Kuis</a>
+			</center>
 		</div>
 		<div class="tab-content">
 	  		<div id="menu1" class="tab-pane fade in active">
