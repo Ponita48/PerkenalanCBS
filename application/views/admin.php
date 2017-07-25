@@ -1,6 +1,6 @@
 
 	<div>
-		<h1>ADMIN</h1>
+		<h1>PERKENALAN DENGAN KELUARGA</h1>
 		<hr>
 		<br>
 	</div>

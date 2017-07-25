@@ -22,16 +22,16 @@
 	    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 		<ul class="nav navbar-nav">
 			<li><a href="<?php echo base_url(); ?>">Home<span class="sr-only">(current)</span></a></li>
+			<li><a href="<?php echo base_url().'angkatan'; ?>">Angkatan</a></li>
 			<?php if (isset($this->session->userdata['logged_in'])): ?>
 				<?php if ($this->session->userdata['logged_in']['role'] == "admin"): ?>
-					<li><a href="<?php echo base_url().'perkenalan_keluarga'; ?>">Admin</a></li>
+					<li><a href="<?php echo base_url().'jumlah_perkenalan'; ?>">Admin</a></li>
+					<li><a href="<?php echo base_url().'perkenalan_keluarga'; ?>">Perkenalan</a></li>
 				<?php else: ?>
-					<li><a href="<?php echo base_url().'profile/'.
-						$this->session->userdata['logged_in']['id_user']; ?>">Profile</a></li>
+					<li><a href="<?php echo base_url().'profile/'.$this->session->userdata['logged_in']['id_user']; ?>">Profile</a></li>
+					<li><a href="<?php echo base_url().'perkenalan'; ?>">Perkenalan</a></li>
 				<?php endif ?>
 			<?php endif ?>
-			<li><a href="<?php echo base_url().'angkatan'; ?>">Angkatan</a></li>
-			<li><a href="<?php echo base_url().'perkenalan'; ?>">Perkenalan</a></li>
 			<li><a href="<?php echo base_url().'kuis'; ?>">Kuis</a></li>
 		</ul>
 		<ul class="nav navbar-nav navbar-right">

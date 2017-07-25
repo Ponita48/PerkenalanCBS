@@ -1,6 +1,6 @@
 
 	<div>
-		<h1>ADMIN</h1>
+		<h1>PESERTA YANG SUDAH MENGISI KUIS</h1>
 		<hr>
 		<br>
 	</div>
@@ -21,7 +21,7 @@
 				<?php foreach ($result as $list): ?>
 					<td><?php echo $list->nama; ?></td>	
 					<td><?php echo $list->npm; ?></td>
-					<td><a href="<?php echo base_url(); ?>kuis/jawaban/<?php echo $list->id_user; ?>" class="btn btn-success">Link</a></td>
+					<td><a href="<?php echo base_url(); ?>kuis/jawaban/<?php echo $list->id_user; ?>" class="btn btn-success">Click Me :3</a></td>
 				<?php endforeach ?>
 			</tr>
 		<?php endif; ?>
