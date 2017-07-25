@@ -50,7 +50,7 @@
 							<label for="error"><?php echo $data['error_message']; ?></label>
 						</div>
 					<?php } ?>
-					<input type="submit" value="Submit" class="btn btn-warning">
+					<input type="submit" value="Submit" class="btn btn-warning" name="submit">
 				</form>
 			</div>
 		</div>
