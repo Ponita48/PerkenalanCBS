@@ -96,3 +96,10 @@
 	<?php endif; ?>
 
 	</div>
+
+	<style type="text/css">
+		img.img-responsive {
+			height: 330px;
+			width: 248px;
+		}
+	</style>
