@@ -1,5 +1,4 @@
 
-<!-- TODO: Jadiin foreach (tunggu backend selesai) -->
 	<div>
 		<h1>ADMIN</h1>
 		<hr>

@@ -81,6 +81,14 @@ class TestViewController extends CI_Controller {
 		$this->load->view('footer');
 	}
 
+	public function kuis_adm()
+	{
+		$this->load->view('header');
+		$this->load->view('kuis_admin');
+		$this->load->view('footer');
+	}
+
+
 }
 
  ?>
