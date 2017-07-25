@@ -15,7 +15,7 @@
 					<div class="modal-body">
 						<?php for ($i=2; $i <= 4; $i++) { ?>
 						<div class="col-sm-4">
-							<img src="<?php echo base_url().'Photos/PP/'.$i.'.jpg'; ?>" alt="NPM <?php echo $i+1; ?> belum mengisi foto" class="img img-responsive" onclick="change_photo();">
+							<img src="<?php echo base_url().'Photos/PP/'.$i.'.jpg'; ?>" alt="NPM <?php echo $i+1; ?> belum mengisi foto" class="img img-responsive" onclick="change_photo(this.src);">
 							<?php if ($i <= 10): ?>
 								14081015000<?php echo $i; ?>
 							<?php else: ?>
@@ -67,8 +67,8 @@
 </div>
 
 <script>
-	function change_photo(id) {
-		document.getElementById('poto').src = '<?php echo base_url().'Photos/PP/'; ?>' + id;
-		document.getElementById('link-foto').value = '<?php echo base_url().'Photos/PP/'; ?>' + id;
+	function change_photo(el) {
+		document.getElementById('poto').src = el;
+		document.getElementById('link-foto').value = el;
 	}
 </script>
