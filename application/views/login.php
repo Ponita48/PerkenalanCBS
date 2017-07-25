@@ -1,7 +1,7 @@
 	<?php if (isset($error_message)): ?>
 		<br>
 		<div class="alert alert-danger alert-dismissable">
-			<a href="#" class="close" data-dismiss="alert" aria-label="close">x</a>
+			<span class="close" data-dismiss="alert">x</span>
 			<?php echo $error_message; ?>
 		</div>
 	<?php endif ?>
@@ -9,7 +9,7 @@
 	<?php if (validation_errors() != NULL): ?>
 		<br>
 		<div class="alert alert-danger alert-dismissable">
-			<a href="#" class="close" data-dismiss="alert" aria-label="close">x</a>
+			<span class="close" data-dismiss="alert">x</span>
 			<?php echo validation_errors(); ?>
 		</div>
 	<?php endif ?>

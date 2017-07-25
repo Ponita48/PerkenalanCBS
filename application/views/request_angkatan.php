@@ -2,22 +2,30 @@
 <hr>
 <div class="col-md-3">
 	<center>
-		<img src="https://static.superdeluxe.com/dankland/generators/y-tho.jpg" alt="" class="img-thumbnail"><br><br>
+		<img src="https://static.superdeluxe.com/dankland/generators/y-tho.jpg" alt="" class="img-thumbnail" id="poto"><br><br>
 		<button type="button" class="btn btn-info" data-toggle="modal" data-target="#modalFoto">Change Photo</button>
 		
 		<div class="modal fade" id="modalFoto" role="dialog">
 			<div class="modal-dialog">
 				<div class="modal-content">
 					<div class="modal-header">
-						<button type="button" class="close" data-dissmiss="modal">&times;</button>
+						<span class="close" data-dissmiss="modal">&times;</span>
 						<h4 class="modal-title">Change Photo</h4>
 					</div>
 					<div class="modal-body">
-						<!-- TODO: tambahin foreach buat foto -->
+						<?php for ($i=2; $i <= 4; $i++) { ?>
+						<div class="col-sm-4">
+							<img src="<?php echo base_url().'Photos/PP/'.$i.'.jpg'; ?>" alt="NPM <?php echo $i+1; ?> belum mengisi foto" class="img img-responsive" onclick="change_photo();">
+							<?php if ($i <= 10): ?>
+								14081015000<?php echo $i; ?>
+							<?php else: ?>
+								1408101500<?php echo $i; ?>
+							<?php endif ?>
+						</div>
+						<?php } ?>
 					</div>
-					<div class="modal-footer">			
+						<br>			
 						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-					</div>
 				</div>
 			</div>
 		</div>
@@ -51,10 +59,16 @@
 				<input type="text" class="form-control" name="no_hp" placeholder="Nomor HP teman anda">
 			</div>
 			<div class="form-group">
-				<label for="link_foto">Link Foto</label>
-				<input type="text" class="form-control" name="link_foto" placeholder="link foto teman anda">
+				<input type="hidden" class="form-control" name="link_foto" placeholder="link foto teman anda" id="link-foto">
 			</div>
 			<input type="submit" value="Submit" class="btn btn-warning">
 		</form>
 	</div>
 </div>
+
+<script>
+	function change_photo(id) {
+		document.getElementById('poto').src = '<?php echo base_url().'Photos/PP/'; ?>' + id;
+		document.getElementById('link-foto').value = '<?php echo base_url().'Photos/PP/'; ?>' + id;
+	}
+</script>
