@@ -13,14 +13,6 @@
 		</div>
 	<?php endif ?>
 
-	<?php if (validation_errors() != NULL): ?>
-		<br>
-		<div class="alert alert-danger alert-dismissable">
-			<a href="#" class="close" data-dismiss="alert" aria-label="close">x</a>
-			<?php echo validation_errors(); ?>
-		</div>
-	<?php endif ?>
-
 	<h1>KATA SAMBUTAN</h1>
 	<center>
 		<?php for ($i=0; $i < 5; $i++) {  ?>

@@ -15,20 +15,16 @@
 			</tr>
 		</thead>
 		<tbody>
-		<!-- <?php foreach ($result as $key) : ?>
+
+		<?php if ($result != NULL) : ?>
 			<tr>
-				<td><?php echo $key->nama_peserta; ?></td>
-				<td><?php echo $key->npm_peserta; ?></td>
-				<td><?php echo $key->jumlah; ?></td>
+				<?php foreach ($result as $list): ?>
+					<td><?php echo $list->nama; ?></td>	
+					<td><?php echo $list->npm; ?></td>
+					<td><a href="<?php echo base_url(); ?>kuis/jawaban/<?php echo $list->id_user; ?>" class="btn btn-success">Link</a></td>
+				<?php endforeach ?>
 			</tr>
-		<?php endforeach; ?> -->
-		<?php for ($i=0; $i < 3; $i++) { ?>
-			<tr>
-				<td>nama wahaha</td>
-				<td>npm wahaha</td>
-				<td><a href="#" class="btn btn-success">Link</a></td>
-			</tr>
-		<?php } ?>
+		<?php endif; ?>
 		</tbody>
 	</table>
 	</div>	

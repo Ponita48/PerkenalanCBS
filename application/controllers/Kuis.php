@@ -25,10 +25,7 @@ class Kuis extends CI_Controller
 		}else {
 
 			if ($this->session->userdata['logged_in']['role'] == 'admin') {
-				$data['error_message'] = "Hanya peserta yang dapat melihat konten ini";
-				$this->load->view('header');
-				$this->load->view('index', $data);
-				$this->load->view('footer');
+				redirect('/kuis/filled');
 			}
 
 			$npm = $this->User_model->get_npm($this->session->userdata['logged_in']['id_user']);
@@ -75,9 +72,6 @@ class Kuis extends CI_Controller
 	}
 
 	public function get_kuis($id_user = NULL) {
-
-
-
 		if ( ! isset($this->session->userdata['logged_in'])) {
 			$data['error_message'] = "Silahkan login terlebih dahulu";
 			$this->load->view('header');
@@ -119,6 +113,30 @@ class Kuis extends CI_Controller
 			$this->load->view('footer');
 		}
 
+	}
+
+	public function filled_kuis() {
+		if ( ! isset($this->session->userdata['logged_in'])) {
+			$data['error_message'] = "Silahkan login terlebih dahulu";
+			$this->load->view('header');
+			$this->load->view('index', $data);
+			$this->load->view('footer');
+		}else {
+			if ($this->session->userdata['logged_in']['role'] != 'admin') {
+				$data['error_message'] = "Hanya admin yang dapat melihat konten ini";
+				$this->load->view('header');
+				$this->load->view('index', $data);
+				$this->load->view('footer');
+			}else {
+				$result = $this->Kuis_model->get_filled_kuis();
+
+				$data['result'] = $result;
+
+				$this->load->view('header');
+				$this->load->view('kuis_admin', $data);
+				$this->load->view('footer');
+			}
+		}
 	}
 
 }	

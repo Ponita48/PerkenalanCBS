@@ -1,6 +1,6 @@
 <h1>CHANGE PROFILE</h1>
 <hr>
-	<?php if (isset($message_display)): ?>
+	<?php if (isset($message_display)): ?>	
 		<div class="alert alert-success alert-dismissable">
 			<a href="#" class="close" data-dismiss="alert" aria-label="close">x</a>
 			<?php echo $message_display; ?>
