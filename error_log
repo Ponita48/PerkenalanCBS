@@ -1,0 +1,1 @@
+[23-Jun-2017 12:09:00 America/Chicago] PHP Fatal error:  Call to undefined function base_url() in /home/cbshimat/public_html/application/views/header.php on line 6
