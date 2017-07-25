@@ -81,7 +81,6 @@ $route['perkenalan_angkatan/(:any)'] = 'A/perkenalanAngkatan/$1'; //$1 = $id
 $route['jumlah_perkenalan'] = 'A/jumlahPerkenalan';
 $route['approve_perkenalan/(:any)'] = 'A/approvePerkenalan/$1'; //$1 = $id_perkenalan
 $route['reject_perkenalan/(:any)'] = 'A/rejectPerkenalan/$1'; //$1 = $id_perkenalan
-$route['admin'] = 'A/perkenalanKeluarga';
 $route['detail_perkenalan/(:any)'] = 'A/detailPerkenalan/$1';
 
 //Kuis

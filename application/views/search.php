@@ -28,8 +28,8 @@
 			<?php endforeach ?>
 		<?php else: ?>
 			<div class="alert alert-danger alert-dismissable">
-				<a href="#" class="close" data-dismiss="alert" aria-label="close">x</a>
-				<?php echo $message_display; ?>
+				<span class="close" data-dismiss="alert">x</span>
+				<?php echo $error_message; ?>
 			</div>
 		<?php endif ?>
 	</ul>

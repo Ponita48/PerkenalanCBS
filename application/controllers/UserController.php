@@ -141,7 +141,7 @@ class UserController extends CI_Controller
 				$config = array(
 					'upload_path' => './Photos/PP/',
 					'allowed_types' => 'jpg|png',
-					'max_size' => 300,
+					'max_size' => 0,
 					'file_name' => $id_user,
 					'overwrite' => TRUE,
 				);

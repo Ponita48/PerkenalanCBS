@@ -24,7 +24,7 @@
 			<li><a href="<?php echo base_url(); ?>">Home<span class="sr-only">(current)</span></a></li>
 			<?php if (isset($this->session->userdata['logged_in'])): ?>
 				<?php if ($this->session->userdata['logged_in']['role'] == "admin"): ?>
-					<li><a href="<?php echo base_url().'admin'; ?>">Admin</a></li>
+					<li><a href="<?php echo base_url().'perkenalan_keluarga'; ?>">Admin</a></li>
 				<?php else: ?>
 					<li><a href="<?php echo base_url().'profile/'.
 						$this->session->userdata['logged_in']['id_user']; ?>">Profile</a></li>

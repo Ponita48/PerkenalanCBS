@@ -29,11 +29,7 @@
 						<!-- cek apakah yang dilihat peserta atau kating -->
 						<?php if ($result->role == "2017"): ?>
 							<!-- ADMIN MELIHAT MABA -->
-							<button class="btn btn-warning" type="submit">Lihat Daftar Perkenalan</button><br><br>
-						<?php else: ?>
-							<!-- ADMIN MELIHAT KATING -->
-							<button class="btn btn-success" type="submit">Edit Profil</button><br><br>
-							<button class="btn btn-warning" type="submit">Lihat Daftar Request</button><br><br>
+							<a href="<?php echo base_url().'perkenalan_angkatan/'.$result->id_user; ?>"><button class="btn btn-warning" type="submit">Lihat Perkenalan Angkatan</button></a><br><br>
 						<?php endif ?>
 					<?php endif ?>
 				<?php endif ?>

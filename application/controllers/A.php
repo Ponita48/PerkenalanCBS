@@ -80,10 +80,17 @@ class A extends CI_Controller {
 				die();
 				//goto list perkenalan
 			}else {
-				echo "<pre>";
-				var_dump($result);
-				echo "</pre>";
-				die();
+				// echo "<pre>";
+				// var_dump($result);
+				// echo "</pre>";
+				// foreach ($result as $key) {
+				// 	echo $key->id_perkenalan_angkatan.'\n';
+				// }
+				$data['result'] = $result;
+				$this->load->view('header');
+				$this->load->view('perkenalan_angkatan', $data);
+				$this->load->view('footer');
+				// die();
 				//goto list perkenalan
 			}
 		}
