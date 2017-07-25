@@ -41,40 +41,56 @@ class UserController extends CI_Controller
 				'password' => $this->input->post('password')
 			);
 
-			//check username and password
-			$result = $this->User_model->loginNoHash($data);
+			$role = $this->User_model->cek_role($data['npm']);
 
-			if ($result == FALSE) {
-				//when username or password wrong
-				$data['error_message'] = "Username atau password salah";
+			if ($role == NULL) {
+				$data['message_display'] = "User tidak ditemukan";
 				$this->load->view('header');
-				$this->load->view('login', $data);
+				$this->load->view('index', $data);
 				$this->load->view('footer');
 			}else {
-				//when username or password correct
-				//insert username and password to session
-				
-				$session_data = array(
-					'npm' => $data['npm'],
-					'password' => $data['password'],
-					'role' => $result->role,
-					'id_user' => $result->row('id_user')
-				);
 
-				$this->session->set_userdata('logged_in', $session_data);
+				$email = $this->User_model->cek_email($data['npm']);
 				
-				//cek email
-				if ($result->row('email') == NULL) {
-					//masukkan email dan password baru
-					$this->new_login();
+				//check username and password
+				if ($role == 'admin' || $email == NULL) {
+					$result = $this->User_model->loginNoHash($data);
 				}else {
-					//login success
-					//back to home
-					$data['message_display'] = "Successfully login";
-					$this->load->view('header');
-					$this->load->view('index', $data);
-					$this->load->view('footer');
+					$result = $this->User_model->login($data);
 				}
+
+				if ($result == FALSE) {
+					//when username or password wrong
+					$data['error_message'] = "Username atau password salah";
+					$this->load->view('header');
+					$this->load->view('login', $data);
+					$this->load->view('footer');
+				}else {
+					//when username or password correct
+					//insert username and password to session
+					
+					$session_data = array(
+						'npm' => $data['npm'],
+						'password' => $data['password'],
+						'role' => $result->role,
+						'id_user' => $result->row('id_user')
+					);
+
+					$this->session->set_userdata('logged_in', $session_data);
+					
+					//cek email
+					if ($result->row('email') == NULL) {
+						//masukkan email dan password baru
+						$this->new_login();
+					}else {
+						//login success
+						//back to home
+						$data['message_display'] = "Successfully login";
+						$this->load->view('header');
+						$this->load->view('index', $data);
+						$this->load->view('footer');
+					}
+				}	
 			}
 
 		}
@@ -88,76 +104,82 @@ class UserController extends CI_Controller
 
 		//back to home
 		$data['message_display'] = "Successfully Logout";
-		$this->load->view('header', $data);
+		$this->load->view('header');
 		$this->load->view('index', $data);
-		$this->load->view('footer', $data);
+		$this->load->view('footer');
 	}
 
 	// login for the first time
 	public function new_login() {
 
-		if (empty($_FILES['pp']['name'])) {
-			$this->form_validation->set_rules('pp', 'Photo Profile', 'required');	
-		}
-		
-		$this->form_validation->set_rules('email', 'Email', 'required|valid_email');
-		$this->form_validation->set_rules('new_pwd', 'New Password', 'required|min_length[6]');
-		$this->form_validation->set_rules('conf_pwd', 'Confirm Password', 'required|min_length[6]|matches[new_pwd]');
-
-		if ($this->form_validation->run() == FALSE) {
-			//echo $this->input->post('new_pwd')."</br>";
-			//echo $this->input->post('conf_pwd')."</br>";
-			//echo validation_errors();
-			
+		if (empty($this->input->post('submit'))) {
 			$this->load->view('header');
 			$this->load->view('new_login');
 			$this->load->view('footer');
 		}else {
-			// echo "bisa(?)";
+			if (empty($_FILES['pp']['name'])) {
+				$this->form_validation->set_rules('pp', 'Photo Profile', 'required');	
+			}
+			
+			$this->form_validation->set_rules('email', 'Email', 'required|valid_email');
+			$this->form_validation->set_rules('new_pwd', 'New Password', 'required|min_length[6]');
+			$this->form_validation->set_rules('conf_pwd', 'Confirm Password', 'required|min_length[6]|matches[new_pwd]');
 
-			$id_user = $this->session->userdata['logged_in']['id_user'];
-
-			$config = array(
-				'upload_path' => './Photos/PP/',
-				'allowed_types' => 'jpg|png',
-				'max_size' => 300,
-				'file_name' => $id_user,
-				'overwrite' => TRUE,
-			);
-
-			$this->load->library('upload', $config);
-
-			if ( ! $this->upload->do_upload('pp')) {
-				$data['error_message'] = $this->upload->display_errors();
+			if ($this->form_validation->run() == FALSE) {
+				//echo $this->input->post('new_pwd')."</br>";
+				//echo $this->input->post('conf_pwd')."</br>";
+				//echo validation_errors();
+				
 				$this->load->view('header');
-				$this->load->view('new_login', $data);
+				$this->load->view('new_login');
 				$this->load->view('footer');
 			}else {
+				// echo "bisa(?)";
 
-				$file_name = base_url()."Photos/PP/".$this->upload->data('file_name');
+				$id_user = $this->session->userdata['logged_in']['id_user'];
 
-				$result = $this->User_model->assign_photo($file_name, $id_user);
+				$config = array(
+					'upload_path' => './Photos/PP/',
+					'allowed_types' => 'jpg|png',
+					'max_size' => 300,
+					'file_name' => $id_user,
+					'overwrite' => TRUE,
+				);
 
-				if ( ! $result) {
-					$data['error_message'] = "There are errors";
+				$this->load->library('upload', $config);
+
+				if ( ! $this->upload->do_upload('pp')) {
+					$data['error_message'] = $this->upload->display_errors();
 					$this->load->view('header');
 					$this->load->view('new_login', $data);
 					$this->load->view('footer');
 				}else {
-					$password = password_hash($this->input->post('new_pwd'), PASSWORD_DEFAULT);
 
-					$data = array(
-						'id_user' => $this->session->userdata['logged_in']['id_user'], 
-						'password' => $password,
-						'email' => $this->input->post('email'),
-						'role' => $this->session->userdata['logged_in']['role'],
-					);
+					$file_name = base_url()."Photos/PP/".$this->upload->data('file_name');
 
-					$this->User_model->new_login($data);
-					$data['message_display'] = "Password berhasil diganti";
-					$this->load->view('header');
-					$this->load->view('index', $data);
-					$this->load->view('footer');
+					$result = $this->User_model->assign_photo($file_name, $id_user);
+
+					if ( ! $result) {
+						$data['error_message'] = "There are errors";
+						$this->load->view('header');
+						$this->load->view('new_login', $data);
+						$this->load->view('footer');
+					}else {
+						$password = password_hash($this->input->post('new_pwd'), PASSWORD_DEFAULT);
+
+						$data = array(
+							'id_user' => $this->session->userdata['logged_in']['id_user'], 
+							'password' => $password,
+							'email' => $this->input->post('email'),
+							'role' => $this->session->userdata['logged_in']['role'],
+						);
+
+						$this->User_model->new_login($data);
+						$data['message_display'] = "Password berhasil diganti";
+						$this->load->view('header');
+						$this->load->view('index', $data);
+						$this->load->view('footer');
+					}
 				}
 			}
 		}

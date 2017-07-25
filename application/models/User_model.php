@@ -314,6 +314,36 @@ class User_model extends CI_Model {
 			return NULL;
 		}else {
 			return $q->result()[0]->role;
+		}
+	}
+
+	public function cek_email($npm) {
+		$q = $this->db
+			->select('email')
+			->from('users')
+			->where('npm', $npm)
+			->limit(1)
+			->get();
+
+		if ($q->num_rows() == 0) {
+			return NULL;
+		}else {
+			return $q->result()[0]->email;
+		}	
+	}
+
+	public function cek_role($npm) {
+		$q = $this->db
+			->select('role')
+			->from('users')
+			->where('npm', $npm)
+			->limit(1)
+			->get();
+
+		if ($q->num_rows() == 0) {
+			return NULL;
+		}else {
+			return $q->result()[0]->role;
 		}	
 	}
 
