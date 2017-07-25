@@ -7,6 +7,10 @@
     position: absolute;
   }
 
+  #navigation-panel {
+  	display: none;
+  }
+
   #photobar {
   	overflow: auto; 
   	position: relative; 
@@ -21,18 +25,17 @@
   	overflow: auto;
   	height: 70vh;
   }  
+  
 </style>
 <!-- End of Header -->
 
 <form action="kuis/submit" method="post" accept-charset="utf-8">
 	<!-- Navigation Pane: Fixed, Collapsible -->
 	<div class="row">
-		<div id="navigasi" style="background-color: #DFDFDF; max-width: 40vh; max-height: 50vh">
-			<button type="button" class="close" aria-label="Close" data-toggle="collapse" data-target="#navigation-pane" style="padding: 5px">
-				<span aria-hidden="true">&times;</span>
-			</button>
+		<div id="navigasi" style="background-color: #FFFFFF; max-width: 40vh; max-height: 50vh">
+			<button type="button" class="btn btn-success" id="toggleNav" style="margin: 10px 10px 0px 10px">Navigasi</button>
 			<br><br>
-			<div class="container-fluid" id="navigation-pane" class="collapse">
+			<div class="container-fluid" id="navigation-panel">
 				<nav class="navbar-nav">
 					<ul class="nav nav-pills">
 						<li class="active"><a href="#menu1" data-toggle="pill">Panitia CBS Himatif FMIPA Unpad 2017</a></li>
@@ -666,3 +669,8 @@
 <script src="<?php echo base_url(); ?>assets/js/jquery.min.js"></script>
 <script src="<?php echo base_url(); ?>assets/js/bootstrap.js"></script>
 <script src="<?php echo base_url(); ?>assets/js/dragpack.js"></script>
+<script type="text/javascript">
+	$('#toggleNav').click(function(){
+	    $('#navigation-panel').slideToggle('slow');
+	});
+</script>
