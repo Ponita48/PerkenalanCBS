@@ -11,7 +11,7 @@
 			<tr>
 				<th>Nama</th>
 				<th>NPM</th>
-				<th>Link ke profile</th>
+				<th>Lihat Kuis</th>
 			</tr>
 		</thead>
 		<tbody>
