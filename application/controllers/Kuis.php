@@ -108,9 +108,17 @@ class Kuis extends CI_Controller
 				'presidium' => $presidium
 			);
 
-			$this->load->view('header');
-			$this->load->view('dummy_kuis_kejawab', $data);
-			$this->load->view('footer');
+			if ($panitia == NULL || $be == NULL || $dpa == NULL || $presidium == NULL) {
+				$data['error_message'] = "user belum mengisi kuis";
+				$this->load->view('header');
+				$this->load->view('index', $data);
+				$this->load->view('footer');
+			}else {
+				$this->load->view('header');
+				$this->load->view('dummy_kuis_kejawab', $data);
+				$this->load->view('footer');
+			}
+
 		}
 
 	}
