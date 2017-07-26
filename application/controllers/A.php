@@ -119,9 +119,12 @@ class A extends CI_Controller {
 
 				if ($result == FALSE) {
 					$data['message_display'] = "Perkenalan kosong?";
-					echo $data['message_display'];
-					die();
+					// echo $data['message_display'];
+					// die();
 					//goto jumlah perkenalan
+					$this->load->view('header');
+					$this->load->view('admin_request', $data);
+					$this->load->view('footer');
 				}else {
 					//goto jumlah perkenalan
 					$data['result'] = $result;

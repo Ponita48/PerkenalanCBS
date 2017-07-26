@@ -11,12 +11,14 @@
 			</tr>
 		</thead>
 		<tbody>
-		<?php foreach ($result as $key) : ?>
-			<tr>
-				<td><?php echo $key->npm_peserta; ?></td>
-				<td><?php echo $key->jumlah; ?></td>
-			</tr>
-		<?php endforeach; ?>
+		<?php if (isset($result)): ?>
+			<?php foreach ($result as $key) : ?>
+				<tr>
+					<td><?php echo $key->npm_peserta; ?></td>
+					<td><?php echo $key->jumlah; ?></td>
+				</tr>
+			<?php endforeach; ?>
+		<?php endif ?>
 		</tbody>
 	</table>
 </div>
