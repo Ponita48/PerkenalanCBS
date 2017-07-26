@@ -99,7 +99,10 @@
 
 	<style type="text/css">
 		img.img-responsive {
-			height: 330px;
-			width: 248px;
+			height: auto;
+			width: auto;
+			display: block;
+			max-height: 330px;
+			max-width: 248px;
 		}
 	</style>
