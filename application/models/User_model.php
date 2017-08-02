@@ -218,15 +218,28 @@ class User_model extends CI_Model {
 		}else {
 			$q = $this->db->where('id_user', $id_user)->update('users', $data1);
 
-			if ( ! $q) {
+			if ($q == FALSE) {
+				echo "di sini";
 				return $q;
 			}else {
-				if ($this->session->userdata['logged_in']['role'] == 'peserta') {
-					$q = $this->db->where('id_user', $id_user)->update('profile_maba', $data2);
-				}else {
-					$q = $this->db->where('id_user', $id_user)->update('profile_kating', $data2);
-				}
 
+				$query = $this->db
+					->select('*')
+					->from('profile_maba')
+					->where("id_user = $id_user")
+					->limit(1)
+					->get();
+
+				if ($query->num_rows() == 0) {
+					$data2['id_user'] = $id_user;
+					$q = $this->db->insert('profile_maba', $data2);				
+				}else {
+					if ($this->session->userdata['logged_in']['role'] == 'peserta') {
+						$q = $this->db->where('id_user', $id_user)->update('profile_maba', $data2);
+					}else {
+						$q = $this->db->where('id_user', $id_user)->update('profile_kating', $data2);
+					}
+				}
 				return $q;
 			}
 
@@ -235,14 +248,14 @@ class User_model extends CI_Model {
 	}
 
 	public function search($keySearch) {
-		$query1 = $this->db->query("SELECT users.id_user, users.npm, profile_kating.nama FROM users, profile_kating WHERE users.id_user = profile_kating.id_user AND (users.npm LIKE '$keySearch' OR profile_kating.nama LIKE '$keySearch')");
+
+		$max_angkatan = $this->max_angkatan();
+
+		$query1 = $this->db->query("SELECT users.id_user, users.npm, profile_kating.nama, profile_kating.link_foto FROM users LEFT JOIN profile_kating ON users.id_user = profile_kating.id_user WHERE users.role != $max_angkatan AND users.role != 'admin' AND (users.npm LIKE '$keySearch' OR profile_kating.nama LIKE '$keySearch') GROUP BY id_user");
 
 		/*SELECT users.npm, profile_kating.nama FROM users LEFT JOIN profile_kating ON users.id_user = profile_kating.id_user WHERE (users.npm LIKE '$keySearch' OR profile_kating.nama LIKE '$keySearch')*/
 
-	
-
-		$query2 = $this->db->query("SELECT users.id_user, users.npm, profile_maba.nama FROM users, profile_maba WHERE users.id_user = profile_maba.id_user AND (users.npm LIKE '$keySearch' OR profile_maba.nama LIKE '$keySearch')");
-
+		$query2 = $this->db->query("SELECT users.id_user, users.npm, profile_maba.nama, profile_maba.link_foto FROM users LEFT JOIN profile_maba ON users.id_user = profile_maba.id_user WHERE users.role = $max_angkatan AND users.role != 'admin' AND (users.npm LIKE '$keySearch' OR profile_maba.nama LIKE '$keySearch') GROUP BY id_user");
 
 		if ($query1->num_rows() == 0 && $query2->num_rows() == 0) {
 			return FALSE;
@@ -317,13 +330,24 @@ class User_model extends CI_Model {
 		}
 	}
 
-	public function cek_email($npm) {
-		$q = $this->db
-			->select('email')
-			->from('users')
-			->where('npm', $npm)
-			->limit(1)
-			->get();
+	public function cek_email($npm, $ket) {
+
+		if ($ket == "npm") {
+			$q = $this->db
+				->select('email')
+				->from('users')
+				->where('npm', $npm)
+				->limit(1)
+				->get();
+		}else {
+			$q = $this->db
+				->select('email')
+				->from('users')
+				->where('id_user', $npm)
+				->limit(1)
+				->get();
+		}
+
 
 		if ($q->num_rows() == 0) {
 			return NULL;

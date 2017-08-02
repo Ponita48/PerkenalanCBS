@@ -1,3 +1,12 @@
+
+<?php if (validation_errors() != NULL): ?>
+	<br>
+	<div class="alert alert-danger alert-dismissable">
+		<span class="close" data-dismiss="alert">x</span>
+		<?php echo validation_errors(); ?>
+	</div>
+<?php endif ?>
+
 <h1>REQUEST PERKENALAN ANGKATAN</h1>
 <hr>
 <div class="col-md-3">
@@ -13,16 +22,11 @@
 						<h4 class="modal-title">Change Photo</h4>
 					</div>
 					<div class="modal-body">
-						<?php for ($i=2; $i <= 4; $i++) { ?>
+						<?php foreach ($pp as $data) : ?>
 						<div class="col-sm-4">
-							<img src="<?php echo base_url().'Photos/PP/'.$i.'.jpg'; ?>" alt="NPM <?php echo $i+1; ?> belum mengisi foto" class="img img-responsive" onclick="change_photo(this.src);">
-							<?php if ($i <= 10): ?>
-								14081015000<?php echo $i; ?>
-							<?php else: ?>
-								1408101500<?php echo $i; ?>
-							<?php endif ?>
+							<img src="<?php echo $data->link_foto; ?>" alt="peserta belum mengisi foto" class="img img-responsive" onclick="change_photo(this.src);">
 						</div>
-						<?php } ?>
+						<?php endforeach; ?>
 					</div>
 						<br>			
 						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>

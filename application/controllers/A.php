@@ -53,9 +53,6 @@ class A extends CI_Controller {
 	public function perkenalanAngkatan($id = NULL) {
 		if (! isset($this->session->userdata['logged_in'])) {
 			//goto home
-			/*$data['error_message'] = "Login dulu cuk!";
-			echo $data['error_message'];
-			die();*/
 			$data['error_message'] = "Silahkan login terlebih dahulu";
 			$this->load->view('header');
 			$this->load->view('index', $data);
@@ -67,18 +64,20 @@ class A extends CI_Controller {
 			}else {
 
 				if ($id == NULL) {
-					echo "parameter tidak boleh kosong";
-					die();
+					$data['error_message'] = "Parameter tidak boleh kosong";
+					$this->load->view('header');
+					$this->load->view('index', $data);
+					$this->load->view('footer');
 				}
 
 				$result = $this->Admin_model->getPerkenalanAngkatan($id);
 
 			}
 			if ($result == FALSE) {
-				$data['message_display'] = "Perkenalan kosong?";
-				echo $data['message_display'];
-				die();
-				//goto list perkenalan
+				$data['error_message'] = "Perkenalan kosong";
+				$this->load->view('header');
+				$this->load->view('index', $data);
+				$this->load->view('footer');
 			}else {
 				// echo "<pre>";
 				// var_dump($result);
@@ -165,9 +164,10 @@ class A extends CI_Controller {
 
 				if ($result == FALSE) {
 					//goto jumlah perkenalan
-					$data['message_display'] = "gagal? tidak ada id perkenalan tersebut?";
-					echo $data['message_display'];
-					die();
+					$data['error_message'] = "gagal? tidak ada id perkenalan tersebut";
+					$this->load->view('header');
+					$this->load->view('index', $data);
+					$this->load->view('footer');
 				}else {
 					//goto jumlah perkenalan
 					redirect('../admin');
@@ -208,9 +208,10 @@ class A extends CI_Controller {
 				$result = $this->Admin_model->approveRejectPerkenalan($id_perkenalan, $data);
 
 				if ($result == FALSE) {
-					$data['message_display'] = "gagal? tidak ada id perkenalan tersebut?";
-					echo $data['message_display'];
-					die();
+					$data['error_message'] = "gagal? tidak ada id perkenalan tersebut";
+					$this->load->view('header');
+					$this->load->view('index', $data);
+					$this->load->view('footer');
 					//goto jumlah perkenalan
 				}else {
 					//goto jumlah perkenalan

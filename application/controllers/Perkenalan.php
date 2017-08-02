@@ -35,10 +35,13 @@ class Perkenalan extends CI_Controller
 				$this->form_validation->set_rules('link_foto', 'Link Foto', 'required');
 
 				if ($this->form_validation->run() == FALSE) {
-					//redirect('../request/'.$id);
-					$this->load->view('header');
-					$this->load->view('index');
-					$this->load->view('footer');
+
+					/*$error_message = "Every+Fields+are+Required";
+	
+					redirect('../request/'.$id.'?err='.$error_message);*/
+
+					$this->request($id);
+					
 				}else {
 					$data = array(
 						'id_keluarga' => $id,
@@ -100,9 +103,10 @@ class Perkenalan extends CI_Controller
 			$this->form_validation->set_rules('link_foto', 'Link Foto', 'required');
 
 			if ($this->form_validation->run() == FALSE) {
-				$this->load->view('header');
-				$this->load->view('index');
-				$this->load->view('footer');
+				/*$error_message = "Every+Fields+are+Required";
+				redirect('../request/'.$id.'?err='.$error_message);*/
+
+				$this->request($id);
 			}else {
 				$data = array(
 					'id_user2' => $id,
@@ -180,9 +184,6 @@ class Perkenalan extends CI_Controller
 			}else {
 
 				$id_user_maba = $this->session->userdata['logged_in']['id_user'];
-
-
-
 				$angkatan = $this->User_model->get_role($id_user);
 				$max_angkatan = $this->User_model->max_angkatan();
 
@@ -195,10 +196,17 @@ class Perkenalan extends CI_Controller
 						$this->load->view('header');
 						$this->load->view('index',$data);
 						$this->load->view('footer');	
+					}else {
+
+						//get pp from database
+						$pp = $this->Perkenalan_model->get_pp();
+
+						$data['pp'] = $pp;
+
+						$this->load->view('header');
+						$this->load->view('request_angkatan', $data);
+						$this->load->view('footer');
 					}
-					$this->load->view('header');
-					$this->load->view('request_angkatan', $data);
-					$this->load->view('footer');
 				}else {
 					$cek = $this->Perkenalan_model->check_perkenalan($id_user_maba, $id_user, 'perkenalan_kating');
 					if ($cek == TRUE) {
@@ -206,10 +214,11 @@ class Perkenalan extends CI_Controller
 						$this->load->view('header');
 						$this->load->view('index',$data);
 						$this->load->view('footer');
+					}else {
+						$this->load->view('header');
+						$this->load->view('request_perkenalan', $data);
+						$this->load->view('footer');
 					}
-					$this->load->view('header');
-					$this->load->view('request_perkenalan', $data);
-					$this->load->view('footer');
 				}
 
 				

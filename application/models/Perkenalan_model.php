@@ -118,9 +118,18 @@ class Perkenalan_model extends CI_Model {
 		}else {
 			return TRUE;
 		}
+	}
 
-		
+	public function get_pp() {
+		$q = $this->db
+			->select('link_foto')
+			->get('profile_maba');
 
+		if ($q->num_rows() == 0) {
+			return NULL;
+		}else {
+			return $q->result();
+		}
 	}
 
 }

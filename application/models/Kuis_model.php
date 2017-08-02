@@ -118,7 +118,6 @@ class Kuis_model extends CI_Model
 			return $q->result();
 		}
 	}
-
 }
 
  ?>

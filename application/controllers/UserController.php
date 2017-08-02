@@ -50,7 +50,7 @@ class UserController extends CI_Controller
 				$this->load->view('footer');
 			}else {
 
-				$email = $this->User_model->cek_email($data['npm']);
+				$email = $this->User_model->cek_email($data['npm'], "npm");
 				
 				//check username and password
 				if ($role == 'admin' || $email == NULL) {
@@ -211,48 +211,53 @@ class UserController extends CI_Controller
 				$this->form_validation->set_rules('motto_hidup', 'Motto Hidup', 'required');
 			}
 
-			$result = $this->User_model->getProfile();
-
-			$data['result'] = $result[0];
-
-			if ($this->form_validation->run() == FALSE) {
+			if ($this->User_model->cek_email($this->session->userdata['logged_in']['id_user'], "id_user") == NULL) {
+				$message['error_message'] = "Untuk mengubah profile, silahkan isi form berikut ini!";
 				$this->load->view('header');
-				$this->load->view('change_profile', $data);
+				$this->load->view('new_login', $message);
 				$this->load->view('footer');
 			}else {
-				$data1['email'] = $this->input->post('email');
-				$data2 = array(
-					'nama' => $this->input->post('nama'),
-					'jk' => $this->input->post('jk'),
-					'tempat_lahir' => $this->input->post('tempat_lahir'),
-					'tgl_lahir' => date("Y-m-d", strtotime($this->input->post('tgl_lahir'))),
-					'alamat_kos' => $this->input->post('alamat_kos'),
-					'no_hp' => $this->input->post('no_hp'),
-					'id_line' => $this->input->post('id_line')
-				);
-				if ($this->session->userdata['logged_in']['role'] == 'peserta') {
-					$data2['motto_hidup'] = $this->input->post('motto_hidup');
-				}
+				$result = $this->User_model->getProfile();
 
-				$result = $this->User_model->setProfile($data1, $data2);
+				$data['result'] = $result[0];
 
-				if ($result == FALSE) {
-					echo "disini";
-					$data['error_message'] = "Error";
+				if ($this->form_validation->run() == FALSE) {
 					$this->load->view('header');
 					$this->load->view('change_profile', $data);
 					$this->load->view('footer');
 				}else {
-					$result = $this->User_model->getProfile();
-					$data['result'] = $result[0];
-					$data['message_display'] = "Success";
-					$this->load->view('header');
-					$this->load->view('change_profile', $data);
-					$this->load->view('footer');
+					$data1['email'] = $this->input->post('email');
+					$data2 = array(
+						'nama' => $this->input->post('nama'),
+						'jk' => $this->input->post('jk'),
+						'tempat_lahir' => $this->input->post('tempat_lahir'),
+						'tgl_lahir' => date("Y-m-d", strtotime($this->input->post('tgl_lahir'))),
+						'alamat_kos' => $this->input->post('alamat_kos'),
+						'no_hp' => $this->input->post('no_hp'),
+						'id_line' => $this->input->post('id_line')
+					);
+					if ($this->session->userdata['logged_in']['role'] == 'peserta') {
+						$data2['motto_hidup'] = $this->input->post('motto_hidup');
+					}
+
+					$result = $this->User_model->setProfile($data1, $data2);
+
+					if ($result == FALSE) {
+						$data['error_message'] = "Error";
+						$this->load->view('header');
+						$this->load->view('change_profile', $data);
+						$this->load->view('footer');
+					}else {
+						$result = $this->User_model->getProfile();
+						$data['result'] = $result[0];
+						$data['message_display'] = "Success";
+						$this->load->view('header');
+						$this->load->view('change_profile', $data);
+						$this->load->view('footer');
+					}
 				}
 			}
 		}
-
 	}
 
 	public function search($key = NULL) {
