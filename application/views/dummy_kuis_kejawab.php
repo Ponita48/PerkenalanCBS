@@ -1,4 +1,3 @@
-
 <!-- Beginning of Header -->
 <link rel=stylesheet href="<?php echo base_url(); ?>assets/css/bootstrap.css">
 <link rel=stylesheet href="<?php echo base_url(); ?>assets/css/tree-diagram.css">
@@ -19,6 +18,11 @@
   #header-content {
   	background-color: #FFD51E;
   	color: #393636;
+  }
+
+  body {
+  	background-color: #393636;
+  	color: #FFD51E;
   }
 
   ul li a {
@@ -470,7 +474,7 @@
 			<div id="field_bagan" class="row">
 				<div class="tree">
 					<ul>
-						<li>
+						<li style="margin: 10px">
 							<table>
 								<caption>Ketua DPA</caption>
 								<tbody>
@@ -482,7 +486,7 @@
 									</tr>
 								</tbody>
 							</table>
-						</li><li>
+						</li><li style="margin: 10px">
 							<table>
 								<caption>Sekretaris DPA</caption>
 								<tbody>
@@ -494,7 +498,7 @@
 									</tr>
 								</tbody>
 							</table>
-						</li><li>
+						</li><li style="margin: 10px">
 							<table>
 								<caption>Bendahara DPA</caption>
 								<tbody>
@@ -506,7 +510,7 @@
 									</tr>
 								</tbody>
 							</table>
-						</li><li>
+						</li><li style="margin: 10px">
 							<table>
 								<caption>Ketua Komisi I</caption>
 								<tbody>
@@ -518,7 +522,7 @@
 									</tr>
 								</tbody>
 							</table>
-						</li><li>
+						</li><li style="margin: 10px">
 							<table>
 								<caption>Ketua Komisi II</caption>
 								<tbody>
@@ -530,7 +534,7 @@
 									</tr>
 								</tbody>
 							</table>
-						</li><li>
+						</li><li style="margin: 10px">
 							<table>
 								<caption>Ketua Komisi III</caption>
 								<tbody>

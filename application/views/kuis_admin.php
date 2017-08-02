@@ -1,4 +1,3 @@
-<body>
 	<div>
 		<h1>PESERTA YANG SUDAH MENGISI KUIS</h1>
 		<hr>
@@ -28,11 +27,10 @@
 		</tbody>
 	</table>
 	</div>
-</body>
 
-<style type="text/css">
-	body {
-		background-color: #393636;
-		color: #FFD51E;
-	}
-</style>
+	<style type="text/css">
+		body {
+			background-color: #393636;
+			color: #FFD51E;
+		}
+	</style>

@@ -39,4 +39,16 @@
 			</div>
 		</div>
 		<div class="col-sm-4"></div>
-	</center>
+	</center>	
+
+	<style type="text/css">
+		body {
+			background-color: #393639;
+			color: #FFD51E;
+		}
+
+		.well {
+			background-color: #393639;
+		}
+
+	</style>

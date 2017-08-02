@@ -26,6 +26,11 @@
   	color: #393636;
   }
 
+  body {
+  	background-color: #393636;
+  	color: #FFD51E;
+  }
+
   ul li a {
   	color: #393636;
   }
