@@ -1,4 +1,4 @@
-
+<body>
 	<div>
 		<h1>PERKENALAN DENGAN KELUARGA</h1>
 		<hr>
@@ -153,3 +153,12 @@
 			</div>
 		</div>
 	</div>
+</body>
+
+<style type="text/css">
+	body {
+		background-color: #393639;
+		color: #FFD51E;
+	}
+
+</style>

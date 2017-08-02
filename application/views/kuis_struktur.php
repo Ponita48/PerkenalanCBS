@@ -32,8 +32,8 @@
 <form action="kuis/submit" method="post" accept-charset="utf-8">
 	<!-- Navigation Pane: Fixed, Collapsible -->
 	<div class="row">
+		<button type="button" class="btn btn-success" id="toggleNav" style="margin: 10px 10px 0px 10px">Navigasi</button>
 		<div id="navigasi" style="background-color: #FFFFFF; max-width: 40vh; max-height: 50vh">
-			<button type="button" class="btn btn-success" id="toggleNav" style="margin: 10px 10px 0px 10px">Navigasi</button>
 			<br><br>
 			<div class="container-fluid" id="navigation-panel">
 				<nav class="navbar-nav">

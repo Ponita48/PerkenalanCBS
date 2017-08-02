@@ -1,4 +1,4 @@
-
+<body>
 	<div>
 		<h1>PESERTA YANG SUDAH MENGISI KUIS</h1>
 		<hr>
@@ -17,7 +17,7 @@
 		<tbody>
 
 		<?php if ($result != NULL) : ?>
-			<tr>
+			<tr style="background-color: #393636">
 				<?php foreach ($result as $list): ?>
 					<td><?php echo $list->nama; ?></td>	
 					<td><?php echo $list->npm; ?></td>
@@ -27,4 +27,12 @@
 		<?php endif; ?>
 		</tbody>
 	</table>
-	</div>	
+	</div>
+</body>
+
+<style type="text/css">
+	body {
+		background-color: #393636;
+		color: #FFD51E;
+	}
+</style>
