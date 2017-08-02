@@ -1,3 +1,4 @@
+<body>
 	<div>
 		<h1>PROFIL</h1>
 		<hr>
@@ -6,9 +7,9 @@
 		<div class="col-sm-3">
 			<center>
 				<?php if ($result->link_foto == NULL): ?>
-					<img src="<?php echo base_url(); ?>img/img1.jpg" alt="" class="img-responsive"><br>
+					<img src="<?php echo base_url(); ?>img/img1.jpg" alt="" class="img-responsive img-thumbnail"><br>
 				<?php else: ?>
-					<img src="<?php echo $result->link_foto;?>" alt="" class="img-responsive"><br>
+					<img src="<?php echo $result->link_foto;?>" alt="" class="img-responsive img-thumbnail"><br>
 				<?php endif ?>
 				<!-- Kalau udah login -->
 				<?php if (isset($this->session->userdata['logged_in'])): ?>
@@ -72,3 +73,20 @@
 			</table>
 		</div>
 	</div>
+</body>
+
+<style type="text/css">
+	img.img-responsive {
+		height: auto;
+		width: auto;
+		display: block;
+		max-height: 330px;
+		max-width: 248px;
+	}
+
+	body {
+		background-color: #393639;
+		color: #FFD51E;
+	}
+
+</style>

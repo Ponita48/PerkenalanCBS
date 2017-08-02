@@ -1,4 +1,5 @@
-<!-- TODO: Jadiin foreach (tunggu backend selesai) -->
+<body>
+	<!-- TODO: Jadiin foreach (tunggu backend selesai) -->
 	<div>
 		<h1>REQUEST LIST</h1> <!--BUAT MABA-->
 		<hr>
@@ -39,3 +40,12 @@
 			</center>
 		</div>
 	</div>
+</body>
+
+<style type="text/css">
+	body {
+		background-color: #393639;
+		color: #FFD51E;
+	}
+
+</style>

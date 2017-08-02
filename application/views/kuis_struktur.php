@@ -2,75 +2,87 @@
 <link rel=stylesheet href="<?php echo base_url(); ?>assets/css/bootstrap.css">
 <link rel=stylesheet href="<?php echo base_url(); ?>assets/css/tree-diagram.css">
 <style type="text/css" media="screen">
-  #navigasi {
-    z-index: 1;
-    position: absolute;
-  }
 
   #navigation-panel {
   	display: none;
+  	width: 100%;
+    position: relative;
   }
 
   #photobar {
   	overflow: auto; 
-  	position: relative; 
-  	z-index: 2
-  }
-
-  #kotak_foto {
-  	background-color: #393636;
+  	height: 100vh;
+  	background-color: gray;
   }
 
   #field_bagan {
   	overflow: auto;
-  	height: 70vh;
-  }  
+  	height: 100vh;
+  	background-color: #393636;
+  }
+
+  #header-content {
+  	background-color: #FFD51E;
+  	color: #393636;
+  }
+
+  ul li a {
+  	color: #393636;
+  }
+
+  caption {
+  	color: #FFD51E;
+  }
+
+  .active a {
+  	background-color: orange !important;
+  	color: white !important;
+  }
   
 </style>
 <!-- End of Header -->
 
 <form action="kuis/submit" method="post" accept-charset="utf-8">
-	<!-- Navigation Pane: Fixed, Collapsible -->
-	<div class="row">
-		<button type="button" class="btn btn-success" id="toggleNav" style="margin: 10px 10px 0px 10px">Navigasi</button>
-		<div id="navigasi" style="background-color: #FFFFFF; max-width: 40vh; max-height: 50vh">
-			<br><br>
-			<div class="container-fluid" id="navigation-panel">
-				<nav class="navbar-nav">
-					<ul class="nav nav-pills">
-						<li class="active"><a href="#menu1" data-toggle="pill">Panitia CBS Himatif FMIPA Unpad 2017</a></li>
-						<li><a href="#menu2" data-toggle="pill">BE Himatif FMIPA Unpad Kabinet Impresif</a></li>
-						<li><a href="#menu3" data-toggle="pill">DPA Himatif FMIPA Unpad Parlemen Insight</a></li>
-						<li><a href="#menu4" data-toggle="pill">Mubes Himatif FMIPA Unpad 2017</a></li>
-					</ul>
-				</nav>
-			</div>
+	<!-- Page Header -->
+	<div id="header-content" class="row">
+		<div class="col-sm-2 col-md-2 col-lg-2">
+			<center>
+				<br>
+				<button type="button" class="btn" id="toggleNav" style="margin: 10px 10px 0px 10px; color: #FFD51E; background-color: #393636;">Toggle Navigasi</button>
+			</center>
+		</div>
+		<div class="col-sm-8 col-md-8 col-lg-8">
+			<center>
+				<h3>KUIS BK/PANITIA (<?php echo $npm; ?>)</h3>
+				<a href="<?php echo base_url(); ?>kuis/jawaban" class="btn btn-primary" target="_blank">Lihat Jawaban Kuis Sebelumnya</a>
+			</center>
+			<br>
+		</div>
+		<div class="col-sm-2 col-md-2 col-lg-2">
+			<center>	
+				<br>
+				<input class="btn btn-success" style="margin: 10px 10px 10px 10px;" type="submit" name="Kirim">
+			</center>
 		</div>
 	</div>
+	<!-- End of Page Header -->
+	<!-- Navigation Pane: Fixed, Collapsible -->
+	<div id="navigation-panel" class="row">
+		<nav class="navbar-nav" style="background-color: white; padding: 10px; width: 100%;">
+			<ul class="nav nav-pills">
+				<li class="active" style="margin-right: 10px"><a href="#menu1" data-toggle="pill">Panitia CBS Himatif FMIPA Unpad 2017</a></li>
+				<li style="margin-right: 10px"><a href="#menu2" data-toggle="pill">BE Himatif FMIPA Unpad Kabinet Impresif</a></li>
+				<li style="margin-right: 10px"><a href="#menu3" data-toggle="pill">DPA Himatif FMIPA Unpad Parlemen Insight</a></li>
+				<li style="margin-right: 10px"><a href="#menu4" data-toggle="pill">Mubes Himatif FMIPA Unpad 2017</a></li>
+			</ul>
+		</nav>
+	</div>
 	<!-- End of Navigation Pane -->
-
 	<!-- Quiz Layer, dengan tab-content -->
-	<div id="konten" class="container-fluid">
-		<div id="header_content" class="row" style="padding-top: 5px;">
-			<div class="col-sm-10 col-md-10 col-lg-10">
-				<center>
-					<h3>KUIS BK/PANITIA (<?php echo $npm; ?>)</h3>
-					<a href="<?php echo base_url(); ?>kuis/jawaban" class="btn btn-info" target="_blank">Lihat Jawaban Kuis Sebelumnya</a>
-				</center>
-
-			</div>
-			<div class="col-sm-2 col-md-2 col-lg-2">
-				<center>
-					
-					<br>
-					<br>
-					<input class="btn btn-success" type="submit" name="Kirim">
-				</center>
-			</div>
-		</div>
+	<div id="konten" class="row">
 		<div class="tab-content">
 	  		<div id="menu1" class="tab-pane fade in active">
-	    		<div id="field_bagan" class="row">
+	    		<div id="field_bagan" class="col-sm-10 col-md-10 col-lg-10">
 	        		<div class="tree">
 	          			<ul>
 	            			<li>
@@ -281,33 +293,22 @@
 						</ul>
 					</div>
 				</div>
-				<div class="row" id="photobar">
-					<table border="1">
-						<tbody>
-							<tr>
-								<td id="kotak_foto" ondrop="drop(event, this)" ondragover="allowDrop(event)" style="height: 155px; min-width: 115px"><center><img src="<?php echo base_url(); ?>img/img1.jpg" id="foto_cbs_1" draggable="true" ondragstart="drag(event)" ondrop="return false" ondragover="return false" style="width: 90px; height: 120px"></center></td>
-								<td id="kotak_foto" ondrop="drop(event, this)" ondragover="allowDrop(event)" style="height: 155px; min-width: 115px"><center><img src="<?php echo base_url(); ?>img/img2.jpg" id="foto_cbs_2" draggable="true" ondragstart="drag(event)" ondrop="return false" ondragover="return false" style="width: 90px; height: 120px"></center></td>
-								<td id="kotak_foto" ondrop="drop(event, this)" ondragover="allowDrop(event)" style="height: 155px; min-width: 115px"><center><img src="<?php echo base_url(); ?>img/img1.jpg" id="foto_cbs_3" draggable="true" ondragstart="drag(event)" ondrop="return false" ondragover="return false" style="width: 90px; height: 120px"></center></td>
-								<td id="kotak_foto" ondrop="drop(event, this)" ondragover="allowDrop(event)" style="height: 155px; min-width: 115px"><center><img src="<?php echo base_url(); ?>img/img2.jpg" id="foto_cbs_4" draggable="true" ondragstart="drag(event)" ondrop="return false" ondragover="return false" style="width: 90px; height: 120px"></center></td>
-								<td id="kotak_foto" ondrop="drop(event, this)" ondragover="allowDrop(event)" style="height: 155px; min-width: 115px"><center><img src="<?php echo base_url(); ?>img/img1.jpg" id="foto_cbs_5" draggable="true" ondragstart="drag(event)" ondrop="return false" ondragover="return false" style="width: 90px; height: 120px"></center></td>
-								<td id="kotak_foto" ondrop="drop(event, this)" ondragover="allowDrop(event)" style="height: 155px; min-width: 115px"><center><img src="<?php echo base_url(); ?>img/img2.jpg" id="foto_cbs_6" draggable="true" ondragstart="drag(event)" ondrop="return false" ondragover="return false" style="width: 90px; height: 120px"></center></td>
-								<td id="kotak_foto" ondrop="drop(event, this)" ondragover="allowDrop(event)" style="height: 155px; min-width: 115px"><center><img src="<?php echo base_url(); ?>img/img1.jpg" id="foto_cbs_7" draggable="true" ondragstart="drag(event)" ondrop="return false" ondragover="return false" style="width: 90px; height: 120px"></center></td>
-								<td id="kotak_foto" ondrop="drop(event, this)" ondragover="allowDrop(event)" style="height: 155px; min-width: 115px"><center><img src="<?php echo base_url(); ?>img/img2.jpg" id="foto_cbs_8" draggable="true" ondragstart="drag(event)" ondrop="return false" ondragover="return false" style="width: 90px; height: 120px"></center></td>
-								<td id="kotak_foto" ondrop="drop(event, this)" ondragover="allowDrop(event)" style="height: 155px; min-width: 115px"><center><img src="<?php echo base_url(); ?>img/img1.jpg" id="foto_cbs_9" draggable="true" ondragstart="drag(event)" ondrop="return false" ondragover="return false" style="width: 90px; height: 120px"></center></td>
-								<td id="kotak_foto" ondrop="drop(event, this)" ondragover="allowDrop(event)" style="height: 155px; min-width: 115px"><center><img src="<?php echo base_url(); ?>img/img2.jpg" id="foto_cbs_10" draggable="true" ondragstart="drag(event)" ondrop="return false" ondragover="return false" style="width: 90px; height: 120px"></center></td>
-								<td id="kotak_foto" ondrop="drop(event, this)" ondragover="allowDrop(event)" style="height: 155px; min-width: 115px"><center><img src="<?php echo base_url(); ?>img/img1.jpg" id="foto_cbs_11" draggable="true" ondragstart="drag(event)" ondrop="return false" ondragover="return false" style="width: 90px; height: 120px"></center></td>
-								<td id="kotak_foto" ondrop="drop(event, this)" ondragover="allowDrop(event)" style="height: 155px; min-width: 115px"><center><img src="<?php echo base_url(); ?>img/img2.jpg" id="foto_cbs_12" draggable="true" ondragstart="drag(event)" ondrop="return false" ondragover="return false" style="width: 90px; height: 120px"></center></td>
-								<td id="kotak_foto" ondrop="drop(event, this)" ondragover="allowDrop(event)" style="height: 155px; min-width: 115px"><center><img src="<?php echo base_url(); ?>img/img1.jpg" id="foto_cbs_13" draggable="true" ondragstart="drag(event)" ondrop="return false" ondragover="return false" style="width: 90px; height: 120px"></center></td>
-								<td id="kotak_foto" ondrop="drop(event, this)" ondragover="allowDrop(event)" style="height: 155px; min-width: 115px"><center><img src="<?php echo base_url(); ?>img/img2.jpg" id="foto_cbs_14" draggable="true" ondragstart="drag(event)" ondrop="return false" ondragover="return false" style="width: 90px; height: 120px"></center></td>
-								<td id="kotak_foto" ondrop="drop(event, this)" ondragover="allowDrop(event)" style="height: 155px; min-width: 115px"><center><img src="<?php echo base_url(); ?>img/img1.jpg" id="foto_cbs_15" draggable="true" ondragstart="drag(event)" ondrop="return false" ondragover="return false" style="width: 90px; height: 120px"></center></td>
-								<td id="kotak_foto" ondrop="drop(event, this)" ondragover="allowDrop(event)" style="height: 155px; min-width: 115px"><center><img src="<?php echo base_url(); ?>img/img2.jpg" id="foto_cbs_16" draggable="true" ondragstart="drag(event)" ondrop="return false" ondragover="return false" style="width: 90px; height: 120px"></center></td>
-							</tr>
-						</tbody>
-					</table>
+				<div class="col-sm-2 col-md-2 col-lg-2" id="photobar">
+	  				<center>
+	  					<table>
+							<tbody>
+								<?php for ($i=1; $i <= 16; $i++) {  ?>
+									<tr>
+										<td id="kotak_foto" ondrop="drop(event, this)" ondragover="allowDrop(event)" style="height: 155px; min-width: 115px"><img src="<?php echo base_url(); ?>img/img1.jpg" class="img-thumbnail" id="foto_cbs_<?php echo "$i";?>" draggable="true" ondragstart="drag(event)" ondrop="return false" ondragover="return false" style="width: 90px; height: 120px"></td>
+									</tr>
+								<?php } ?>
+							</tbody>
+						</table>
+	  				</center>
 				</div>
 			</div>
 			<div id="menu2" class="tab-pane fade">
-				<div id="field_bagan" class="row">
+				<div id="field_bagan" class="col-sm-10 col-md-10 col-lg-10">
 					<div class="tree">
 						<ul>
 							<li>
@@ -488,31 +489,22 @@
 						</ul>
 					</div>
 				</div>
-				<div class="row" id="photobar">
-					<table>
-						<tbody>
-							<tr>
-								<td id="kotak_foto" ondrop="drop(event, this)" ondragover="allowDrop(event)" style="height: 155px; min-width: 115px"><center><img src="<?php echo base_url(); ?>img/img1.jpg" id="foto_be_1" draggable="true" ondragstart="drag(event)" ondrop="return false" ondragover="return false" style="width: 90px; height: 120px"></center></td>
-								<td id="kotak_foto" ondrop="drop(event, this)" ondragover="allowDrop(event)" style="height: 155px; min-width: 115px"><center><img src="<?php echo base_url(); ?>img/img2.jpg" id="foto_be_2" draggable="true" ondragstart="drag(event)" ondrop="return false" ondragover="return false" style="width: 90px; height: 120px"></center></td>
-								<td id="kotak_foto" ondrop="drop(event, this)" ondragover="allowDrop(event)" style="height: 155px; min-width: 115px"><center><img src="<?php echo base_url(); ?>img/img1.jpg" id="foto_be_3" draggable="true" ondragstart="drag(event)" ondrop="return false" ondragover="return false" style="width: 90px; height: 120px"></center></td>
-								<td id="kotak_foto" ondrop="drop(event, this)" ondragover="allowDrop(event)" style="height: 155px; min-width: 115px"><center><img src="<?php echo base_url(); ?>img/img2.jpg" id="foto_be_4" draggable="true" ondragstart="drag(event)" ondrop="return false" ondragover="return false" style="width: 90px; height: 120px"></center></td>
-								<td id="kotak_foto" ondrop="drop(event, this)" ondragover="allowDrop(event)" style="height: 155px; min-width: 115px"><center><img src="<?php echo base_url(); ?>img/img1.jpg" id="foto_be_5" draggable="true" ondragstart="drag(event)" ondrop="return false" ondragover="return false" style="width: 90px; height: 120px"></center></td>
-								<td id="kotak_foto" ondrop="drop(event, this)" ondragover="allowDrop(event)" style="height: 155px; min-width: 115px"><center><img src="<?php echo base_url(); ?>img/img2.jpg" id="foto_be_6" draggable="true" ondragstart="drag(event)" ondrop="return false" ondragover="return false" style="width: 90px; height: 120px"></center></td>
-								<td id="kotak_foto" ondrop="drop(event, this)" ondragover="allowDrop(event)" style="height: 155px; min-width: 115px"><center><img src="<?php echo base_url(); ?>img/img1.jpg" id="foto_be_7" draggable="true" ondragstart="drag(event)" ondrop="return false" ondragover="return false" style="width: 90px; height: 120px"></center></td>
-								<td id="kotak_foto" ondrop="drop(event, this)" ondragover="allowDrop(event)" style="height: 155px; min-width: 115px"><center><img src="<?php echo base_url(); ?>img/img2.jpg" id="foto_be_8" draggable="true" ondragstart="drag(event)" ondrop="return false" ondragover="return false" style="width: 90px; height: 120px"></center></td>
-								<td id="kotak_foto" ondrop="drop(event, this)" ondragover="allowDrop(event)" style="height: 155px; min-width: 115px"><center><img src="<?php echo base_url(); ?>img/img1.jpg" id="foto_be_9" draggable="true" ondragstart="drag(event)" ondrop="return false" ondragover="return false" style="width: 90px; height: 120px"></center></td>
-								<td id="kotak_foto" ondrop="drop(event, this)" ondragover="allowDrop(event)" style="height: 155px; min-width: 115px"><center><img src="<?php echo base_url(); ?>img/img2.jpg" id="foto_be_10" draggable="true" ondragstart="drag(event)" ondrop="return false" ondragover="return false" style="width: 90px; height: 120px"></center></td>
-								<td id="kotak_foto" ondrop="drop(event, this)" ondragover="allowDrop(event)" style="height: 155px; min-width: 115px"><center><img src="<?php echo base_url(); ?>img/img1.jpg" id="foto_be_11" draggable="true" ondragstart="drag(event)" ondrop="return false" ondragover="return false" style="width: 90px; height: 120px"></center></td>
-								<td id="kotak_foto" ondrop="drop(event, this)" ondragover="allowDrop(event)" style="height: 155px; min-width: 115px"><center><img src="<?php echo base_url(); ?>img/img2.jpg" id="foto_be_12" draggable="true" ondragstart="drag(event)" ondrop="return false" ondragover="return false" style="width: 90px; height: 120px"></center></td>
-								<td id="kotak_foto" ondrop="drop(event, this)" ondragover="allowDrop(event)" style="height: 155px; min-width: 115px"><center><img src="<?php echo base_url(); ?>img/img1.jpg" id="foto_be_13" draggable="true" ondragstart="drag(event)" ondrop="return false" ondragover="return false" style="width: 90px; height: 120px"></center></td>
-								<td id="kotak_foto" ondrop="drop(event, this)" ondragover="allowDrop(event)" style="height: 155px; min-width: 115px"><center><img src="<?php echo base_url(); ?>img/img2.jpg" id="foto_be_14" draggable="true" ondragstart="drag(event)" ondrop="return false" ondragover="return false" style="width: 90px; height: 120px"></center></td>
-							</tr>
-						</tbody>
-					</table>
+				<div class="col-sm-2 col-md-2 col-lg-2" id="photobar">
+					<center>
+						<table>
+							<tbody>
+								<?php for ($i=1; $i <= 14; $i++) {  ?>
+									<tr>
+										<td id="kotak_foto" ondrop="drop(event, this)" ondragover="allowDrop(event)" style="height: 155px; min-width: 115px"><img src="<?php echo base_url(); ?>img/img1.jpg" class="img-thumbnail" id="foto_be_<?php echo "$i";?>" draggable="true" ondragstart="drag(event)" ondrop="return false" ondragover="return false" style="width: 90px; height: 120px"></td>
+									</tr>
+								<?php } ?>
+							</tbody>
+						</table>
+					</center>
 				</div>
 			</div>
 			<div id="menu3" class="tab-pane fade">
-				<div id="field_bagan" class="row">
+				<div id="field_bagan" class="col-sm-10 col-md-10 col-lg-10">
 					<div class="tree">
 						<ul>
 							<li>
@@ -591,23 +583,22 @@
 						</ul>
 					</div>
 				</div>
-				<div class="row" id="photobar">
-					<table>
-						<tbody>
-							<tr>
-								<td id="kotak_foto" ondrop="drop(event, this)" ondragover="allowDrop(event)" style="height: 155px; min-width: 115px"><center><img src="<?php echo base_url(); ?>img/img1.jpg" id="foto_dpa_1" draggable="true" ondragstart="drag(event)" ondrop="return false" ondragover="return false" style="width: 90px; height: 120px"></center></td>
-								<td id="kotak_foto" ondrop="drop(event, this)" ondragover="allowDrop(event)" style="height: 155px; min-width: 115px"><center><img src="<?php echo base_url(); ?>img/img1.jpg" id="foto_dpa_2" draggable="true" ondragstart="drag(event)" ondrop="return false" ondragover="return false" style="width: 90px; height: 120px"></center></td>
-								<td id="kotak_foto" ondrop="drop(event, this)" ondragover="allowDrop(event)" style="height: 155px; min-width: 115px"><center><img src="<?php echo base_url(); ?>img/img1.jpg" id="foto_dpa_3" draggable="true" ondragstart="drag(event)" ondrop="return false" ondragover="return false" style="width: 90px; height: 120px"></center></td>
-								<td id="kotak_foto" ondrop="drop(event, this)" ondragover="allowDrop(event)" style="height: 155px; min-width: 115px"><center><img src="<?php echo base_url(); ?>img/img1.jpg" id="foto_dpa_4" draggable="true" ondragstart="drag(event)" ondrop="return false" ondragover="return false" style="width: 90px; height: 120px"></center></td>
-								<td id="kotak_foto" ondrop="drop(event, this)" ondragover="allowDrop(event)" style="height: 155px; min-width: 115px"><center><img src="<?php echo base_url(); ?>img/img1.jpg" id="foto_dpa_5" draggable="true" ondragstart="drag(event)" ondrop="return false" ondragover="return false" style="width: 90px; height: 120px"></center></td>
-								<td id="kotak_foto" ondrop="drop(event, this)" ondragover="allowDrop(event)" style="height: 155px; min-width: 115px"><center><img src="<?php echo base_url(); ?>img/img1.jpg" id="foto_dpa_6" draggable="true" ondragstart="drag(event)" ondrop="return false" ondragover="return false" style="width: 90px; height: 120px"></center></td>
-							</tr>
-						</tbody>
-					</table>
+				<div class="col-sm-2 col-md-2 col-lg-2" id="photobar">
+					<center>
+						<table>
+							<tbody>
+								<?php for ($i=1; $i <= 6; $i++) {  ?>
+									<tr>
+										<td id="kotak_foto" ondrop="drop(event, this)" ondragover="allowDrop(event)" style="height: 155px; min-width: 115px"><img src="<?php echo base_url(); ?>img/img1.jpg" class="img-thumbnail" id="foto_dpa_<?php echo "$i";?>" draggable="true" ondragstart="drag(event)" ondrop="return false" ondragover="return false" style="width: 90px; height: 120px"></td>
+									</tr>
+								<?php } ?>
+							</tbody>
+						</table>
+					</center>
 				</div>
 			</div>
 			<div id="menu4" class="tab-pane fade">
-				<div id="field_bagan" class="row">
+				<div id="field_bagan" class="col-sm-10 col-md-10 col-lg-10">
 					<div class="tree">
 						<ul>
 							<li>
@@ -650,16 +641,18 @@
 						</ul>
 					</div>
 				</div>
-				<div class="row" id="photobar">
-					<table>
-						<tbody>
-							<tr>
-							<td id="kotak_foto" ondrop="drop(event, this)" ondragover="allowDrop(event)" style="height: 155px; min-width: 115px"><center><img src="<?php echo base_url(); ?>img/img1.jpg" id="foto_mubes_1" draggable="true" ondragstart="drag(event)" ondrop="return false" ondragover="return false" style="width: 90px; height: 120px"></center></td>
-							<td id="kotak_foto" ondrop="drop(event, this)" ondragover="allowDrop(event)" style="height: 155px; min-width: 115px"><center><img src="<?php echo base_url(); ?>img/img2.jpg" id="foto_mubes_2" draggable="true" ondragstart="drag(event)" ondrop="return false" ondragover="return false" style="width: 90px; height: 120px"></center></td>
-							<td id="kotak_foto" ondrop="drop(event, this)" ondragover="allowDrop(event)" style="height: 155px; min-width: 115px"><center><img src="<?php echo base_url(); ?>img/img2.jpg" id="foto_mubes_3" draggable="true" ondragstart="drag(event)" ondrop="return false" ondragover="return false" style="width: 90px; height: 120px"></center></td>
-							</tr>
-						</tbody>
-					</table>
+				<div class="col-sm-2 col-md-2 col-lg-2" id="photobar">
+					<center>
+						<table>
+							<tbody>
+								<?php for ($i=1; $i <= 3; $i++) {  ?>
+									<tr>
+										<td id="kotak_foto" ondrop="drop(event, this)" ondragover="allowDrop(event)" style="height: 155px; min-width: 115px"><img src="<?php echo base_url(); ?>img/img1.jpg" class="img-thumbnail" id="foto_mubes_<?php echo "$i";?>" draggable="true" ondragstart="drag(event)" ondrop="return false" ondragover="return false" style="width: 90px; height: 120px"></td>
+									</tr>
+								<?php } ?>
+							</tbody>
+						</table>
+					</center>
 				</div>
 			</div> 
 		</div>

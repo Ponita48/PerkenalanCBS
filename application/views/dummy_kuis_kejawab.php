@@ -3,54 +3,75 @@
 <link rel=stylesheet href="<?php echo base_url(); ?>assets/css/bootstrap.css">
 <link rel=stylesheet href="<?php echo base_url(); ?>assets/css/tree-diagram.css">
 <style type="text/css" media="screen">
-  #navigasi {
-    z-index: 1;
-    position: absolute;
+  #navigation-panel {
+  	display: none;
+  	width: 100%;
+    position: relative;
   }
 
   #field_bagan {
   	overflow: auto;
-  	height: 100%;
+  	height: 100vh;
   	width: 100%;
+  	background-color: #393636;
   }
 
-  #navigation-panel {
-  	display: none;
+  #header-content {
+  	background-color: #FFD51E;
+  	color: #393636;
+  }
+
+  ul li a {
+  	color: #393636;
+  }
+
+  caption {
+  	color: #FFD51E;
+  }
+
+  .active a {
+  	background-color: orange !important;
+  	color: white !important;
   } 
 
 </style>
 <!-- End of Header -->
 
-<!-- Navigation Pane: Fixed, Collapsible -->
-<div class="row">
-	<button type="button" class="btn btn-success" id="toggleNav" style="margin: 10px 10px 0px 10px">Navigasi</button>
-	<div id="navigasi" style="background-color: #FFFFFF; max-width: 40vh; max-height: 50vh">
-		<br><br>
-		<div class="container-fluid" id="navigation-panel">
-			<nav class="navbar-nav">
-				<ul class="nav nav-pills">
-					<li class="active"><a href="#menu1" data-toggle="pill">Panitia CBS Himatif FMIPA Unpad 2017</a></li>
-					<li><a href="#menu2" data-toggle="pill">BE Himatif FMIPA Unpad Kabinet Impresif</a></li>
-					<li><a href="#menu3" data-toggle="pill">DPA Himatif FMIPA Unpad Parlemen Insight</a></li>
-					<li><a href="#menu4" data-toggle="pill">Mubes Himatif FMIPA Unpad 2017</a></li>
-				</ul>
-			</nav>
-		</div>
+<!-- Page Header -->
+<div id="header-content" class="row">
+	<div class="col-sm-2 col-md-2 col-lg-2">
+		<center>
+			<br>
+			<button type="button" class="btn" id="toggleNav" style="margin: 10px 10px 0px 10px; color: #FFD51E; background-color: #393636;">Toggle Navigasi</button>
+		</center>
 	</div>
-</div>
-<!-- End of Navigation Pane -->
-
-<!-- Quiz Layer, dengan tab-content -->
-<div id="konten" class="container-fluid">
-	<div id="header_content" class="row" style="padding-top: 5px;">
+	<div class="col-sm-10 col-md-10 col-lg-10">
 		<center>
 			<h3>HASIL KUIS BK/PANITIA (<?php echo $npm; ?>)</h3>
 			<a href="<?php echo base_url(); ?>kuis/isi" class="btn btn-info" target="_blank">Isi Kuis</a>
 		</center>
+		<br>
 	</div>
+</div>
+<!-- End of Page Header -->
+<!-- Navigation Pane: Fixed, Collapsible -->
+<div id="navigation-panel" class="row">
+	<nav class="navbar-nav" style="background-color: white; padding: 10px; width: 100%;">
+		<ul class="nav nav-pills">
+			<li class="active" style="margin-right: 10px"><a href="#menu1" data-toggle="pill">Panitia CBS Himatif FMIPA Unpad 2017</a></li>
+			<li style="margin-right: 10px"><a href="#menu2" data-toggle="pill">BE Himatif FMIPA Unpad Kabinet Impresif</a></li>
+			<li style="margin-right: 10px"><a href="#menu3" data-toggle="pill">DPA Himatif FMIPA Unpad Parlemen Insight</a></li>
+			<li style="margin-right: 10px"><a href="#menu4" data-toggle="pill">Mubes Himatif FMIPA Unpad 2017</a></li>
+		</ul>
+	</nav>
+</div>
+<!-- End of Navigation Pane -->
+
+<!-- Quiz Layer, dengan tab-content -->
+<div id="konten" class="row">
 	<div class="tab-content">
   		<div id="menu1" class="tab-pane fade in active">
-    		<div id="field_bagan" class="row">
+    		<div id="field_bagan">
         		<div class="tree">
           			<ul>
             			<li>
