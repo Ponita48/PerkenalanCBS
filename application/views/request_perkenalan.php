@@ -1,4 +1,3 @@
-<body>
 	<div>
 		<h1>REQUEST PERKENALAN</h1>
 		<hr>
@@ -29,12 +28,12 @@
 			</form>
 		</div>
 	</div>
-</body>
 
-<style type="text/css">
-	body {
-		background-color: #393639;
-		color: #FFD51E;
-	}
 
-</style>
+	<style type="text/css">
+		body {
+			background-color: #393639;
+			color: #FFD51E;
+		}
+
+	</style>

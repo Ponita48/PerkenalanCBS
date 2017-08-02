@@ -72,3 +72,14 @@
 		document.getElementById('link-foto').value = el;
 	}
 </script>
+
+<style type="text/css">
+	body {
+		background-color: #393639;
+		color: #FFD51E;
+	}
+
+	.well {
+		background-color: gray;
+	}
+</style>

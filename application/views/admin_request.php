@@ -4,7 +4,7 @@
 	<hr>
 
 	<div class="table-responsive">
-		<table class="table table-striped">
+		<table class="table">
 			<thead>
 				<tr>
 					<th>NPM</th>

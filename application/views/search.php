@@ -1,4 +1,3 @@
-<body>
 	<h1>SEARCH RESULT</h1>
 	<hr>
 	<div class="col-md-12 col-sm-12 col-lg-12" id="search" style="padding: 10px; margin-top: 0; margin-bottom: 10px;">
@@ -37,7 +36,6 @@
 	</div>
 	<div class="col-sm-3 col-md-3 col-lg-3"></div>
 	</div>
-</body>
 
 <style type="text/css">
 	body {

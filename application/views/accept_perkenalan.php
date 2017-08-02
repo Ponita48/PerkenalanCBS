@@ -8,7 +8,7 @@
 	<div class="container">
 		<div class="col-sm-4">
 			<center>
-				<img src="$result->link_foto_peserta;" alt="" width="300" class="myImg img-thumbnail"><br>
+				<img src="$result->link_foto_peserta;" alt="" width="300" class="myImg img-responsive img-thumbnail"><br>
 				<p>Foto Mahasiswa Baru</p>
 			</center>
 		</div>
@@ -30,7 +30,7 @@
 		</div>
 		<div class="col-sm-4">
 			<center>
-				<img src="<?php echo $result->link_foto; ?>" alt="" width="300" class="myImg img-thumbnail"><br>
+				<img src="<?php echo $result->link_foto; ?>" alt="" width="300" class="myImg img-responsive img-thumbnail"><br>
 				<p>Foto Selfie</p>
 			</center>
 		</div>
@@ -46,3 +46,18 @@
 					class="btn btn-danger btn-block" type="submit">Tolak Perkenalan</a><br><br>
 		</div>
 	</div>
+
+	<style type="text/css">
+		img.img-responsive {
+			height: auto;
+			width: auto;
+			display: block;
+			height: 330px;
+			width: 248px;
+		}
+		body {
+			background-color: #393639;
+			color: #FFD51E;
+		}
+
+	</style>

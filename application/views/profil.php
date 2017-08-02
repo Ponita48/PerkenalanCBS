@@ -1,4 +1,3 @@
-<body>
 	<div>
 		<h1>PROFIL</h1>
 		<hr>
@@ -73,20 +72,19 @@
 			</table>
 		</div>
 	</div>
-</body>
 
-<style type="text/css">
-	img.img-responsive {
-		height: auto;
-		width: auto;
-		display: block;
-		max-height: 330px;
-		max-width: 248px;
-	}
+	<style type="text/css">
+		img.img-responsive {
+			height: auto;
+			width: auto;
+			display: block;
+			max-height: 330px;
+			max-width: 248px;
+		}
 
-	body {
-		background-color: #393639;
-		color: #FFD51E;
-	}
+		body {
+			background-color: #393639;
+			color: #FFD51E;
+		}
 
-</style>
+	</style>
