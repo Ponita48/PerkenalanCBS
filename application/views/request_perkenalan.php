@@ -1,3 +1,4 @@
+
 	
 <?php if (validation_errors() != NULL): ?>
 	<br>
@@ -5,7 +6,7 @@
 		<span class="close" data-dismiss="alert">x</span>
 		<?php echo validation_errors(); ?>
 	</div>
-<?php endif ?>
+<?php endif; ?>
 
 <div>
 	<h1>REQUEST PERKENALAN</h1>
@@ -37,3 +38,12 @@
 		</form>
 	</div>
 </div>
+
+	<style type="text/css">
+		body {
+			background-color: #393639;
+			color: #FFD51E;
+		}
+
+	</style>
+

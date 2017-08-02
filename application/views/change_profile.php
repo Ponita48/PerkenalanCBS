@@ -1,4 +1,3 @@
-<body>
 	<h1>CHANGE PROFILE</h1>
 	<hr>
 		<?php if (isset($message_display)): ?>	
@@ -95,15 +94,14 @@
 		</div>
 		<div class="col-sm-4"></div>
 	</div>
-</body>
 
-<style type="text/css">
-	body {
-		background-color: #393639;
-		color: #FFD51E;
-	}
+	<style type="text/css">
+		body {
+			background-color: #393639;
+			color: #FFD51E;
+		}
 
-	.well {
-		background-color: gray;
-	}
-</style>
+		.well {
+			background-color: gray;
+		}
+	</style>
