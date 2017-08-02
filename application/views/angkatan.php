@@ -10,9 +10,9 @@
 				<div class="col-md-3">
 					<?php if (is_null($key->link_foto)): ?>
 						<!-- TODO: ganti jadi placeholder -->
-						<img src="wahaha" alt="" class="img-responsive">
+						<img src="wahaha" alt="" class="img-responsive img-thumbnail">
 					<?php else: ?>
-						<img src="<?php echo $key->link_foto;?>" alt="" class="img-responsive">
+						<img src="<?php echo $key->link_foto;?>" alt="" class="img-responsive img-thumbnail">
 					<?php endif ?>
 					<p id="nama"><?php echo $key->nama; ?></p>
 					<p id="npm"><?php echo $key->npm; ?></p>
@@ -28,8 +28,8 @@
 		height: auto;
 		width: auto;
 		display: block;
-		max-height: 330px;
-		max-width: 248px;
+		height: 330px;
+		width: 248px;
 	}
 
 	body {
