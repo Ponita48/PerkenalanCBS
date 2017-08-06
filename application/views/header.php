@@ -7,6 +7,25 @@
 	<link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/user.css">
 	<link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/datepicker.css">
 	<link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/tree-diagram.css">
+	<script src = "https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+	<script>
+		function hint(str) {
+			if (str.length == 0) {
+				document.getElementById("hasil").innerHTML = "";
+				return;
+			}else {
+				str = str.replace(" ", "+");
+			}
+
+			$.ajax({
+				type:'GET',
+				url:'<?php echo base_url(); ?>ajax/'+str,
+				success:function(data){
+					$("#hasil").html(data);
+				}
+			});
+		}
+	</script>
 </head>
 <body>
 	<nav class="navbar navbar-inverse" style="margin-bottom: 0px;">
@@ -61,13 +80,14 @@
 	<center>
 		<form action="<?php echo base_url(); ?>UserController/search" class="form-inline" id="searchForm" method="GET">
 			<div class="input-group">
-				<input type="text" class="form-control" id="keySearch" placeholder="Search. . ." name="keySearch">
+				<input type="text" class="form-control" id="keySearch" placeholder="Search. . ." name="keySearch" onkeyup="hint(this.value)">
 				<span class="input-group-btn">
 					<button class="btn btn-primary" type="submit">Search</button>
 				</span>
 			</div>
 		</form>
 	</center>
+	<div><span id="hasil"></span></div>
 	</div>
 
 	<div class="container-fluid" >

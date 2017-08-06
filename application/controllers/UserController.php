@@ -300,6 +300,21 @@ class UserController extends CI_Controller
 			$this->load->view('footer');
 		}
 	}
+
+	public function hintSearch($keySearch)
+	{
+		$keyArray = explode(" ",$keySearch);
+
+		$keySearch = '%';
+
+		foreach ($keyArray as $value) {
+			$keySearch = $keySearch.$value.'%';
+		}
+		$result = $this->User_model->search($keySearch);
+		$data['result'] = $result;
+
+		return $this->load->view('ajax_search',$data);
+	}
 	
 	public function lihat_profile($id) {
 
