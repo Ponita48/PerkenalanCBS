@@ -251,11 +251,11 @@ class User_model extends CI_Model {
 
 		$max_angkatan = $this->max_angkatan();
 
-		$query1 = $this->db->query("SELECT users.id_user, users.npm, profile_kating.nama, profile_kating.link_foto FROM users LEFT JOIN profile_kating ON users.id_user = profile_kating.id_user WHERE users.role != $max_angkatan AND users.role != 'admin' AND (users.npm LIKE '$keySearch' OR profile_kating.nama LIKE '$keySearch') GROUP BY id_user");
+		$query1 = $this->db->query("SELECT users.id_user, users.npm, profile_kating.nama, profile_kating.link_foto FROM users LEFT JOIN profile_kating ON users.id_user = profile_kating.id_user WHERE users.role != $max_angkatan AND users.role != 'admin' AND (users.npm LIKE '$keySearch' OR profile_kating.nama LIKE '$keySearch') LIMIT 5 GROUP BY id_user");
 
 		/*SELECT users.npm, profile_kating.nama FROM users LEFT JOIN profile_kating ON users.id_user = profile_kating.id_user WHERE (users.npm LIKE '$keySearch' OR profile_kating.nama LIKE '$keySearch')*/
 
-		$query2 = $this->db->query("SELECT users.id_user, users.npm, profile_maba.nama, profile_maba.link_foto FROM users LEFT JOIN profile_maba ON users.id_user = profile_maba.id_user WHERE users.role = $max_angkatan AND users.role != 'admin' AND (users.npm LIKE '$keySearch' OR profile_maba.nama LIKE '$keySearch') GROUP BY id_user");
+		$query2 = $this->db->query("SELECT users.id_user, users.npm, profile_maba.nama, profile_maba.link_foto FROM users LEFT JOIN profile_maba ON users.id_user = profile_maba.id_user WHERE users.role = $max_angkatan AND users.role != 'admin' AND (users.npm LIKE '$keySearch' OR profile_maba.nama LIKE '$keySearch') LIMIT 5 GROUP BY id_user");
 
 		if ($query1->num_rows() == 0 && $query2->num_rows() == 0) {
 			return FALSE;
