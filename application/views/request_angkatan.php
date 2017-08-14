@@ -63,9 +63,9 @@
 				<input type="text" class="form-control" name="no_hp" placeholder="Nomor HP teman anda">
 			</div>
 			<div class="form-group">
-				<input type="hidden" class="form-control" name="link_foto" placeholder="link foto teman anda" id="link-foto">
+				<input type="hidden" class="form-control" name="link_foto" placeholder="link foto teman anda" id="link-foto" id="linkPoto">
 			</div>
-			<input type="submit" value="Submit" class="btn btn-warning">
+			<input type="submit" value="Submit" class="btn btn-warning" >
 		</form>
 	</div>
 </div>
@@ -74,6 +74,7 @@
 	function change_photo(el) {
 		document.getElementById('poto').src = el;
 		document.getElementById('link-foto').value = el;
+		document.getElementById('linkPoto').value = el;
 	}
 </script>
 
@@ -84,6 +85,6 @@
 	}
 
 	.well {
-		background-color: gray;
+		color: gray;
 	}
 </style>

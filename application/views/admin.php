@@ -8,6 +8,7 @@
 
   		<!-- Nav tabs -->
 		<ul class="nav nav-tabs" role="tablist">
+			<!-- TODO: span badge dihitung jumlah perkenalan -->
 			<li role="presentation" class="active"><a href="#1" aria-controls="1" role="tab" data-toggle="tab">2016 <span class="badge">99+</span></a></li>
 			<li role="presentation"><a href="#2" aria-controls="2" role="tab" data-toggle="tab">2015 <span class="badge">99+</span></a></li>
 			<li role="presentation"><a href="#3" aria-controls="3" role="tab" data-toggle="tab">2014 <span class="badge">99+</span></a></li>
@@ -37,7 +38,6 @@
 								<th>NPM Peserta</th>
 								<th>Halaman Detail</th>
 							</tr>
-							<!-- TODO: foreach(backend) -->
 						<?php if (isset($result)) : ?>
 							<?php foreach ($result as $key) : ?>
 								<?php if ($key->angkatan_keluarga == 2016) : ?>
@@ -68,7 +68,6 @@
 								<th>NPM Peserta</th>
 								<th>Halaman Detail</th>
 							</tr>
-							<!-- TODO: foreach(backend) -->
 						<?php if (isset($result)) : ?>
 							<?php foreach ($result as $key) : ?>
 								<?php if ($key->angkatan_keluarga == 2015) : ?>
@@ -99,7 +98,6 @@
 								<th>NPM Peserta</th>
 								<th>Halaman Detail</th>
 							</tr>
-							<!-- TODO: foreach(backend) -->
 						<?php if (isset($result)) : ?>
 							<?php foreach ($result as $key) : ?>
 								<?php if ($key->angkatan_keluarga == 2014) : ?>
@@ -130,7 +128,6 @@
 								<th>NPM Peserta</th>
 								<th>Halaman Detail</th>
 							</tr>
-							<!-- TODO: foreach(backend) -->
 						<?php if (isset($result)) : ?>
 							<?php foreach ($result as $key) : ?>
 								<?php if ($key->angkatan_keluarga == 2013) : ?>

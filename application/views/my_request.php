@@ -1,4 +1,3 @@
-	<!-- TODO: Jadiin foreach (tunggu backend selesai) -->
 	<div>
 		<h1>REQUEST LIST</h1> <!--BUAT MABA-->
 		<hr>

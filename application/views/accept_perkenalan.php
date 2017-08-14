@@ -1,5 +1,4 @@
 
-<!-- TODO: pake id untuk tiap mahasiswa -->
 	<div>
 		<h1>TERIMA PERKENALAN?</h1>
 		<hr>

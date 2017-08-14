@@ -42,6 +42,8 @@
 <!-- End of Header -->
 
 <!-- Page Header -->
+<!-- TODO: tulisan isi kuis dkk ditengahin biar gak berantem -->
+<!-- TODO: bikin responsive -->
 <div id="header-content" class="row">
 	<div class="col-sm-2 col-md-2 col-lg-2">
 		<center>
