@@ -45,7 +45,7 @@
 				<?php endforeach ?>
 				</center>
 			</div>
-			<div role="tabpanel" class="tab-pane container-fluid active" id="2014">
+			<div role="tabpanel" class="tab-pane container-fluid" id="2014">
 				<center>
 				<?php foreach ($result as $key): ?>
 					<?php if ($key->role == "2014"): ?>
@@ -60,7 +60,7 @@
 				<?php endforeach ?>
 				</center>
 			</div>
-			<div role="tabpanel" class="tab-pane container-fluid active" id="2015">
+			<div role="tabpanel" class="tab-pane container-fluid" id="2015">
 				<center>
 				<?php foreach ($result as $key): ?>
 					<?php if ($key->role == "2015"): ?>
@@ -75,7 +75,7 @@
 				<?php endforeach ?>
 				</center>
 			</div>
-			<div role="tabpanel" class="tab-pane container-fluid active" id="2016">
+			<div role="tabpanel" class="tab-pane container-fluid" id="2016">
 				<center>
 				<?php foreach ($result as $key): ?>
 					<?php if ($key->role == "2016"): ?>

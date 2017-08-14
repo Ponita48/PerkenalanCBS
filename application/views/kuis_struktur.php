@@ -72,7 +72,7 @@
 	</div>
 	<!-- End of Page Header -->
 	<!-- Navigation Pane: Fixed, Collapsible -->
-	<div id="navigation-panel" class="row">
+	<div id="navigation-panel" class="row" style="margin: 0 0 0 0;">
 		<nav class="navbar-nav" style="background-color: white; padding: 10px; width: 100%;">
 			<ul class="nav nav-pills">
 				<li class="active" style="margin-right: 10px"><a href="#menu1" data-toggle="pill">Panitia CBS Himatif FMIPA Unpad 2017</a></li>
