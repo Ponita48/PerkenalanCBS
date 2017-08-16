@@ -4,7 +4,6 @@
 <style type="text/css" media="screen">
   #navigation-panel {
   	display: none;
-  	width: 100%;
     position: relative;
   }
 
@@ -20,9 +19,14 @@
   	color: #393636;
   }
 
+  #toggleNav {
+  	position: relative;
+  	z-index: 1;
+  }
+
   body {
-  	background-color: #393636;
-  	color: #FFD51E;
+  	background-color: #FFD51E;
+  	color: #393636;
   }
 
   ul li a {
@@ -34,7 +38,7 @@
   }
 
   .active a {
-  	background-color: orange !important;
+  	background-color: goldenrod !important;
   	color: white !important;
   } 
 
@@ -45,23 +49,23 @@
 <!-- TODO: tulisan isi kuis dkk ditengahin biar gak berantem -->
 <!-- TODO: bikin responsive -->
 <div id="header-content" class="row">
-	<div class="col-sm-2 col-md-2 col-lg-2">
+	<div class="col-sm-12 col-md-2 col-lg-2">
 		<center>
 			<br>
 			<button type="button" class="btn" id="toggleNav" style="margin: 10px 10px 0px 10px; color: #FFD51E; background-color: #393636;">Toggle Navigasi</button>
 		</center>
 	</div>
-	<div class="col-sm-10 col-md-10 col-lg-10">
+	<div class="col-sm-12 col-md-10 col-md-pull-1 col-lg-10 col-lg-pull-1">
 		<center>
 			<h3>HASIL KUIS BK/PANITIA (<?php echo $npm; ?>)</h3>
-			<a href="<?php echo base_url(); ?>kuis/isi" class="btn btn-info" target="_blank">Isi Kuis</a>
+			<a href="<?php echo base_url(); ?>kuis/isi" class="btn btn-primary" target="_blank">Isi Kuis</a>
 		</center>
 		<br>
 	</div>
 </div>
 <!-- End of Page Header -->
 <!-- Navigation Pane: Fixed, Collapsible -->
-<div id="navigation-panel" class="row">
+<div id="navigation-panel" class="col-sm-12 col-md-12 col-lg-12">
 	<nav class="navbar-nav" style="background-color: white; padding: 10px; width: 100%;">
 		<ul class="nav nav-pills">
 			<li class="active" style="margin-right: 10px"><a href="#menu1" data-toggle="pill">Panitia CBS Himatif FMIPA Unpad 2017</a></li>
@@ -74,7 +78,7 @@
 <!-- End of Navigation Pane -->
 
 <!-- Quiz Layer, dengan tab-content -->
-<div id="konten" class="row">
+<div id="konten" class="col-sm-12 col-md-12 col-lg-12">
 	<div class="tab-content">
   		<div id="menu1" class="tab-pane fade in active">
     		<div id="field_bagan">
@@ -290,7 +294,7 @@
 			</div>
 		</div>
 		<div id="menu2" class="tab-pane fade">
-			<div id="field_bagan" class="row">
+			<div id="field_bagan">
 				<div class="tree">
 					<ul>
 						<li>
@@ -473,7 +477,7 @@
 			</div>
 		</div>
 		<div id="menu3" class="tab-pane fade">
-			<div id="field_bagan" class="row">
+			<div id="field_bagan">
 				<div class="tree">
 					<ul>
 						<li style="margin: 10px">
@@ -554,7 +558,7 @@
 			</div>
 		</div>
 		<div id="menu4" class="tab-pane fade">
-			<div id="field_bagan" class="row">
+			<div id="field_bagan">
 				<div class="tree">
 					<ul>
 						<li>
@@ -606,5 +610,8 @@
 <script type="text/javascript">
 	$('#toggleNav').click(function(){
 	    $('#navigation-panel').slideToggle('slow');
+	});
+	$(document).ready(function() {
+	    $(document).scrollTop(0);
 	});
 </script>

@@ -27,8 +27,8 @@
   }
 
   body {
-  	background-color: #393636;
-  	color: #FFD51E;
+  	background-color: #FFD51E;
+  	color: #393636;
   }
 
   ul li a {
@@ -40,7 +40,7 @@
   }
 
   .active a {
-  	background-color: orange !important;
+  	background-color: goldenrod !important;
   	color: white !important;
   }
   
@@ -50,29 +50,33 @@
 <form action="kuis/submit" method="post" accept-charset="utf-8">
 	<!-- Page Header -->
 	<div id="header-content" class="row">
-		<div class="col-sm-2 col-md-2 col-lg-2">
-			<center>
-				<br>
-				<button type="button" class="btn" id="toggleNav" style="margin: 10px 10px 0px 10px; color: #FFD51E; background-color: #393636;">Toggle Navigasi</button>
-			</center>
-		</div>
-		<div class="col-sm-8 col-md-8 col-lg-8">
+		<div class="col-sm-12 col-md-12 col-lg-12">
 			<center>
 				<h3>KUIS BK/PANITIA (<?php echo $npm; ?>)</h3>
+			</center>
+		</div>
+		<div class="col-sm-4 col-md-4 col-lg-4">
+			<center>
+				<button type="button" class="btn" id="toggleNav" style="color: #FFD51E; background-color: #393636;">Toggle Navigasi</button>
+			</center>
+			<br>
+		</div>
+		<div class="col-sm-4 col-md-4 col-lg-4">
+			<center>	
 				<a href="<?php echo base_url(); ?>kuis/jawaban" class="btn btn-primary" target="_blank">Lihat Jawaban Kuis Sebelumnya</a>
 			</center>
 			<br>
 		</div>
-		<div class="col-sm-2 col-md-2 col-lg-2">
+		<div class="col-sm-4 col-md-4 col-lg-4">
 			<center>	
-				<br>
-				<input class="btn btn-success" style="margin: 10px 10px 10px 10px;" type="submit" name="Kirim">
+				<input class="btn btn-success" type="submit" name="Kirim">
 			</center>
+			<br>
 		</div>
 	</div>
 	<!-- End of Page Header -->
 	<!-- Navigation Pane: Fixed, Collapsible -->
-	<div id="navigation-panel" class="row" style="margin: 0 0 0 0;">
+	<div id="navigation-panel" class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
 		<nav class="navbar-nav" style="background-color: white; padding: 10px; width: 100%;">
 			<ul class="nav nav-pills">
 				<li class="active" style="margin-right: 10px"><a href="#menu1" data-toggle="pill">Panitia CBS Himatif FMIPA Unpad 2017</a></li>
@@ -84,7 +88,7 @@
 	</div>
 	<!-- End of Navigation Pane -->
 	<!-- Quiz Layer, dengan tab-content -->
-	<div id="konten" class="row">
+	<div id="konten" class="col-sm-12 col-md-12 col-lg-12">
 		<div class="tab-content">
 	  		<div id="menu1" class="tab-pane fade in active">
 	    		<div id="field_bagan" class="col-sm-10 col-md-10 col-lg-10">
