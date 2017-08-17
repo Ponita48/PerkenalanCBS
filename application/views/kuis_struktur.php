@@ -47,7 +47,7 @@
 </style>
 <!-- End of Header -->
 
-<form action="kuis/submit" method="post" accept-charset="utf-8">
+<form action="<?php echo base_url(); ?>kuis/submit" method="post" accept-charset="utf-8">
 	<!-- Page Header -->
 	<div id="header-content" class="row">
 		<div class="col-sm-12 col-md-12 col-lg-12">
@@ -308,7 +308,7 @@
 							<tbody>
 								<?php for ($i=1; $i <= 16; $i++) {  ?>
 									<tr>
-										<td id="kotak_foto" ondrop="drop(event, this)" ondragover="allowDrop(event)" style="height: 155px; min-width: 115px"><img src="<?php echo base_url(); ?>img/img1.jpg" class="img-thumbnail" id="foto_cbs_<?php echo "$i";?>" draggable="true" ondragstart="drag(event)" ondrop="return false" ondragover="return false" style="width: 90px; height: 120px"></td>
+										<td id="kotak_cbs_<?php echo "$i";?>" ondrop="drop(event, this)" ondragover="allowDrop(event)" style="height: 155px; min-width: 115px"><img src="<?php echo base_url(); ?>img/img<?php echo "$i";?>.jpg" class="img-thumbnail" id="foto_cbs_<?php echo "$i";?>" draggable="true" ondragstart="drag(event)" style="width: 90px; height: 120px"></td>
 									</tr>
 								<?php } ?>
 							</tbody>
@@ -665,10 +665,11 @@
 				</div>
 			</div> 
 		</div>
-	</div>
+	</div>	
 </form>
 
 <script src="<?php echo base_url(); ?>assets/js/jquery.min.js"></script>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.9/jquery-ui.min.js"></script>
 <script src="<?php echo base_url(); ?>assets/js/bootstrap.js"></script>
 <script src="<?php echo base_url(); ?>assets/js/dragpack.js"></script>
 <script type="text/javascript">
