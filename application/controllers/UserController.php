@@ -12,16 +12,43 @@ class UserController extends CI_Controller
 	}
 
 	public function index() {
-		
+
 		//$this->User_model->aihihi();
 
 		$this->load->view('header');
 		$this->load->view('index');
 		$this->load->view('footer');
 	}
+
+	//cek sudah pernah login atau belum dengan cara mengecek email null atau tidak
+	public function cek_login() {
+		if ( ! isset($this->session->userdata['logged_in'])) {
+			$this->login("Harap login terlebih dahulu");
+			return FALSE;
+		}else {
+			if ($this->User_model->cek_email($this->session->userdata['logged_in']['id_user'], "id_user") == NULL) {
+				$message['error_message'] = "Harap mengisi form ini terlebih dahulu";
+				$this->load->view('header');
+				$this->load->view('new_login', $message);
+				$this->load->view('footer');
+				return FALSE;
+			}
+		}
+
+		return TRUE;
+	}
 	
 	//login function
-	public function login() {
+	public function login($message = NULL) {
+
+		if ($message != NULL) {
+			$data['error_message'] = $message;
+			$this->load->view('header');
+			$this->load->view('login', $data);
+			$this->load->view('footer');
+			return;
+		}
+
 		//formValidation
 		$this->form_validation->set_rules('npm', 'NPM', 'required');
 		$this->form_validation->set_rules('password', 'Password', 'required');
@@ -112,6 +139,10 @@ class UserController extends CI_Controller
 	// login for the first time
 	public function new_login() {
 
+		if($this->cek_login() == FALSE) {
+			return;
+		}
+
 		if (empty($this->input->post('submit'))) {
 			$this->load->view('header');
 			$this->load->view('new_login');
@@ -188,6 +219,10 @@ class UserController extends CI_Controller
 	//edit profile, peserta or keluarga
 	public function edit_profile() {
 
+		if($this->cek_login() == FALSE) {
+			return;
+		}
+
 		if (! isset($this->session->userdata['logged_in'])) {
 			$data['error_message'] = "Silahkan login terlebih dahulu";
 			$this->load->view('header');
@@ -261,6 +296,10 @@ class UserController extends CI_Controller
 	}
 
 	public function search($key = NULL) {
+
+		if($this->cek_login() == FALSE) {
+			return;
+		}
 		
 		//echo $this->input->get('keySearch');
 
@@ -318,6 +357,10 @@ class UserController extends CI_Controller
 	
 	public function lihat_profile($id) {
 
+		if($this->cek_login() == FALSE) {
+			return;
+		}
+
 		if (! isset($this->session->userdata['logged_in'])) {
 			$data['error_message'] = "Silahkan login terlebih dahulu";
 			$this->load->view('header');
@@ -352,6 +395,10 @@ class UserController extends CI_Controller
 	}
 
 	public function get_angkatan($angkatan = 2017) {
+
+		if($this->cek_login() == FALSE) {
+			return;
+		}
 		
 		if (! isset($this->session->userdata['logged_in'])) {
 			$data['error_message'] = "Silahkan login terlebih dahulu";
@@ -376,6 +423,10 @@ class UserController extends CI_Controller
 	}
 
 	public function get_angkatan_2017() {
+
+		if($this->cek_login() == FALSE) {
+			return;
+		}
 		
 		if (! isset($this->session->userdata['logged_in'])) {
 			$data['error_message'] = "Silahkan login terlebih dahulu";
@@ -408,6 +459,10 @@ class UserController extends CI_Controller
 
 	public function accept() {
 
+		if($this->cek_login() == FALSE) {
+			return;
+		}
+
 		$this->load->view('header');
 		$this->load->view('accept_perkenalan');
 		$this->load->view('footer');
@@ -415,11 +470,19 @@ class UserController extends CI_Controller
 
 	public function request_list() {
 
+		if($this->cek_login() == FALSE) {
+			return;
+		}
+
 		$this->load->view('header');
 		$this->load->view('request_list');
 		$this->load->view('footer');
 	}
 	public function my_request() {
+
+		if($this->cek_login() == FALSE) {
+			return;
+		}
 
 		$this->load->view('header');
 		$this->load->view('my_request');

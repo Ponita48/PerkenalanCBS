@@ -11,7 +11,31 @@ class Perkenalan extends CI_Controller
 		$this->load->model(array('Perkenalan_model', 'User_model'));
 	}
 
+	public function cek_login() {
+		if ( ! isset($this->session->userdata['logged_in'])) {
+			$data['error_message'] = "Harap login terlebih dahulu";
+			$this->load->view('header');
+			$this->load->view('login', $data);
+			$this->load->view('footer');
+			return FALSE;
+		}else {
+			if ($this->User_model->cek_email($this->session->userdata['logged_in']['id_user'], "id_user") == NULL) {
+				$message['error_message'] = "Harap mengisi form ini terlebih dahulu";
+				$this->load->view('header');
+				$this->load->view('new_login', $message);
+				$this->load->view('footer');
+				return FALSE;
+			}
+		}
+
+		return TRUE;
+	}
+
 	public function request_keluarga($id) {
+
+		if($this->cek_login() == FALSE) {
+			return;
+		}
 
 		if (! isset($this->session->userdata['logged_in'])) {
 			//goto home
@@ -74,6 +98,10 @@ class Perkenalan extends CI_Controller
 	}
 
 	public function request_peserta($id) {
+
+		if($this->cek_login() == FALSE) {
+			return;
+		}
 
 		if (! isset($this->session->userdata['logged_in'])) {
 			//goto home
@@ -138,6 +166,11 @@ class Perkenalan extends CI_Controller
 	}
 
 	public function my_request() {
+
+		if($this->cek_login() == FALSE) {
+			return;
+		}
+
 		if (! isset($this->session->userdata['logged_in'])) {
 			$data['error_message'] = "Silahkan login terlebih dahulu";
 			$this->load->view('header');
@@ -169,6 +202,10 @@ class Perkenalan extends CI_Controller
 	}
 
 	public function request($id_user) {
+
+		if($this->cek_login() == FALSE) {
+			return;
+		}
 
 		if ( ! isset($this->session->userdata['logged_in'])) {
 			$data['error_message'] = "Silahkan login terlebih dahulu";

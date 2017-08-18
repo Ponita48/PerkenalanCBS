@@ -10,12 +10,36 @@ class Kuis extends CI_Controller
 	{
 		parent::__construct();
 		$this->load->model(array('Kuis_model', 'User_model'));
-		$this->load->library('session');
+		$this->load->library(array('form_validation', 'session'));
 		$this->load->database();
 		$this->load->helper('url');
 	}
 
+	public function cek_login() {
+		if ( ! isset($this->session->userdata['logged_in'])) {
+			$data['error_message'] = "Harap login terlebih dahulu";
+			$this->load->view('header');
+			$this->load->view('login', $data);
+			$this->load->view('footer');
+			return FALSE;
+		}else {
+			if ($this->User_model->cek_email($this->session->userdata['logged_in']['id_user'], "id_user") == NULL) {
+				$message['error_message'] = "Harap mengisi form ini terlebih dahulu";
+				$this->load->view('header');
+				$this->load->view('new_login', $message);
+				$this->load->view('footer');
+				return FALSE;
+			}
+		}
+
+		return TRUE;
+	}
+
 	public function view_kuis() {
+
+		if($this->cek_login() == FALSE) {
+			return;
+		}
 
 		if ( ! isset($this->session->userdata['logged_in'])) {
 			$data['error_message'] = "Silahkan login terlebih dahulu";
@@ -45,6 +69,11 @@ class Kuis extends CI_Controller
 	}
 
 	public function isi_kuis() {
+
+		if($this->cek_login() == FALSE) {
+			return;
+		}
+
 		if ( ! isset($this->session->userdata['logged_in'])) {
 			$data['error_message'] = "Silahkan login terlebih dahulu";
 			$this->load->view('header');
@@ -67,6 +96,10 @@ class Kuis extends CI_Controller
 	}
 
 	public function kuis_struktur_submit() {
+
+		if($this->cek_login() == FALSE) {
+			return;
+		}
 
 		$npm_maba = $this->session->userdata['logged_in']['npm'];
 
@@ -99,6 +132,11 @@ class Kuis extends CI_Controller
 	}
 
 	public function get_kuis($id_user = NULL) {
+
+		if($this->cek_login() == FALSE) {
+			return;
+		}
+
 		if ( ! isset($this->session->userdata['logged_in'])) {
 			$data['error_message'] = "Silahkan login terlebih dahulu";
 			$this->load->view('header');
@@ -151,6 +189,11 @@ class Kuis extends CI_Controller
 	}
 
 	public function filled_kuis() {
+
+		if($this->cek_login() == FALSE) {
+			return;
+		}
+
 		if ( ! isset($this->session->userdata['logged_in'])) {
 			$data['error_message'] = "Silahkan login terlebih dahulu";
 			$this->load->view('header');
