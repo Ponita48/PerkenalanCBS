@@ -1,6 +1,20 @@
 	<div>
 		<h1>PROFIL</h1>
 		<hr>
+		<?php if (isset($message_display)): ?>	
+			<div class="alert alert-success alert-dismissable">
+				<a href="#" class="close" data-dismiss="alert" aria-label="close">x</a>
+				<?php echo $message_display; ?>
+			</div>
+		<?php endif ?>
+
+		<?php if (isset($error_message)): ?>
+			<br>
+			<div class="alert alert-danger alert-dismissable">
+				<a href="#" class="close" data-dismiss="alert" aria-label="close">x</a>
+				<?php echo $error_message; ?>
+			</div>
+		<?php endif ?>
 	</div>
 	<div class="container">
 		<div class="col-sm-3">

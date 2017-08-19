@@ -139,10 +139,6 @@ class UserController extends CI_Controller
 	// login for the first time
 	public function new_login() {
 
-		if($this->cek_login() == FALSE) {
-			return;
-		}
-
 		if (empty($this->input->post('submit'))) {
 			$this->load->view('header');
 			$this->load->view('new_login');
@@ -278,17 +274,14 @@ class UserController extends CI_Controller
 					$result = $this->User_model->setProfile($data1, $data2);
 
 					if ($result == FALSE) {
+						$result = $this->User_model->getProfile();
+						$data['result'] = $result[0];
 						$data['error_message'] = "Error";
 						$this->load->view('header');
 						$this->load->view('change_profile', $data);
 						$this->load->view('footer');
 					}else {
-						$result = $this->User_model->getProfile();
-						$data['result'] = $result[0];
-						$data['message_display'] = "Success";
-						$this->load->view('header');
-						$this->load->view('change_profile', $data);
-						$this->load->view('footer');
+						$this->lihat_profile($this->session->userdata['logged_in']['id_user'], '', "Profile berhasil diganti");
 					}
 				}
 			}
@@ -355,7 +348,7 @@ class UserController extends CI_Controller
 		return $this->load->view('ajax_search',$data);
 	}
 	
-	public function lihat_profile($id) {
+	public function lihat_profile($id, $error_message = NULL, $message = NULL) {
 
 		if($this->cek_login() == FALSE) {
 			return;
@@ -382,6 +375,11 @@ class UserController extends CI_Controller
 			}else {
 				//goto ?
 				$data['result'] = $result[0];
+				if ($error_message != NULL) {
+					$data['error_message'] = $error_message;
+				}else {
+					$data['message_display'] = $message;
+				}
 				$this->load->view('header');
 				$this->load->view('profil', $data);
 				$this->load->view('footer');
