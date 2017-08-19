@@ -27,7 +27,7 @@ class Admin_model extends CI_Model {
 	}
 
 	public function getJumlahPerkenalan() {
-		$q = $this->db->query("SELECT (SELECT u.npm FROM users u WHERE u.id_user = p.id_user_maba) AS 'npm_peserta', (SELECT COUNT(*) FROM perkenalan_kating p WHERE p.id_user_maba = u.id_user) AS 'jumlah' FROM perkenalan_kating p, users u WHERE p.id_user_maba = u.id_user GROUP BY u.npm");
+		$q = $this->db->query("SELECT (SELECT u.npm FROM users u WHERE u.id_user = p.id_user_maba) AS 'npm_peserta', (SELECT COUNT(*) FROM perkenalan_kating p WHERE p.id_user_maba = u.id_user) AS 'jumlah' FROM perkenalan_kating p, users u WHERE p.id_user_maba = u.id_user AND p.status = 1 GROUP BY u.npm");
 
 		if ($q->num_rows() == 0) {
 			return FALSE;
@@ -67,8 +67,8 @@ class Admin_model extends CI_Model {
 			return FALSE;
 		}else {
 			$res = $q->result()[0];
-			$peserta = $this->db->query("SELECT link_foto FROM profile_maba WHERE id_user = $res->id_user_maba");
-			$kating = $this->db->query("SELECT npm FROM users WHERE id_user = $res->id_user_kating");
+			$peserta = $this->db->query("SELECT link_foto FROM profile_maba WHERE id_user = '$res->id_user_maba'");
+			$kating = $this->db->query("SELECT npm FROM users WHERE id_user = '$res->id_user_kating'");
 			
 			if ($peserta->num_rows() == 0) {
 				$res->link_foto_peserta = NULL;
