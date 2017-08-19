@@ -22,6 +22,8 @@
 
 	</style>
 	<script src = "https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+	<script src="<?php echo base_url(); ?>assets/js/jquery.min.js" type="text/javascript"></script>
+	<script src="<?php echo base_url(); ?>assets/js/jquery-ui.min.js" type="text/javascript"></script>
 	<script>
 		function hint(str) {
 			if (str.length == 0) {
