@@ -11,13 +11,11 @@
 			<center>
 			<?php if($pending != NULL) : ?>
 				<?php foreach ($pending as $value) : ?>
-					<a href="#">
-						<div class="col-md-3">
-							<img src="<?php echo $value->link_foto; ?>" alt="" class="img-responsive">
-								<p id="nama"><?php echo $value->nama; ?></p>
-								<p id="npm"><?php echo $value->npm_keluarga; ?></p>
-						</div>
-					</a>
+					<div class="col-md-3">
+						<img src="<?php echo $value->link_foto; ?>" alt="" class="img-responsive">
+							<p id="nama"><?php echo $value->nama; ?></p>
+							<p id="npm"><?php echo $value->npm_keluarga; ?></p>
+					</div>
 				<?php endforeach; ?>
 			<?php endif; ?>
 			</center>
@@ -26,13 +24,11 @@
 			<center>
 				<?php if($accepted != NULL) : ?>
 					<?php foreach ($accepted as $value) : ?>
-						<a href="#">
-							<div class="col-md-3">
-								<img src="<?php echo $value->link_foto; ?>" alt="" class="img-responsive">
-									<p id="nama"><?php echo $value->nama; ?></p>
-									<p id="npm"><?php echo $value->npm_keluarga; ?></p>
-							</div>
-						</a>
+						<div class="col-md-3">
+							<img src="<?php echo $value->link_foto; ?>" alt="" class="img-responsive">
+								<p id="nama"><?php echo $value->nama; ?></p>
+								<p id="npm"><?php echo $value->npm_keluarga; ?></p>
+						</div>
 					<?php endforeach; ?>
 				<?php endif; ?>
 			</center>

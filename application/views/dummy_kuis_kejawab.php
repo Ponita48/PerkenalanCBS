@@ -608,10 +608,13 @@
 <script src="<?php echo base_url(); ?>assets/js/jquery.min.js"></script>
 <script src="<?php echo base_url(); ?>assets/js/bootstrap.js"></script>
 <script type="text/javascript">
-	$('#toggleNav').click(function(){
-	    $('#navigation-panel').slideToggle('slow');
-	});
 	$(document).ready(function() {
-	    $(document).scrollTop(0);
+		$('#navigation-panel').show();
+		$('#toggleNav').click(function(){
+		    $('#navigation-panel').slideToggle('slow');
+		});
+		$(document).ready(function() {
+		    $(document).scrollTop(0);
+		});
 	});
 </script>

@@ -15,21 +15,26 @@
 		<button type="button" class="btn btn-info" data-toggle="modal" data-target="#modalFoto">Change Photo</button>
 		
 		<div class="modal fade" id="modalFoto" role="dialog">
-			<div class="modal-dialog">
+			<div class="modal-dialog modal-lg">
 				<div class="modal-content">
 					<div class="modal-header">
-						<span class="close" data-dissmiss="modal">&times;</span>
+						<button type="button" class="close" data-dismiss="modal" aria-hidden="true" style="color: white;">&times;</button> 
 						<h4 class="modal-title">Change Photo</h4>
 					</div>
 					<div class="modal-body">
-						<?php foreach ($pp as $data) : ?>
-						<div class="col-sm-4">
-							<img src="<?php echo $data->link_foto; ?>" alt="peserta belum mengisi foto" class="img img-responsive" onclick="change_photo(this.src);">
+						<div class="container">
+							<?php foreach ($pp as $data) : ?>
+							<div class="col-sm-4">
+								<img src="<?php echo $data->link_foto; ?>" alt="peserta belum mengisi foto" class="img img-responsive" onclick="change_photo(this.src);">
+							</div>
+							<?php endforeach; ?>
 						</div>
-						<?php endforeach; ?>
 					</div>
+					<div class="modal-footer">
+						
 						<br>			
 						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+					</diwv>
 				</div>
 			</div>
 		</div>
@@ -80,6 +85,11 @@
 
 <style type="text/css">
 	body {
+		background-color: #393639;
+		color: #FFD51E;
+	}
+
+	.modal-content {
 		background-color: #393639;
 		color: #FFD51E;
 	}
