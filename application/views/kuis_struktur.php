@@ -673,7 +673,10 @@
 <script src="<?php echo base_url(); ?>assets/js/bootstrap.js"></script>
 <script src="<?php echo base_url(); ?>assets/js/dragpack.js"></script>
 <script type="text/javascript">
-	$('#toggleNav').click(function(){
-	    $('#navigation-panel').slideToggle('slow');
+	$(document).ready(function() {
+		$('#navigation-panel').show();
+		$('#toggleNav').click(function(){
+		    $('#navigation-panel').slideToggle('slow');
+		});
 	});
 </script>
