@@ -16,7 +16,7 @@ class Admin_model extends CI_Model {
 	}
 
 	public function getPerkenalanAngkatan($id) {
-		$q = $this->db->query("SELECT p.id_perkenalan_angkatan, (SELECT u.npm FROM users u WHERE u.id_user = p.id_user1) AS 'npm_peserta', (SELECT u.npm FROM users u WHERE u.id_user = p.id_user2) AS 'npm_angkatan', p.nama, p.tempat_lahir, p.tgl_lahir, p.alamat_kos, p.id_line, p.no_hp, p.link_foto FROM users u, perkenalan_angkatan p WHERE p.id_user1 = $id GROUP BY p.id_perkenalan_angkatan");
+		$q = $this->db->query("SELECT p.id_perkenalan_angkatan, (SELECT u.npm FROM users u WHERE u.id_user = p.id_user1) AS 'npm_peserta', (SELECT u.npm FROM users u WHERE u.id_user = p.id_user2) AS 'npm_angkatan', p.nama, p.tempat_lahir, p.tgl_lahir, p.alamat_kos, p.id_line, p.no_hp, p.link_foto FROM users u, perkenalan_angkatan p WHERE p.id_user1 = '$id' GROUP BY p.id_perkenalan_angkatan");
 
 		if ($q->num_rows() == 0) {
 			return FALSE;
@@ -27,7 +27,7 @@ class Admin_model extends CI_Model {
 	}
 
 	public function getJumlahPerkenalan() {
-		$q = $this->db->query("SELECT (SELECT u.npm FROM users u WHERE u.id_user = p.id_user_maba) AS 'npm_peserta', (SELECT COUNT(*) FROM perkenalan_kating p WHERE p.id_user_maba = u.id_user) AS 'jumlah' FROM perkenalan_kating p, users u WHERE p.id_user_maba = u.id_user GROUP BY u.npm");
+		$q = $this->db->query("SELECT (SELECT u.npm FROM users u WHERE u.id_user = p.id_user_maba) AS 'npm_peserta', (SELECT COUNT(*) FROM perkenalan_kating p WHERE p.id_user_maba = u.id_user) AS 'jumlah' FROM perkenalan_kating p, users u WHERE p.id_user_maba = u.id_user AND p.status = 1 GROUP BY u.npm");
 
 		if ($q->num_rows() == 0) {
 			return FALSE;
@@ -67,8 +67,8 @@ class Admin_model extends CI_Model {
 			return FALSE;
 		}else {
 			$res = $q->result()[0];
-			$peserta = $this->db->query("SELECT link_foto FROM profile_maba WHERE id_user = $res->id_user_maba");
-			$kating = $this->db->query("SELECT npm FROM users WHERE id_user = $res->id_user_kating");
+			$peserta = $this->db->query("SELECT link_foto FROM profile_maba WHERE id_user = '$res->id_user_maba'");
+			$kating = $this->db->query("SELECT npm FROM users WHERE id_user = '$res->id_user_kating'");
 			
 			if ($peserta->num_rows() == 0) {
 				$res->link_foto_peserta = NULL;

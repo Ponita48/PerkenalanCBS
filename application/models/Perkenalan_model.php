@@ -26,7 +26,7 @@ class Perkenalan_model extends CI_Model {
 			->limit(1)
 			->get();*/
 		$max_angkatan = $this->db->query("SELECT MAX(role) as 'max' FROM users WHERE role != 'admin'")->result()[0]->max;
-		$query = $this->db->query("SELECT * FROM users WHERE id_user = $id_keluarga AND role != $max_angkatan");
+		$query = $this->db->query("SELECT * FROM users WHERE id_user = '$id_keluarga' AND role != $max_angkatan");
 
 		if ($query->num_rows() == 0) {
 			return FALSE;
@@ -59,7 +59,7 @@ class Perkenalan_model extends CI_Model {
 		$id_user2 = $data['id_user2'];
 		
 		$max_angkatan = $this->db->query("SELECT MAX(role) as 'max' FROM users WHERE role != 'admin'")->result()[0]->max;
-		$query = $this->db->query("SELECT * FROM users WHERE id_user = $id_user2 AND role = $max_angkatan");
+		$query = $this->db->query("SELECT * FROM users WHERE id_user = '$id_user2' AND role = $max_angkatan");
 
 		if ($query->num_rows() == 0) {
 			return FALSE;
@@ -76,7 +76,7 @@ class Perkenalan_model extends CI_Model {
 	}
 
 	public function getPendingRequest($id_user) {
-		$q = $this->db->query("SELECT p.id_perkenalan_kating, (SELECT u.npm FROM users u WHERE u.id_user = p.id_user_maba) AS 'npm_peserta', (SELECT u.npm FROM users u WHERE u.id_user = p.id_user_kating) AS 'npm_keluarga', p.nama, p.ciri_khas, p.link_foto, p.request_time, (SELECT u.role FROM users u WHERE u.id_user = p.id_user_kating) AS 'angkatan_keluarga', (SELECT prof.nama FROM profile_maba prof WHERE prof.id_user = p.id_user_maba) AS 'nama_peserta' FROM users u, perkenalan_kating p WHERE p.id_user_maba = $id_user AND status = 0 GROUP BY p.id_perkenalan_kating");
+		$q = $this->db->query("SELECT p.id_perkenalan_kating, (SELECT u.npm FROM users u WHERE u.id_user = p.id_user_maba) AS 'npm_peserta', (SELECT u.npm FROM users u WHERE u.id_user = p.id_user_kating) AS 'npm_keluarga', p.nama, p.ciri_khas, p.link_foto, p.request_time, (SELECT u.role FROM users u WHERE u.id_user = p.id_user_kating) AS 'angkatan_keluarga', (SELECT prof.nama FROM profile_maba prof WHERE prof.id_user = p.id_user_maba) AS 'nama_peserta' FROM users u, perkenalan_kating p WHERE p.id_user_maba = '$id_user' AND status = 0 GROUP BY p.id_perkenalan_kating");
 		
 		if ($q->num_rows() == 0) {
 			return FALSE;
@@ -86,7 +86,7 @@ class Perkenalan_model extends CI_Model {
 	}
 
 	public function getAcceptedRequest($id_user) {
-		$q = $this->db->query("SELECT p.id_perkenalan_kating, (SELECT u.npm FROM users u WHERE u.id_user = p.id_user_maba) AS 'npm_peserta', (SELECT u.npm FROM users u WHERE u.id_user = p.id_user_kating) AS 'npm_keluarga', p.nama, p.ciri_khas, p.link_foto, p.request_time, (SELECT u.role FROM users u WHERE u.id_user = p.id_user_kating) AS 'angkatan_keluarga', (SELECT prof.nama FROM profile_maba prof WHERE prof.id_user = p.id_user_maba) AS 'nama_peserta' FROM users u, perkenalan_kating p WHERE p.id_user_maba = $id_user AND status = 1 GROUP BY p.id_perkenalan_kating");
+		$q = $this->db->query("SELECT p.id_perkenalan_kating, (SELECT u.npm FROM users u WHERE u.id_user = p.id_user_maba) AS 'npm_peserta', (SELECT u.npm FROM users u WHERE u.id_user = p.id_user_kating) AS 'npm_keluarga', p.nama, p.ciri_khas, p.link_foto, p.request_time, (SELECT u.role FROM users u WHERE u.id_user = p.id_user_kating) AS 'angkatan_keluarga', (SELECT prof.nama FROM profile_maba prof WHERE prof.id_user = p.id_user_maba) AS 'nama_peserta' FROM users u, perkenalan_kating p WHERE p.id_user_maba = '$id_user' AND status = 1 GROUP BY p.id_perkenalan_kating");
 		
 		if ($q->num_rows() == 0) {
 			return FALSE;

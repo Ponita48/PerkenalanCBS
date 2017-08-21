@@ -210,7 +210,7 @@ class A extends CI_Controller {
 					$this->load->view('footer');
 				}else {
 					//goto jumlah perkenalan
-					redirect('../admin');
+					redirect('../jumlah_perkenalan');
 				}
 			}
 		}	

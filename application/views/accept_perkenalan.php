@@ -7,7 +7,7 @@
 	<div class="container">
 		<div class="col-sm-4">
 			<center>
-				<img src="$result->link_foto_peserta;" alt="" width="300" class="myImg img-responsive img-thumbnail"><br>
+				<img src="<?php echo $result->link_foto_peserta; ?>" alt="" width="300" class="myImg img-responsive img-thumbnail"><br>
 				<p>Foto Mahasiswa Baru</p>
 			</center>
 		</div>

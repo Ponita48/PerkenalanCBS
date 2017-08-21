@@ -151,7 +151,6 @@ class User_model extends CI_Model {
 
 	public function getProfile($id = NULL) {
 		
-
 		if ($id == NULL) {
 			if ($this->session->userdata['logged_in']['role'] == 'peserta') {
 				$sel = "u.id_user, u.npm, u.email, u.role, p.nama, p.jk, p.tempat_lahir, p.tgl_lahir, p.alamat_kos, p.no_hp, p.id_line, p.motto_hidup, p.link_foto";
@@ -168,10 +167,10 @@ class User_model extends CI_Model {
 
 			$role = $this->db->select('*')
 				->from('users')
-				->where("id_user = ".$id." AND role != 'admin'")
+				->where("id_user = '$id' AND role != 'admin'")
 				->limit(1)
 				->get();
-
+			
 			if ($role->num_rows() == 0) {
 				return FALSE;
 			}else {
@@ -190,7 +189,7 @@ class User_model extends CI_Model {
 				return FALSE;
 			}
 		}
-			$q = "SELECT ".$sel." FROM ".$fr." LEFT JOIN ".$j." ON u.id_user = p.id_user WHERE u.id_user = ".$id;
+			$q = "SELECT ".$sel." FROM ".$fr." LEFT JOIN ".$j." ON u.id_user = p.id_user WHERE u.id_user = '$id'";
 
 		$query = $this->db->query($q);
 
@@ -209,7 +208,7 @@ class User_model extends CI_Model {
 		$query = $this->db
 			->select('*')
 			->from('users')
-			->where("id_user = $id_user")
+			->where("id_user = '$id_user'")
 			->limit(1)
 			->get();
 
@@ -226,7 +225,7 @@ class User_model extends CI_Model {
 				$query = $this->db
 					->select('*')
 					->from('profile_maba')
-					->where("id_user = $id_user")
+					->where("id_user = '$id_user'")
 					->limit(1)
 					->get();
 

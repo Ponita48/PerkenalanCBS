@@ -123,8 +123,9 @@
 
 <script>
 	$ (function(){
-		$("#toggleNav").click(function(){
-		    $("#navigation-panel").slideToggle("slow");
+		$('#navigation-panel').show();
+		$('#toggleNav').click(function(){
+		    $('#navigation-panel').slideToggle('slow');
 		});
 
 		var dropped = false;
@@ -157,7 +158,6 @@
 	            // ui.helper.appendTo(this);
 	            // alert('haha');
 	    	}
-		});
+	    });
 	});
-
 </script>
