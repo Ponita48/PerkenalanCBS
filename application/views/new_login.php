@@ -1,3 +1,20 @@
+	<?php if ($this->session->flashdata('error_message')): ?>
+		<br>
+		<div class="alert alert-danger alert-dismissable">
+			<span class="close" data-dismiss="alert">x</span>
+			<?php echo $this->session->flashdata('error_message'); ?>
+		</div>
+	<?php endif ?>
+
+
+	<?php if ($this->session->flashdata('message_display')): ?>
+		<br>
+		<div class="alert alert-success alert-dismissable">
+			<span class="close" data-dismiss="alert">x</span>
+			<?php echo $this->session->flashdata('message_display'); ?>
+		</div>
+	<?php endif ?>
+
 	<?php if (isset($error_message)): ?>
 		<br>
 		<div class="alert alert-danger alert-dismissable">

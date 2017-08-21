@@ -2,7 +2,7 @@
 	<hr>
 	<div class="col-md-12 col-sm-12 col-lg-12" id="search" style="padding: 10px; margin-top: 0; margin-bottom: 10px;">
 	<center>
-		<form action="<?php echo base_url(); ?>UserController/search" class="form-inline" id="searchForm" method="GET">
+		<form action="<?php echo base_url(); ?>search" class="form-inline" id="searchForm" method="GET">
 			<div class="input-group">
 				<input type="text" class="form-control" id="searchKey" placeholder="Search. . ." name="keySearch" onkeyup="hahaha(this.value)">
 				<span class="input-group-btn">

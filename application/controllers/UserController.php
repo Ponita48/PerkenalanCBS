@@ -6,47 +6,36 @@ class UserController extends CI_Controller
 	function __construct() {
 		parent::__construct();
 		$this->load->helper('url');
-		$this->load->library(array('form_validation', 'session'));
+		$this->load->library(array('form_validation', 'session', 'auth'));
 		$this->load->database();
 		$this->load->model('User_model');
 	}
 
-	public function index() {
+	public function index($message = NULL) {
 
-		//$this->User_model->aihihi();
+		$data = NULL;
 
-		$this->load->view('header');
-		$this->load->view('index');
-		$this->load->view('footer');
-	}
-
-	//cek sudah pernah login atau belum dengan cara mengecek email null atau tidak
-	public function cek_login() {
-		if ( ! isset($this->session->userdata['logged_in'])) {
-			$this->login("Harap login terlebih dahulu");
-			return FALSE;
-		}else {
-			if ($this->User_model->cek_email($this->session->userdata['logged_in']['id_user'], "id_user") == NULL) {
-				$message['error_message'] = "Harap mengisi form ini terlebih dahulu";
-				$this->load->view('header');
-				$this->load->view('new_login', $message);
-				$this->load->view('footer');
-				return FALSE;
+		if ($message != NULL) {
+			if ($message['type'] == 'error_message') {
+				$data['error_message'] = $message['message'];
+			}else {
+				$data['message_display'] = $message['message'];
 			}
 		}
 
-		return TRUE;
+		$this->load->view('header');
+		$this->load->view('index', $data);
+		$this->load->view('footer');
 	}
 	
 	//login function
 	public function login($message = NULL) {
 
-		if ($message != NULL) {
-			$data['error_message'] = $message;
-			$this->load->view('header');
-			$this->load->view('login', $data);
-			$this->load->view('footer');
-			return;
+		$cek = $this->auth->cek_login();
+
+		if ($cek['result'] == TRUE) {
+			$this->session->set_flashdata('error_message', 'Maaf anda sudah login');
+			redirect(base_url());
 		}
 
 		//formValidation
@@ -57,8 +46,16 @@ class UserController extends CI_Controller
 		if ($this->form_validation->run() == FALSE) {
 			//When error
 			//load login form
+			$data = NULL;
+			if ($message != NULL) {
+				if ($message['type'] == 'error_message') {
+					$data['error_message'] = $message['message'];
+				}else {
+					$data['message_display'] = $message['message'];
+				}
+			}
 			$this->load->view('header');
-			$this->load->view('login');
+			$this->load->view('login', $data);
 			$this->load->view('footer');
 		}else {
 			
@@ -71,10 +68,8 @@ class UserController extends CI_Controller
 			$role = $this->User_model->cek_role($data['npm']);
 
 			if ($role == NULL) {
-				$data['message_display'] = "User tidak ditemukan";
-				$this->load->view('header');
-				$this->load->view('index', $data);
-				$this->load->view('footer');
+				$this->session->set_flashdata('error_message', 'User tidak ditemukan');
+				redirect(base_url().'login');
 			}else {
 
 				$email = $this->User_model->cek_email($data['npm'], "npm");
@@ -87,11 +82,8 @@ class UserController extends CI_Controller
 				}
 
 				if ($result == FALSE) {
-					//when username or password wrong
-					$data['error_message'] = "Username atau password salah";
-					$this->load->view('header');
-					$this->load->view('login', $data);
-					$this->load->view('footer');
+					$this->session->set_flashdata('error_message', 'Username atau password salah');
+					redirect(base_url().'login');
 				}else {
 					//when username or password correct
 					//insert username and password to session
@@ -112,10 +104,8 @@ class UserController extends CI_Controller
 					}else {
 						//login success
 						//back to home
-						$data['message_display'] = "Successfully login";
-						$this->load->view('header');
-						$this->load->view('index', $data);
-						$this->load->view('footer');
+						$this->session->set_flashdata('message_display', 'Successfully login');
+						redirect(base_url());
 					}
 				}	
 			}
@@ -127,21 +117,26 @@ class UserController extends CI_Controller
 	public function logout() {
 		//delete session
 		$this->session->unset_userdata('logged_in');
-		//$this->session->unset_userdata('role');
-
+		
 		//back to home
-		$data['message_display'] = "Successfully Logout";
-		$this->load->view('header');
-		$this->load->view('index', $data);
-		$this->load->view('footer');
+		$this->session->set_flashdata('message_display', 'Successfully logout');
+		redirect(base_url());
 	}
 
 	// login for the first time
-	public function new_login() {
+	public function new_login($message = NULL) {
 
 		if (empty($this->input->post('submit'))) {
+			$data = NULL;
+			if ($message != NULL) {
+				if ($message['type'] == 'error_message') {
+					$data['error_message'] = $message['message'];
+				}else {
+					$data['message_display'] = $message['message'];
+				}
+			}
 			$this->load->view('header');
-			$this->load->view('new_login');
+			$this->load->view('new_login', $data);
 			$this->load->view('footer');
 		}else {
 			if (empty($_FILES['pp']['name'])) {
@@ -214,123 +209,126 @@ class UserController extends CI_Controller
 
 	//edit profile, peserta or keluarga
 	public function edit_profile() {
+		$cek = $this->auth->cek_login_peserta();
 
-		if($this->cek_login() == FALSE) {
-			return;
+		if ($cek['result'] != TRUE) {
+			switch ($cek['code']) {
+				case 'login':
+					/*$message = array('type' => 'error_message', 'message' => $cek['message']);
+					return $this->login($message);*/
+					$this->session->set_flashdata('error_message', $cek['message']);
+					redirect(base_url().'login');
+					break;
+				case 'new_login':
+					$message = array('type' => 'error_message', 'message' => $cek['message']);
+					return $this->new_login($message);
+					break;
+				case 'home':
+					/*$message = array('type' => 'error_message', 'message' => $cek['message']);
+					return $this->index($message);*/
+					$this->session->set_flashdata('error_message', $cek['message']);
+					redirect(base_url());
+					break;
+			}
 		}
 
-		if (! isset($this->session->userdata['logged_in'])) {
-			$data['error_message'] = "Silahkan login terlebih dahulu";
+		$this->form_validation->set_rules('email', 'Email', 'required');
+		$this->form_validation->set_rules('nama', 'Nama', 'required');
+		$this->form_validation->set_rules('jk', 'Jenis Kelamin', 'required');
+		$this->form_validation->set_rules('tempat_lahir', 'Tempat Lahir', 'required');
+		$this->form_validation->set_rules('tgl_lahir', 'Tanggal Lahir', 'required');
+		$this->form_validation->set_rules('alamat_kos', 'Alamat Kos', 'required');
+		$this->form_validation->set_rules('no_hp', 'No HP', 'required');
+		$this->form_validation->set_rules('id_line', 'ID Line', 'required');
+
+		if ($this->session->userdata['logged_in']['role'] == 'peserta') {
+			//$this->form_validation->set_rules('link_foto', 'Link Foto', 'required');
+			$this->form_validation->set_rules('motto_hidup', 'Motto Hidup', 'required');
+		}
+
+		if ($this->User_model->cek_email($this->session->userdata['logged_in']['id_user'], "id_user") == NULL) {
+			$message['error_message'] = "Untuk mengubah profile, silahkan isi form berikut ini!";
 			$this->load->view('header');
-			$this->load->view('index', $data);
+			$this->load->view('new_login', $message);
 			$this->load->view('footer');
-			// $data['error_message'] = "login dulu cuk!";
-			// echo $data['error_message'];
-			// die();
 		}else {
-			$this->form_validation->set_rules('email', 'Email', 'required');
-			$this->form_validation->set_rules('nama', 'Nama', 'required');
-			$this->form_validation->set_rules('jk', 'Jenis Kelamin', 'required');
-			$this->form_validation->set_rules('tempat_lahir', 'Tempat Lahir', 'required');
-			$this->form_validation->set_rules('tgl_lahir', 'Tanggal Lahir', 'required');
-			$this->form_validation->set_rules('alamat_kos', 'Alamat Kos', 'required');
-			$this->form_validation->set_rules('no_hp', 'No HP', 'required');
-			$this->form_validation->set_rules('id_line', 'ID Line', 'required');
+			$result = $this->User_model->getProfile();
 
-			if ($this->session->userdata['logged_in']['role'] == 'peserta') {
-				//$this->form_validation->set_rules('link_foto', 'Link Foto', 'required');
-				$this->form_validation->set_rules('motto_hidup', 'Motto Hidup', 'required');
-			}
+			$data['result'] = $result[0];
 
-			if ($this->User_model->cek_email($this->session->userdata['logged_in']['id_user'], "id_user") == NULL) {
-				$message['error_message'] = "Untuk mengubah profile, silahkan isi form berikut ini!";
+			if ($this->form_validation->run() == FALSE) {
 				$this->load->view('header');
-				$this->load->view('new_login', $message);
+				$this->load->view('change_profile', $data);
 				$this->load->view('footer');
 			}else {
-				$result = $this->User_model->getProfile();
+				$data1['email'] = $this->input->post('email');
+				$data2 = array(
+					'nama' => $this->input->post('nama'),
+					'jk' => $this->input->post('jk'),
+					'tempat_lahir' => $this->input->post('tempat_lahir'),
+					'tgl_lahir' => date("Y-m-d", strtotime($this->input->post('tgl_lahir'))),
+					'alamat_kos' => $this->input->post('alamat_kos'),
+					'no_hp' => $this->input->post('no_hp'),
+					'id_line' => $this->input->post('id_line')
+				);
+				if ($this->session->userdata['logged_in']['role'] == 'peserta') {
+					$data2['motto_hidup'] = $this->input->post('motto_hidup');
+				}
 
-				$data['result'] = $result[0];
+				$result = $this->User_model->setProfile($data1, $data2);
 
-				if ($this->form_validation->run() == FALSE) {
+				if ($result == FALSE) {
+					$result = $this->User_model->getProfile();
+					$data['result'] = $result[0];
+					$data['error_message'] = "Error";
 					$this->load->view('header');
 					$this->load->view('change_profile', $data);
 					$this->load->view('footer');
 				}else {
-					$data1['email'] = $this->input->post('email');
-					$data2 = array(
-						'nama' => $this->input->post('nama'),
-						'jk' => $this->input->post('jk'),
-						'tempat_lahir' => $this->input->post('tempat_lahir'),
-						'tgl_lahir' => date("Y-m-d", strtotime($this->input->post('tgl_lahir'))),
-						'alamat_kos' => $this->input->post('alamat_kos'),
-						'no_hp' => $this->input->post('no_hp'),
-						'id_line' => $this->input->post('id_line')
-					);
-					if ($this->session->userdata['logged_in']['role'] == 'peserta') {
-						$data2['motto_hidup'] = $this->input->post('motto_hidup');
-					}
-
-					$result = $this->User_model->setProfile($data1, $data2);
-
-					if ($result == FALSE) {
-						$result = $this->User_model->getProfile();
-						$data['result'] = $result[0];
-						$data['error_message'] = "Error";
-						$this->load->view('header');
-						$this->load->view('change_profile', $data);
-						$this->load->view('footer');
-					}else {
-						$this->lihat_profile($this->session->userdata['logged_in']['id_user'], '', "Profile berhasil diganti");
-					}
+					/*$this->lihat_profile($this->session->userdata['logged_in']['id_user'], '', "Profile berhasil diganti");*/
+					$this->session->set_flashdata('message_display', 'Profile berhasil diganti');
+					redirect(base_url().'profile/'.$this->session->userdata['logged_in']['id_user']);
 				}
 			}
 		}
+		
 	}
 
 	public function search($key = NULL) {
 
-		if($this->cek_login() == FALSE) {
-			return;
-		}
-		
-		//echo $this->input->get('keySearch');
+		$cek = $this->auth->cek_login();
 
-		if (! isset($this->session->userdata['logged_in'])) {
-			/*$data['error_message'] = "login dulu cuk!";
-			echo $data['error_message'];
-			die();*/
-			$data['error_message'] = "Silahkan login terlebih dahulu";
-			$this->load->view('header');
-			$this->load->view('index', $data);
-			$this->load->view('footer');
-		}else {
-			//$keySearch = $_GET['keySearch'];
-			$keySearch = $this->input->get('keySearch');
-			$keyArray = explode(" ",$keySearch);
-
-			$keySearch = '%';
-
-			foreach ($keyArray as $value) {
-				$keySearch = $keySearch.$value.'%';
-			}
-			$result = $this->User_model->search($keySearch);
-
-			if (! $result) {
-				$data['error_message'] = 'Not Found';
-				// echo $data['message_display'];
-				// die();
+		if ($cek['result'] == FALSE) {
+			if ($cek['code'] == 'login') {
+				$this->session->set_flashdata('error_message', $cek['message']);
+				redirect(base_url().'login');
 			}else {
-				$data['hasil'] = $result;
-				// echo "<pre>";
-				// var_dump($result);
-				// echo "</pre>";
-				// die();
+				$message = array('type' => 'error_message', 'message' => $cek['message']);
+				return $this->new_login($message);
 			}
-			$this->load->view('header');
-			$this->load->view('search', $data);
-			$this->load->view('footer');
 		}
+
+		//echo $this->input->get('keySearch');	
+		//$keySearch = $_GET['keySearch'];
+		$keySearch = $this->input->get('keySearch');
+		$keyArray = explode(" ",$keySearch);
+
+		$keySearch = '%';
+
+		foreach ($keyArray as $value) {
+			$keySearch = $keySearch.$value.'%';
+		}
+		$result = $this->User_model->search($keySearch);
+
+		if (! $result) {
+			$data['error_message'] = 'Not Found';
+		}else {
+			$data['hasil'] = $result;
+		}
+		$this->load->view('header');
+		$this->load->view('search', $data);
+		$this->load->view('footer');
+		
 	}
 
 	public function hintSearch($keySearch)
@@ -350,115 +348,113 @@ class UserController extends CI_Controller
 	
 	public function lihat_profile($id, $error_message = NULL, $message = NULL) {
 
-		if($this->cek_login() == FALSE) {
-			return;
-		}
+		$cek = $this->auth->cek_login();
 
-		if (! isset($this->session->userdata['logged_in'])) {
-			$data['error_message'] = "Silahkan login terlebih dahulu";
-			$this->load->view('header');
-			$this->load->view('index', $data);
-			$this->load->view('footer');
-			// echo $data['message_display'];
-			// die();
-		}else {
-			$result = $this->User_model->getProfile($id);
-
-			if ($result == FALSE) {
-				$data['error_message'] = "Maaf, Profile tidak ditemukan";
-				$this->load->view('header');
-				$this->load->view('index', $data);
-				$this->load->view('footer');
-				//goto ?
-				// echo "profile tidak ditemukan";
-				// die();
+		if ($cek['result'] == FALSE) {
+			if ($cek['code'] == 'login') {
+				$this->session->set_flashdata('error_message', $cek['message']);
+				redirect(base_url().'login');
 			}else {
-				//goto ?
-				$data['result'] = $result[0];
-				if ($error_message != NULL) {
-					$data['error_message'] = $error_message;
-				}else {
-					$data['message_display'] = $message;
-				}
-				$this->load->view('header');
-				$this->load->view('profil', $data);
-				$this->load->view('footer');
-				// echo "<pre>";
-				// var_dump($result);
-				// echo "</pre>";
-				// die();
+				$message = array('type' => 'error_message', 'message' => $cek['message']);
+				return $this->new_login($message);
 			}
 		}
 
+		$result = $this->User_model->getProfile($id);
+
+		if ($result == FALSE) {
+			$data['error_message'] = "Maaf, Profile tidak ditemukan";
+			$this->load->view('header');
+			$this->load->view('index', $data);
+			$this->load->view('footer');
+			//goto ?
+			// echo "profile tidak ditemukan";
+			// die();
+		}else {
+			//goto ?
+			$data['result'] = $result[0];
+			if ($error_message != NULL) {
+				$data['error_message'] = $error_message;
+			}else {
+				$data['message_display'] = $message;
+			}
+			$this->load->view('header');
+			$this->load->view('profil', $data);
+			$this->load->view('footer');
+		}
 	}
 
 	public function get_angkatan($angkatan = 2017) {
 
-		if($this->cek_login() == FALSE) {
-			return;
-		}
-		
-		if (! isset($this->session->userdata['logged_in'])) {
-			$data['error_message'] = "Silahkan login terlebih dahulu";
-			$this->load->view('header');
-			$this->load->view('index', $data);
-			$this->load->view('footer');
-		}else {
-			$result = $this->User_model->get_angkatan($angkatan);
+		$cek = $this->auth->cek_login();
 
-			if ($result == FALSE) {
-				$data['error_message'] = "Maaf, angkatan tidak dapat ditemukan";
-				$this->load->view('header');
-				$this->load->view('index', $data);
-				$this->load->view('footer');
+		if ($cek['result'] == FALSE) {
+			if ($cek['code'] == 'login') {
+				$this->session->set_flashdata('error_message', $cek['message']);
+				redirect(base_url().'login');
 			}else {
-				$data['result'] = $result;
-				$this->load->view('header');
-				$this->load->view('kating', $data);
-				$this->load->view('footer');
+				$message = array('type' => 'error_message', 'message' => $cek['message']);
+				return $this->new_login($message);
 			}
+		}
+
+		$result = $this->User_model->get_angkatan($angkatan);
+
+		if ($result == FALSE) {
+			$this->session->set_flashdata('error_message', 'Maaf, angkatan tidak dapat ditemukan');
+			redirect(base_url());
+		}else {
+			$data['result'] = $result;
+			$this->load->view('header');
+			$this->load->view('kating', $data);
+			$this->load->view('footer');
 		}
 	}
 
 	public function get_angkatan_2017() {
 
-		if($this->cek_login() == FALSE) {
-			return;
-		}
-		
-		if (! isset($this->session->userdata['logged_in'])) {
-			$data['error_message'] = "Silahkan login terlebih dahulu";
-			$this->load->view('header');
-			$this->load->view('index', $data);
-			$this->load->view('footer');
-		}else {
+		$cek = $this->auth->cek_login();
 
-			$angkatan = 2017;
-
-			$result = $this->User_model->get_angkatan($angkatan);
-
-			if ($result == FALSE) {
-				// echo "angkatan ga ada coeg";
-				$data['error_message'] = "Maaf, angkatan tidak dapat ditemukan";
-				$this->load->view('header');
-				$this->load->view('index', $data);
-				$this->load->view('footer');
+		if ($cek['result'] == FALSE) {
+			if ($cek['code'] == 'login') {
+				$this->session->set_flashdata('error_message', $cek['message']);
+				redirect(base_url().'login');
 			}else {
-				$data['result'] = $result;
-				$this->load->view('header');
-				$this->load->view('angkatan',$data);
-				$this->load->view('footer');
+				$message = array('type' => 'error_message', 'message' => $cek['message']);
+				return $this->new_login($message);
 			}
 		}
+		
+		$angkatan = 2017;
 
+		$result = $this->User_model->get_angkatan($angkatan);
+
+		if ($result == FALSE) {
+			// echo "angkatan ga ada coeg";
+			$this->session->set_flashdata('error_message', 'Maaf, angkatan tidak dapat ditemukan');
+			redirect(base_url());
+		}else {
+			$data['result'] = $result;
+			$this->load->view('header');
+			$this->load->view('angkatan',$data);
+			$this->load->view('footer');
+		}
 	}
 
 	
 
 	public function accept() {
 
-		if($this->cek_login() == FALSE) {
-			return;
+		$cek = $this->auth->cek_login();
+
+		if ($cek['result'] == FALSE) {
+			if ($cek['code'] == 'login') {
+				$this->session->set_flashdata('error_message', $cek['message']);
+				redirect(base_url().'login');
+			}else {
+				$message = array('type' => 'error_message', 'message' => $cek['message']);
+				return $this->new_login($message);
+			}
 		}
 
 		$this->load->view('header');
@@ -468,8 +464,16 @@ class UserController extends CI_Controller
 
 	public function request_list() {
 
-		if($this->cek_login() == FALSE) {
-			return;
+		$cek = $this->auth->cek_login();
+
+		if ($cek['result'] == FALSE) {
+			if ($cek['code'] == 'login') {
+				$this->session->set_flashdata('error_message', $cek['message']);
+				redirect(base_url().'login');
+			}else {
+				$message = array('type' => 'error_message', 'message' => $cek['message']);
+				return $this->new_login($message);
+			}
 		}
 
 		$this->load->view('header');
@@ -478,12 +482,39 @@ class UserController extends CI_Controller
 	}
 	public function my_request() {
 
-		if($this->cek_login() == FALSE) {
-			return;
+		$cek = $this->auth->cek_login();
+
+		if ($cek['result'] == FALSE) {
+			if ($cek['code'] == 'login') {
+				$this->session->set_flashdata('error_message', $cek['message']);
+				redirect(base_url().'login');
+			}else {
+				$message = array('type' => 'error_message', 'message' => $cek['message']);
+				return $this->new_login($message);
+			}
 		}
 
 		$this->load->view('header');
 		$this->load->view('my_request');
+		$this->load->view('footer');
+	}
+
+	public function view_baru_login()
+	{
+		$cek = $this->auth->cek_login();
+
+		if ($cek['result'] == FALSE) {
+			if ($cek['code'] == 'login') {
+				$this->session->set_flashdata('error_message', $cek['message']);
+				redirect(base_url().'login');
+			}else {
+				$this->session->set_flashdata('error_message', $cek['message']);
+				redirect(base_url());
+			}
+		}
+
+		$this->load->view('header');
+		$this->load->view('new_login');
 		$this->load->view('footer');
 	}
 

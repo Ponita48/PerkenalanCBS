@@ -10,95 +10,83 @@ class Kuis extends CI_Controller
 	{
 		parent::__construct();
 		$this->load->model(array('Kuis_model', 'User_model'));
-		$this->load->library(array('form_validation', 'session'));
+		$this->load->library(array('form_validation', 'session', 'auth'));
 		$this->load->database();
 		$this->load->helper('url');
 	}
 
-	public function cek_login() {
-		if ( ! isset($this->session->userdata['logged_in'])) {
-			$data['error_message'] = "Harap login terlebih dahulu";
-			$this->load->view('header');
-			$this->load->view('login', $data);
-			$this->load->view('footer');
-			return FALSE;
-		}else {
-			if ($this->User_model->cek_email($this->session->userdata['logged_in']['id_user'], "id_user") == NULL) {
-				$message['error_message'] = "Harap mengisi form ini terlebih dahulu";
-				$this->load->view('header');
-				$this->load->view('new_login', $message);
-				$this->load->view('footer');
-				return FALSE;
-			}
-		}
-
-		return TRUE;
-	}
-
 	public function view_kuis() {
 
-		if($this->cek_login() == FALSE) {
-			return;
+		$cek = $this->auth->cek_login();
+
+		if ($cek['result'] == FALSE) {
+			if ($cek['code'] == 'login') {
+				$this->session->set_flashdata('error_message', $cek['message']);
+				redirect(base_url().'login');
+			}else {
+				$message = array('type' => 'error_message', 'message' => $cek['message']);
+				return $this->new_login($message);
+			}
 		}
 
-		if ( ! isset($this->session->userdata['logged_in'])) {
-			$data['error_message'] = "Silahkan login terlebih dahulu";
+		if ($this->session->userdata['logged_in']['role'] == 'admin') {
+			redirect(base_url().'kuis/filled');
+		}
+
+		$npm = $this->User_model->get_npm($this->session->userdata['logged_in']['id_user']);
+
+		$filled = $this->Kuis_model->cek_filled_kuis($npm);
+
+		if ($filled == NULL) {
+			$data['npm'] = $npm;
+
 			$this->load->view('header');
-			$this->load->view('index', $data);
+			$this->load->view('kuis_struktur', $data);
 			$this->load->view('footer');
 		}else {
-
-			if ($this->session->userdata['logged_in']['role'] == 'admin') {
-				redirect('/kuis/filled');
-			}
-
-			$npm = $this->User_model->get_npm($this->session->userdata['logged_in']['id_user']);
-
-			$filled = $this->Kuis_model->cek_filled_kuis($npm);
-
-			if ($filled == NULL) {
-				$data['npm'] = $npm;
-
-				$this->load->view('header');
-				$this->load->view('kuis_struktur', $data);
-				$this->load->view('footer');
-			}else {
-				redirect('/kuis/jawaban');
-			}
+			redirect(base_url().'kuis/jawaban');
 		}
 	}
 
 	public function isi_kuis() {
 
-		if($this->cek_login() == FALSE) {
-			return;
-		}
+		$cek = $this->auth->cek_login();
 
-		if ( ! isset($this->session->userdata['logged_in'])) {
-			$data['error_message'] = "Silahkan login terlebih dahulu";
-			$this->load->view('header');
-			$this->load->view('index', $data);
-			$this->load->view('footer');
-		}else {
-
-			if ($this->session->userdata['logged_in']['role'] == 'admin') {
-				redirect('/kuis/filled');
+		if ($cek['result'] == FALSE) {
+			if ($cek['code'] == 'login') {
+				$this->session->set_flashdata('error_message', $cek['message']);
+				redirect(base_url().'login');
+			}else {
+				$message = array('type' => 'error_message', 'message' => $cek['message']);
+				return $this->new_login($message);
 			}
-
-			$npm = $this->User_model->get_npm($this->session->userdata['logged_in']['id_user']);
-		
-			$data['npm'] = $npm;
-
-			$this->load->view('header');
-			$this->load->view('kuis_struktur', $data);
-			$this->load->view('footer');			
 		}
+
+		if ($this->session->userdata['logged_in']['role'] == 'admin') {
+			redirect(base_url().'/kuis/filled');
+		}
+
+		$npm = $this->User_model->get_npm($this->session->userdata['logged_in']['id_user']);
+	
+		$data['npm'] = $npm;
+
+		$this->load->view('header');
+		$this->load->view('kuis_struktur', $data);
+		$this->load->view('footer');
 	}
 
 	public function kuis_struktur_submit() {
 
-		if($this->cek_login() == FALSE) {
-			return;
+		$cek = $this->auth->cek_login();
+
+		if ($cek['result'] == FALSE) {
+			if ($cek['code'] == 'login') {
+				$this->session->set_flashdata('error_message', $cek['message']);
+				redirect(base_url().'login');
+			}else {
+				$message = array('type' => 'error_message', 'message' => $cek['message']);
+				return $this->new_login($message);
+			}
 		}
 
 		$npm_maba = $this->session->userdata['logged_in']['npm'];
@@ -127,94 +115,93 @@ class Kuis extends CI_Controller
 			$this->Kuis_model->insert_bk($npm_maba, $info['nama'], $jabatan, 'presidium', $info['link_foto']);
 		}
 
-		redirect('../kuis/jawaban');
+		redirect(base_url().'kuis/jawaban');
 
 	}
 
 	public function get_kuis($id_user = NULL) {
 
-		if($this->cek_login() == FALSE) {
-			return;
+		$cek = $this->auth->cek_login();
+
+		if ($cek['result'] == FALSE) {
+			if ($cek['code'] == 'login') {
+				$this->session->set_flashdata('error_message', $cek['message']);
+				redirect(base_url().'login');
+			}else {
+				$message = array('type' => 'error_message', 'message' => $cek['message']);
+				return $this->new_login($message);
+			}
 		}
 
-		if ( ! isset($this->session->userdata['logged_in'])) {
-			$data['error_message'] = "Silahkan login terlebih dahulu";
-			$this->load->view('header');
-			$this->load->view('index', $data);
-			$this->load->view('footer');
+		if ($this->session->userdata['logged_in']['role'] != 'admin') {
+			$npm = $this->session->userdata['logged_in']['npm'];
 		}else {
-
-			if ($this->session->userdata['logged_in']['role'] != 'admin') {
-				$npm = $this->session->userdata['logged_in']['npm'];
-			}else {
-				$npm = $this->User_model->get_npm($id_user);
-				if ($npm == NULL) {
-					$data['error_message'] = "user tidak ditemukan";
-					$this->load->view('header');
-					$this->load->view('index', $data);
-					$this->load->view('footer');
-					return 0;
-				}
+			$npm = $this->User_model->get_npm($id_user);
+			if ($npm == NULL) {
+				$this->session->set_flashdata('error_message', 'User tidak ditemukan');
+				redirect(base_url());
 			}
-
-			$panitia = $this->Kuis_model->get_kuis_panitia($npm);
-
-			$be = $this->Kuis_model->get_kuis_bk($npm, 'be');
-
-			$dpa = $this->Kuis_model->get_kuis_bk($npm, 'dpa');
-
-			$presidium = $this->Kuis_model->get_kuis_bk($npm, 'presidium');
-
-			$data = array(
-				'npm' => $npm,
-				'panitia' => $panitia,
-				'be' => $be,
-				'dpa' => $dpa,
-				'presidium' => $presidium
-			);
-
-			if ($panitia == NULL || $be == NULL || $dpa == NULL || $presidium == NULL) {
-				$data['error_message'] = "user belum mengisi kuis";
-				$this->load->view('header');
-				$this->load->view('index', $data);
-				$this->load->view('footer');
-			}else {
-				$this->load->view('header');
-				$this->load->view('dummy_kuis_kejawab', $data);
-				$this->load->view('footer');
-			}
-
 		}
 
+		$panitia = $this->Kuis_model->get_kuis_panitia($npm);
+
+		$be = $this->Kuis_model->get_kuis_bk($npm, 'be');
+
+		$dpa = $this->Kuis_model->get_kuis_bk($npm, 'dpa');
+
+		$presidium = $this->Kuis_model->get_kuis_bk($npm, 'presidium');
+
+		$data = array(
+			'npm' => $npm,
+			'panitia' => $panitia,
+			'be' => $be,
+			'dpa' => $dpa,
+			'presidium' => $presidium
+		);
+
+		if ($panitia == NULL || $be == NULL || $dpa == NULL || $presidium == NULL) {
+			$this->session->set_flashdata('error_message', 'User belum mengisi kuis');
+				redirect(base_url());
+		}else {
+			$this->load->view('header');
+			$this->load->view('dummy_kuis_kejawab', $data);
+			$this->load->view('footer');
+		}
 	}
 
 	public function filled_kuis() {
 
-		if($this->cek_login() == FALSE) {
-			return;
-		}
+		$cek = $this->auth->cek_login_admin();
 
-		if ( ! isset($this->session->userdata['logged_in'])) {
-			$data['error_message'] = "Silahkan login terlebih dahulu";
-			$this->load->view('header');
-			$this->load->view('index', $data);
-			$this->load->view('footer');
-		}else {
-			if ($this->session->userdata['logged_in']['role'] != 'admin') {
-				$data['error_message'] = "Hanya admin yang dapat melihat konten ini";
-				$this->load->view('header');
-				$this->load->view('index', $data);
-				$this->load->view('footer');
-			}else {
-				$result = $this->Kuis_model->get_filled_kuis();
-
-				$data['result'] = $result;
-
-				$this->load->view('header');
-				$this->load->view('kuis_admin', $data);
-				$this->load->view('footer');
+		if ($cek['result'] != TRUE) {
+			switch ($cek['code']) {
+				case 'login':
+					/*$message = array('type' => 'error_message', 'message' => $cek['message']);
+					return $this->login($message);*/
+					$this->session->set_flashdata('error_message', $cek['message']);
+					redirect(base_url().'login');
+					break;
+				case 'new_login':
+					$message = array('type' => 'error_message', 'message' => $cek['message']);
+					return $this->new_login($message);
+					break;
+				case 'home':
+					/*$message = array('type' => 'error_message', 'message' => $cek['message']);
+					return $this->index($message);*/
+					$this->session->set_flashdata('error_message', $cek['message']);
+					redirect(base_url());
+					break;
 			}
 		}
+		
+		$result = $this->Kuis_model->get_filled_kuis();
+
+		$data['result'] = $result;
+
+		$this->load->view('header');
+		$this->load->view('kuis_admin', $data);
+		$this->load->view('footer');
+	
 	}
 
 }	
