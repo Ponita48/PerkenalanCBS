@@ -89,10 +89,10 @@
 	<div id="navigation-panel" class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
 		<nav class="navbar-nav" style="background-color: white; padding: 10px; width: 100%;">
 			<ul class="nav nav-pills">
-				<li class="active" style="margin-right: 10px"><a href="<?php echo base_url(); ?>kuis/kuis_cbs" data-toggle="pill" target="section_kuis">Panitia CBS Himatif FMIPA Unpad 2017</a></li>
-				<li style="margin-right: 10px"><a href="<?php echo base_url(); ?>kuis/kuis_be" data-toggle="pill" target="section_kuis">BE Himatif FMIPA Unpad Kabinet Impresif</a></li>
-				<li style="margin-right: 10px"><a href="<?php echo base_url(); ?>kuis/kuis_dpa" data-toggle="pill" target="section_kuis">DPA Himatif FMIPA Unpad Parlemen Insight</a></li>
-				<li style="margin-right: 10px"><a href="<?php echo base_url(); ?>kuis/kuis_mubes" data-toggle="pill" target="section_kuis">Mubes Himatif FMIPA Unpad 2017</a></li>
+				<li style="margin-right: 10px"><a href="#menu1" data-toggle="pill" target="section_kuis" onclick="sectionKuis('kuis_cbs')">Panitia CBS Himatif FMIPA Unpad 2017</a></li>
+				<li style="margin-right: 10px"><a href="#menu2" data-toggle="pill" target="section_kuis" onclick="sectionKuis('kuis_be')">BE Himatif FMIPA Unpad Kabinet Impresif</a></li>
+				<li style="margin-right: 10px"><a href="#menu3" data-toggle="pill" target="section_kuis" onclick="sectionKuis('kuis_dpa')">DPA Himatif FMIPA Unpad Parlemen Insight</a></li>
+				<li style="margin-right: 10px"><a href="#menu4" data-toggle="pill" target="section_kuis" onclick="sectionKuis('kuis_mubes')">Mubes Himatif FMIPA Unpad 2017</a></li>
 			</ul>
 		</nav>
 	</div>
@@ -112,9 +112,7 @@
 			<div id="menu4" class="tab-pane fade">
 				
 			</div> 
-			<div class="tab-pane fade">
-				<iframe name="section_kuis" src="<?php echo base_url(); ?>kuis/kuis_cbs" frameborder="0"></iframe>
-			</div>
+			<span id="section_kuis"></span>
 		</div>
 	</div>	
 </form>
@@ -163,4 +161,16 @@
 	    	}
 	    });
 	});
+</script>
+
+<script>
+	function sectionKuis(str) {
+		$.ajax({
+			type:'GET',
+			url:'<?php echo base_url(); ?>kuis/'+str,
+			success:function(data){
+				$("#section_kuis").html(data);
+			}
+		});
+	}
 </script>

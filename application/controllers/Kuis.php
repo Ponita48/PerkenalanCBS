@@ -77,6 +77,11 @@ class Kuis extends CI_Controller
 
 	public function kuis_struktur_submit() {
 
+		/*echo "<pre>";
+		var_dump($this->input->post());
+		echo "</pre>";
+		die();*/
+
 		$cek = $this->auth->cek_login();
 
 		if ($cek['result'] == FALSE) {
@@ -159,7 +164,7 @@ class Kuis extends CI_Controller
 			'presidium' => $presidium
 		);
 
-		if ($panitia == NULL || $be == NULL || $dpa == NULL || $presidium == NULL) {
+		if ($panitia == NULL && $be == NULL && $dpa == NULL && $presidium == NULL) {
 			$this->session->set_flashdata('error_message', 'User belum mengisi kuis');
 				redirect(base_url());
 		}else {
