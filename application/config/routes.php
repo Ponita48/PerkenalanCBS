@@ -92,6 +92,12 @@ $route['kuis/jawaban/(:any)'] = 'Kuis/get_kuis/$1';
 $route['kuis/filled'] = 'Kuis/filled_kuis';
 $route['kuis/isi'] = 'Kuis/isi_kuis';
 
+//view kuis
+$route['kuis/kuis_cbs'] = 'Kuis/kuis_cbs';
+$route['kuis/kuis_be'] = 'Kuis/kuis_be';
+$route['kuis/kuis_dpa'] = 'Kuis/kuis_dpa';
+$route['kuis/kuis_mubes'] = 'Kuis/kuis_mubes';
+
 
 //ajax
 $route['ajax/(:any)'] = 'UserController/hintSearch/$1';

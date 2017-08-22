@@ -24,8 +24,8 @@ class Kuis extends CI_Controller
 				$this->session->set_flashdata('error_message', $cek['message']);
 				redirect(base_url().'login');
 			}else {
-				$message = array('type' => 'error_message', 'message' => $cek['message']);
-				return $this->new_login($message);
+				$this->session->set_flashdata('error_message', $cek['message']);
+				redirect(base_url().'new_login');
 			}
 		}
 
@@ -57,8 +57,8 @@ class Kuis extends CI_Controller
 				$this->session->set_flashdata('error_message', $cek['message']);
 				redirect(base_url().'login');
 			}else {
-				$message = array('type' => 'error_message', 'message' => $cek['message']);
-				return $this->new_login($message);
+				$this->session->set_flashdata('error_message', $cek['message']);
+				redirect(base_url().'new_login');
 			}
 		}
 
@@ -84,8 +84,8 @@ class Kuis extends CI_Controller
 				$this->session->set_flashdata('error_message', $cek['message']);
 				redirect(base_url().'login');
 			}else {
-				$message = array('type' => 'error_message', 'message' => $cek['message']);
-				return $this->new_login($message);
+				$this->session->set_flashdata('error_message', $cek['message']);
+				redirect(base_url().'new_login');
 			}
 		}
 
@@ -128,8 +128,8 @@ class Kuis extends CI_Controller
 				$this->session->set_flashdata('error_message', $cek['message']);
 				redirect(base_url().'login');
 			}else {
-				$message = array('type' => 'error_message', 'message' => $cek['message']);
-				return $this->new_login($message);
+				$this->session->set_flashdata('error_message', $cek['message']);
+				redirect(base_url().'new_login');
 			}
 		}
 
@@ -182,8 +182,8 @@ class Kuis extends CI_Controller
 					redirect(base_url().'login');
 					break;
 				case 'new_login':
-					$message = array('type' => 'error_message', 'message' => $cek['message']);
-					return $this->new_login($message);
+					$this->session->set_flashdata('error_message', $cek['message']);
+					redirect(base_url().'new_login');
 					break;
 				case 'home':
 					/*$message = array('type' => 'error_message', 'message' => $cek['message']);
@@ -202,6 +202,26 @@ class Kuis extends CI_Controller
 		$this->load->view('kuis_admin', $data);
 		$this->load->view('footer');
 	
+	}
+
+	public function kuis_cbs()
+	{
+		return $this->load->view('section_cbs');
+	}
+
+	public function kuis_be()
+	{
+		return $this->load->view('section_be');
+	}
+
+	public function kuis_dpa()
+	{
+		return $this->load->view('section_dpa');
+	}
+
+	public function kuis_mubes()
+	{
+		return $this->load->view('section_mubes');
 	}
 
 }	

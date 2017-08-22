@@ -24,8 +24,8 @@ class Perkenalan extends CI_Controller
 					redirect(base_url().'login');
 					break;
 				case 'new_login':
-					$message = array('type' => 'error_message', 'message' => $cek['message']);
-					return $this->new_login($message);
+					$this->session->set_flashdata('error_message', $cek['message']);
+					redirect(base_url().'new_login');
 					break;
 				case 'home':
 					/*$message = array('type' => 'error_message', 'message' => $cek['message']);
@@ -90,8 +90,8 @@ class Perkenalan extends CI_Controller
 					redirect(base_url().'login');
 					break;
 				case 'new_login':
-					$message = array('type' => 'error_message', 'message' => $cek['message']);
-					return $this->new_login($message);
+					$this->session->set_flashdata('error_message', $cek['message']);
+					redirect(base_url().'new_login');
 					break;
 				case 'home':
 					/*$message = array('type' => 'error_message', 'message' => $cek['message']);
@@ -159,8 +159,8 @@ class Perkenalan extends CI_Controller
 				$this->session->set_flashdata('error_message', $cek['message']);
 				redirect(base_url().'login');
 			}else {
-				$message = array('type' => 'error_message', 'message' => $cek['message']);
-				return $this->new_login($message);
+				$this->session->set_flashdata('error_message', $cek['message']);
+				redirect(base_url().'new_login');
 			}
 		}
 
@@ -200,8 +200,8 @@ class Perkenalan extends CI_Controller
 					redirect(base_url().'login');
 					break;
 				case 'new_login':
-					$message = array('type' => 'error_message', 'message' => $cek['message']);
-					return $this->new_login($message);
+					$this->session->set_flashdata('error_message', $cek['message']);
+					redirect(base_url().'new_login');
 					break;
 				case 'home':
 					/*$message = array('type' => 'error_message', 'message' => $cek['message']);
