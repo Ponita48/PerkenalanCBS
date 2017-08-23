@@ -7,7 +7,7 @@
 
 		<?php foreach ($result as $key): ?>
 			<a href="<?php echo base_url().'profile/'.$key->id_user; ?>">
-				<div class="col-md-4">
+				<div class="col-md-3">
 					<?php if (is_null($key->link_foto)): ?>
 						<!-- TODO: ganti jadi placeholder -->
 						<img src="wahaha" alt="" class="img-responsive img-thumbnail">

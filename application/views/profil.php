@@ -72,7 +72,7 @@
 					<td><b>Jenis Kelamin</b></td>
 					<td><?php echo $result->jk; ?></td>
 				</tr>
-				<tr>
+				<!-- <tr>
 					<td><b>Tempat Lahir</b></td>
 					<td><?php echo $result->tempat_lahir; ?></td>
 				</tr>
@@ -91,7 +91,7 @@
 				<tr>
 					<td><b>ID Line</b></td>
 					<td><?php echo $result->id_line; ?></td>
-				</tr>
+				</tr> -->
 			</table>
 		</div>
 	</div>

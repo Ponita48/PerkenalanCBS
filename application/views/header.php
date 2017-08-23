@@ -44,7 +44,7 @@
 	</script>
 </head>
 <body>
-	<nav class="navbar navbar-inverse" style="margin-bottom: 0px;">
+	<nav class="navbar navbar-default" style="margin-bottom: 0px;">
 		<div class="navbar-header">
 	      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
 	        <span class="sr-only">Toggle navigation</span>
@@ -52,7 +52,7 @@
 	        <span class="icon-bar"></span>
 	        <span class="icon-bar"></span>
 	      </button>
-	      <a class="navbar-brand" href="<?php echo base_url(); ?>" style="color: #FFD51E">CBS</a>
+	      <a class="navbar-left" href="<?php echo base_url(); ?>" style="color: #FFD51E"><img src="<?php echo base_url(); ?>img/logo-delphi.png" alt=""  style="height: 50px; padding: 10px;"></a>
 	    </div>
 	    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 		<ul class="nav navbar-nav">
@@ -66,6 +66,8 @@
 					<li><a href="<?php echo base_url().'profile/'.$this->session->userdata['logged_in']['id_user']; ?>">Profile</a></li>
 					<li><a href="<?php echo base_url().'perkenalan'; ?>">Perkenalan</a></li>
 				<?php endif ?>
+			<?php else: ?>
+					<li><a href="<?php echo base_url().'perkenalan'; ?>">Perkenalan</a></li>
 			<?php endif ?>
 			<li><a href="<?php echo base_url().'kuis'; ?>">Kuis</a></li>
 		</ul>
