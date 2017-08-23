@@ -45,18 +45,3 @@
 					class="btn btn-danger btn-block" type="submit">Tolak Perkenalan</a><br><br>
 		</div>
 	</div>
-
-	<style type="text/css">
-		img.img-responsive {
-			height: auto;
-			width: auto;
-			display: block;
-			height: 330px;
-			width: 248px;
-		}
-		body {
-			background-color: #393639;
-			color: #FFD51E;
-		}
-
-	</style>

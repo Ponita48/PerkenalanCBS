@@ -95,19 +95,3 @@
 			</table>
 		</div>
 	</div>
-
-	<style type="text/css">
-		img.img-responsive {
-			height: auto;
-			width: auto;
-			display: block;
-			max-height: 330px;
-			max-width: 248px;
-		}
-
-		body {
-			background-color: #393639;
-			color: #FFD51E;
-		}
-
-	</style>

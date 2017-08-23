@@ -42,13 +42,11 @@
 
 			<div class="carousel-inner">
 				<div class="item active">
-				<div class="container">
 					<img src="<?php echo base_url(); ?>img/img1.jpg" alt="" class="img-responsive img-thumbnail"><br><br><br><br><br><br><br><br>
 					<div class="carousel-caption">
 						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Non eligendi magnam consequatur ut, corporis consectetur aspernatur quae numquam aperiam porro nesciunt debitis possimus animi reprehenderit vero ad quod dicta omnis?</p>
 						<p>-Nama Penyambut</p>
 					</div>
-				</div>
 				</div>
 				<div class="item">
 					<img src="<?php echo base_url(); ?>img/img1.jpg" alt="" class="img-responsive img-thumbnail"><br><br><br><br><br><br><br><br>
@@ -75,18 +73,3 @@
 			</a>
 		</div>
 	</center>
-
-	<style type="text/css">
-		img.img-responsive {
-			height: auto;
-			width: auto;
-			display: block;
-			max-height: 330px;
-			max-width: 248px;
-			margin: 0 auto;
-		}
-		body {
-			background-color: #393636;
-			color: #FFD51E;
-		}
-	</style>

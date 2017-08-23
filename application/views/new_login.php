@@ -73,11 +73,3 @@
 		</div>
 		<div class="col-sm-4"></div>
 	</center>
-
-	<style type="text/css">
-		body {
-			background-color: #393639;
-			color: #FFD51E;
-		}
-
-	</style>

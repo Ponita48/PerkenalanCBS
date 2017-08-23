@@ -12,10 +12,22 @@
 			height: auto;
 			width: auto;
 			display: block;
-			height: 330px;
-			width: 248px;
+			max-height: 330px;
+			max-width: 248px;
+			min-height: 330px;
+			min-width: 248px;
 		}
+
 		body {
+			background-color: #393639;
+			color: #FFD51E;
+		}
+
+		.well {
+			background-color: #393639;
+		}
+
+		.modal-content {
 			background-color: #393639;
 			color: #FFD51E;
 		}
@@ -69,7 +81,17 @@
 			<?php else: ?>
 					<li><a href="<?php echo base_url().'perkenalan'; ?>">Perkenalan</a></li>
 			<?php endif ?>
-			<li><a href="<?php echo base_url().'kuis'; ?>">Kuis</a></li>
+			<li class="dropdown">
+				<a href="<?php echo base_url().'kuis'; ?>" class="dropdown-toggle" data-toggle="dropdown">Kuis
+				<span class="caret"></span></a>
+				<ul class="dropdown-menu">
+				<!-- TODO: isi link kuis -->
+					<li><a href="#">Kuis BE</a></li>
+					<li><a href="#">Kuis DPA</a></li>
+					<li><a href="#">Kuis Mubes</a></li>
+					<li><a href="#">Kuis Panitia</a></li>
+				</ul>
+			</li>
 		</ul>
 		<ul class="nav navbar-nav navbar-right">
 			<?php if (isset($this->session->userdata['logged_in'])): ?>

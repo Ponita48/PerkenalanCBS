@@ -1,4 +1,3 @@
-<body>
 	<div>
 		<h1>DELPHI 2017</h1>
 		<hr>
@@ -25,20 +24,3 @@
 		<?php endforeach ?>
 
 	</center>
-</body>	
-
-<style type="text/css">
-	img.img-responsive {
-		height: auto;
-		width: auto;
-		display: block;
-		height: 330px;
-		width: 248px;
-	}
-
-	body {
-		background-color: #393639;
-		color: #FFD51E;
-	}
-
-</style>

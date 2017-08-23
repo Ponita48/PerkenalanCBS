@@ -27,10 +27,3 @@
 		</tbody>
 	</table>
 	</div>
-
-	<style type="text/css">
-		body {
-			background-color: #393636;
-			color: #FFD51E;
-		}
-	</style>
