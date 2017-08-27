@@ -40,7 +40,7 @@
 			<div class="well well-lg" style="vertical-align: middle">
 				<h1 style="padding-bottom: 20px;">NEW USER LOGIN</h1>
 				<!-- <form action="/new_login" class="form-horizontal" method="POST"> -->
-				<?php echo form_open_multipart(base_url().'new_login', array('class' => 'form-horizontal')); ?>
+				<?php echo form_open_multipart(base_url().'new_login/submit', array('class' => 'form-horizontal')); ?>
 					<div class="form-group">
 						<label for="pp">Photo Profile</label>
 						<input type="file" class="form-control" name="pp" placeholder="Chose your photo profile">

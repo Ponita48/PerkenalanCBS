@@ -509,7 +509,7 @@ class UserController extends CI_Controller
 				redirect(base_url().'login');
 			}else {
 				$this->session->set_flashdata('error_message', $cek['message']);
-				redirect(base_url());
+				redirect(base_url().'new_login/submit');
 			}
 		}
 
