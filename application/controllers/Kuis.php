@@ -39,6 +39,10 @@ class Kuis extends CI_Controller
 
 		if ($filled == NULL) {
 			$data['npm'] = $npm;
+			$data['panti'] = $this->Kuis_model->get_photo_panti();
+			$data['be'] = $this->Kuis_model->get_photo_be();
+			$data['dpa'] = $this->Kuis_model->get_photo_dpa();
+			$data['mubes'] = $this->Kuis_model->get_photo_mubes();
 
 			$this->load->view('header');
 			$this->load->view('kuis_struktur', $data);
@@ -69,6 +73,10 @@ class Kuis extends CI_Controller
 		$npm = $this->User_model->get_npm($this->session->userdata['logged_in']['id_user']);
 	
 		$data['npm'] = $npm;
+		$data['panti'] = $this->Kuis_model->get_photo_panti();
+		$data['be'] = $this->Kuis_model->get_photo_be();
+		$data['dpa'] = $this->Kuis_model->get_photo_dpa();
+		$data['mubes'] = $this->Kuis_model->get_photo_mubes();
 
 		$this->load->view('header');
 		$this->load->view('kuis_struktur', $data);

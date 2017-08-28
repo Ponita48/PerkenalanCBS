@@ -118,6 +118,50 @@ class Kuis_model extends CI_Model
 			return $q->result();
 		}
 	}
+
+	public function get_photo_panti()
+	{
+		$q = $this->db->query("SELECT profile_kating.link_foto FROM users JOIN panitia ON users.npm = panitia.npm JOIN profile_kating ON users.id_user = profile_kating.id_user WHERE panitia.tahun_jabatan = 2017");
+
+		if ($q->num_rows() == 0) {
+			return NULL;
+		}else {
+			return $q->result();
+		}
+	}
+
+	public function get_photo_be()
+	{
+		$q = $this->db->query("SELECT profile_kating.link_foto FROM users JOIN bk ON users.npm = bk.npm JOIN profile_kating ON users.id_user = profile_kating.id_user WHERE bk.lembaga = 'BE' AND bk.tahun_jabatan = 2017");
+
+		if ($q->num_rows() == 0) {
+			return NULL;
+		}else {
+			return $q->result();
+		}
+	}
+
+	public function get_photo_dpa()
+	{
+		$q = $this->db->query("SELECT profile_kating.link_foto FROM users JOIN bk ON users.npm = bk.npm JOIN profile_kating ON users.id_user = profile_kating.id_user WHERE bk.lembaga = 'DPA' AND bk.tahun_jabatan = 2017");
+
+		if ($q->num_rows() == 0) {
+			return NULL;
+		}else {
+			return $q->result();
+		}
+	}
+
+	public function get_photo_mubes()
+	{
+		$q = $this->db->query("SELECT profile_kating.link_foto FROM users JOIN bk ON users.npm = bk.npm JOIN profile_kating ON users.id_user = profile_kating.id_user WHERE bk.lembaga = 'Mubes' AND bk.tahun_jabatan = 2017");
+
+		if ($q->num_rows() == 0) {
+			return NULL;
+		}else {
+			return $q->result();
+		}
+	}
 }
 
  ?>

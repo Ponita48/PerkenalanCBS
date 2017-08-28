@@ -391,17 +391,19 @@
 	  				<br><center>
 	  					<table>
 							<tbody>
-								<?php for ($i=1; $i <= 16; $i++) {  ?>
+								<?php $i = 1; ?>
+								<?php foreach ($panti as $panitia) : ?>
 									<tr>
 										<td>
 											<center>
 												<div id="kotak_cbs_<?php echo "$i"; ?>" ondrop="drop(event,this)" ondragover="allowDrop(event)" style="height: 155px; min-width: 115px">
-													<img src="<?php echo base_url(); ?>img/img<?php echo "$i"; ?>.jpg" class="img-thumbnail" id="foto_cbs_<?php echo "$i";?>" draggable="true" ondragstart="drag(event)" style="width: 90px; height: 120px">	
+													<img src="<?php echo $panitia->link_foto; ?>" class="img-thumbnail" id="foto_cbs_<?php echo "$i";?>" draggable="true" ondragstart="drag(event)" style="width: 90px; height: 120px">	
 												</div>
 											</center>
 										</td>
 									</tr>
-								<?php } ?>
+									<?php $i++; ?>
+								<?php endforeach; ?>
 							</tbody>
 						</table>
 	  				</center>
@@ -663,17 +665,19 @@
 					<br><center>
 						<table>
 							<tbody>
-								<?php for ($i=1; $i <= 14; $i++) {  ?>
+								<?php $i = 1; ?>
+								<?php foreach ($be as $anggota_be): ?>
 									<tr>
 										<td>
 											<center>
 												<div id="kotak_be_<?php echo "$i";?>" ondrop="drop(event,this)" ondragover="allowDrop(event)" style="height: 155px; min-width: 115px">
-													<img src="<?php echo base_url(); ?>img/img1.jpg" class="img-thumbnail" id="foto_be_<?php echo "$i";?>" draggable="true" ondragstart="drag(event)" style="width: 90px; height: 120px">
+													<img src="<?php echo $anggota_be->link_foto; ?>" class="img-thumbnail" id="foto_be_<?php echo "$i";?>" draggable="true" ondragstart="drag(event)" style="width: 90px; height: 120px">
 												</div>
 											</center>
 										</td>
 									</tr>
-								<?php } ?>
+									<?php $i++; ?>
+								<?php endforeach ?>
 							</tbody>
 						</table>
 					</center>
@@ -793,17 +797,19 @@
 					<br><center>
 						<table>
 							<tbody>
-								<?php for ($i=1; $i <= 6; $i++) {  ?>
+								<?php $i = 1; ?>
+								<?php foreach ($dpa as $anggota_dpa): ?>
 									<tr>
 										<td>
 											<center>
 												<div id="kotak_dpa_<?php echo "$i";?>" ondrop="drop(event,this)" ondragover="allowDrop(event)" style="height: 155px; min-width: 115px">
-													<img src="<?php echo base_url(); ?>img/img1.jpg" class="img-thumbnail" id="foto_dpa_<?php echo "$i";?>" draggable="true" ondragstart="drag(event)" style="width: 90px; height: 120px">
+													<img src="<?php echo $anggota_dpa->link_foto; ?>" class="img-thumbnail" id="foto_dpa_<?php echo "$i";?>" draggable="true" ondragstart="drag(event)" style="width: 90px; height: 120px">
 												</div>
 											</center>
 										</td>
 									</tr>
-								<?php } ?>
+									<?php $i++; ?>
+								<?php endforeach ?>
 							</tbody>
 						</table>
 					</center>
@@ -872,17 +878,19 @@
 					<br><center>
 						<table>
 							<tbody>
-								<?php for ($i=1; $i <= 3; $i++) {  ?>
+								<?php $i = 1; ?>
+								<?php foreach ($mubes as $anggota_mubes): ?>
 									<tr>
 										<td>
 											<center>
 												<div id="kotak_mubes_<?php echo "$i";?>" ondrop="drop(event,this)" ondragover="allowDrop(event)" style="height: 155px; min-width: 115px">
-													<img src="<?php echo base_url(); ?>img/img1.jpg" class="img-thumbnail" id="foto_mubes_<?php echo "$i";?>" draggable="true" ondragstart="drag(event)" style="width: 90px; height: 120px">
+													<img src="<?php echo $anggota_mubes->link_foto; ?>" class="img-thumbnail" id="foto_mubes_<?php echo "$i";?>" draggable="true" ondragstart="drag(event)" style="width: 90px; height: 120px">
 												</div>
 											</center>
 										</td>
 									</tr>
-								<?php } ?>
+									<?php $i++; ?>
+								<?php endforeach ?>
 							</tbody>
 						</table>
 					</center>
