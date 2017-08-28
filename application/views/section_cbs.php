@@ -302,6 +302,38 @@
 						</table>
 	  				</center>
 				</div>
+				<script>
+					$ (function(){
 
+						$('.img-thumbnail').draggable({
+							appendTo: '#field_bagan',
+							containment: 'document',
+							cursor: 'move',
+							scroll: true,
+							snap: '.receiver',
+							snapMode: 'inner',
+							revert: 'invalid',
+						    helper: function(){
+						    	$copy = $(this).clone();
+						    	return $copy;
+						    },
+							start: function(event, ui) {
+					            $(this).addClass("hide");
+					        },
+					        stop: function(event, ui) {
+					        	// $(this).removeClass("hide");
+					        }
+						});
 
-				
+						$('.receiver').droppable({
+							drop: function(this, event, ui) {
+					            dropped = true;
+					            $.ui.ddmanager.current.cancelHelperRemoval = true;
+					            var srcImg = draggable.attr("src");
+					            document.getElementById('this').value = srcImg;
+					            // ui.helper.appendTo(this);
+					            // alert('haha');
+					    	}
+					    });
+					});
+				</script>

@@ -120,3 +120,40 @@
 						</table>
 					</center>
 				</div>
+				<script>
+					$ (function(){
+						var dropped = false;
+
+						$('.img-thumbnail').draggable({
+							appendTo: '#field_bagan',
+							containment: '#konten',
+							cursor: 'move',
+							scroll: true,
+							snap: '.receiver',
+							snapMode: 'inner',
+							snapTolerance: 60,
+							revert: 'invalid',
+						    helper: function(){
+						    	$copy = $(this).clone();
+						    	return $copy;
+						    },
+							start: function(event, ui) {
+					            $(this).addClass("hide");
+					        },
+					        stop: function(event, ui) {
+					            // $(this).removeClass("hide");
+					        }
+						});
+
+						$('.receiver').droppable({
+							drop: function(event, ui) {
+					            dropped = true;
+					            $.ui.ddmanager.current.cancelHelperRemoval = true;
+					            var srcImg = draggable.attr("src");
+					            document.getElementByClassName('.receiverSrc').value = srcImg;
+					            // ui.helper.appendTo(this);
+					            // alert('haha');
+					    	}
+					    });
+					});
+				</script>

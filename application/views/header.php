@@ -82,15 +82,7 @@
 					<li><a href="<?php echo base_url().'perkenalan'; ?>">Perkenalan</a></li>
 			<?php endif ?>
 			<li class="dropdown">
-				<a href="<?php echo base_url().'kuis'; ?>" class="dropdown-toggle" data-toggle="dropdown">Kuis
-				<span class="caret"></span></a>
-				<ul class="dropdown-menu">
-				<!-- TODO: isi link kuis -->
-					<li><a href="#">Kuis BE</a></li>
-					<li><a href="#">Kuis DPA</a></li>
-					<li><a href="#">Kuis Mubes</a></li>
-					<li><a href="#">Kuis Panitia</a></li>
-				</ul>
+				<a href="<?php echo base_url().'kuis'; ?>">Kuis</a>
 			</li>
 		</ul>
 		<ul class="nav navbar-nav navbar-right">
