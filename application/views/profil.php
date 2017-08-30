@@ -29,7 +29,7 @@
 		<div class="col-sm-3">
 			<center>
 				<?php if ($result->link_foto == NULL): ?>
-					<img src="<?php echo base_url(); ?>img/img1.jpg" alt="" class="img-responsive img-thumbnail"><br>
+					<img src="https://upload.wikimedia.org/wikipedia/en/b/b1/Portrait_placeholder.png" alt="" class="img-responsive img-thumbnail"><br>
 				<?php else: ?>
 					<img src="<?php echo $result->link_foto;?>" alt="" class="img-responsive img-thumbnail"><br>
 				<?php endif ?>
@@ -41,6 +41,7 @@
 						<!-- npm di session = npm yang dilihat -->
 						<?php if ($this->session->userdata['logged_in']['npm'] == $result->npm): ?>
 							<!-- PROFIL PRIBADI MABA -->
+							<button class="btn btn-primary" id="chg_photo">Change Photo</button><br><br>
 							<a href="<?php echo base_url(); ?>edit_profile"><button class="btn btn-success" type="submit">Edit Profil</button></a><br><br>
 							<a href="<?php echo base_url(); ?>my_request"><button class="btn btn-warning" type="submit">Lihat Daftar Perkenalan</button></a><br><br>
 						<?php else : ?>
@@ -57,6 +58,26 @@
 					<?php endif ?>
 				<?php endif ?>
 			</center>
+			<div class="modal fade" id="modalFoto" role="dialog">
+				<div class="modal-dialog modal-lg">
+					<div class="modal-content">
+					<form action="#">
+						<div class="modal-header">
+							<button type="button" class="close" data-dismiss="modal" aria-hidden="true" style="color: white;">&times;</button> 
+							<h4 class="modal-title">Change Photo</h4>
+						</div>
+						<div class="modal-body">
+							<p>Apakah anda yakin ingin mengganti foto profil?</p>
+						</div>
+						<div class="modal-footer">			
+							<br>
+							<input type="submit" class="btn btn-primary">
+							<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+						</div>
+					</form>
+					</div>
+				</div>
+			</div>
 		</div>
 		<div class="col-sm-9">
 			<table class="table table-borderless">
@@ -72,26 +93,14 @@
 					<td><b>Jenis Kelamin</b></td>
 					<td><?php echo $result->jk; ?></td>
 				</tr>
-				<!-- <tr>
-					<td><b>Tempat Lahir</b></td>
-					<td><?php echo $result->tempat_lahir; ?></td>
-				</tr>
-				<tr>
-					<td><b>Tanggal Lahir</b></td>
-					<td><?php echo $result->tgl_lahir; ?></td>
-				</tr>
-				<tr>
-					<td><b>Alamat Kos</b></td>
-					<td><?php echo $result->alamat_kos; ?></td>
-				</tr>
-				<tr>
-					<td><b>No HP</b></td>
-					<td><?php echo $result->no_hp; ?></td>
-				</tr>
-				<tr>
-					<td><b>ID Line</b></td>
-					<td><?php echo $result->id_line; ?></td>
-				</tr> -->
 			</table>
 		</div>
 	</div>
+
+	<script>
+		$(document).ready(function() {
+			$('#chg_photo').click(function() {
+				$('#formChg').modal('show');
+			});
+		});
+	</script>

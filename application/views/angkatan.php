@@ -9,7 +9,7 @@
 				<div class="col-md-3">
 					<?php if (is_null($key->link_foto)): ?>
 						<!-- TODO: ganti jadi placeholder -->
-						<img src="wahaha" alt="" class="img-responsive img-thumbnail">
+						<img src="https://upload.wikimedia.org/wikipedia/en/b/b1/Portrait_placeholder.png" alt="" class="img-responsive img-thumbnail">
 					<?php else: ?>
 						<img src="<?php echo $key->link_foto;?>" alt="" class="img-responsive img-thumbnail">
 					<?php endif ?>

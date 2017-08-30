@@ -74,9 +74,30 @@
 		</div>
 		<div class="col-sm-4 col-md-4 col-lg-4">
 			<center>	
-				<input class="btn btn-success" type="submit" name="Kirim">
+				<div class="btn btn-success" id="btn_kirim">Kirim</div>
+				
 			</center>
 			<br>
+		</div>
+		<div class="modal fade" id="modalConf" role="dialog">
+			<div class="modal-dialog modal-lg">
+			<center>
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" aria-hidden="true" style="color: white;">&times;</button> 
+						<h4 class="modal-title" style="color: black;">Confirmation</h4>
+					</div>
+					<div class="modal-body">
+							<p style="color: black;">Data Kuis sebelumnya akan diganti oleh yang anda isi</p>
+							<p style="color: black;">Apakah anda yakin akan melanjutkan?</p>
+					</div>
+					<div class="modal-footer">
+						<input class="btn btn-success" type="submit" name="Kirim">
+						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+					</diwv>
+				</div>
+			</center>
+			</div>
 		</div>
 	</div>
 	<!-- End of Page Header -->
@@ -906,12 +927,16 @@
 <!-- <script src="<?php echo base_url(); ?>assets/js/jquery-ui.js" type="text/javascript"></script> -->
 
 <script>
-	$ (function(){
-		$('#navigation-panel').show();
-		$('#toggleNav').click(function(){
-		    $('#navigation-panel').slideToggle('fast');
+	$(document).ready(function() {
+		$ (function(){
+			$('#navigation-panel').show();
+			$('#toggleNav').click(function(){
+			    $('#navigation-panel').slideToggle('fast');
+			});
+		});
+		$('#btn_kirim').click(function() {
+			$('#modalConf').modal('show');
 		});
 
-		
 	});
 </script>
