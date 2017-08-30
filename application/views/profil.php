@@ -1,6 +1,14 @@
 	<div>
 		<h1>PROFIL</h1>
 		<hr>
+		
+		<?php if ($this->session->flashdata('error_message')): ?>
+			<br>
+			<div class="alert alert-danger alert-dismissable">
+				<span class="close" data-dismiss="alert">x</span>
+				<?php echo $this->session->flashdata('error_message'); ?>
+			</div>
+		<?php endif ?>
 
 		<?php if ($this->session->flashdata('message_display')): ?>
 			<br>
