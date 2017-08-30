@@ -61,13 +61,14 @@
 			<div class="modal fade" id="modalFoto" role="dialog">
 				<div class="modal-dialog modal-lg">
 					<div class="modal-content">
-					<form action="#">
+					<form action="<?php echo base_url(); ?>profile/<?php echo $this->session->userdata['logged_in']['id_user']; ?>/change_pp" method="POST" enctype="multipart/form-data">
 						<div class="modal-header">
 							<button type="button" class="close" data-dismiss="modal" aria-hidden="true" style="color: white;">&times;</button> 
 							<h4 class="modal-title">Change Photo</h4>
 						</div>
 						<div class="modal-body">
 							<p>Apakah anda yakin ingin mengganti foto profil?</p>
+							<input type="file" name="pp" placeholder="Chose your photo profile">
 						</div>
 						<div class="modal-footer">			
 							<br>
@@ -100,7 +101,7 @@
 	<script>
 		$(document).ready(function() {
 			$('#chg_photo').click(function() {
-				$('#formChg').modal('show');
+				$('#modalFoto').modal('show');
 			});
 		});
 	</script>

@@ -518,5 +518,68 @@ class UserController extends CI_Controller
 		$this->load->view('footer');
 	}
 
+	public function change_pp()
+	{
+
+		$cek = $this->auth->cek_login_peserta();
+
+		if ($cek['result'] != TRUE) {
+			switch ($cek['code']) {
+				case 'login':
+					/*$message = array('type' => 'error_message', 'message' => $cek['message']);
+					return $this->login($message);*/
+					$this->session->set_flashdata('error_message', $cek['message']);
+					redirect(base_url().'login');
+					break;
+				case 'new_login':
+					$message = array('type' => 'error_message', 'message' => $cek['message']);
+					return $this->new_login($message);
+					break;
+				case 'home':
+					/*$message = array('type' => 'error_message', 'message' => $cek['message']);
+					return $this->index($message);*/
+					$this->session->set_flashdata('error_message', $cek['message']);
+					redirect(base_url());
+					break;
+			}
+		}
+
+		$id_user = $this->session->userdata['logged_in']['id_user'];
+
+		if (empty($_FILES['pp']['name'])) {
+			$this->session->set_flashdata('error_message', "Photo tidak boleh kosong");
+			redirect(base_url().'profile/'.$id_user);
+		}
+		
+		$config = array(
+			'upload_path' => './Photos/PP/',
+			'allowed_types' => 'jpg|png',
+			'max_size' => 0,
+			'file_name' => $id_user,
+			'overwrite' => TRUE,
+		);
+
+		$this->load->library('upload', $config);
+
+		if ( ! $this->upload->do_upload('pp')) {
+			$this->session->set_flashdata('error_message', $this->upload->display_errors());
+			redirect(base_url().'profile/'.$id_user);
+		}else {
+
+			$file_name = base_url()."Photos/PP/".$this->upload->data('file_name');
+
+			$result = $this->User_model->assign_photo($file_name, $id_user);
+
+			if ( ! $result) {
+				$this->session->set_flashdata('error_message', "There are errors");
+				redirect(base_url().'profile/'.$id_user);
+			}else {
+				$this->session->set_flashdata('message_display', "Photo Profile berhasil diubah");
+				redirect(base_url().'profile/'.$id_user);
+			}
+		}
+	
+	}
+
 }
  ?>

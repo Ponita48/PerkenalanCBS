@@ -67,6 +67,7 @@ $route['change_profile'] = 'UserController/change_profile';
 $route['login'] = 'UserController/login';
 $route['perkenalan'] = 'UserController/get_angkatan/all';
 $route['new_login'] = 'UserController/view_baru_login';
+$route['profile/(:any)/change_pp'] = 'UserController/change_pp';
 
 
 //Perkenalan
