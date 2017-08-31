@@ -68,6 +68,7 @@ $route['login'] = 'UserController/login';
 $route['perkenalan'] = 'UserController/get_angkatan/all';
 $route['new_login'] = 'UserController/view_baru_login';
 $route['profile/(:any)/change_pp'] = 'UserController/change_pp';
+$route['search'] = 'UserController/search/$1'; //$1 = $keysearch
 
 
 //Perkenalan
