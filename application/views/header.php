@@ -50,14 +50,12 @@
 			<?php if (isset($this->session->userdata['logged_in'])): ?>
 				<?php if ($this->session->userdata['logged_in']['role'] == "admin"): ?>
 					<li><a href="<?php echo base_url().'jumlah_perkenalan'; ?>">Admin</a></li>
-					<li><a href="<?php echo base_url().'perkenalan_keluarga'; ?>">Perkenalan</a></li>
+					<li><a href="<?php echo base_url().'perkenalan_keluarga'; ?>">Cek Perkenalan</a></li>
 				<?php else: ?>
 					<li><a href="<?php echo base_url().'profile/'.$this->session->userdata['logged_in']['id_user']; ?>">Profile</a></li>
-					<li><a href="<?php echo base_url().'perkenalan'; ?>">Perkenalan</a></li>
 				<?php endif ?>
-			<?php else: ?>
-					<li><a href="<?php echo base_url().'perkenalan'; ?>">Perkenalan</a></li>
 			<?php endif ?>
+			<li><a href="<?php echo base_url().'perkenalan'; ?>">Perkenalan</a></li>
 			<li class="dropdown">
 				<a href="<?php echo base_url().'kuis'; ?>">Kuis</a>
 			</li>
