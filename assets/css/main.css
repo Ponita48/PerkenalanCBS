@@ -1,24 +1,17 @@
-/* line 3, ../../sass/main.scss */
-html {
-  width: 100%;
-  height: 100%;
-}
-
 /* line 7, ../../sass/main.scss */
 body {
-  width: 100%;
   height: 100%;
   background-color: #393639;
   color: #FFD51E;
 }
 
-/* line 14, ../../sass/main.scss */
+/* line 13, ../../sass/main.scss */
 a {
   text-decoration: none;
   color: #FFD51E;
 }
 
-/* line 19, ../../sass/main.scss */
+/* line 18, ../../sass/main.scss */
 .cf:after {
   content: " ";
   /* 1 */
@@ -26,53 +19,55 @@ a {
   clear: both;
 }
 
-/* line 25, ../../sass/main.scss */
+/* line 24, ../../sass/main.scss */
 .cf {
   zoom: 1;
 }
 
-/* line 29, ../../sass/main.scss */
+/* line 28, ../../sass/main.scss */
 img.img-responsive {
   height: auto;
   width: auto;
   display: block;
   max-height: 330px;
   max-width: 248px;
+  min-height: 330px;
+  min-width: 248px;
 }
 
-/* line 37, ../../sass/main.scss */
+/* line 38, ../../sass/main.scss */
 .well {
   background-color: #393639;
 }
 
-/* line 41, ../../sass/main.scss */
+/* line 42, ../../sass/main.scss */
 .modal-content {
   background-color: #393639;
   color: #FFD51E;
 }
 
-/* line 46, ../../sass/main.scss */
+/* line 47, ../../sass/main.scss */
 #search {
   display: none;
   padding: 10px;
   margin-top: 0;
   margin-bottom: 10px;
 }
-/* line 51, ../../sass/main.scss */
+/* line 52, ../../sass/main.scss */
 #search form {
   float: right;
 }
 
-/* line 56, ../../sass/main.scss */
+/* line 57, ../../sass/main.scss */
 #nama-angkatan {
   border-bottom: solid 1px white;
 }
 
-/* line 59, ../../sass/main.scss */
+/* line 60, ../../sass/main.scss */
 .header-title {
   color: #FFD51E;
 }
-/* line 61, ../../sass/main.scss */
+/* line 62, ../../sass/main.scss */
 .header-title h1 {
   font-size: 30px;
   margin-left: 10px;
@@ -80,45 +75,45 @@ img.img-responsive {
   padding: 20px;
 }
 
-/* line 69, ../../sass/main.scss */
+/* line 70, ../../sass/main.scss */
 .search-area {
   width: 20%;
   float: right;
   height: 40px;
 }
 
-/* line 74, ../../sass/main.scss */
+/* line 75, ../../sass/main.scss */
 .footer {
   position: relative;
   bottom: 0px;
   width: 100%;
-  height: 50px;
+  height: 40px;
   color: #FFD51E;
   background-color: transparent;
 }
-/* line 81, ../../sass/main.scss */
+/* line 82, ../../sass/main.scss */
 .footer p {
-  font-size: 16px;
-  line-height: 50px;
+  font-size: 14px;
+  line-height: 40px;
 }
 
-/* line 87, ../../sass/main.scss */
+/* line 88, ../../sass/main.scss */
 .all-person-box {
   width: 100%;
   height: 100%;
 }
 
-/* line 92, ../../sass/main.scss */
+/* line 93, ../../sass/main.scss */
 .person-box {
   float: left;
-  width: 25%;
+  width: 33%;
   padding: 10px;
 }
-/* line 97, ../../sass/main.scss */
+/* line 98, ../../sass/main.scss */
 .person-box .identity {
   margin-top: 10px;
 }
-/* line 99, ../../sass/main.scss */
+/* line 100, ../../sass/main.scss */
 .person-box .identity p {
   text-align: center;
   margin: 0;

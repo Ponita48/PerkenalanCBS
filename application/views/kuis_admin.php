@@ -1,7 +1,5 @@
-	<div>
+	<div class="header-title">
 		<h1>PESERTA YANG SUDAH MENGISI KUIS</h1>
-		<hr>
-		<br>
 	</div>
 
 	<div class="table-responsive">
