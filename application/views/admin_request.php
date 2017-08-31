@@ -1,8 +1,8 @@
 <body>
-	<h1>JUMLAH PERKENALAN KE KELUARGA</h1>
-	<h6> BESAR YANG SANGAT BESAR TAPI MASIH DAPAT DIHITUNG</h6>
-	<hr>
-
+	<div class="header-title">
+		<h1>PERKENALAN KELUARGA HIMATIF</h1>
+		<!-- <h6>Kenali keluarga terdekat di </h6> -->
+	</div>
 	<div class="table-responsive">
 		<table class="table">
 			<thead>

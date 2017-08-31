@@ -2,37 +2,14 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>Perkenalan CBS</title>
-	<link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/bootstrap.min.css">
+	<title>Delphi 2017 | Character Building Season</title>
+	<link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/bootstrap.css">
+	<link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/main.css">
 	<link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/user.css">
 	<link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/datepicker.css">
 	<link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/tree-diagram.css">
-	<style type="text/css">
-		img.img-responsive {
-			height: auto;
-			width: auto;
-			display: block;
-			max-height: 330px;
-			max-width: 248px;
-			min-height: 330px;
-			min-width: 248px;
-		}
 
-		body {
-			background-color: #393639;
-			color: #FFD51E;
-		}
-
-		.well {
-			background-color: #393639;
-		}
-
-		.modal-content {
-			background-color: #393639;
-			color: #FFD51E;
-		}
-
-	</style>
+	<link rel="icon" href="img/logo-delphi.png">
 	<script src = "https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 	<script src="<?php echo base_url(); ?>assets/js/jquery.min.js" type="text/javascript"></script>
 	<script src="<?php echo base_url(); ?>assets/js/jquery-ui.min.js" type="text/javascript"></script>
@@ -86,40 +63,38 @@
 			</li>
 		</ul>
 		<ul class="nav navbar-nav navbar-right">
+			<li>
+				<a href="#" data-toggle="search" data-placement="bottom" id="search_icon">
+					<span class="glyphicon glyphicon-search"></span>&nbsp; Search
+				</a>
+			</li>
 			<?php if (isset($this->session->userdata['logged_in'])): ?>
 				<li>
 					<a href="<?php echo base_url().'logout'; ?>">
-						<span class="glyphicon glyphicon-log-out"></span> Logout
+						<span class="glyphicon glyphicon-log-out"></span>&nbsp; Logout
 					</a>
 				</li>
 			<?php else: ?>
 				<li>
 					<a href="<?php echo base_url().'login'; ?>">
-						<span class="glyphicon glyphicon-log-in"></span> Login
+						<span class="glyphicon glyphicon-log-in"></span>&nbsp; Login
 					</a>
 				</li>
 			<?php endif ?>
-			<li>
-				<a href="#" data-toggle="search" data-placement="bottom" id="search_icon">
-					<span class="glyphicon glyphicon-search"></span>
-				</a>
-			</li>
 		</ul>
 		</div>
 	</nav>
 
-	<div class="col-md-12 col-sm-12 col-lg-12" id="search" style="background-color: #FFD51E; padding: 10px; margin-top: 0; margin-bottom: 10px; display: none;">
-	<center>
+	<div class="search-area" id="search">
 		<form action="<?php echo base_url(); ?>UserController/search" class="form-inline" id="searchForm" method="GET">
 			<div class="input-group">
-				<input type="text" class="form-control" id="keySearch" placeholder="Search. . ." name="keySearch" onkeyup="hint(this.value)">
+				<input type="text" class="form-control" id="keySearch" placeholder="Keywords..." name="keySearch" onkeyup="hint(this.value)">
 				<span class="input-group-btn">
-					<button class="btn btn-primary" type="submit">Search</button>
+					<button class="btn btn-primary" type="submit">Go</button>
 				</span>
 			</div>
 		</form>
-	</center>
 	<div><span id="hasil"></span></div>
 	</div>
 
-	<div class="container-fluid" >
+	<div class="container-fluid cf">
