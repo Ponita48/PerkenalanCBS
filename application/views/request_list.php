@@ -1,6 +1,6 @@
 <!-- TODO: Jadiin foreach (tunggu backend selesai) -->
 	<div>
-		<h1>LIST REQUEST PERKENALAN</h1> <!--BUAT KATING-->
+		<h1>LIST Send Request</h1> <!--BUAT KATING-->
 		<hr>
 	</div>
 	<div class="container">

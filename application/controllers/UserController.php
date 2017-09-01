@@ -331,8 +331,7 @@ class UserController extends CI_Controller
 		
 	}
 
-	public function hintSearch($keySearch)
-	{
+	public function hintSearch($keySearch){
 		$keyArray = explode(" ",$keySearch);
 
 		$keySearch = '%';

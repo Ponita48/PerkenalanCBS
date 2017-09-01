@@ -1,5 +1,5 @@
 	<div>
-		<h1>REQUEST PERKENALAN</h1>
+		<h1>Send Request</h1>
 		<hr>
 	</div>
 

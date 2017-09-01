@@ -1,11 +1,8 @@
-	<div>
-		<h1>PERKENALAN DENGAN KELUARGA</h1>
-		<hr>
-		<br>
+	<div class=header-title>
+		<h1>ALL SUBMISSION</h1>
 	</div>
 
 	<div class="container">
-
   		<!-- Nav tabs -->
 		<ul class="nav nav-tabs" role="tablist">
 			<!-- TODO: span badge dihitung jumlah perkenalan -->
@@ -172,7 +169,7 @@
 					</div>
 				</center>
 			</div>
-			<div role="tabpanel" class="tab-pane container-fluid" id="4">
+			<div role="tabpanel" class="tab-pane container-fluid" id="0">
 				<center>
 					<div class="col-sm-12">
 						<table class="table">

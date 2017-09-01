@@ -68,6 +68,7 @@
 							<a href="<?php echo base_url().'perkenalan_keluarga'; ?>">Task Submission</a>
 						</li>
 					<?php else: ?>
+
 					<?php endif ?>
 				<?php endif ?>
 				<li class="main-menu-list">
@@ -102,17 +103,28 @@
 		<div class="title">CBS 2017</div>
 		<ul class="nav navbar-nav">
 			<li>
-				<a href="<?php echo base_url().'angkatan'; ?>">DELPHI 2017</a>
+				<a href="<?php echo base_url().'angkatan'; ?>">Delphi 2017</a>
 			</li>
 			<li>
 				<a href="<?php echo base_url().'perkenalan'; ?>">Keluarga HIMATIF</a>
 			</li>
-			<li>
-				<a href="<?php echo base_url().'jumlah_perkenalan'; ?>">Admin</a>
-			</li>
-			<li>
-			<a href="<?php echo base_url().'perkenalan_keluarga'; ?>">Task Submission</a>
-			</li>
+			<?php if (isset($this->session->userdata['logged_in'])): ?>
+				<?php if ($this->session->userdata['logged_in']['role'] != "admin"): ?>
+				<li>
+					<a href="<?php echo base_url().'kuis'; ?>">Quiz</a>
+				</li>
+				<?php endif ?>
+			<?php endif ?>
+			<?php if (isset($this->session->userdata['logged_in'])): ?>
+				<?php if ($this->session->userdata['logged_in']['role'] == "admin"): ?>
+					<li>
+						<a href="<?php echo base_url().'jumlah_perkenalan'; ?>">Admin</a>
+					</li>
+					<li>
+						<a href="<?php echo base_url().'perkenalan_keluarga'; ?>">Task Submission</a>
+					</li>
+				<?php endif ?>
+			<?php endif ?>
 		</ul>
 		<!-- <ul class="nav navbar-nav">
 			<li><a href="<?php echo base_url().'angkatan'; ?>">DELPHI 2017</a></li>

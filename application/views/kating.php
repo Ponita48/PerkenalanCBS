@@ -1,5 +1,4 @@
 	<?php if ($this->session->flashdata('error_message')): ?>
-		<br>
 		<div class="alert alert-danger alert-dismissable">
 			<span class="close" data-dismiss="alert">x</span>
 			<?php echo $this->session->flashdata('error_message'); ?>
@@ -7,7 +6,6 @@
 	<?php endif ?>
 
 	<?php if ($this->session->flashdata('message_display')): ?>
-		<br>
 		<div class="alert alert-success alert-dismissable">
 			<span class="close" data-dismiss="alert">x</span>
 			<?php echo $this->session->flashdata('message_display'); ?>
@@ -15,7 +13,6 @@
 	<?php endif ?>
 
 	<?php if (isset($message_display)): ?>
-		<br>
 		<div class="alert alert-success alert-dismissable">
 			<a href="#" class="close" data-dismiss="alert" aria-label="close">x</a>
 			<?php echo $message_display; ?>
@@ -23,7 +20,6 @@
 	<?php endif ?>
 
 	<?php if (isset($error_message)): ?>
-		<br>
 		<div class="alert alert-danger alert-dismissable">
 			<a href="#" class="close" data-dismiss="alert" aria-label="close">x</a>
 			<?php echo $error_message; ?>
@@ -35,7 +31,6 @@
 	</div>
 
 	<div class="container">
-
   		<!-- Nav tabs -->
 		<ul class="nav nav-tabs" role="tablist">
 			<li role="presentation" class="active"><a href="#2012" aria-controls="2012" role="tab" data-toggle="tab">Circle - 2012</a></li>
@@ -52,7 +47,9 @@
 				<?php foreach ($result as $key): ?>
 					<?php if ($key->role == "2012"): ?>
 						<a class="person-box" href="<?php echo base_url().'profile/'.$key->id_user; ?>">
-							<img src="<?php echo $key->link_foto; ?>" alt="" class="img-responsive">
+							<div class="photo-box">
+								<img src="<?php echo $key->link_foto; ?>" alt="" class="img-responsive img-thumbnail">
+							</div>
 							<div class="identity">
 								<p id="nama"><?php echo $key->nama; ?></p>
 								<p id="npm"><?php echo $key->npm; ?></p>
@@ -67,7 +64,7 @@
 				<?php foreach ($result as $key): ?>
 					<?php if ($key->role == "2013"): ?>
 						<a class="person-box" href="<?php echo base_url().'profile/'.$key->id_user; ?>">
-							<img src="<?php echo $key->link_foto; ?>" alt="" class="img-responsive">
+							<img src="<?php echo $key->link_foto; ?>" alt="" class="img-responsive img-thumbnail">
 							<div class="identity">
 								<p id="nama"><?php echo $key->nama; ?></p>
 								<p id="npm"><?php echo $key->npm; ?></p>
@@ -82,7 +79,7 @@
 				<?php foreach ($result as $key): ?>
 					<?php if ($key->role == "2014"): ?>
 						<a class="person-box" href="<?php echo base_url().'profile/'.$key->id_user; ?>">
-							<img src="<?php echo $key->link_foto; ?>" alt="" class="img-responsive">
+							<img src="<?php echo $key->link_foto; ?>" alt="" class="img-responsive img-thumbnail">
 							<div class="identity">
 								<p id="nama"><?php echo $key->nama; ?></p>
 								<p id="npm"><?php echo $key->npm; ?></p>
@@ -97,7 +94,7 @@
 				<?php foreach ($result as $key): ?>
 					<?php if ($key->role == "2015"): ?>
 						<a class="person-box" href="<?php echo base_url().'profile/'.$key->id_user; ?>">
-							<img src="<?php echo $key->link_foto; ?>" alt="" class="img-responsive">
+							<img src="<?php echo $key->link_foto; ?>" alt="" class="img-responsive img-thumbnail">
 							<div class="identity">
 								<p id="nama"><?php echo $key->nama; ?></p>
 								<p id="npm"><?php echo $key->npm; ?></p>
@@ -112,7 +109,7 @@
 				<?php foreach ($result as $key): ?>
 					<?php if ($key->role == "2016"): ?>
 						<a class="person-box" href="<?php echo base_url().'profile/'.$key->id_user; ?>">
-							<img src="<?php echo $key->link_foto; ?>" alt="" class="img-responsive">
+							<img src="<?php echo $key->link_foto; ?>" alt="" class="img-responsive img-thumbnail">
 							<div class="identity">
 								<p id="nama"><?php echo $key->nama; ?></p>
 								<p id="npm"><?php echo $key->npm; ?></p>

@@ -8,9 +8,13 @@
 				<!-- <div class="person-box"> -->
 					<?php if (is_null($key->link_foto)): ?>
 						<!-- TODO: ganti jadi placeholder -->
-						<img src="https://upload.wikimedia.org/wikipedia/en/b/b1/Portrait_placeholder.png" alt="" class="img-responsive img-thumbnail">
+						<div class="photo-box">
+							<img src="https://upload.wikimedia.org/wikipedia/en/b/b1/Portrait_placeholder.png" alt="" class="img-responsive img-thumbnail">
+						</div>
 					<?php else: ?>
-						<img src="<?php echo $key->link_foto;?>" alt="" class="img-responsive img-thumbnail">
+						<div class="photo-box">
+							<img src="<?php echo $key->link_foto;?>" alt="" class="img-responsive img-thumbnail">
+						</div>
 					<?php endif ?>
 					<div class="identity">
 						<?php if (is_null($key->nama)): ?>

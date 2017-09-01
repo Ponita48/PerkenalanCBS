@@ -68,11 +68,11 @@ class Perkenalan extends CI_Controller
 			$result = $this->Perkenalan_model->request_keluarga($data);
 
 			if (!$result) {
-				$this->session->set_flashdata('error_message', 'Error');
+				$this->session->set_flashdata('error_message', 'Error!');
 				redirect(base_url());
 			}else {
-				$this->session->set_flashdata('message_display', 'Success');
-				redirect(base_url());
+				$this->session->set_flashdata('message_display', 'Request sent!');
+				redirect(base_url('perkenalan'));
 			}
 		}
 	}
@@ -238,7 +238,7 @@ class Perkenalan extends CI_Controller
 			$cek = $this->Perkenalan_model->check_perkenalan($id_user_maba, $id_user, 'perkenalan_kating');
 			if ($cek == TRUE) {
 				$this->session->set_flashdata('error_message', 'Request approved!');
-				redirect(base_url());
+				redirect(base_url(''));
 			}else {
 				$this->load->view('header');
 				$this->load->view('request_perkenalan', $data);

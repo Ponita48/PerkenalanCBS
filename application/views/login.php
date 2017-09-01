@@ -28,7 +28,7 @@
 			<form action="<?php echo base_url() ?>login" class="form-horizontal" method="POST">
 				<div class="form-group">
 					<label for="npm">NPM</label>
-					<input type="text" class="form-control" id="npm" placeholder="NPM" name="npm">
+					<input type="text" class="form-control" id="npm" placeholder="e.g 140810xxxxxx" name="npm">
 				</div>
 				<div class="form-group">
 					<label for="password">Password</label>
