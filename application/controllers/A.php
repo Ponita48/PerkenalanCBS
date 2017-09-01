@@ -47,7 +47,7 @@ class A extends CI_Controller {
 			$this->load->view('header');
 			$this->load->view('admin',$data);
 			$this->load->view('footer');*/
-			$this->session->set_flashdata('error_message', 'Perkenalan kosong');
+			$this->session->set_flashdata('error_message', 'No task submissions!');
 			redirect(base_url());
 		}else {
 			//goto list perkenalan
@@ -77,7 +77,7 @@ class A extends CI_Controller {
 		}else {
 
 			if ($id == NULL) {
-				$data['error_message'] = "Parameter tidak boleh kosong";
+				$data['error_message'] = "Parameter is required.";
 				$this->load->view('header');
 				$this->load->view('index', $data);
 				$this->load->view('footer');
@@ -87,7 +87,7 @@ class A extends CI_Controller {
 
 		}
 		if ($result == FALSE) {
-			$this->session->set_flashdata('error_message', 'Perkenalan kosong');
+			$this->session->set_flashdata('error_message', 'No task submission!');
 			redirect(base_url());
 		}else {
 			$data['result'] = $result;
@@ -128,7 +128,7 @@ class A extends CI_Controller {
 		$result = $this->Admin_model->getJumlahPerkenalan();
 
 		if ($result == FALSE) {
-			$data['message_display'] = "Perkenalan kosong?";
+			$data['message_display'] = "No task submission!";
 			// echo $data['message_display'];
 			// die();
 			//goto jumlah perkenalan
@@ -181,7 +181,7 @@ class A extends CI_Controller {
 
 		if ($result == FALSE) {
 			//goto jumlah perkenalan
-			$data['error_message'] = "gagal? tidak ada id perkenalan tersebut";
+			$data['error_message'] = "ID perkenalan not found!";
 			$this->load->view('header');
 			$this->load->view('index', $data);
 			$this->load->view('footer');
@@ -227,7 +227,7 @@ class A extends CI_Controller {
 		$result = $this->Admin_model->approveRejectPerkenalan($id_perkenalan, $data);
 
 		if ($result == FALSE) {
-			$data['error_message'] = "gagal? tidak ada id perkenalan tersebut";
+			$data['error_message'] = "ID perkenalan not found!";
 			$this->load->view('header');
 			$this->load->view('index', $data);
 			$this->load->view('footer');
@@ -264,7 +264,7 @@ class A extends CI_Controller {
 		}
 		
 		if ($id_perkenalan == NULL) {
-			$data['error_message'] = "id_perkenalan tidak boleh kosong";
+			$data['error_message'] = "id_perkenalan is required.";
 			$this->load->view('header');
 			$this->load->view('index', $data);
 			$this->load->view('footer');
@@ -272,7 +272,7 @@ class A extends CI_Controller {
 			$result = $this->Admin_model->getDetailPerkenalan($id_perkenalan);
 
 			if ($result == FALSE) {
-				$data['error_message'] = "id_perkenalan tidak ditemukan";
+				$data['error_message'] = "id_perkenalan not found!";
 				$this->load->view('header');
 				$this->load->view('index', $data);
 				$this->load->view('footer');

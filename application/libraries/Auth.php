@@ -20,10 +20,10 @@ class Auth
 	{
 		if ( ! isset($this->CI->session->userdata['logged_in'])) {
 			//$this->login("Harap login terlebih dahulu");
-			return array('result' => FALSE, 'code' => 'login', 'message' => 'Harap login terlebih dahulu');
+			return array('result' => FALSE, 'code' => 'login', 'message' => 'Please Log In first!');
 		}else {
 			if ($this->CI->User_model->cek_email($this->CI->session->userdata['logged_in']['id_user'], "id_user") == NULL) {
-				return array('result' => FALSE, 'code' => 'new_login', 'message' => 'Harap mengisi form ini terlebih dahulu');
+				return array('result' => FALSE, 'code' => 'new_login', 'message' => 'Please fill this form first!');
 			}
 		}
 
@@ -40,7 +40,7 @@ class Auth
 			if ($this->CI->session->userdata['logged_in']['role'] == 'peserta') {
 				return array('result' => TRUE);
 			}else {
-				return array('result' => FALSE, 'code' => 'home', 'message' => 'Hanya peserta yang dapat melihat konten ini');
+				return array('result' => FALSE, 'code' => 'home', 'message' => 'Forbidden content, participants only!');
 			}
 		}
 	}
@@ -55,7 +55,7 @@ class Auth
 			if ($this->CI->session->userdata['logged_in']['role'] == 'admin') {
 				return array('result' => TRUE);
 			}else {
-				return array('result' => FALSE, 'code' => 'home', 'message' => 'Hanya admin yang dapat melihat konten ini');
+				return array('result' => FALSE, 'code' => 'home', 'message' => 'Forbidden content, Admin only!');
 			}
 		}	
 	}
@@ -64,10 +64,10 @@ class Auth
 	{
 		if ( ! isset($this->CI->session->userdata['logged_in'])) {
 			//$this->login("Harap login terlebih dahulu");
-			return array('result' => FALSE, 'code' => 'login', 'message' => 'Harap login terlebih dahulu');
+			return array('result' => FALSE, 'code' => 'login', 'message' => 'Please Log In first!');
 		}else {
 			if ($this->CI->User_model->cek_email($this->CI->session->userdata['logged_in']['id_user'], "id_user") != NULL) {
-				return array('result' => FALSE, 'code' => 'new_login', 'message' => 'Anda telah mengisi form ini');
+				return array('result' => FALSE, 'code' => 'new_login', 'message' => 'Form has successfully filled!');
 			}
 		}
 

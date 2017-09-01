@@ -151,7 +151,7 @@ class Kuis extends CI_Controller
 		}else {
 			$npm = $this->User_model->get_npm($id_user);
 			if ($npm == NULL) {
-				$this->session->set_flashdata('error_message', 'User tidak ditemukan');
+				$this->session->set_flashdata('error_message', 'User not found!');
 				redirect(base_url());
 			}
 		}
@@ -173,7 +173,7 @@ class Kuis extends CI_Controller
 		);
 
 		if ($panitia == NULL && $be == NULL && $dpa == NULL && $presidium == NULL) {
-			$this->session->set_flashdata('error_message', 'User belum mengisi kuis');
+			$this->session->set_flashdata('error_message', 'User has not submitted yet.');
 				redirect(base_url());
 		}else {
 			$this->load->view('header');

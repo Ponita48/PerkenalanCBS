@@ -6,7 +6,6 @@
 		</div>
 	<?php endif ?>
 
-
 	<?php if ($this->session->flashdata('message_display')): ?>
 		<br>
 		<div class="alert alert-success alert-dismissable">
@@ -22,6 +21,7 @@
 			<?php echo $message_display; ?>
 		</div>
 	<?php endif ?>
+
 	<?php if (isset($error_message)): ?>
 		<br>
 		<div class="alert alert-danger alert-dismissable">
@@ -30,20 +30,19 @@
 		</div>
 	<?php endif ?>
 
-	<div>
-		<h1>ANGGOTA KELUARGA HIMATIF</h1>
-		<br>
+	<div class="header-title">
+		<h1>KELUARGA HIMATIF FMIPA UNPAD</h1>
 	</div>
 
 	<div class="container">
 
   		<!-- Nav tabs -->
 		<ul class="nav nav-tabs" role="tablist">
-			<li role="presentation" class="active"><a href="#2012" aria-controls="2012" role="tab" data-toggle="tab">2012</a></li>
-			<li role="presentation"><a href="#2013" aria-controls="2013" role="tab" data-toggle="tab">2013</a></li>
-			<li role="presentation"><a href="#2014" aria-controls="2014" role="tab" data-toggle="tab">2014</a></li>
-			<li role="presentation"><a href="#2015" aria-controls="2015" role="tab" data-toggle="tab">2015</a></li>
-			<li role="presentation"><a href="#2016" aria-controls="2016" role="tab" data-toggle="tab">2016</a></li>
+			<li role="presentation" class="active"><a href="#2012" aria-controls="2012" role="tab" data-toggle="tab">Circle - 2012</a></li>
+			<li role="presentation"><a href="#2013" aria-controls="2013" role="tab" data-toggle="tab">Pascal - 2013</a></li>
+			<li role="presentation"><a href="#2014" aria-controls="2014" role="tab" data-toggle="tab">Assembly - 2014</a></li>
+			<li role="presentation"><a href="#2015" aria-controls="2015" role="tab" data-toggle="tab">Binary - 2015</a></li>
+			<li role="presentation"><a href="#2016" aria-controls="2016" role="tab" data-toggle="tab">Cyber - 2016</a></li>
 		</ul><br>
 		<!-- Tab panes -->
 	<?php if (isset($result)) : ?>
@@ -52,9 +51,9 @@
 				<center>
 				<?php foreach ($result as $key): ?>
 					<?php if ($key->role == "2012"): ?>
-						<a href="<?php echo base_url().'profile/'.$key->id_user; ?>">
-							<div class="col-md-3">
-								<img src="<?php echo $key->link_foto; ?>" alt="" class="img-responsive">
+						<a class="person-box" href="<?php echo base_url().'profile/'.$key->id_user; ?>">
+							<img src="<?php echo $key->link_foto; ?>" alt="" class="img-responsive">
+							<div class="identity">
 								<p id="nama"><?php echo $key->nama; ?></p>
 								<p id="npm"><?php echo $key->npm; ?></p>
 							</div>
@@ -67,9 +66,9 @@
 				<center>
 				<?php foreach ($result as $key): ?>
 					<?php if ($key->role == "2013"): ?>
-						<a href="<?php echo base_url().'profile/'.$key->id_user; ?>">
-							<div class="col-md-3">
-								<img src="<?php echo $key->link_foto; ?>" alt="" class="img-responsive">
+						<a class="person-box" href="<?php echo base_url().'profile/'.$key->id_user; ?>">
+							<img src="<?php echo $key->link_foto; ?>" alt="" class="img-responsive">
+							<div class="identity">
 								<p id="nama"><?php echo $key->nama; ?></p>
 								<p id="npm"><?php echo $key->npm; ?></p>
 							</div>
@@ -82,9 +81,9 @@
 				<center>
 				<?php foreach ($result as $key): ?>
 					<?php if ($key->role == "2014"): ?>
-						<a href="<?php echo base_url().'profile/'.$key->id_user; ?>">
-							<div class="col-md-3">
-								<img src="<?php echo $key->link_foto; ?>" alt="" class="img-responsive">
+						<a class="person-box" href="<?php echo base_url().'profile/'.$key->id_user; ?>">
+							<img src="<?php echo $key->link_foto; ?>" alt="" class="img-responsive">
+							<div class="identity">
 								<p id="nama"><?php echo $key->nama; ?></p>
 								<p id="npm"><?php echo $key->npm; ?></p>
 							</div>
@@ -97,9 +96,9 @@
 				<center>
 				<?php foreach ($result as $key): ?>
 					<?php if ($key->role == "2015"): ?>
-						<a href="<?php echo base_url().'profile/'.$key->id_user; ?>">
-							<div class="col-md-3">
-								<img src="<?php echo $key->link_foto; ?>" alt="" class="img-responsive">
+						<a class="person-box" href="<?php echo base_url().'profile/'.$key->id_user; ?>">
+							<img src="<?php echo $key->link_foto; ?>" alt="" class="img-responsive">
+							<div class="identity">
 								<p id="nama"><?php echo $key->nama; ?></p>
 								<p id="npm"><?php echo $key->npm; ?></p>
 							</div>
@@ -112,9 +111,9 @@
 				<center>
 				<?php foreach ($result as $key): ?>
 					<?php if ($key->role == "2016"): ?>
-						<a href="<?php echo base_url().'profile/'.$key->id_user; ?>">
-							<div class="col-md-3">
-								<img src="<?php echo $key->link_foto; ?>" alt="" class="img-responsive">
+						<a class="person-box" href="<?php echo base_url().'profile/'.$key->id_user; ?>">
+							<img src="<?php echo $key->link_foto; ?>" alt="" class="img-responsive">
+							<div class="identity">
 								<p id="nama"><?php echo $key->nama; ?></p>
 								<p id="npm"><?php echo $key->npm; ?></p>
 							</div>

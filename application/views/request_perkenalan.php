@@ -23,9 +23,8 @@
 	</div>
 <?php endif; ?>
 
-<div>
+<div class="header-title">
 	<h1>REQUEST PERKENALAN</h1>
-	<hr>
 </div>
 
 <div class="container">

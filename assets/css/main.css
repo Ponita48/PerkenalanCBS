@@ -1,121 +1,479 @@
-/* line 7, ../../sass/main.scss */
-body {
-  height: 100%;
-  background-color: #393639;
-  color: #FFD51E;
-}
+@media only screen {
+  /* line 1, ../../sass/_main-menu.scss */
+  .main-menu {
+    display: none;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 4;
+  }
+  /* line 10, ../../sass/_main-menu.scss */
+  .main-menu.show {
+    display: block;
+  }
+  /* line 14, ../../sass/_main-menu.scss */
+  .main-menu .main-menu-container {
+    position: absolute;
+    left: -100%;
+    min-width: 300px;
+    width: 25%;
+    height: 100%;
+    z-index: 12;
+    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8);
+    transition: left .25s;
+    background-color: #393639;
+  }
+  /* line 27, ../../sass/_main-menu.scss */
+  .main-menu.slide .main-menu-container {
+    left: 0;
+  }
+  /* line 30, ../../sass/_main-menu.scss */
+  .main-menu.slide .smoke {
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+  /* line 35, ../../sass/_main-menu.scss */
+  .main-menu .smoke {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-color: transparent;
+    transition: background-color .25s;
+  }
 
-/* line 13, ../../sass/main.scss */
-a {
-  text-decoration: none;
-  color: #FFD51E;
-}
+  /* line 44, ../../sass/_main-menu.scss */
+  .main-menu-btn {
+    cursor: pointer;
+    display: block;
+    float: left;
+    width: 50px;
+    height: 50px;
+    background-image: url("../../img/icons/menu_black_24px.svg");
+    background-position: center center;
+    background-repeat: no-repeat;
+    z-index: 2;
+  }
 
-/* line 18, ../../sass/main.scss */
-.cf:after {
-  content: " ";
-  /* 1 */
-  display: block;
-  clear: both;
-}
+  /* line 56, ../../sass/_main-menu.scss */
+  .main-menu-header {
+    position: relative;
+    background-color: #f8f9f8;
+    max-height: 200px;
+    height: calc(25% + 5px);
+  }
 
-/* line 24, ../../sass/main.scss */
-.cf {
-  zoom: 1;
-}
+  /* line 63, ../../sass/_main-menu.scss */
+  .main-menu-title {
+    position: relative;
+    bottom: 10px;
+    font-size: 22px;
+    padding: 10px;
+    color: #FFD51E;
+    text-align: center;
+    font-weight: bold;
+  }
 
-/* line 28, ../../sass/main.scss */
-img.img-responsive {
-  height: auto;
-  width: auto;
-  display: block;
-  max-height: 330px;
-  max-width: 248px;
-  min-height: 330px;
-  min-width: 248px;
-}
+  /* line 73, ../../sass/_main-menu.scss */
+  .main-menu-body {
+    display: block;
+    max-height: auto;
+    background-color: #393639;
+  }
+  /* line 80, ../../sass/_main-menu.scss */
+  .main-menu-body :hover {
+    transition: .2s;
+    background-color: #393639;
+    text-decoration: none;
+  }
 
-/* line 38, ../../sass/main.scss */
-.well {
-  background-color: #393639;
-}
+  /* line 87, ../../sass/_main-menu.scss */
+  .main-menu-img {
+    position: relative;
+    padding: 10px;
+    /* top: 10%; */
+    /* left: 40%; */
+    width: 99px;
+    height: 110px;
+  }
 
-/* line 42, ../../sass/main.scss */
-.modal-content {
-  background-color: #393639;
-  color: #FFD51E;
-}
+  /* line 96, ../../sass/_main-menu.scss */
+  .main-menu-list {
+    display: block;
+    width: 100%;
+    height: 50px;
+    border-width: 1px;
+    border-color: #999999;
+  }
+  /* line 103, ../../sass/_main-menu.scss */
+  .main-menu-list :hover {
+    text-decoration: none;
+    background-color: #999999;
+  }
+  /* line 108, ../../sass/_main-menu.scss */
+  .main-menu-list a {
+    display: block;
+    color: #eff1f4;
+    font-size: 14px;
+    line-height: 50px;
+    padding: 0;
+    font-weight: bold;
+  }
 
-/* line 47, ../../sass/main.scss */
-#search {
-  display: none;
-  padding: 10px;
-  margin-top: 0;
-  margin-bottom: 10px;
-}
-/* line 52, ../../sass/main.scss */
-#search form {
-  float: right;
-}
+  /* line 119, ../../sass/_main-menu.scss */
+  .icon-home, .icon-friend, .icon-people, .icon-admin, .icon-perkenalan, .icon-tugas, .icon-account {
+    position: relative;
+    float: left;
+    width: 50px;
+    height: 50px;
+    border-radius: 100%;
+    background-image: url("../../img/icons/home_white_24px.svg");
+    background-position: center center;
+    background-repeat: no-repeat;
+  }
 
-/* line 57, ../../sass/main.scss */
-#nama-angkatan {
-  border-bottom: solid 1px white;
-}
+  /* line 129, ../../sass/_main-menu.scss */
+  .icon-friend {
+    background-image: url("../../img/icons/accessibility_white_24px.svg");
+  }
 
-/* line 60, ../../sass/main.scss */
-.header-title {
-  color: #FFD51E;
-}
-/* line 62, ../../sass/main.scss */
-.header-title h1 {
-  font-size: 30px;
-  margin-left: 10px;
-  margin: 0;
-  padding: 20px;
-}
+  /* line 133, ../../sass/_main-menu.scss */
+  .icon-people {
+    background-image: url("../../img/icons/people_white_24px.svg");
+  }
 
-/* line 70, ../../sass/main.scss */
-.search-area {
-  width: 20%;
-  float: right;
-  height: 40px;
-}
+  /* line 137, ../../sass/_main-menu.scss */
+  .icon-admin {
+    background-image: url("../../img/icons/admin_white_24px.svg");
+  }
 
-/* line 75, ../../sass/main.scss */
-.footer {
-  position: relative;
-  bottom: 0px;
-  width: 100%;
-  height: 40px;
-  color: #FFD51E;
-  background-color: transparent;
-}
-/* line 82, ../../sass/main.scss */
-.footer p {
-  font-size: 14px;
-  line-height: 40px;
-}
+  /* line 141, ../../sass/_main-menu.scss */
+  .icon-perkenalan {
+    background-image: url("../../img/icons/assignment_ind_white_24px.svg");
+  }
 
-/* line 88, ../../sass/main.scss */
-.all-person-box {
-  width: 100%;
-  height: 100%;
-}
+  /* line 145, ../../sass/_main-menu.scss */
+  .icon-tugas {
+    background-image: url("../../img/icons/assignment_white_24px.svg");
+  }
 
-/* line 93, ../../sass/main.scss */
-.person-box {
-  float: left;
-  width: 33%;
-  padding: 10px;
-}
-/* line 98, ../../sass/main.scss */
-.person-box .identity {
-  margin-top: 10px;
-}
-/* line 100, ../../sass/main.scss */
-.person-box .identity p {
-  text-align: center;
-  margin: 0;
-  margin-bottom: 5px;
+  /* line 149, ../../sass/_main-menu.scss */
+  .icon-account {
+    background-image: url("../../img/icons/account_circle_white_24px.svg");
+  }
+
+  /* line 154, ../../sass/_main-menu.scss */
+  .main-menu-exit {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 50px;
+    background-color: #F44336;
+  }
+  /* line 161, ../../sass/_main-menu.scss */
+  .main-menu-exit :hover {
+    opacity: .8;
+  }
+  /* line 166, ../../sass/_main-menu.scss */
+  .main-menu-exit a {
+    display: block;
+    color: #eff1f4;
+    font-size: 18px;
+    height: 100%;
+    line-height: 50px;
+    text-align: center;
+    font-weight: bold;
+  }
+
+  /* line 27, ../../sass/main.scss */
+  html {
+    width: 100%;
+    height: 100%;
+  }
+
+  /* line 31, ../../sass/main.scss */
+  body {
+    height: 100%;
+    background-color: #393639;
+    color: #FFD51E;
+  }
+
+  /* line 37, ../../sass/main.scss */
+  a {
+    text-decoration: none;
+    color: #FFD51E;
+  }
+
+  /* line 42, ../../sass/main.scss */
+  .cf:after {
+    content: " ";
+    /* 1 */
+    display: block;
+    clear: both;
+  }
+
+  /* line 48, ../../sass/main.scss */
+  .cf {
+    zoom: 1;
+  }
+
+  /* line 52, ../../sass/main.scss */
+  img.img-responsive {
+    height: auto;
+    width: auto;
+    max-height: 200px;
+    max-width: 150px;
+  }
+
+  /* line 64, ../../sass/main.scss */
+  .well {
+    background-color: #393639;
+  }
+
+  /* line 68, ../../sass/main.scss */
+  .modal-content {
+    background-color: #393639;
+    color: #FFD51E;
+  }
+
+  /* line 73, ../../sass/main.scss */
+  .app-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 3;
+    background-color: #f8f8f8;
+    border-color: #e7e7e7;
+  }
+  /* line 82, ../../sass/main.scss */
+  .app-header a {
+    font-size: 16px;
+    color: #393639;
+  }
+  /* line 88, ../../sass/main.scss */
+  .app-header .header-img {
+    width: 50px;
+    height: 50px;
+    padding: 10px;
+  }
+  /* line 94, ../../sass/main.scss */
+  .app-header .space {
+    position: relative;
+    display: block;
+    left: 100px;
+    height: 50px;
+  }
+  /* line 100, ../../sass/main.scss */
+  .app-header .title {
+    float: left;
+    position: relative;
+    font-size: 18px;
+    font-weight: bold;
+    color: #393639;
+    line-height: 50px;
+    padding-right: 5px;
+  }
+
+  /* line 113, ../../sass/main.scss */
+  .app-body {
+    position: relative;
+    top: 50px;
+    bottom: 50px;
+    display: block;
+    width: 100%;
+    height: calc(100% - 50px);
+  }
+
+  /* line 123, ../../sass/main.scss */
+  .sambutan, .quotes {
+    text-align: justify;
+  }
+
+  /* line 127, ../../sass/main.scss */
+  .big-name, .jabatan {
+    text-align: center;
+    font-size: 20px;
+    font-weight: bold;
+  }
+
+  /* line 137, ../../sass/main.scss */
+  .quotes {
+    font-style: italic;
+    margin: 30px 20px 30px 20px;
+    font-size: 16px;
+    font-weight: bold;
+  }
+
+  /* line 146, ../../sass/main.scss */
+  .name-badge {
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    margin-top: 20px;
+  }
+  /* line 152, ../../sass/main.scss */
+  .name-badge p {
+    margin: 0;
+  }
+
+  /* line 157, ../../sass/main.scss */
+  #nama-header {
+    border-bottom: solid 2px white;
+  }
+
+  /* line 160, ../../sass/main.scss */
+  .header-title {
+    color: #FFD51E;
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+  /* line 164, ../../sass/main.scss */
+  .header-title h1 {
+    font-size: 30px;
+    margin: 0;
+    padding: 20px;
+    font-weight: bold;
+  }
+
+  /* line 172, ../../sass/main.scss */
+  .search-area {
+    float: right;
+    position: relative;
+    top: 50px;
+    width: 33%;
+    height: 40px;
+  }
+  /* line 179, ../../sass/main.scss */
+  .search-area .form-inline .input-group {
+    width: 100%;
+  }
+
+  /* line 184, ../../sass/main.scss */
+  #search {
+    display: none;
+    margin-top: 20px;
+    margin-bottom: 10px;
+  }
+
+  /* line 194, ../../sass/main.scss */
+  #hasil {
+    position: absolute;
+    top: 35%;
+    right: 19%;
+    width: 81%;
+    z-index: 1;
+  }
+
+  /* line 206, ../../sass/main.scss */
+  .footer {
+    position: relative;
+    bottom: 0px;
+    height: 40px;
+    margin: 50px 50px 0 50px;
+    color: #FFD51E;
+    background-color: transparent;
+    border-top: solid 2px #999999;
+  }
+  /* line 214, ../../sass/main.scss */
+  .footer p {
+    font-size: 14px;
+    line-height: 40px;
+  }
+  /* line 218, ../../sass/main.scss */
+  .footer a {
+    color: #FFD51E;
+  }
+
+  /* line 223, ../../sass/main.scss */
+  .all-person-box {
+    position: relative;
+    padding: 10px;
+    width: 100%;
+  }
+
+  /* line 229, ../../sass/main.scss */
+  .person-box {
+    float: left;
+    width: 20%;
+    height: 300px;
+    padding: 10px;
+  }
+  /* line 235, ../../sass/main.scss */
+  .person-box .identity {
+    margin-top: 10px;
+  }
+  /* line 237, ../../sass/main.scss */
+  .person-box .identity p {
+    text-align: center;
+    margin: 0;
+    color: #FFD51E;
+  }
+
+  /* line 246, ../../sass/main.scss */
+  .profile-box {
+    position: relative;
+    padding-top: 30px;
+    padding-right: 30px;
+    padding-left: 30px;
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  /* line 255, ../../sass/main.scss */
+  .profile-photo {
+    float: left;
+    position: relative;
+    left: 20px;
+    width: 20%;
+    height: 100%;
+    margin: 0;
+  }
+
+  /* line 265, ../../sass/main.scss */
+  .identity-box {
+    position: relative;
+    width: 78%;
+    float: left;
+  }
+
+  /* line 271, ../../sass/main.scss */
+  .login-box {
+    position: relative;
+    width: 100%;
+    padding: 30px;
+    height: 400px;
+  }
+
+  /* line 279, ../../sass/main.scss */
+  .login-container {
+    position: relative;
+    left: 35%;
+    width: 30%;
+    height: 100%;
+    border-radius: 4px;
+    background-color: #999999;
+  }
+  /* line 287, ../../sass/main.scss */
+  .login-container .title {
+    display: block;
+    width: 100%;
+    text-align: center;
+    font-size: 20px;
+    padding: 20px 0;
+  }
+  /* line 294, ../../sass/main.scss */
+  .login-container .forgot {
+    display: block;
+    width: 100%;
+    text-align: center;
+    margin: 10px 0;
+    font-size: 12px;
+  }
+  /* line 301, ../../sass/main.scss */
+  .login-container .btn-login {
+    width: 100%;
+    height: 40px;
+    margin: 15px 15px 30px 0;
+  }
 }

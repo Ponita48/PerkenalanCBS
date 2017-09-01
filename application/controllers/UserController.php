@@ -34,7 +34,7 @@ class UserController extends CI_Controller
 		$cek = $this->auth->cek_login();
 
 		if ($cek['result'] == TRUE) {
-			$this->session->set_flashdata('error_message', 'Maaf anda sudah login');
+			$this->session->set_flashdata('error_message', 'You are logged in already.');
 			redirect(base_url());
 		}
 
@@ -68,7 +68,7 @@ class UserController extends CI_Controller
 			$role = $this->User_model->cek_role($data['npm']);
 
 			if ($role == NULL) {
-				$this->session->set_flashdata('error_message', 'User tidak ditemukan');
+				$this->session->set_flashdata('error_message', 'User not found!');
 				redirect(base_url().'login');
 			}else {
 
@@ -82,7 +82,7 @@ class UserController extends CI_Controller
 				}
 
 				if ($result == FALSE) {
-					$this->session->set_flashdata('error_message', 'Username atau password salah');
+					$this->session->set_flashdata('error_message', 'Username or password incorrect!');
 					redirect(base_url().'login');
 				}else {
 					//when username or password correct
@@ -104,7 +104,7 @@ class UserController extends CI_Controller
 					}else {
 						//login success
 						//back to home
-						$this->session->set_flashdata('message_display', 'Successfully login');
+						$this->session->set_flashdata('message_display', 'Log In success!');
 						redirect(base_url());
 					}
 				}	
@@ -119,7 +119,7 @@ class UserController extends CI_Controller
 		$this->session->unset_userdata('logged_in');
 		
 		//back to home
-		$this->session->set_flashdata('message_display', 'Successfully logout');
+		$this->session->set_flashdata('message_display', 'Log Out success!');
 		redirect(base_url());
 	}
 
@@ -197,7 +197,7 @@ class UserController extends CI_Controller
 						);
 
 						$this->User_model->new_login($data);
-						$data['message_display'] = "Password berhasil diganti";
+						$data['message_display'] = "Your new password has been saved.";
 						$this->load->view('header');
 						$this->load->view('index', $data);
 						$this->load->view('footer');
@@ -247,7 +247,7 @@ class UserController extends CI_Controller
 		}
 
 		if ($this->User_model->cek_email($this->session->userdata['logged_in']['id_user'], "id_user") == NULL) {
-			$message['error_message'] = "Untuk mengubah profile, silahkan isi form berikut ini!";
+			$message['error_message'] = "Please fill this form to change your profile";
 			$this->load->view('header');
 			$this->load->view('new_login', $message);
 			$this->load->view('footer');
@@ -286,7 +286,7 @@ class UserController extends CI_Controller
 					$this->load->view('footer');
 				}else {
 					/*$this->lihat_profile($this->session->userdata['logged_in']['id_user'], '', "Profile berhasil diganti");*/
-					$this->session->set_flashdata('message_display', 'Profile berhasil diganti');
+					$this->session->set_flashdata('message_display', 'Profile changed successfully.');
 					redirect(base_url().'profile/'.$this->session->userdata['logged_in']['id_user']);
 				}
 			}
@@ -363,7 +363,7 @@ class UserController extends CI_Controller
 		$result = $this->User_model->getProfile($id);
 
 		if ($result == FALSE) {
-			$data['error_message'] = "Maaf, Profile tidak ditemukan";
+			$data['error_message'] = "Profile was unavailable. Please try again.";
 			$this->load->view('header');
 			$this->load->view('index', $data);
 			$this->load->view('footer');
@@ -401,7 +401,7 @@ class UserController extends CI_Controller
 		$result = $this->User_model->get_angkatan($angkatan);
 
 		if ($result == FALSE) {
-			$this->session->set_flashdata('error_message', 'Maaf, angkatan tidak dapat ditemukan');
+			$this->session->set_flashdata('error_message', 'Sorry, your request was unavailable.');
 			redirect(base_url());
 		}else {
 			$data['result'] = $result;
@@ -431,7 +431,7 @@ class UserController extends CI_Controller
 
 		if ($result == FALSE) {
 			// echo "angkatan ga ada coeg";
-			$this->session->set_flashdata('error_message', 'Maaf, angkatan tidak dapat ditemukan');
+			$this->session->set_flashdata('error_message', 'Sorry, your request was unavailable.');
 			redirect(base_url());
 		}else {
 			$data['result'] = $result;
@@ -547,7 +547,7 @@ class UserController extends CI_Controller
 		$id_user = $this->session->userdata['logged_in']['id_user'];
 
 		if (empty($_FILES['pp']['name'])) {
-			$this->session->set_flashdata('error_message', "Photo tidak boleh kosong");
+			$this->session->set_flashdata('error_message', "Photo is required!");
 			redirect(base_url().'profile/'.$id_user);
 		}
 		
@@ -571,10 +571,10 @@ class UserController extends CI_Controller
 			$result = $this->User_model->assign_photo($file_name, $id_user);
 
 			if ( ! $result) {
-				$this->session->set_flashdata('error_message', "There are errors");
+				$this->session->set_flashdata('error_message', "There was an errors. Please try again.");
 				redirect(base_url().'profile/'.$id_user);
 			}else {
-				$this->session->set_flashdata('message_display', "Photo Profile berhasil diubah");
+				$this->session->set_flashdata('message_display', "Profile photo saved.");
 				redirect(base_url().'profile/'.$id_user);
 			}
 		}

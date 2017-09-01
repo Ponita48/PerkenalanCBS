@@ -1,7 +1,5 @@
-	<div>
-		<h1>PROFIL</h1>
-		<hr>
-		
+	<div class="header-title">
+		<h1 id="nama-header">PROFIL</h1>
 		<?php if ($this->session->flashdata('error_message')): ?>
 			<br>
 			<div class="alert alert-danger alert-dismissable">
@@ -33,39 +31,38 @@
 			</div>
 		<?php endif ?>
 	</div>
-	<div class="container">
-		<div class="col-sm-3">
-			<center>
-				<?php if ($result->link_foto == NULL): ?>
-					<img src="https://upload.wikimedia.org/wikipedia/en/b/b1/Portrait_placeholder.png" alt="" class="img-responsive img-thumbnail"><br>
-				<?php else: ?>
-					<img src="<?php echo $result->link_foto;?>" alt="" class="img-responsive img-thumbnail"><br>
-				<?php endif ?>
-				<!-- Kalau udah login -->
-				<?php if (isset($this->session->userdata['logged_in'])): ?>
-					<!-- Login = peserta & dilihat != Peserta -->
-					<?php if ($this->session->userdata['logged_in']['role'] != "admin"): ?>
-						
-						<!-- npm di session = npm yang dilihat -->
-						<?php if ($this->session->userdata['logged_in']['npm'] == $result->npm): ?>
-							<!-- PROFIL PRIBADI MABA -->
-							<button class="btn btn-primary" id="chg_photo">Change Photo</button><br><br>
-							<a href="<?php echo base_url(); ?>edit_profile"><button class="btn btn-success" type="submit">Edit Profil</button></a><br><br>
-							<a href="<?php echo base_url(); ?>my_request"><button class="btn btn-warning" type="submit">Lihat Daftar Perkenalan</button></a><br><br>
-						<?php else : ?>
-							<a href="<?php echo base_url(); ?>request/<?php echo $result->id_user; ?>"><button class="btn btn-warning" type="submit">Request Perkenalan</button></a><br><br>
-						<?php endif ?>
-					<?php endif ?>
-					<!-- admin ngeliat -->
-					<?php if ($this->session->userdata['logged_in']['role'] == "admin"): ?>
-						<!-- cek apakah yang dilihat peserta atau kating -->
-						<?php if ($result->role == "2017"): ?>
-							<!-- ADMIN MELIHAT MABA -->
-							<a href="<?php echo base_url().'perkenalan_angkatan/'.$result->id_user; ?>"><button class="btn btn-warning" type="submit">Lihat Perkenalan Angkatan</button></a><br><br>
-						<?php endif ?>
+	<div class="profile-box cf">
+		<div class="profile-photo">
+			<?php if ($result->link_foto == NULL): ?>
+				<img src="https://upload.wikimedia.org/wikipedia/en/b/b1/Portrait_placeholder.png" alt="" class="img-responsive img-thumbnail"><br>
+			<?php else: ?>
+				<img src="<?php echo $result->link_foto;?>" alt="" class="img-responsive img-thumbnail"><br>
+			<?php endif ?>
+			<!-- Kalau udah login -->
+			<?php if (isset($this->session->userdata['logged_in'])): ?>
+				<!-- Login = peserta & dilihat != Peserta -->
+				<?php if ($this->session->userdata['logged_in']['role'] != "admin"): ?>
+					
+					<!-- npm di session = npm yang dilihat -->
+					<?php if ($this->session->userdata['logged_in']['npm'] == $result->npm): ?>
+						<!-- PROFIL PRIBADI MABA -->
+						<button class="btn btn-primary" id="chg_photo">Change Photo</button><br><br>
+						<a href="<?php echo base_url(); ?>edit_profile"><button class="btn btn-success" type="submit">Edit Profil</button></a><br><br>
+						<a href="<?php echo base_url(); ?>my_request"><button class="btn btn-warning" type="submit">Lihat Daftar Perkenalan</button></a><br><br>
+					<?php else : ?>
+						<a href="<?php echo base_url(); ?>request/<?php echo $result->id_user; ?>"><button class="btn btn-warning" type="submit">Request Perkenalan</button></a><br><br>
 					<?php endif ?>
 				<?php endif ?>
-			</center>
+				<!-- admin ngeliat -->
+				<?php if ($this->session->userdata['logged_in']['role'] == "admin"): ?>
+					<!-- cek apakah yang dilihat peserta atau kating -->
+					<?php if ($result->role == "2017"): ?>
+						<!-- ADMIN MELIHAT MABA -->
+						<a href="<?php echo base_url().'perkenalan_angkatan/'.$result->id_user; ?>"><button class="btn btn-warning" type="submit">Lihat Perkenalan Angkatan</button></a><br><br>
+					<?php endif ?>
+				<?php endif ?>
+			<?php endif ?>
+			<!-- INI APA AING GANGERTI -->
 			<div class="modal fade" id="modalFoto" role="dialog">
 				<div class="modal-dialog modal-lg">
 					<div class="modal-content">
@@ -88,7 +85,7 @@
 				</div>
 			</div>
 		</div>
-		<div class="col-sm-9">
+		<div class="identity-box">
 			<table class="table table-borderless">
 				<tr>
 					<td><b>Nama</b></td>

@@ -23,9 +23,9 @@
 		<?php echo validation_errors(); ?>
 	</div>
 <?php endif ?>
-
-<h1>REQUEST PERKENALAN ANGKATAN</h1>
-<hr>
+<div class="header-title">
+	<h1>REQUEST PERKENALAN ANGKATAN</h1>
+</div>
 <div class="col-md-3">
 	<center>
 		<img src="https://static.superdeluxe.com/dankland/generators/y-tho.jpg" alt="" class="img-thumbnail" id="poto"><br><br>

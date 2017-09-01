@@ -1,7 +1,7 @@
 	<div class="header-title">
-		<h1 id="nama-angkatan">DELPHI 2017</h1>
+		<h1 id="nama-header">DELPHI 2017</h1>
 	</div>
-	<div class="all-person-box">
+	<div class="all-person-box cf">
 		<center>
 		<?php foreach ($result as $key): ?>
 			<a class="person-box" href="<?php echo base_url().'profile/'.$key->id_user; ?>">

@@ -237,7 +237,7 @@ class Perkenalan extends CI_Controller
 		}else {
 			$cek = $this->Perkenalan_model->check_perkenalan($id_user_maba, $id_user, 'perkenalan_kating');
 			if ($cek == TRUE) {
-				$this->session->set_flashdata('error_message', 'Request telah diapprove');
+				$this->session->set_flashdata('error_message', 'Request approved!');
 				redirect(base_url());
 			}else {
 				$this->load->view('header');
