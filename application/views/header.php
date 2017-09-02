@@ -41,10 +41,10 @@
 		<div class="main-menu"> <!-- MAIN MENU -->
 	        <div class="main-menu-container">
 	            <div class="main-menu-header">
-	                <center><img class="main-menu-img" src="http://localhost/PerkenalanCBS/img/logo-delphi.png"></center>
+	                <center><img class="main-menu-img" src="<?php echo base_url(); ?>/img/logo-delphi.png"></center>
 		            <?php if (isset($this->session->userdata['logged_in'])): ?>
 						<?php if ($this->session->userdata['logged_in']['role'] != "admin"): ?>
-			                <div class="main-menu-title">Character Building Season 2017</div>
+			                <div class="main-menu-title"><?php echo $this->session->userdata('logged_in')['npm']; ?></div>
 		                <?php else: ?>
 		                	<div class="main-menu-title">Web Admin CBS 2017</div>
 		                <?php endif ?>
@@ -165,7 +165,7 @@
 				<?php if (isset($this->session->userdata['logged_in'])): ?>
 					<?php if ($this->session->userdata['logged_in']['role'] != "admin"): ?>
 						<li>
-							<a href="<?php echo base_url().'profile/'.$this->session->userdata['logged_in']['id_user']; ?>">My Profile</a>
+							<a href="<?php echo base_url().'profile/'.$this->session->userdata['logged_in']['id_user']; ?>"><?php echo $this->session->userdata('logged_in')['npm']; ?></a>
 						</li>
 					<?php endif ?>
 				<?php endif ?>
@@ -180,7 +180,7 @@
 		</div>
 
 		<div class="search-area" id="search">
-			<form action="<?php echo base_url(); ?>UserController/search" class="form-inline" id="searchForm" method="GET">
+			<form action="#" class="form-inline" id="searchForm" method="GET">
 				<div class="input-group">
 					<input type="text" class="form-control" id="keySearch" placeholder="Keywords..." name="keySearch" onkeyup="hint(this.value)">
 					<div class="input-group-btn">

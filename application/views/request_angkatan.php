@@ -25,7 +25,7 @@
 </div>
 <div class="wrapper-for-all cf">
 	<div class="person-box" id="req-teman">
-		<img src="https://static.superdeluxe.com/dankland/generators/y-tho.jpg" alt="" class="img-thumbnail" id="poto">
+		<img src="<?php echo base_url(); ?>Photos/placeholder.png" alt="" class="img-thumbnail" id="poto">
 		<button type="button" class="btn btn-info" data-toggle="modal" data-target="#modalFoto">Change Photo</button>
 	</div>
 	<div class="form-box"> <!-- Form isi biodata -->
@@ -73,7 +73,7 @@
 					<div class="container">
 						<?php foreach ($pp as $data) : ?>
 						<div class="col-sm-4">
-							<img src="<?php echo $data->link_foto; ?>" alt="No Photo!" class="img img-responsive" onclick="change_photo(this.src);">
+							<img src="<?php echo $data->link_foto; ?>" alt="No Photo!" class="img-responsive img-thumbnail" onclick="change_photo(this.src);">
 						</div>
 						<?php endforeach; ?>
 					</div>

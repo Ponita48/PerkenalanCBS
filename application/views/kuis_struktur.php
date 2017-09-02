@@ -31,11 +31,11 @@
 				<div class="modal-content">
 					<div class="modal-header">
 						<button type="button" class="close" data-dismiss="modal" aria-hidden="true" style="color: white;">&times;</button> 
-						<h4 class="modal-title" style="color: black;">Confirmation</h4>
+						<h4 class="modal-title">Confirmation</h4>
 					</div>
 					<div class="modal-body">
-							<p style="color: black;">Data Kuis sebelumnya akan diganti oleh yang anda isi</p>
-							<p style="color: black;">Apakah anda yakin akan melanjutkan?</p>
+							<p>Data Kuis sebelumnya akan diganti oleh yang anda isi</p>
+							<p>Apakah anda yakin akan melanjutkan?</p>
 					</div>
 					<div class="modal-footer">
 						<input class="btn btn-success" type="submit" name="Kirim">
@@ -868,9 +868,9 @@
 </form>
 
 <script src="<?php echo base_url(); ?>assets/js/dragpack.js" defer></script>
-<!-- <script src="<?php echo base_url(); ?>assets/js/bootstrap.min.js"></script> -->
-<!-- <script src="<?php echo base_url(); ?>assets/js/jquery.min.js" type="text/javascript"></script> -->
-<!-- <script src="<?php echo base_url(); ?>assets/js/jquery-ui.js" type="text/javascript"></script> -->
+<script src="<?php echo base_url(); ?>assets/js/bootstrap.min.js"></script>
+<script src="<?php echo base_url(); ?>assets/js/jquery.min.js" type="text/javascript"></script>
+<script src="<?php echo base_url(); ?>assets/js/jquery-ui.js" type="text/javascript"></script>
 
 <script>
 	$(document).ready(function() {

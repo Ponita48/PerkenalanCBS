@@ -9,7 +9,7 @@
 					<?php if (is_null($key->link_foto)): ?>
 						<!-- TODO: ganti jadi placeholder -->
 						<div class="photo-box">
-							<img src="https://upload.wikimedia.org/wikipedia/en/b/b1/Portrait_placeholder.png" alt="" class="img-responsive img-thumbnail">
+							<img src="<?php echo base_url(); ?>Photos/placeholder.png" alt="" class="img-responsive img-thumbnail">
 						</div>
 					<?php else: ?>
 						<div class="photo-box">
