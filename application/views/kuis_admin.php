@@ -1,27 +1,29 @@
-	<div class="header-title">
-		<h1>ADMIN | TUGAS KUIS</h1>
-	</div>
+<div class="header-title">
+	<h1 id="nama-header">QUIZ SUBMISSION</h1>
+</div>
 
-	<div class="table-responsive">
-	<table class="table table-striped">
-		<thead>
-			<tr>
-				<th>NPM</th>
-				<th>Nama</th>
-				<th>Lihat Kuis</th>
-			</tr>
-		</thead>
-		<tbody>
+<div class="wrapper-for-all">
+	<div class="single-mid-box">
+		<table class="table">
+			<thead>
+				<tr>
+					<th>NPM</th>
+					<th>Nama</th>
+					<th>Submission</th>
+				</tr>
+			</thead>
+			<tbody>
 
-		<?php if ($result != NULL) : ?>
+			<?php if ($result != NULL) : ?>
 				<?php foreach ($result as $list): ?>
 					<tr>
 						<td><?php echo $list->npm; ?></td>
 						<td><?php echo $list->nama; ?></td>	
-						<td><a href="<?php echo base_url(); ?>kuis/jawaban/<?php echo $list->id_user; ?>" class="btn btn-success">Click Me :3</a></td>
+						<td><a href="<?php echo base_url(); ?>kuis/jawaban/<?php echo $list->id_user; ?>" class="btn btn-primary">Open Quiz</a></td>
 					</tr>
 				<?php endforeach ?>
-		<?php endif; ?>
-		</tbody>
-	</table>
+			<?php endif; ?>
+			</tbody>
+		</table>
 	</div>
+</div>

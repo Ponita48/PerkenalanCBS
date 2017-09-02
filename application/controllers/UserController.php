@@ -105,7 +105,10 @@ class UserController extends CI_Controller
 						//login success
 						//back to home
 						$this->session->set_flashdata('message_display', 'Log In success!');
-						redirect(base_url());
+						if ($role == 'admin')
+							redirect(base_url('perkenalan_keluarga'));
+						else
+							redirect(base_url());
 					}
 				}	
 			}
@@ -377,6 +380,7 @@ class UserController extends CI_Controller
 			}else {
 				$data['message_display'] = $message;
 			}
+			// var_dump($data);
 			$this->load->view('header');
 			$this->load->view('profil', $data);
 			$this->load->view('footer');

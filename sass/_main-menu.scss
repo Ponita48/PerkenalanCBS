@@ -135,7 +135,7 @@
 		@extend .icon-home;
 	}
 	.icon-admin{
-		background-image: url('../../img/icons/admin_white_24px.svg');
+		background-image: url('../../img/icons/trending_up_white_24px.svg');
 		@extend .icon-home;
 	}
 	.icon-perkenalan{
@@ -143,11 +143,15 @@
 		@extend .icon-home;
 	}
 	.icon-tugas{
-		background-image: url('../../img/icons/assignment_white_24px.svg');
+		background-image: url('../../img/icons/inbox_white_24px.svg');
 		@extend .icon-home;
 	}
 	.icon-account{
 		background-image: url('../../img/icons/account_circle_white_24px.svg');
+		@extend .icon-home;
+	}
+	.icon-submit{
+		background-image: url('../../img/icons/send_white_24px.svg');
 		@extend .icon-home;
 	}
 

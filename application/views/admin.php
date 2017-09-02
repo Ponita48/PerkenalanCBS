@@ -34,14 +34,14 @@
 			<li role="presentation"><a href="#2" aria-controls="2" role="tab" data-toggle="tab">2015 <span class="badge"><?php echo $jmlAngkatan[3]; ?></span></a></li>
 			<li role="presentation"><a href="#3" aria-controls="3" role="tab" data-toggle="tab">2014 <span class="badge"><?php echo $jmlAngkatan[2]; ?></span></a></li>
 			<li role="presentation"><a href="#4" aria-controls="4" role="tab" data-toggle="tab">2013 <span class="badge"><?php echo $jmlAngkatan[1]; ?></span></a></li>
-			<li role="presentation"><a href="#4" aria-controls="4" role="tab" data-toggle="tab">2012 <span class="badge"><?php echo $jmlAngkatan[0]; ?></span></a></li>
+			<li role="presentation"><a href="#5" aria-controls="5" role="tab" data-toggle="tab">2012 <span class="badge"><?php echo $jmlAngkatan[0]; ?></span></a></li>
 		</ul><br>
 
 		<!-- Tab panes -->
 		<div class="tab-content">
 			<div role="tabpanel" class="tab-pane container-fluid active" id="1">
 				<center>
-					<div class="col-sm-12">
+					<div class="wrapper-for-all cf">
 					<div class="col-md-12 col-sm-12 col-lg-12" id="search" style="background-color: #FFD51E; padding: 10px; margin-top: 0; margin-bottom: 10px; display: none;">
 					<center>
 						<div class="input-group">
@@ -58,7 +58,7 @@
 								<th>NPM Keluarga</th>
 								<th>Nama Peserta</th>
 								<th>NPM Peserta</th>
-								<th>Halaman Detail</th>
+								<th>Details</th>
 							</tr>
 						<?php if (isset($result)) : ?>
 							<?php foreach ($result as $key) : ?>
@@ -81,14 +81,14 @@
 			</div>
 			<div role="tabpanel" class="tab-pane container-fluid" id="2">
 				<center>
-					<div class="col-sm-12">
+					<div class="wrapper-for-all cf">
 						<table class="table">
 							<tr>
 								<th>Nama Keluarga</th>
 								<th>NPM Keluarga</th>
 								<th>Nama Peserta</th>
 								<th>NPM Peserta</th>
-								<th>Halaman Detail</th>
+								<th>Details</th>
 							</tr>
 						<?php if (isset($result)) : ?>
 							<?php foreach ($result as $key) : ?>
@@ -111,14 +111,14 @@
 			</div>
 			<div role="tabpanel" class="tab-pane container-fluid" id="3">
 				<center>
-					<div class="col-sm-12">
+					<div class="wrapper-for-all cf">
 						<table class="table">
 							<tr>
 								<th>Nama Keluarga</th>
 								<th>NPM Keluarga</th>
 								<th>Nama Peserta</th>
 								<th>NPM Peserta</th>
-								<th>Halaman Detail</th>
+								<th>Details</th>
 							</tr>
 						<?php if (isset($result)) : ?>
 							<?php foreach ($result as $key) : ?>
@@ -141,14 +141,14 @@
 			</div>
 			<div role="tabpanel" class="tab-pane container-fluid" id="4">
 				<center>
-					<div class="col-sm-12">
+					<div class="wrapper-for-all cf">
 						<table class="table">
 							<tr>
 								<th>Nama Keluarga</th>
 								<th>NPM Keluarga</th>
 								<th>Nama Peserta</th>
 								<th>NPM Peserta</th>
-								<th>Halaman Detail</th>
+								<th>Details</th>
 							</tr>
 						<?php if (isset($result)) : ?>
 							<?php foreach ($result as $key) : ?>
@@ -169,16 +169,16 @@
 					</div>
 				</center>
 			</div>
-			<div role="tabpanel" class="tab-pane container-fluid" id="0">
+			<div role="tabpanel" class="tab-pane container-fluid" id="5">
 				<center>
-					<div class="col-sm-12">
+					<div class="wrapper-for-all cf">
 						<table class="table">
 							<tr>
 								<th>Nama Keluarga</th>
 								<th>NPM Keluarga</th>
 								<th>Nama Peserta</th>
 								<th>NPM Peserta</th>
-								<th>Halaman Detail</th>
+								<th>Details</th>
 							</tr>
 						<?php if (isset($result)) : ?>
 							<?php foreach ($result as $key) : ?>

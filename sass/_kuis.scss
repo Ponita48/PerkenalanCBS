@@ -1,0 +1,45 @@
+  #navigation-panel {
+  	display: none;
+  	width: 100%;
+  }
+
+  #photobar {
+  	overflow: auto; 
+  	height: 100vh;
+  	background-color: gray;
+  }
+
+  #field_bagan {
+  	overflow: auto;
+  	height: 100vh;
+  	background-color: #393636;
+  }
+
+  #header-content {
+  	background-color: #FFD51E;
+  	color: #393636;
+  }
+
+  .receiver {
+  	width: 90px;
+  	height: 120px;
+	background-color: white;
+  }
+
+  body {
+  	background-color: #FFD51E;
+  	color: #393636;
+  }
+
+  ul li a {
+  	color: #393636;
+  }
+
+  caption {
+  	color: #FFD51E;
+  }
+
+  .active a {
+  	background-color: goldenrod !important;
+  	color: white !important;
+  }

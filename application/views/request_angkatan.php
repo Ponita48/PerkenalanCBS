@@ -1,5 +1,4 @@
 	<?php if ($this->session->flashdata('error_message')): ?>
-		<br>
 		<div class="alert alert-danger alert-dismissable">
 			<span class="close" data-dismiss="alert">x</span>
 			<?php echo $this->session->flashdata('error_message'); ?>
@@ -8,26 +7,24 @@
 
 
 	<?php if ($this->session->flashdata('message_display')): ?>
-		<br>
 		<div class="alert alert-success alert-dismissable">
 			<span class="close" data-dismiss="alert">x</span>
 			<?php echo $this->session->flashdata('message_display'); ?>
 		</div>
 	<?php endif ?>
 
+	<?php if (validation_errors() != NULL): ?>
+		<div class="alert alert-danger alert-dismissable">
+			<span class="close" data-dismiss="alert">x</span>
+			<?php echo validation_errors(); ?>
+		</div>
+	<?php endif ?>
 
-<?php if (validation_errors() != NULL): ?>
-	<br>
-	<div class="alert alert-danger alert-dismissable">
-		<span class="close" data-dismiss="alert">x</span>
-		<?php echo validation_errors(); ?>
-	</div>
-<?php endif ?>
 <div class="header-title">
-	<h1 id="nama-header">SEND REQUEST ANGKATAN</h1>
+	<h1 id="nama-header">REQUEST TO DELPHI 2017</h1>
 </div>
 <div class="wrapper-for-all cf">
-	<div class="person-box">
+	<div class="person-box" id="req-teman">
 		<img src="https://static.superdeluxe.com/dankland/generators/y-tho.jpg" alt="" class="img-thumbnail" id="poto">
 		<button type="button" class="btn btn-info" data-toggle="modal" data-target="#modalFoto">Change Photo</button>
 	</div>
@@ -85,7 +82,6 @@
 			</div>
 		</div>
 	</div>
-	
 </div>
 <script>
 	function change_photo(el) {

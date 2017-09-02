@@ -1,5 +1,6 @@
-	<h1>SEARCH RESULT</h1>
-	<hr>
+	<div class="header-title">
+		<h1 id="nama-header">SEARCH RESULT</h1>
+	</div>
 	<div class="col-md-12 col-sm-12 col-lg-12" id="search" style="padding: 10px; margin-top: 0; margin-bottom: 10px;">
 	<center>
 		<form action="<?php echo base_url(); ?>search" class="form-inline" id="searchForm" method="GET">

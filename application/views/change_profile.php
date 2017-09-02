@@ -1,49 +1,44 @@
-	<h1>CHANGE PROFILE</h1>
-	<hr>
-
-		<?php if ($this->session->flashdata('error_message')): ?>
-			<br>
-			<div class="alert alert-danger alert-dismissable">
-				<span class="close" data-dismiss="alert">x</span>
-				<?php echo $this->session->flashdata('error_message'); ?>
-			</div>
-		<?php endif ?>
+	<?php if ($this->session->flashdata('error_message')): ?>
+		<div class="alert alert-danger alert-dismissable">
+			<span class="close" data-dismiss="alert">x</span>
+			<?php echo $this->session->flashdata('error_message'); ?>
+		</div>
+	<?php endif ?>
 
 
-		<?php if ($this->session->flashdata('message_display')): ?>
-			<br>
-			<div class="alert alert-success alert-dismissable">
-				<span class="close" data-dismiss="alert">x</span>
-				<?php echo $this->session->flashdata('message_display'); ?>
-			</div>
-		<?php endif ?>
+	<?php if ($this->session->flashdata('message_display')): ?>
+		<div class="alert alert-success alert-dismissable">
+			<span class="close" data-dismiss="alert">x</span>
+			<?php echo $this->session->flashdata('message_display'); ?>
+		</div>
+	<?php endif ?>
 
-		<?php if (isset($message_display)): ?>	
-			<div class="alert alert-success alert-dismissable">
-				<a href="#" class="close" data-dismiss="alert" aria-label="close">x</a>
-				<?php echo $message_display; ?>
-			</div>
-		<?php endif ?>
+	<?php if (isset($message_display)): ?>	
+		<div class="alert alert-success alert-dismissable">
+			<a href="#" class="close" data-dismiss="alert" aria-label="close">x</a>
+			<?php echo $message_display; ?>
+		</div>
+	<?php endif ?>
 
-		<?php if (isset($error_message)): ?>
-			<br>
-			<div class="alert alert-danger alert-dismissable">
-				<a href="#" class="close" data-dismiss="alert" aria-label="close">x</a>
-				<?php echo $error_message; ?>
-			</div>
-		<?php endif ?>
+	<?php if (isset($error_message)): ?>
+		<div class="alert alert-danger alert-dismissable">
+			<a href="#" class="close" data-dismiss="alert" aria-label="close">x</a>
+			<?php echo $error_message; ?>
+		</div>
+	<?php endif ?>
 
-		<?php if (validation_errors() != NULL): ?>
-			<br>
-			<div class="alert alert-danger alert-dismissable">
-				<a href="#" class="close" data-dismiss="alert" aria-label="close">x</a>
-				<?php echo validation_errors(); ?>
-			</div>
-		<?php endif ?>
+	<?php if (validation_errors() != NULL): ?>
+		<div class="alert alert-danger alert-dismissable">
+			<a href="#" class="close" data-dismiss="alert" aria-label="close">x</a>
+			<?php echo validation_errors(); ?>
+		</div>
+	<?php endif ?>
 
-	<div class="container">
-		<div class="col-sm-4"></div>
-		<div class="col-sm-4">
+	<div class="header-title">
+		<h1 id="nama-header">EDIT PROFILE</h1>
+	</div>
+	<div class="wrapper-for-all">
+		<div class="single-mid-box cf">
 			<div class="well well-lg">
 				<form class="form-horizontal" action="<?php echo base_url(); ?>edit_profile" method="POST">
 					<div class="form-group">
@@ -61,17 +56,17 @@
 								case 'Laki-laki': ?>
 									<option value="Laki-laki" selected>Laki-laki</option>
 									<option value="Perempuan">Perempuan</option>
-									<option value="Lainnya">Lainnya</option>		
+									<option value="Lainnya"></option>		
 									<?php break; ?>
 								<?php case 'Perempuan': ?>
 									<option value="Laki-laki">Laki-laki</option>
 									<option value="Perempuan" selected>Perempuan</option>
-									<option value="Lainnya">Lainnya</option>	
+									<option value="Lainnya"></option>	
 									<?php break; ?>
 								<?php default: ?>
 									<option value="Laki-laki">Laki-laki</option>
 									<option value="Perempuan">Perempuan</option>
-									<option value="Lainnya" selected>Lainnya</option>
+									<option value="Lainnya" selected></option>
 									<?php break; ?>
 							<?php } ?>
 						</select>
@@ -112,14 +107,3 @@
 		</div>
 		<div class="col-sm-4"></div>
 	</div>
-
-	<style type="text/css">
-		body {
-			background-color: #393639;
-			color: #FFD51E;
-		}
-
-		.well {
-			background-color: gray;
-		}
-	</style>

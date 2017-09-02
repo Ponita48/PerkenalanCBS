@@ -1,20 +1,19 @@
+<div class="header-title">
+	<h1 id="nama-header">TASK VERIFICATION</h1>
+</div>
 
-	<div>
-		<h1>TERIMA PERKENALAN?</h1>
-		<hr>
+<div class="wrapper-for-all cf">
+	<div class="col-sm-4">
+		<center>
+			<img src="<?php echo $result->link_foto_peserta; ?>" class="myImg img-thumbnail"><br>
+			<p>Profile Photo</p>
+		</center>
 	</div>
-
-	<div class="container">
-		<div class="col-sm-4">
-			<center>
-				<img src="<?php echo $result->link_foto_peserta; ?>" alt="" width="300" class="myImg img-responsive img-thumbnail"><br>
-				<p>Foto Mahasiswa Baru</p>
-			</center>
-		</div>
-		<div class="col-sm-4">
+	<div class="col-sm-4">
+		<div class="profile-box">
 			<table class="table table-borderless">
 				<tr>
-					<td><b>Nama</b></td>
+					<td><b>Nama Keluarga</b></td>
 					<td><?php echo $result->nama; ?></td>
 				</tr>
 				<tr>
@@ -27,21 +26,23 @@
 				</tr>
 			</table>
 		</div>
-		<div class="col-sm-4">
-			<center>
-				<img src="<?php echo $result->link_foto; ?>" alt="" width="300" class="myImg img-responsive img-thumbnail"><br>
-				<p>Foto Selfie</p>
-			</center>
-		</div>
-		<div class="col-sm-4"></div>
-		<div class="col-sm-4">
-				<a href="<?php echo base_url().'profile/'.$result->id_user_maba; ?>" 
-					class="btn btn-warning btn-block" type="submit">Lihat Profil</a>
-				<br><br>	
-				<a href="<?php echo base_url().'approve_perkenalan/'.$result->id_perkenalan_kating; ?>" 
-					class="btn btn-success btn-block" type="submit">Terima Perkenalan</a>
-				<br><br>
-				<a href="<?php echo base_url().'reject_perkenalan/'.$result->id_perkenalan_kating; ?>" 
-					class="btn btn-danger btn-block" type="submit">Tolak Perkenalan</a><br><br>
+		<div class="verification-action-box">
+			<a href="<?php echo base_url().'reject_perkenalan/'.$result->id_perkenalan_kating; ?>" class="btn btn-danger btn-block" type="submit">
+				<span>Decline</span>
+			</a>
+			<a href="<?php echo base_url().'profile/'.$result->id_user_maba; ?>" class="btn btn-warning" type="submit">
+				<span>See Profile</span>
+			</a>
+			<a href="<?php echo base_url().'approve_perkenalan/'.$result->id_perkenalan_kating; ?>" class="btn btn-success btn-block" type="submit">
+				<span>Accept</span>
+			</a>
 		</div>
 	</div>
+	<div class="col-sm-4">
+		<center>
+			<img src="<?php echo $result->link_foto; ?>" class="myImg img-thumbnail"><br>
+			<p>Required Photo (selfie)</p>
+		</center>
+	</div>
+	<!-- <div class="col-sm-4"></div> -->
+</div>

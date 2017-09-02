@@ -47,7 +47,7 @@ class A extends CI_Controller {
 			$this->load->view('header');
 			$this->load->view('admin',$data);
 			$this->load->view('footer');*/
-			$this->session->set_flashdata('error_message', 'No task submissions!');
+			$this->session->set_flashdata('error_message', 'No pending task submissions!');
 			redirect(base_url());
 		}else {
 			//goto list perkenalan
@@ -187,7 +187,7 @@ class A extends CI_Controller {
 			$this->load->view('footer');
 		}else {
 			//goto jumlah perkenalan
-			redirect('../jumlah_perkenalan');
+			redirect('../perkenalan_keluarga');
 		}
 	}
 
