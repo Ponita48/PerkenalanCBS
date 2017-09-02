@@ -3,7 +3,7 @@
 	<head>
 		<meta charset="UTF-8">
 		<title>Character Building Season 2017</title>
-		<link rel="icon" href="../img/logo-delphi.png"> <!-- icon warna putihnya ga keliatan -->
+		<link rel="icon" href="http://localhost/PerkenalanCBS/img/logo-delphi.png"> <!-- icon warna putihnya ga keliatan -->
 
 		<link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/bootstrap.css">
 		<link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/main.css">
