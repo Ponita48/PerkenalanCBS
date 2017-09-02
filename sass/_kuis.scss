@@ -1,45 +1,122 @@
-  #navigation-panel {
-  	display: none;
-  	width: 100%;
+#navigation-panel {
+  display: none;
+  width: 100%;
+}
+
+#photobar {
+  position: relative;
+  float: right;
+  width: calc(20% - 20px);
+  overflow: auto; 
+  height: 100vh;
+  margin: 10px 0 0 10px;
+  border-radius: 4px;      
+  background-color: gray;
+}
+
+#field_bagan {
+  overflow: auto;
+  height: 100%;
+  width: 80%;
+  background-color: $abu-header;
+  // border: solid 1px $abu;
+  border-radius: 4px;
+  margin-top: 10px;
+}
+
+#field-bagan {
+  overflow: auto;
+  height: 100%;
+  width: 100%;
+  background-color: $abu-header;
+  // border: solid 1px $abu;
+  border-radius: 4px;
+  margin-top: 10px;
+}
+
+#header-content {
+  // background-color: #FFD51E;
+  position: relative;
+  color: $himatif;
+  margin: 10px 15px;
+
+  .btn-success{
+    position: relative;
+    float: right;
+    top: 10px;
+    height: 50px;
+    width: 20%;
+    line-height: 30px;
+    font-weight: bold;
+    margin-bottom: 10px;
   }
 
-  #photobar {
-  	overflow: auto; 
-  	height: 100vh;
-  	background-color: gray;
+  .btn-primary{
+    // height: 30px;
+    // line-height: 15px;
+    @extend .btn-success;
   }
 
-  #field_bagan {
-  	overflow: auto;
-  	height: 100vh;
-  	background-color: #393636;
-  }
+}
 
-  #header-content {
-  	background-color: #FFD51E;
-  	color: #393636;
-  }
+#navigation-panel {
+  display: none;
+  position: relative;
 
-  .receiver {
-  	width: 90px;
-  	height: 120px;
-	background-color: white;
+  .navbar-nav{
+    padding: 10px;
+    width: 100%;
+    // border-top-right-radius: 4px;
+    // border-top-right-radius: 4px;
+    border-radius: 4px;
+    background-color: $header;
   }
+}
 
-  body {
-  	background-color: #FFD51E;
-  	color: #393636;
-  }
+#kuis{
+  position: relative;
+  float: left;
+  // color: $abuhimatif;
+  font-weight: bold;
+  width: 75%;
+}
 
-  ul li a {
-  	color: #393636;
-  }
+#toggleNav{
+  position: absolute;
+  top: 10px;  
+}
+.receiver {
+  width: 90px;
+  height: 120px;
+  background-color: white;
+}
 
-  caption {
-  	color: #FFD51E;
-  }
+body{
+  background-color: #FFD51E;
+  color: #393636;
+}
 
+ul li a {
+  color: #393636;
+}
+
+caption {
+  color: $himatif;
+}
+
+.quiz-box{
+  position: relative;
+  width: 100%;
+}
+
+.nav-pills{
   .active a {
   	background-color: goldenrod !important;
   	color: white !important;
   }
+}
+
+.modal-content{
+  color: $putih;
+  width: 300px;
+}

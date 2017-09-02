@@ -1,74 +1,17 @@
-<!-- Beginning of Header -->
-<link rel=stylesheet href="<?php echo base_url(); ?>assets/css/bootstrap.css">
-<link rel=stylesheet href="<?php echo base_url(); ?>assets/css/tree-diagram.css">
-<style type="text/css" media="screen">
-  #navigation-panel {
-  	display: none;
-    position: relative;
-  }
-
-  #field_bagan {
-  	overflow: auto;
-  	height: 100vh;
-  	width: 100%;
-  	background-color: #393636;
-  }
-
-  #header-content {
-  	background-color: #FFD51E;
-  	color: #393636;
-  }
-
-  #toggleNav {
-  	position: relative;
-  	z-index: 1;
-  }
-
-  body {
-  	background-color: #FFD51E;
-  	color: #393636;
-  }
-
-  ul li a {
-  	color: #393636;
-  }
-
-  caption {
-  	color: #FFD51E;
-  }
-
-  .active a {
-  	background-color: goldenrod !important;
-  	color: white !important;
-  } 
-
-</style>
-<!-- End of Header -->
-
 <!-- Page Header -->
 <!-- TODO: tulisan isi kuis dkk ditengahin biar gak berantem -->
 <!-- TODO: bikin responsive -->
 <div id="header-content" class="row">
-	<div class="col-sm-12 col-md-2 col-lg-2">
-		<center>
-			<br>
-			<button type="button" class="btn" id="toggleNav" style="margin: 10px 10px 0px 10px; color: #FFD51E; background-color: #393636;">Toggle Navigasi</button>
-		</center>
+	<div class="header-title" id="kuis">
+		<h1>YOUR LATEST SUBMISSION (<?php echo $npm; ?>)</h1>
 	</div>
-	<div class="col-sm-12 col-md-10 col-md-pull-1 col-lg-10 col-lg-pull-1">
-		<center>
-			<h3>HASIL KUIS BK/PANITIA (<?php echo $npm; ?>)</h3>
-			<a href="<?php echo base_url(); ?>kuis/isi" class="btn btn-primary" target="_blank">Isi Kuis</a>
-		</center>
-		<br>
-	</div>
+	<a href="<?php echo base_url(); ?>kuis/isi" class="btn btn-success" target="_blank">Take your Quiz!</a>
 </div>
-<!-- End of Page Header -->
-<!-- Navigation Pane: Fixed, Collapsible -->
+
 <div id="navigation-panel" class="col-sm-12 col-md-12 col-lg-12">
 	<nav class="navbar-nav" style="background-color: white; padding: 10px; width: 100%;">
 		<ul class="nav nav-pills">
-			<li class="active" style="margin-right: 10px"><a href="#menu1" data-toggle="pill">Panitia CBS Himatif FMIPA Unpad 2017</a></li>
+			<li class="active" style="margin-right: 10px"><a href="#menu1" data-toggle="pill">CBS Himatif FMIPA Unpad 2017</a></li>
 			<li style="margin-right: 10px"><a href="#menu2" data-toggle="pill">BE Himatif FMIPA Unpad Kabinet Impresif</a></li>
 			<li style="margin-right: 10px"><a href="#menu3" data-toggle="pill">DPA Himatif FMIPA Unpad Parlemen Insight</a></li>
 			<li style="margin-right: 10px"><a href="#menu4" data-toggle="pill">Mubes Himatif FMIPA Unpad 2017</a></li>
@@ -81,7 +24,7 @@
 <div id="konten" class="col-sm-12 col-md-12 col-lg-12">
 	<div class="tab-content">
   		<div id="menu1" class="tab-pane fade in active">
-    		<div id="field_bagan">
+    		<div id="field-bagan">
         		<div class="tree">
           			<ul>
             			<li>
@@ -294,7 +237,7 @@
 			</div>
 		</div>
 		<div id="menu2" class="tab-pane fade">
-			<div id="field_bagan">
+			<div id="field-bagan">
 				<div class="tree">
 					<ul>
 						<li>
@@ -477,7 +420,7 @@
 			</div>
 		</div>
 		<div id="menu3" class="tab-pane fade">
-			<div id="field_bagan">
+			<div id="field-bagan">
 				<div class="tree">
 					<ul>
 						<li style="margin: 10px">
@@ -558,7 +501,7 @@
 			</div>
 		</div>
 		<div id="menu4" class="tab-pane fade">
-			<div id="field_bagan">
+			<div id="field-bagan">
 				<div class="tree">
 					<ul>
 						<li>

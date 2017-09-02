@@ -12,6 +12,7 @@
 		<link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/tree-diagram.css">
 		<link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/material-icons.css">
 
+		<script src="<?php echo base_url(); ?>assets/js/dragpack.js" defer></script>
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 		<script src="<?php echo base_url(); ?>assets/js/main.js" type="text/javascript"></script>
 		<script src="<?php echo base_url(); ?>assets/js/jquery.min.js" type="text/javascript"></script>

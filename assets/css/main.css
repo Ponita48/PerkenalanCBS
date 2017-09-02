@@ -198,51 +198,120 @@
 
   /* line 6, ../../sass/_kuis.scss */
   #photobar {
+    position: relative;
+    float: right;
+    width: calc(20% - 20px);
     overflow: auto;
     height: 100vh;
+    margin: 10px 0 0 10px;
+    border-radius: 4px;
     background-color: gray;
   }
 
-  /* line 12, ../../sass/_kuis.scss */
+  /* line 17, ../../sass/_kuis.scss */
   #field_bagan {
     overflow: auto;
-    height: 100vh;
-    background-color: #393636;
+    height: 100%;
+    width: 80%;
+    background-color: #0c0c0c;
+    border-radius: 4px;
+    margin-top: 10px;
   }
 
-  /* line 18, ../../sass/_kuis.scss */
+  /* line 27, ../../sass/_kuis.scss */
+  #field-bagan {
+    overflow: auto;
+    height: 100%;
+    width: 100%;
+    background-color: #0c0c0c;
+    border-radius: 4px;
+    margin-top: 10px;
+  }
+
+  /* line 37, ../../sass/_kuis.scss */
   #header-content {
-    background-color: #FFD51E;
-    color: #393636;
+    position: relative;
+    color: #FFD51E;
+    margin: 10px 15px;
+  }
+  /* line 43, ../../sass/_kuis.scss */
+  #header-content .btn-success, #header-content .btn-primary {
+    position: relative;
+    float: right;
+    top: 10px;
+    height: 50px;
+    width: 20%;
+    line-height: 30px;
+    font-weight: bold;
+    margin-bottom: 10px;
   }
 
-  /* line 23, ../../sass/_kuis.scss */
+  /* line 62, ../../sass/_kuis.scss */
+  #navigation-panel {
+    display: none;
+    position: relative;
+  }
+  /* line 66, ../../sass/_kuis.scss */
+  #navigation-panel .navbar-nav {
+    padding: 10px;
+    width: 100%;
+    border-radius: 4px;
+    background-color: #f8f8f8;
+  }
+
+  /* line 76, ../../sass/_kuis.scss */
+  #kuis {
+    position: relative;
+    float: left;
+    font-weight: bold;
+    width: 75%;
+  }
+
+  /* line 84, ../../sass/_kuis.scss */
+  #toggleNav {
+    position: absolute;
+    top: 10px;
+  }
+
+  /* line 88, ../../sass/_kuis.scss */
   .receiver {
     width: 90px;
     height: 120px;
     background-color: white;
   }
 
-  /* line 29, ../../sass/_kuis.scss */
+  /* line 94, ../../sass/_kuis.scss */
   body {
     background-color: #FFD51E;
     color: #393636;
   }
 
-  /* line 34, ../../sass/_kuis.scss */
+  /* line 99, ../../sass/_kuis.scss */
   ul li a {
     color: #393636;
   }
 
-  /* line 38, ../../sass/_kuis.scss */
+  /* line 103, ../../sass/_kuis.scss */
   caption {
     color: #FFD51E;
   }
 
-  /* line 42, ../../sass/_kuis.scss */
-  .active a {
+  /* line 107, ../../sass/_kuis.scss */
+  .quiz-box {
+    position: relative;
+    width: 100%;
+  }
+
+  /* line 113, ../../sass/_kuis.scss */
+  .nav-pills .active a {
     background-color: goldenrod !important;
     color: white !important;
+  }
+
+  /* line 119, ../../sass/_kuis.scss */
+  .modal-content {
+    color: #FFFFFF;
+    width: 300px;
   }
 
   /* line 28, ../../sass/main.scss */
@@ -542,14 +611,14 @@
     width: calc(50%);
   }
   /* line 322, ../../sass/main.scss */
-  .verification-action-box .btn-success {
+  .verification-action-box .btn-success, .verification-action-box #header-content .btn-primary, #header-content .verification-action-box .btn-primary {
     float: left;
     position: relative;
     height: 50px;
     margin-top: 5px;
   }
   /* line 328, ../../sass/main.scss */
-  .verification-action-box .btn-success span {
+  .verification-action-box .btn-success span, .verification-action-box #header-content .btn-primary span, #header-content .verification-action-box .btn-primary span {
     font-size: 22px;
     line-height: 40px;
   }

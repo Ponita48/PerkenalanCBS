@@ -1,57 +1,39 @@
 <form action="<?php echo base_url(); ?>kuis/submit" method="post" accept-charset="utf-8">
 	<!-- Page Header -->
-	<div id="header-content" class="row">
-		<div class="col-sm-12 col-md-12 col-lg-12">
-			<center>
-				<h3>KUIS BK/PANITIA (<?php echo $npm; ?>)</h3>
-			</center>
-		</div>
-		<div class="col-sm-4 col-md-4 col-lg-4">
-			<center>
-				<button type="button" class="btn" id="toggleNav" style="color: #FFD51E; background-color: #393636;">Toggle Navigasi</button>
-			</center>
-			<br>
-		</div>
-		<div class="col-sm-4 col-md-4 col-lg-4">
-			<center>	
-				<a href="<?php echo base_url(); ?>kuis/jawaban" class="btn btn-primary" target="_blank">Lihat Jawaban Kuis Sebelumnya</a>
-			</center>
-			<br>
-		</div>
-		<div class="col-sm-4 col-md-4 col-lg-4">
-			<center>	
-				<div class="btn btn-success" id="btn_kirim">Kirim</div>
-				
-			</center>
-			<br>
-		</div>
-		<div class="modal fade" id="modalConf" role="dialog">
+	<div class="modal fade" id="modalConf" role="dialog">
 			<div class="modal-dialog modal-lg">
 			<center>
 				<div class="modal-content">
 					<div class="modal-header">
 						<button type="button" class="close" data-dismiss="modal" aria-hidden="true" style="color: white;">&times;</button> 
-						<h4 class="modal-title" style="color: black;">Confirmation</h4>
+						<h4 class="modal-title">Confirmation</h4>
 					</div>
 					<div class="modal-body">
-							<p style="color: black;">Data Kuis sebelumnya akan diganti oleh yang anda isi</p>
-							<p style="color: black;">Apakah anda yakin akan melanjutkan?</p>
+							<p>Your latest submission will be replaced.</p>
+							<p>Are you sure?</p>
 					</div>
 					<div class="modal-footer">
 						<input class="btn btn-success" type="submit" name="Kirim">
-						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+						<!-- <button type="button" class="btn btn-default" data-dismiss="modal">Close</button> -->
 					</diwv>
 				</div>
 			</center>
 			</div>
 		</div>
+	<div id="header-content" class="row">
+		<div class="header-title" id="kuis">
+			<h1 id="nama-header">YOUR LATEST QUIZ SUBMISSION (<?php echo $npm; ?>)</h1>
+		</div>
+		<a href="<?php echo base_url(); ?>kuis/jawaban" class="btn btn-primary" target="_blank">See my latest submission</a>
+		<div class="btn btn-success" id="btn_kirim">Click to Finish!</div>
 	</div>
 	<!-- End of Page Header -->
+
 	<!-- Navigation Pane: Fixed, Collapsible -->
 	<div id="navigation-panel" class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
 		<nav class="navbar-nav" style="background-color: white; padding: 10px; width: 100%;">
 			<ul class="nav nav-pills">
-				<li class="active" style="margin-right: 10px"><a href="#menu1" data-toggle="pill">Panitia CBS Himatif FMIPA Unpad 2017</a></li>
+				<li class="active" style="margin-right: 10px"><a href="#menu1" data-toggle="pill">CBS Himatif FMIPA Unpad 2017</a></li>
 				<li style="margin-right: 10px"><a href="#menu2" data-toggle="pill">BE Himatif FMIPA Unpad Kabinet Impresif</a></li>
 				<li style="margin-right: 10px"><a href="#menu3" data-toggle="pill">DPA Himatif FMIPA Unpad Parlemen Insight</a></li>
 				<li style="margin-right: 10px"><a href="#menu4" data-toggle="pill">Mubes Himatif FMIPA Unpad 2017</a></li>
@@ -59,6 +41,7 @@
 		</nav>
 	</div>
 	<!-- End of Navigation Pane -->
+	
 	<!-- Quiz Layer, dengan tab-content -->
 	<div id="konten" class="col-sm-12 col-md-12 col-lg-12">
 		<div class="tab-content">
@@ -866,11 +849,6 @@
 		</div>
 	</div>	
 </form>
-
-<script src="<?php echo base_url(); ?>assets/js/dragpack.js" defer></script>
-<!-- <script src="<?php echo base_url(); ?>assets/js/bootstrap.min.js"></script> -->
-<!-- <script src="<?php echo base_url(); ?>assets/js/jquery.min.js" type="text/javascript"></script> -->
-<!-- <script src="<?php echo base_url(); ?>assets/js/jquery-ui.js" type="text/javascript"></script> -->
 
 <script>
 	$(document).ready(function() {
