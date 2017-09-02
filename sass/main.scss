@@ -175,8 +175,9 @@ $abuhimatif: #393639;
 	.search-area{
 		float: right;
 		position: relative;
+		right: 10px;
 		top: 50px;
-		width: 33%;
+		width: 20%;
 		height: 40px;
 
 		.form-inline .input-group {
@@ -345,6 +346,10 @@ $abuhimatif: #393639;
 		// height: 50px;
 	}
 
+	#open{ // button buat open attachment admin
+		margin: 0;
+	}
+
 	.small{
 		position: relative;
 		width: 25%;
@@ -425,6 +430,10 @@ $abuhimatif: #393639;
 		width: 100%;
 		padding: 30px;
 		height: 400px;
+	}
+
+	#new-login{
+		height: 500px;
 	}
 	.login-container{
 		position: relative;

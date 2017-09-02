@@ -9,8 +9,8 @@
 						<h4 class="modal-title">Confirmation</h4>
 					</div>
 					<div class="modal-body">
-							<p>Your latest submission will be replaced.</p>
-							<p>Are you sure?</p>
+						<p>Your latest submission will be replaced.</p>
+						<p>Are you sure?</p>
 					</div>
 					<div class="modal-footer">
 						<input class="btn btn-success" type="submit" name="Kirim">
@@ -62,7 +62,7 @@
 		                  					</td>
 		                  				</tr>
 		                  				<tr>
-		                  					<td><input type="text" name="panitia[po_cbs][nama]" id="ketua" placeholder="Nama"></td>
+		                  					<td><input type="text" name="panitia[po_cbs][nama]" id="ketua" placeholder="Nama Lengkap"></td>
 		                  				</tr>
 	                				</tbody>
 	              				</table>
@@ -80,7 +80,7 @@
 		                  							</td>
 												</tr>
 												<tr>
-													<td><input type="text" name="panitia[sekretaris_cbs][nama]" id="sekre" placeholder="Nama"></td>
+													<td><input type="text" name="panitia[sekretaris_cbs][nama]" id="sekre" placeholder="Nama Lengkap"></td>
 												</tr>
 											</tbody>
 	                  					</table>
@@ -97,7 +97,7 @@
 													</td>
 												</tr>
 												<tr>
-													<td><input type="text" name="panitia[bendahara_cbs][nama]" id="bendahara" placeholder="Nama"></td>
+													<td><input type="text" name="panitia[bendahara_cbs][nama]" id="bendahara" placeholder="Nama Lengkap"></td>
 												</tr>
 											</tbody>
 										</table>
@@ -114,7 +114,7 @@
 													</td>
 												</tr>
 												<tr>
-													<td><input type="text" name="panitia[kabid1_cbs][nama]" id="kabid1" placeholder="Nama"></td>
+													<td><input type="text" name="panitia[kabid1_cbs][nama]" id="kabid1" placeholder="Nama Lengkap"></td>
 												</tr>
 											</tbody>
 										</table>
@@ -132,7 +132,7 @@
 															</td>
 														</tr>
 														<tr>
-															<td><input type="text" name="panitia[kadiv_humas_cbs][nama]" id="humas" placeholder="Nama"></td>
+															<td><input type="text" name="panitia[kadiv_humas_cbs][nama]" id="humas" placeholder="Nama Lengkap"></td>
 														</tr>
 													</tbody>
 												</table>
@@ -149,7 +149,7 @@
 															</td>
 														</tr>
 														<tr>
-															<td><input type="text" name="panitia[kadiv_acara_cbs][nama]" id="acara" placeholder="Nama"></td>
+															<td><input type="text" name="panitia[kadiv_acara_cbs][nama]" id="acara" placeholder="Nama Lengkap"></td>
 														</tr>
 													</tbody>
 												</table>
@@ -166,7 +166,7 @@
 															</td>
 														</tr>
 														<tr>
-															<td><input type="text" name="panitia[kadiv_pk_cbs][nama]" id="pk" placeholder="Nama"></td>
+															<td><input type="text" name="panitia[kadiv_pk_cbs][nama]" id="pk" placeholder="Nama Lengkap"></td>
 														</tr>
 													</tbody>
 												</table>
@@ -185,7 +185,7 @@
 													</td>
 												</tr>
 												<tr>
-													<td><input type="text" name="panitia[kabid2_cbs][nama]" id="kabid2" placeholder="Nama"></td>
+													<td><input type="text" name="panitia[kabid2_cbs][nama]" id="kabid2" placeholder="Nama Lengkap"></td>
 												</tr>
 											</tbody>
 										</table>
@@ -203,7 +203,7 @@
 															</td>
 														</tr>
 														<tr>
-															<td><input type="text" name="panitia[kadiv_medik_cbs][nama]" id="medik" placeholder="Nama"></td>
+															<td><input type="text" name="panitia[kadiv_medik_cbs][nama]" id="medik" placeholder="Nama Lengkap"></td>
 														</tr>
 													</tbody>
 												</table>
@@ -220,7 +220,7 @@
 															</td>
 														</tr>
 														<tr>
-															<td><input type="text" name="panitia[kadiv_akademik_cbs][nama]" id="akad" placeholder="Nama"></td>
+															<td><input type="text" name="panitia[kadiv_akademik_cbs][nama]" id="akad" placeholder="Nama Lengkap"></td>
 														</tr>
 													</tbody>
 												</table>
@@ -237,7 +237,7 @@
 															</td>
 														</tr>
 														<tr>
-															<td><input type="text" name="panitia[kadiv_komdis_cbs][nama]" id="komdis" placeholder="Nama"></td>
+															<td><input type="text" name="panitia[kadiv_komdis_cbs][nama]" id="komdis" placeholder="Nama Lengkap"></td>
 														</tr>
 													</tbody>
 												</table>
@@ -254,7 +254,7 @@
 															</td>
 														</tr>
 														<tr>
-															<td><input type="text" name="panitia[kadiv_rohani_cbs][nama]" id="rohani" placeholder="Nama"></td>
+															<td><input type="text" name="panitia[kadiv_rohani_cbs][nama]" id="rohani" placeholder="Nama Lengkap"></td>
 														</tr>
 													</tbody>
 												</table>
@@ -273,7 +273,7 @@
 													</td>
 												</tr>
 												<tr>
-													<td><input type="text" name="panitia[kabid3_cbs][nama]" id="kabid3" placeholder="Nama"></td>
+													<td><input type="text" name="panitia[kabid3_cbs][nama]" id="kabid3" placeholder="Nama Lengkap"></td>
 												</tr>
 											</tbody>
 										</table>
@@ -291,7 +291,7 @@
 															</td>
 														</tr>
 														<tr>
-															<td><input type="text" name="panitia[kadiv_logistik_cbs][nama]" id="logistik" placeholder="Nama"></td>
+															<td><input type="text" name="panitia[kadiv_logistik_cbs][nama]" id="logistik" placeholder="Nama Lengkap"></td>
 														</tr>
 													</tbody>
 												</table>
@@ -308,7 +308,7 @@
 															</td>
 														</tr>
 														<tr>
-															<td><input type="text" name="panitia[kadiv_dankom_cbs][nama]" id="dankom" placeholder="Nama"></td>
+															<td><input type="text" name="panitia[kadiv_dankom_cbs][nama]" id="dankom" placeholder="Nama Lengkap"></td>
 														</tr>
 													</tbody>
 												</table>
@@ -325,7 +325,7 @@
 															</td>
 														</tr>
 														<tr>
-															<td><input type="text" name="panitia[kadiv_pubdok_cbs][nama]" id="pubdok" placeholder="Nama"></td>
+															<td><input type="text" name="panitia[kadiv_pubdok_cbs][nama]" id="pubdok" placeholder="Nama Lengkap"></td>
 														</tr>
 													</tbody>
 												</table>
@@ -376,7 +376,7 @@
 											</td>
 										</tr>
 										<tr>
-											<td><input type="text" name="be[ketua_be][nama]" id="nama1" placeholder="Nama"></td>
+											<td><input type="text" name="be[ketua_be][nama]" id="nama1" placeholder="Nama Lengkap"></td>
 										</tr>
 									</tbody>
 								</table>
@@ -394,7 +394,7 @@
 													</td>
 												</tr>
 												<tr>
-													<td><input type="text" name="be[waketu_be][nama]" id="nama2" placeholder="Nama"></td>
+													<td><input type="text" name="be[waketu_be][nama]" id="nama2" placeholder="Nama Lengkap"></td>
 												</tr>
 											</tbody>
 										</table>
@@ -412,7 +412,7 @@
 															</td>
 														</tr>
 														<tr>
-															<td><input type="text" name="be[kabir_adk][nama]" id="nama3" placeholder="Nama"></td>
+															<td><input type="text" name="be[kabir_adk][nama]" id="nama3" placeholder="Nama Lengkap"></td>
 														</tr>
 													</tbody>
 												</table>
@@ -429,7 +429,7 @@
 															</td>
 														</tr>
 														<tr>
-															<td><input type="text" name="be[kabir_uang][nama]" id="nama4" placeholder="Nama"></td>
+															<td><input type="text" name="be[kabir_uang][nama]" id="nama4" placeholder="Nama Lengkap"></td>
 														</tr>
 													</tbody>
 												</table>
@@ -446,7 +446,7 @@
 															</td>
 														</tr>
 														<tr>
-															<td><input type="text" name="be[kadep_psdm][nama]" id="nama5" placeholder="Nama"></td>
+															<td><input type="text" name="be[kadep_psdm][nama]" id="nama5" placeholder="Nama Lengkap"></td>
 														</tr>
 													</tbody>
 												</table>
@@ -463,7 +463,7 @@
 															</td>
 														</tr>
 														<tr>
-															<td><input type="text" name="be[kadep_po][nama]" id="nama6" placeholder="Nama"></td>
+															<td><input type="text" name="be[kadep_po][nama]" id="nama6" placeholder="Nama Lengkap"></td>
 														</tr>
 													</tbody>
 												</table>
@@ -480,7 +480,7 @@
 															</td>
 														</tr>
 														<tr>
-															<td><input type="text" name="be[kadep_hubin][nama]" id="nama7" placeholder="Nama"></td>
+															<td><input type="text" name="be[kadep_hubin][nama]" id="nama7" placeholder="Nama Lengkap"></td>
 														</tr>
 													</tbody>
 												</table>
@@ -497,7 +497,7 @@
 															</td>
 														</tr>
 														<tr>
-															<td><input type="text" name="be[kadep_hubeks][nama]" id="nama8" placeholder="Nama"></td>
+															<td><input type="text" name="be[kadep_hubeks][nama]" id="nama8" placeholder="Nama Lengkap"></td>
 														</tr>
 													</tbody>
 												</table>
@@ -514,7 +514,7 @@
 															</td>
 														</tr>
 														<tr>
-															<td><input type="text" name="be[kadep_litbang][nama]" id="nama9" placeholder="Nama"></td>
+															<td><input type="text" name="be[kadep_litbang][nama]" id="nama9" placeholder="Nama Lengkap"></td>
 														</tr>
 													</tbody>
 												</table>
@@ -531,7 +531,7 @@
 															</td>
 														</tr>
 														<tr>
-															<td><input type="text" name="be[kadep_medinfo][nama]" id="nama10" placeholder="Nama"></td>
+															<td><input type="text" name="be[kadep_medinfo][nama]" id="nama10" placeholder="Nama Lengkap"></td>
 														</tr>
 													</tbody>
 												</table>
@@ -548,7 +548,7 @@
 															</td>
 														</tr>
 														<tr>
-															<td><input type="text" name="be[kadep_wirus][nama]" id="nama11" placeholder="Nama"></td>
+															<td><input type="text" name="be[kadep_wirus][nama]" id="nama11" placeholder="Nama Lengkap"></td>
 														</tr>
 													</tbody>
 												</table>
@@ -565,7 +565,7 @@
 															</td>
 														</tr>
 														<tr>
-															<td><input type="text" name="be[kadep_agama][nama]" id="nama12" placeholder="Nama"></td>
+															<td><input type="text" name="be[kadep_agama][nama]" id="nama12" placeholder="Nama Lengkap"></td>
 														</tr>
 													</tbody>
 												</table>
@@ -582,7 +582,7 @@
 															</td>
 														</tr>
 														<tr>
-															<td><input type="text" name="be[kadep_keprof][nama]" id="nama13" placeholder="Nama"></td>
+															<td><input type="text" name="be[kadep_keprof][nama]" id="nama13" placeholder="Nama Lengkap"></td>
 														</tr>
 													</tbody>
 												</table>
@@ -599,7 +599,7 @@
 															</td>
 														</tr>
 														<tr>
-															<td><input type="text" name="be[kadep_miba][nama]" id="nama14" placeholder="Nama"></td>
+															<td><input type="text" name="be[kadep_miba][nama]" id="nama14" placeholder="Nama Lengkap"></td>
 														</tr>
 													</tbody>
 												</table>
@@ -650,7 +650,7 @@
 											</td>
 										</tr>
 										<tr>
-											<td><input type="text" name="dpa[ketua_dpa][nama]" id="kdpa" placeholder="Nama"></td>
+											<td><input type="text" name="dpa[ketua_dpa][nama]" id="kdpa" placeholder="Nama Lengkap"></td>
 										</tr>
 									</tbody>
 								</table>
@@ -667,7 +667,7 @@
 											</td>
 										</tr>
 										<tr>
-											<td><input type="text" name="dpa[sekretaris_dpa][nama]" id="sdpa" placeholder="Nama"></td>
+											<td><input type="text" name="dpa[sekretaris_dpa][nama]" id="sdpa" placeholder="Nama Lengkap"></td>
 										</tr>
 									</tbody>
 								</table>
@@ -684,7 +684,7 @@
 											</td>
 										</tr>
 										<tr>
-											<td><input type="text" name="dpa[bendahara_dpa][nama]" id="bdpa" placeholder="Nama"></td>
+											<td><input type="text" name="dpa[bendahara_dpa][nama]" id="bdpa" placeholder="Nama Lengkap"></td>
 										</tr>
 									</tbody>
 								</table>
@@ -701,7 +701,7 @@
 											</td>
 										</tr>
 										<tr>
-											<td><input type="text" name="dpa[kakom_1][nama]" id="k1dpa" placeholder="Nama"></td>
+											<td><input type="text" name="dpa[kakom_1][nama]" id="k1dpa" placeholder="Nama Lengkap"></td>
 										</tr>
 									</tbody>
 								</table>
@@ -718,7 +718,7 @@
 											</td>
 										</tr>
 										<tr>
-											<td><input type="text" name="dpa[kakom_2][nama]" id="k2dpa" placeholder="Nama"></td>
+											<td><input type="text" name="dpa[kakom_2][nama]" id="k2dpa" placeholder="Nama Lengkap"></td>
 										</tr>
 									</tbody>
 								</table>
@@ -735,7 +735,7 @@
 											</td>
 										</tr>
 										<tr>
-											<td><input type="text" name="dpa[kakom_3][nama]" id="k3dpa" placeholder="Nama"></td>
+											<td><input type="text" name="dpa[kakom_3][nama]" id="k3dpa" placeholder="Nama Lengkap"></td>
 										</tr>
 									</tbody>
 								</table>
@@ -782,7 +782,7 @@
 											</td>
 										</tr>
 										<tr>
-											<td><input type="text" name="presidium[presidium_1][nama]" id="p1" placeholder="Nama"></td>
+											<td><input type="text" name="presidium[presidium_1][nama]" id="p1" placeholder="Nama Lengkap"></td>
 										</tr>
 									</tbody>
 								</table>
@@ -799,7 +799,7 @@
 											</td>
 										</tr>
 										<tr>
-											<td><input type="text" name="presidium[presidium_2][nama]" id="p2" placeholder="Nama"></td>
+											<td><input type="text" name="presidium[presidium_2][nama]" id="p2" placeholder="Nama Lengkap"></td>
 										</tr>
 									</tbody>
 								</table>
@@ -816,7 +816,7 @@
 											</td>
 										</tr>
 										<tr>
-											<td><input type="text" name="presidium[presidium_3][nama]" id="p3" placeholder="Nama"></td>
+											<td><input type="text" name="presidium[presidium_3][nama]" id="p3" placeholder="Nama Lengkap"></td>
 										</tr>
 									</tbody>
 								</table>
@@ -849,18 +849,3 @@
 		</div>
 	</div>	
 </form>
-
-<script>
-	$(document).ready(function() {
-		$ (function(){
-			$('#navigation-panel').show();
-			$('#toggleNav').click(function(){
-			    $('#navigation-panel').slideToggle('fast');
-			});
-		});
-		$('#btn_kirim').click(function() {
-			$('#modalConf').modal('show');
-		});
-
-	});
-</script>

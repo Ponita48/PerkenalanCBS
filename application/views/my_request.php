@@ -12,9 +12,13 @@
 				<?php if($pending != NULL) : ?>
 					<?php foreach ($pending as $value) : ?>
 						<div class="person-box">
-							<img src="<?php echo $value->link_foto; ?>" alt="" class="img-responsive">
-								<p id="nama"><?php echo $value->nama; ?></p>
-								<p id="npm"><?php echo $value->npm_keluarga; ?></p>
+							<?php if (is_null($value->link_foto)): ?>
+								<img src="<?php echo base_url(); ?>Photos/placeholder.png" alt="">
+							<?php else: ?>
+								<img src="<?php echo $value->link_foto; ?>" alt="" class="img-responsive">
+							<?php endif ?>
+							<p id="nama"><?php echo $value->nama; ?></p>
+							<p id="npm"><?php echo $value->npm_keluarga; ?></p>
 						</div>
 					<?php endforeach; ?>
 				<?php endif; ?>
@@ -25,10 +29,14 @@
 					<?php if($accepted != NULL) : ?>
 						<?php foreach ($accepted as $value) : ?>
 							<div class="person-box">
+							<?php if (is_null($value->link_foto)): ?>
+								<img src="<?php echo base_url(); ?>Photos/placeholder.png" alt="">
+							<?php else: ?>
 								<img src="<?php echo $value->link_foto; ?>" alt="" class="img-responsive">
-									<p id="nama"><?php echo $value->nama; ?></p>
-									<p id="npm"><?php echo $value->npm_keluarga; ?></p>
-							</div>
+							<?php endif ?>
+							<p id="nama"><?php echo $value->nama; ?></p>
+							<p id="npm"><?php echo $value->npm_keluarga; ?></p>
+						</div>
 						<?php endforeach; ?>
 					<?php endif; ?>
 				</center>

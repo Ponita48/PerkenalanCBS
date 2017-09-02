@@ -81,13 +81,13 @@
 								<h4 class="modal-title">Change Photo</h4>
 							</div>
 							<div class="modal-body">
-								<p>Apakah anda yakin ingin mengganti foto profil?</p>
-								<input type="file" name="pp" placeholder="Chose your photo profile">
+								<input type="file" name="pp" placeholder="Choose your new photo">
+								<p></p>
+								<p>Are you sure to change your profile photo?</p>
 							</div>
 							<div class="modal-footer">			
 								<br>
-								<input type="submit" class="btn btn-primary">
-								<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+								<input type="submit" class="btn btn-success">
 							</div>
 						</form>
 						</div>

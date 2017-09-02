@@ -22,5 +22,14 @@ $(document).ready(function(){
     // $('span.close').click(function(){ //backup close alert
     // 	$(this).parent().remove();
     // });
+    $ (function(){
+        $('#navigation-panel').show();
+        $('#toggleNav').click(function(){
+            $('#navigation-panel').slideToggle('fast');
+        });
+    });
+    $('#btn_kirim').click(function() {
+        $('#modalConf').modal('show');
+    });
 
 });

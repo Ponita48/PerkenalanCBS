@@ -67,6 +67,21 @@ Sebagai mahasiswa, kita haruslah memberikan yang terbaik untuk Bangsa Indonesia 
 					</div>
 				</div>
 				<div class="item">
+					<img src="http://hda2.jux.in/foto/2015/70.jpg" alt="" class="img-responsive img-thumbnail">
+					<div class="carousel-caption">
+						<p class="sambutan">Assalamualaikum Wr. Wb.</p>
+						<p class="sambutan">Langkah pertama akan selalu berat, namun ketika sudah berjalan maka semuanya menjadi terasa mudah. Selamat datang bagi teman-teman penerus generasi muda informatika, saya harap teman-teman selalu dalam keadaan sehat dan sejahtera. Ucapan ini juga menandakan bahwa teman-teman sudah menjadi seorang mahasiswa, yang kontribusinya bukan hanya untuk diri sendiri, tetapi untuk masyarakat luas, yang pikirannya bukan hanya sekedar nilai semester ini, tetapi mau jadi apa saya saat sudah lulus nanti.</p>
+						<p class="sambutan">Maaf karena saya harus membahas topik mahasiswa lagi dan lagi, karena di masa saat orang berlomba untuk berdusta dan kejujuran hanya menjadi lelucon, teman-teman harus bisa menjadi pribadi yang jujur, bermoral, dan beretika. Mulai dari sana, dan melangkah maju sedikit demi sedikit. Saya yakin tidak semua dari teman-teman memilih program studi ini karena keinginan pribadi, mungkin ada yang desakan lingkungan atau sekedar coba-coba. Namun ingat, setengah hati dalam menjalankan sesuatu tidak akan membawa teman-teman ke mana pun.</p>
+						<p class="sambutan">Terlepas dari kegiatan sebagai mahasiswa, CBS adalah sarana bagi teman-teman untuk dapat mengenal program studi dan himpunan lebih jauh juga tentang tanggung jawab sebagai mahasiswa selain dari belajar. Event ini dapat teman-teman jadikan sebagai batu loncatan dan ajang unjuk diri agar dapat lebih dikenal di kalangan dosen dan teman-teman lain yang sudah lebih dulu masuk ke program studi ini. Maka dari itu, manfaatkan dengan sebaik-baiknya, jalani dengan sungguh-sungguh dan penuh semangat, selalu ambil hikmahnya dan kritisi acaranya, cari kelemahannya, pikirkan solusinya, diskusikan dan terapkan di saat teman-teman sudah bergabung bersama kami di Himpunan Teknik Informatika FMIPA Unpad.</p>
+						<p class="sambutan">Terima kasih.</p>
+						<p class="sambutan">Wassalamualaikum Wr. Wb</p>
+						<div class="name-badge">
+							<p class="big-name">Fikri Muhammad Iqbal,</p>
+							<p class="jabatan">Ketua Dewan Perwakilan Anggota HIMATIF FMIPA UNPAD 2017</p>
+						</div>
+					</div>
+				</div>
+				<div class="item">
 					<img src="<?php echo base_url(); ?>img/img1.jpg" alt="" class="img-responsive img-thumbnail">
 					<div class="carousel-caption">
 						<p class="sambutan">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Non eligendi magnam consequatur ut, corporis consectetur aspernatur quae numquam aperiam porro nesciunt debitis possimus animi reprehenderit vero ad quod dicta omnis?</p>
@@ -101,6 +116,7 @@ Sebagai mahasiswa, kita haruslah memberikan yang terbaik untuk Bangsa Indonesia 
 				<li data-target="#perkenalan" data-slide-to="2"></li>
 				<li data-target="#perkenalan" data-slide-to="3"></li>
 				<li data-target="#perkenalan" data-slide-to="4"></li>
+				<li data-target="#perkenalan" data-slide-to="5"></li>
 			</div>
 		</div>
 	</center>
