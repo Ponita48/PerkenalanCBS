@@ -17,8 +17,10 @@
 							<?php else: ?>
 								<img src="<?php echo $value->link_foto; ?>" alt="" class="img-responsive">
 							<?php endif ?>
-							<p id="nama"><?php echo $value->nama; ?></p>
-							<p id="npm"><?php echo $value->npm_keluarga; ?></p>
+							<div class="identity">
+								<p id="nama"><?php echo $value->nama; ?></p>
+								<p id="npm"><?php echo $value->npm_keluarga; ?></p>
+							</div>
 						</div>
 					<?php endforeach; ?>
 				<?php endif; ?>
@@ -34,8 +36,10 @@
 							<?php else: ?>
 								<img src="<?php echo $value->link_foto; ?>" alt="" class="img-responsive">
 							<?php endif ?>
-							<p id="nama"><?php echo $value->nama; ?></p>
-							<p id="npm"><?php echo $value->npm_keluarga; ?></p>
+							<div class="identity">
+								<p id="nama"><?php echo $value->nama; ?></p>
+								<p id="npm"><?php echo $value->npm_keluarga; ?></p>
+							</div>
 						</div>
 						<?php endforeach; ?>
 					<?php endif; ?>

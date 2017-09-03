@@ -1,5 +1,5 @@
 <div class="header-title">
-	<h1 id="nama-header">TASK VERIFICATION</h1>
+	<h1 id="nama-header">REQUEST VERIFICATION</h1>
 </div>
 
 <div class="wrapper-for-all cf">
@@ -34,7 +34,7 @@
 				<span>See Profile</span>
 			</a>
 			<a href="<?php echo base_url().'approve_perkenalan/'.$result->id_perkenalan_kating; ?>" class="btn btn-success btn-block" type="submit">
-				<span>Accept</span>
+				<span>Approve this Request</span>
 			</a>
 		</div>
 	</div>

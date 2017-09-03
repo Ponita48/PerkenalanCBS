@@ -67,7 +67,7 @@
 						<!-- cek apakah yang dilihat peserta atau kating -->
 						<?php if ($result->role == "2017"): ?>
 							<!-- ADMIN MELIHAT MABA -->
-							<a href="<?php echo base_url().'perkenalan_angkatan/'.$result->id_user; ?>"><button class="btn btn-warning" type="submit">Check Submission</button></a><br><br>
+							<a href="<?php echo base_url().'perkenalan_angkatan/'.$result->id_user; ?>"><button class="btn btn-warning" type="submit">See Request</button></a><br><br>
 						<?php endif ?>
 					<?php endif ?>
 				<?php endif ?>

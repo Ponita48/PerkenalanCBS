@@ -12,12 +12,13 @@
 		<link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/tree-diagram.css">
 		<link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/material-icons.css">
 
-		<script src="<?php echo base_url(); ?>assets/js/dragpack.js" defer></script>
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 		<script src="<?php echo base_url(); ?>assets/js/main.js" type="text/javascript"></script>
+		<script src="<?php echo base_url(); ?>assets/js/dragpack.js" defer></script>
 		<script src="<?php echo base_url(); ?>assets/js/jquery.min.js" type="text/javascript"></script>
 		<script src="<?php echo base_url(); ?>assets/js/jquery-ui.min.js" type="text/javascript"></script>
 		<script src="<?php echo base_url(); ?>assets/js/bootstrap.min.js"></script>
+		<script src="<?php echo base_url(); ?>assets/js/bootstrap.js"></script>
 		<script src="<?php echo base_url(); ?>assets/js/bootstrap-datepicker.js"></script>
 		<script>
 			function hint(str) {
@@ -45,9 +46,11 @@
 	                <center><img class="main-menu-img" src="<?php echo base_url(); ?>/img/logo-delphi.png"></center>
 		            <?php if (isset($this->session->userdata['logged_in'])): ?>
 						<?php if ($this->session->userdata['logged_in']['role'] != "admin"): ?>
-			                <div class="main-menu-title">Character Building Season 2017</div>
+			                <div class="main-menu-title">CBS 2017</div>
+			                <div class="main-menu-title" id="npm"><?php echo $this->session->userdata('logged_in')['role']; ?> (Delphi <?php echo $this->session->userdata('logged_in')['npm']; ?>)</div>
+			                <!-- <div class="main-menu-title" id="npm">(<?php echo $this->session->userdata('logged_in')['npm']; ?>)</div> -->
 		                <?php else: ?>
-		                	<div class="main-menu-title">Web Admin CBS 2017</div>
+		                	<div class="main-menu-title" id="admin">Admin CBS 2017</div>
 		                <?php endif ?>
 					<?php endif ?>
 	            </div>
@@ -68,7 +71,7 @@
 						<?php if ($this->session->userdata['logged_in']['role'] == "admin"): ?>
 							<li class="main-menu-list">
 								<div class="icon-perkenalan"></div>
-								<a href="<?php echo base_url().'perkenalan_keluarga'; ?>">Request Submission</a>
+								<a href="<?php echo base_url().'perkenalan_keluarga'; ?>">Requests Submission</a>
 							</li>
 							<li class="main-menu-list">
 	            				<div class="icon-admin"></div>
@@ -84,7 +87,7 @@
 								<a href="<?php echo base_url().'my_request'; ?>">My Request</a>
 							</li>
 							<li class="main-menu-list">
-								<div class="icon-submit"></div>
+								<div class="icon-quiz"></div>
 								<a href="<?php echo base_url().'kuis'; ?>">Quiz</a>
 							</li>
 							<li class="main-menu-list">
@@ -103,7 +106,7 @@
 	        </div>
 	        <div class="smoke"></div>
 	    </div>
-		<div class="app-header"> <!-- HEADER -->
+		<div class="app-header cf"> <!-- HEADER -->
 			<?php if (isset($this->session->userdata['logged_in'])): ?>
 				<div class="main-menu-btn"></div>
 			<?php endif ?>
@@ -161,7 +164,7 @@
 				<?php if (isset($this->session->userdata['logged_in'])): ?>
 					<?php if ($this->session->userdata['logged_in']['role'] != "admin"): ?>
 						<li>
-							<a href="<?php echo base_url().'profile/'.$this->session->userdata['logged_in']['id_user']; ?>">Logged in as: <?php echo $this->session->userdata('logged_in')['npm']; ?></a>
+							<a href="<?php echo base_url().'profile/'.$this->session->userdata['logged_in']['id_user']; ?>"><i class="glyphicon glyphicon-user"></i>&nbsp; <?php echo $this->session->userdata('logged_in')['npm']; ?></a>
 						</li>
 					<?php endif ?>
 				<?php endif ?>

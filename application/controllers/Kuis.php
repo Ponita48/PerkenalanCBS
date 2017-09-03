@@ -46,7 +46,7 @@ class Kuis extends CI_Controller
 
 			$this->load->view('header');
 			$this->load->view('kuis_struktur', $data);
-			// $this->load->view('footer');
+			$this->load->view('footer');
 		}else {
 			redirect(base_url().'kuis/jawaban');
 		}
@@ -80,7 +80,7 @@ class Kuis extends CI_Controller
 
 		$this->load->view('header');
 		$this->load->view('kuis_struktur', $data);
-		// $this->load->view('footer');
+		$this->load->view('footer');
 	}
 
 	public function kuis_struktur_submit() {
@@ -178,7 +178,7 @@ class Kuis extends CI_Controller
 		}else {
 			$this->load->view('header');
 			$this->load->view('dummy_kuis_kejawab', $data);
-			// $this->load->view('footer');
+			$this->load->view('footer');
 		}
 	}
 

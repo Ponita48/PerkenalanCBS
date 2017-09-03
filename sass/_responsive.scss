@@ -1,0 +1,26 @@
+// Smartphone (180 - 600 px)
+
+@media only screen and (min-device-width: 180px) and (max-device-width: 600px){
+
+	html{
+		max-height: 600px;
+	}
+	.navbar-nav{
+		display: none;
+	}
+
+	.navbar-right{
+		display: block;
+	}
+
+	#search_icon:after{
+		content: '';
+	}
+
+	.carousel-inner{
+	    position: relative;
+	    width: 100%;
+	    height: 400px;
+	    overflow: auto;
+	}
+}

@@ -56,26 +56,39 @@
 .main-menu-header{
 	position: relative;
 	background-color: #f8f9f8;
-	max-height: 200px;
-	height: calc(25% + 5px);
+	min-height: 170px;
+	max-height: calc(25% + 5px);
 }
 
 .main-menu-title{
 	position: relative;
 	bottom: 10px;
-	font-size: 22px;
-	padding: 10px;
+	font-size: 18px;
+	padding: 10px 10px 0 10px;
+	// padding: 10px;
 	color: $himatif;
 	text-align: center;
 	font-weight: bold;
 }
 
+#npm{
+	// text-align: left;
+	padding: 0 10px;
+	margin-top: 5px;
+	font-size: 14px;
+	text-transform: uppercase;
+}
+
+#admin{
+	font-size: 22px;
+}
+
 .main-menu-body{
 	display: block;
-	// height: calc(100% - 200px);
+	height: calc(100% - 170px);
 	max-height: auto;
 	background-color: $abuhimatif;
-	// overflow-y: scroll;
+	overflow-y: scroll;
 
 	:hover{
 		transition: .2s;
@@ -150,8 +163,8 @@
 		background-image: url('../../img/icons/account_circle_white_24px.svg');
 		@extend .icon-home;
 	}
-	.icon-submit{
-		background-image: url('../../img/icons/send_white_24px.svg');
+	.icon-quiz{
+		background-image: url('../../img/icons/create_white_24px.svg');
 		@extend .icon-home;
 	}
 

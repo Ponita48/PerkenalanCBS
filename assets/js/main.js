@@ -22,12 +22,10 @@ $(document).ready(function(){
     // $('span.close').click(function(){ //backup close alert
     // 	$(this).parent().remove();
     // });
-    $ (function(){
-        $('#navigation-panel').show();
+    $('#navigation-panel').show();
         $('#toggleNav').click(function(){
-            $('#navigation-panel').slideToggle('fast');
+            $('#navigation-panel').slideToggle('slow');
         });
-    });
     $('#btn_kirim').click(function() {
         $('#modalConf').modal('show');
     });

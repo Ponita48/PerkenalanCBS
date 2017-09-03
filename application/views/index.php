@@ -57,7 +57,7 @@ Sebagai mahasiswa, kita haruslah memberikan yang terbaik untuk Bangsa Indonesia 
 					</div>
 				</div>
 				<div class="item">
-					<img src="<?php echo base_url(); ?>img/img1.jpg" alt="" class="img-responsive img-thumbnail">
+					<img src="http://hda2.jux.in/foto/2015/72.jpg" alt="" class="img-responsive img-thumbnail">
 					<div class="carousel-caption">
 						<p class="sambutan">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Non eligendi magnam consequatur ut, corporis consectetur aspernatur quae numquam aperiam porro nesciunt debitis possimus animi reprehenderit vero ad quod dicta omnis?</p>
 						<div class="name-badge">
@@ -82,11 +82,19 @@ Sebagai mahasiswa, kita haruslah memberikan yang terbaik untuk Bangsa Indonesia 
 					</div>
 				</div>
 				<div class="item">
-					<img src="<?php echo base_url(); ?>img/img1.jpg" alt="" class="img-responsive img-thumbnail">
+					<img src="http://hda2.jux.in/foto/2015/01.jpg" alt="" class="img-responsive img-thumbnail">
 					<div class="carousel-caption">
-						<p class="sambutan">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Non eligendi magnam consequatur ut, corporis consectetur aspernatur quae numquam aperiam porro nesciunt debitis possimus animi reprehenderit vero ad quod dicta omnis?</p>
+						<p class="sambutan">Assalamu'alaikum Wr. Wb.</p>
+						<p class="sambutan">Puji syukur kita panjatkan untuk ke hadirat Ilahi Rabbi. Karena dengan rahmat dan kasih-Nya kita bisa hadir pada kesempatan hari ini. Shalawat serta salam tak lupa kita curahkan kepada baginda besar kita Nabi Muhammad SAW.</p>
+						<p class="sambutan">Pertama, saya ingin mengucapkan selamat datang dan selamat bergabung kepada teman-teman di prodi S-1 Teknik Informatika Unpad. Semoga teman-teman sekalian disini menjadi generasi penerus yang mampu memajukan teknologi di Indonesia.</p>
+						<p class="sambutan">Ya, berbicara CBS yang merupakan singkatan dari Character Building Season. Yang artinya masa pembangunan karakter. Apa maksudnya? Teman-teman datang ke Unpad masih dengan status siswa. Untuk itu agar teman-teman bisa melepaskan status siswa menjadi mahasiswa, dibutuhkan sebuah masa dimana teman-teman mampu belajar dan membangun karakter teman-teman agar memiliki karakter seorang mahasiswa yang mampu menjadi pembawa perubahan bagi bangsa, bukan hanya mampu mengkritisi tapi juga mampu memberikan solusi.</p>
+						<p class="sambutan">Untuk itu, kami selaku panitia CBS 2017 berharap acara ini dapat menjadi langkah awal bagi teman-teman sekalian untuk bisa belajar dan memiliki karakter mahasiswa yang dibutuhkan bagi negara saat ini.</p>
+						<p class="sambutan">Terakhir, saya ingin mengucapkan terima kasih yang sebesar-besarnya kepada panita CBS 2017 dan seluruh pihak yang membantu demi kelancaran acara ini.</p>
+						<p class="sambutan">Sekian dari saya, kurang dan lebihnya mohon maaf. Semoga teman-teman mampu aktif dan menikmati rangkaian acara ini hingga selesai.</p>
+						<p class="sambutan">Sekian,</p>
+						<p class="sambutan">Wassalamu'alaikum Wr. Wb.</p>
 						<div class="name-badge">
-							<p class="big-name">Gilang Hikmawan,</p>
+							<p class="big-name">Mohammad Gilang Akbar Hikmawan,</p>
 							<p class="jabatan">Ketua Character Building Season 2017</p>
 						</div>
 					</div>

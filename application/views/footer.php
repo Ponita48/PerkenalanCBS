@@ -1,6 +1,6 @@
 	<div class="footer">
 		<center>
-			<p>Copyright &copy Devcom 2017 | <!-- <a href="http://linkedin.com/in/satriaamp"> -->satriaamp<!-- </a> --></p>
+			<p>Copyright &copy Devcom 2017 | Satria M. Purnama</p>
 		</center>
 	</div>
 </div> 	

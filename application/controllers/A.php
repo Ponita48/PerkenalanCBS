@@ -87,7 +87,7 @@ class A extends CI_Controller {
 
 		}
 		if ($result == FALSE) {
-			$this->session->set_flashdata('error_message', 'No task submission!');
+			$this->session->set_flashdata('error_message', 'No requests!');
 			redirect(base_url());
 		}else {
 			$data['result'] = $result;
@@ -234,7 +234,7 @@ class A extends CI_Controller {
 			//goto jumlah perkenalan
 		}else {
 			//goto jumlah perkenalan
-			redirect('../admin');
+			redirect(base_url('perkenalan_keluarga'));
 		}
 	}
 

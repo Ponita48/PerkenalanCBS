@@ -1,6 +1,4 @@
-
  	<?php if ($this->session->flashdata('error_message')): ?>
- 		<br>
  		<div class="alert alert-danger alert-dismissable">
  			<span class="close" data-dismiss="alert">x</span>
  			<?php echo $this->session->flashdata('error_message'); ?>
@@ -8,7 +6,6 @@
  	<?php endif ?>
 
 	<?php if (isset($error_message)): ?>
-		<br>
 		<div class="alert alert-danger alert-dismissable">
 			<span class="close" data-dismiss="alert">x</span>
 			<?php echo $error_message; ?>
@@ -16,7 +13,6 @@
 	<?php endif ?>
 
 	<?php if (validation_errors() != NULL): ?>
-		<br>
 		<div class="alert alert-danger alert-dismissable">
 			<span class="close" data-dismiss="alert">x</span>
 			<?php echo validation_errors(); ?>
