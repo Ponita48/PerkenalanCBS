@@ -64,8 +64,10 @@ img.img-responsive {
 }
 
 .modal-content {
+	max-width: 400px;
 	background-color: #393639;
 	color: #FFD51E;
+	left: 25%;
 }
 
 .app-header{
@@ -76,6 +78,12 @@ img.img-responsive {
 	z-index: 3;
 	background-color: $header;
 	border-color: #e7e7e7;
+
+	.cbs-logo-wrapper{
+		float: left;
+		position: relative;
+	    margin-left: -5px;
+	}
 
 	.navbar-right{
 		font-weight: normal;
@@ -93,6 +101,7 @@ img.img-responsive {
 	}
 
 	.header-img{
+		float: left;
 		width: 50px;
 		height: 50px;
 		padding: 10px;
@@ -109,7 +118,7 @@ img.img-responsive {
 	    position: relative;
 	    // position: absolute;
 	    // left: 110px;
-	    font-size: 18px;
+	    font-size: 16px;
 	    font-weight: bold;
 	    color: $abuhimatif;
 	    line-height: 50px;
@@ -180,7 +189,7 @@ img.img-responsive {
 	float: right;
 	position: relative;
 	right: 10px;
-	top: 50px;
+	top: 0;
 	width: 20%;
 	height: 40px;
 
@@ -220,7 +229,7 @@ img.img-responsive {
 	background-color: transparent;
 	border-top: solid 2px $himatif;
 	p{
-		font-size: 14px;
+		font-size: 12px;
 		line-height: 40px;
 	}
 	a{
@@ -256,8 +265,10 @@ img.img-responsive {
 		}
 	}
 	.modal-lg{
-		width: 400px;
+		position: absolute;
+		width: 50%;
 		top: 20%;
+		left: 25%;
 	}
 	.col-sm-12, .col-sm-4{
 		padding: 0;
@@ -306,10 +317,19 @@ img.img-responsive {
 	}
 }
 
+.single-box{
+	position: relative;
+    bottom: 13%;
+    width: 50%;
+    left: 25%;
+}
+
 .verification-action-box{
 	float: left;
 	position: relative;
-	width: 100%;
+	bottom: 0;
+	left: 13%;
+	width: 80%;
 
 	.btn{
 		height: 40px;
@@ -348,19 +368,18 @@ img.img-responsive {
 
 }
 
-#edit{ // button edit dan progres untuk profile sendiri
-	position: relative;
-	float: left;
-	width: 100%;
-	margin-top: 5px;
-}
-#progress{
-	@extend #edit;
-	margin-top: 10px;
-	// height: 50px;
+.single-mid-box{
+	#edit{ // button edit dan progres untuk profile sendiri
+		margin-top: 5px;
+	}
+	#progress{
+		@extend #edit;
+		margin-top: 10px;
+		// height: 50px;
+	}		
 }
 
-#open{ // button buat open attachment admin
+#open-quiz{ // button buat open attachment admin
 	margin: 0;
 }
 
@@ -480,5 +499,10 @@ img.img-responsive {
 	}
 }
 .myImg{
-	width: 250px;
+	width: 200px;
+	position: relative;
+	left: 25%;
+	p{
+		text-align: center;
+	}
 }

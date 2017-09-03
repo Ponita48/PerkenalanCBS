@@ -109,6 +109,14 @@ Sebagai mahasiswa, kita haruslah memberikan yang terbaik untuk Bangsa Indonesia 
 						</div>
 					</div>
 				</div>
+				<div class="carousel-indicators">
+					<li data-target="#perkenalan" data-slide-to="0" class="active"></li>
+					<li data-target="#perkenalan" data-slide-to="1"></li>
+					<li data-target="#perkenalan" data-slide-to="2"></li>
+					<li data-target="#perkenalan" data-slide-to="3"></li>
+					<li data-target="#perkenalan" data-slide-to="4"></li>
+					<li data-target="#perkenalan" data-slide-to="5"></li>
+				</div>
 			</div>
 			<a class="left carousel-control" href="#perkenalan" data-slide="prev">
 				<span class="glyphicon glyphicon-chevron-left"></span>
@@ -118,13 +126,5 @@ Sebagai mahasiswa, kita haruslah memberikan yang terbaik untuk Bangsa Indonesia 
 				<span class="glyphicon glyphicon-chevron-right"></span>
 				<span class="sr-only">Next</span>
 			</a>
-			<div class="carousel-indicators">
-				<li data-target="#perkenalan" data-slide-to="0" class="active"></li>
-				<li data-target="#perkenalan" data-slide-to="1"></li>
-				<li data-target="#perkenalan" data-slide-to="2"></li>
-				<li data-target="#perkenalan" data-slide-to="3"></li>
-				<li data-target="#perkenalan" data-slide-to="4"></li>
-				<li data-target="#perkenalan" data-slide-to="5"></li>
-			</div>
 		</div>
 	</center>

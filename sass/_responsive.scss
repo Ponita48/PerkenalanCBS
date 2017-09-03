@@ -1,10 +1,6 @@
 // Smartphone (180 - 600 px)
 
-@media only screen and (min-device-width: 180px) and (max-device-width: 600px){
-
-	html{
-		max-height: 600px;
-	}
+@media only screen and (max-device-width: 800px){
 	.navbar-nav{
 		display: none;
 	}
@@ -17,10 +13,243 @@
 		content: '';
 	}
 
+	// .navbar-nav{
+	// 	li{
+	// 		a{
+	// 			padding: 10px;
+	// 		}
+	// 	}
+	// }
+
+	.nav-tabs {
+		// border: none;
+		li{
+			position: relative;
+			float: left;
+			a{
+				width: 148px;
+				padding: 5px;
+				border-radius: 4px;
+				margin-bottom: 5px;
+			}
+		}
+	}
+
+	#pc-only, #photobar, #navigation-panel{ // untuk konten quiz yang gabisa dikerjain di smartphone
+		display: none;
+	}
+
+	.tab-content{
+		.active{
+			overflow: auto;
+		}
+		.person-box{
+			width: 33.3333%;
+			height: 250px;
+
+			.identity{
+				p{
+					font-weight: bold;
+					margin: 0;
+					font-size: 12px;
+				}
+			}
+		}
+		#field_bagan{
+			width: 100%;
+		}
+	}
+
+	#open-quiz{
+		left: 0;
+		width: 100%;
+	}
+
+	#header-content{
+		#kuis{
+			width: 100%;
+			margin: 0;
+		}
+		#take-quiz{
+			float: left;
+			left: 10px;
+			width: 95%;
+			margin: 0;
+			// margin: 0 10px;
+		}
+		.btn-primary{
+			width: 100%;
+		}
+		#btn_kirim, #see-latest{
+			width: 100%;
+		}
+	}
+
+	.container {
+	    padding: 0 15px;
+
+	    .nav-tabs{
+	    	li{
+	    		a{
+	    			width: 160px;
+	    		}
+	    	}
+	    }
+	}
+
+	.container-fluid{
+		padding: 0;
+	}
+
+	.app-header{
+		// .title{
+		// 	display: none;
+		// }
+		#search_icon{
+			display: none;
+		}
+	}
+
+	.header-title{
+		h1{
+			text-align: center;
+		}
+	}
+	#nama-header{
+		font-size: 18px;
+	}
+
 	.carousel-inner{
 	    position: relative;
 	    width: 100%;
 	    height: 400px;
 	    overflow: auto;
+
+	    .item{
+	    	.img-responsive{
+		    	height: 100px;
+		    }
+	    }
+
+	    p{
+	    	font-size: 14px;
+	    }
+	}
+
+	.carousel-caption{
+		position: absolute;
+		width: 70%;
+		right: 15%;
+		left: 15%;
+	}
+
+	.carousel-indicators{
+		display: none;
+	}
+
+	.name-badge{
+		.big-name, .jabatan{
+			font-size: 14px;
+		}
+	}
+
+	.modal-lg{
+		.modal-content{
+			width: 100%;
+			left: 0;
+			.modal-footer{
+				.btn-success{
+					width: 100%;
+					left: 0;
+				}
+			}
+		}
+	}
+
+	.login-box{
+		.login-container{
+			width: 100%;
+			left: 0;
+		}
+	}
+
+	.all-person-box{
+		.person-box{
+			width: 33.333%;
+			height: 250px;
+		}
+
+		.identity{
+			p{
+				margin: 0;
+				font-size: 12px;
+				font-weight: bold;
+			}
+		}
+	}
+	.wrapper-for-all#my-request{
+		padding: 20px 30px 0 30px;
+		.nav-tabs{
+			li{
+				position: relative;
+				float: left;
+				a{
+
+				}
+			}
+		}
+	}
+	.wrapper-for-all{
+		.single-mid-box{
+			position: relative;
+			width: 100%;
+			left: 0;
+			.img-thumbnail{
+				width: 150px;
+			}
+			.btn-primary, .btn-success{
+				position: relative;
+				left: 25%;
+				width: 50%;
+				height: 30px;
+			}
+			.identity-box{
+				margin-top: 10px;
+				width: 100%;
+			}
+		}
+		.myImg{
+			left: 0;
+		}
+		.single-box{
+		    bottom: 13%;
+		    width: 100%;
+		    left: 0;
+		}
+	}
+
+	.single-box{
+		.verification-action-box{
+	    	width: 100%;
+	    	left: 0;
+	    }
+	}
+
+	.single-mid-box{
+		.table-responsive{
+			padding: 0;
+			width: 100%;
+			border: none;
+		}
+	}
+	
+
+	.verification-action-box{
+		width: 100%;		
+		#approve-request{
+			left: 0;
+			height: 50px;
+			width: 100%;
+		}
 	}
 }

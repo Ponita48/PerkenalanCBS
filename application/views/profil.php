@@ -117,7 +117,7 @@
 					<?php if ($this->session->userdata['logged_in']['role'] != "admin"): ?> <!-- npm di session = npm yang dilihat -->
 						<?php if ($this->session->userdata['logged_in']['npm'] == $result->npm): ?>
 							<a href="<?php echo base_url(); ?>my_request">
-								<button class="btn btn-warning" id="progress" type="submit">My Requests</button>
+								<button class="btn btn-warning" id="progress" type="submit">See My Requests</button>
 							</a> 
 						<?php endif ?>
 					<?php endif ?>

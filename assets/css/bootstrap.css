@@ -1772,6 +1772,7 @@ pre code {
 .col-xs-offset-0 {
   margin-left: 0;
 }
+
 @media (min-width: 768px) {
   .col-sm-1, .col-sm-2, .col-sm-3, .col-sm-4, .col-sm-5, .col-sm-6, .col-sm-7, .col-sm-8, .col-sm-9, .col-sm-10, .col-sm-11, .col-sm-12 {
     float: left;
@@ -4236,7 +4237,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
     display: block;
     line-height: 50px;
     height: 50px;
-    padding: 0px 15px;
+    padding: 0px 10px;
     font-size: 14px;
 }
 .navbar-nav > li > a.active{
@@ -6230,7 +6231,7 @@ button.close {
   position: absolute;
   bottom: 10px;
   left: 50%;
-  z-index: 15;
+  z-index: 3;
   width: 60%;
   padding-left: 0;
   margin-left: -30%;

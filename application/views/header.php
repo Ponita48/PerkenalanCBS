@@ -2,6 +2,8 @@
 <html class="no-js" lang="en">
 	<head>
 		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+
 		<title>Character Building Season 2017</title>
 		<link rel="icon" href="http://localhost/PerkenalanCBS/img/logo-delphi.png"> <!-- icon warna putihnya ga keliatan -->
 
@@ -47,7 +49,7 @@
 		            <?php if (isset($this->session->userdata['logged_in'])): ?>
 						<?php if ($this->session->userdata['logged_in']['role'] != "admin"): ?>
 			                <div class="main-menu-title">CBS 2017</div>
-			                <div class="main-menu-title" id="npm"><?php echo $this->session->userdata('logged_in')['role']; ?> (Delphi <?php echo $this->session->userdata('logged_in')['npm']; ?>)</div>
+			                <div class="main-menu-title" id="npm-menu"><?php echo $this->session->userdata('logged_in')['role']; ?> (Delphi <?php echo $this->session->userdata('logged_in')['npm']; ?>)</div>
 			                <!-- <div class="main-menu-title" id="npm">(<?php echo $this->session->userdata('logged_in')['npm']; ?>)</div> -->
 		                <?php else: ?>
 		                	<div class="main-menu-title" id="admin">Admin CBS 2017</div>
@@ -86,9 +88,9 @@
 								<div class="icon-tugas"></div>
 								<a href="<?php echo base_url().'my_request'; ?>">My Request</a>
 							</li>
-							<li class="main-menu-list">
+							<li class="main-menu-list" id="pc-only">
 								<div class="icon-quiz"></div>
-								<a href="<?php echo base_url().'kuis'; ?>">Quiz</a>
+								<a href="<?php echo base_url().'kuis'; ?>">Quiz (via PC only)</a>
 							</li>
 							<li class="main-menu-list">
 								<div class="icon-account"></div>
@@ -110,22 +112,24 @@
 			<?php if (isset($this->session->userdata['logged_in'])): ?>
 				<div class="main-menu-btn"></div>
 			<?php endif ?>
-			<a class="navbar-left" href="<?php echo base_url(); ?>">
-				<img class="header-img" src="<?php echo base_url(); ?>img/logo-delphi.png">
-			</a>
-			<div class="title">
-				<?php if (!isset($this->session->userdata['logged_in'])): ?>
-					&nbsp; Character Building Season 2017 HIMATIF FMIPA UNPAD
-				<?php else: ?>
-					<?php if (isset($this->session->userdata['logged_in'])): ?>
-						<?php if ($this->session->userdata['logged_in']['role'] == "admin"): ?>
-							Admin CBS 2017
+			<a href="<?php echo base_url(); ?>">
+				<div class="cbs-logo-wrapper">
+					<img class="header-img" src="<?php echo base_url(); ?>img/logo-delphi.png">
+					<div class="title">
+						<?php if (!isset($this->session->userdata['logged_in'])): ?>
+							&nbsp; CBS 2017
 						<?php else: ?>
-							CBS 2017
+							<?php if (isset($this->session->userdata['logged_in'])): ?>
+								<?php if ($this->session->userdata['logged_in']['role'] == "admin"): ?>
+									Admin CBS 2017
+								<?php else: ?>
+									CBS 2017
+								<?php endif ?>
+							<?php endif ?>
 						<?php endif ?>
-					<?php endif ?>
-				<?php endif ?>
-			</div>
+					</div>
+				</div>
+			</a>
 			<ul class="nav navbar-nav">
 				<?php if (isset($this->session->userdata['logged_in'])): ?>
 					<li>

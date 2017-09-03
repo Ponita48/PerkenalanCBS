@@ -1,16 +1,16 @@
 	<div class="header-title">
 		<h1 id="nama-header">MY REQUESTS</h1> <!--BUAT MABA-->
 	</div>
-	<div class="wrapper-for-all">
+	<div class="wrapper-for-all" id="my-request">
 		<ul class="nav nav-tabs" role="tablist">
-			<li role="presentation" class="active"><a href="#1" aria-controls="1" role="tab" data-toggle="tab">Pending</a></li>
-			<li role="presentation"><a href="#2" aria-controls="2" role="tab" data-toggle="tab">Accepted</a></li>
+			<li role="presentation" class="active"><a href="#1" aria-controls="1" role="tab" data-toggle="tab">Accepted</a></li>
+			<li role="presentation"><a href="#2" aria-controls="2" role="tab" data-toggle="tab">Pending</a></li>
 		</ul><br>
 		<div class="tab-content">
 			<div role="tabpanel" class="tab-pane container-fluid active" id="1">
 				<center>
-				<?php if($pending != NULL) : ?>
-					<?php foreach ($pending as $value) : ?>
+				<?php if($accepted != NULL) : ?>
+					<?php foreach ($accepted as $value) : ?>
 						<div class="person-box">
 							<?php if (is_null($value->link_foto)): ?>
 								<img src="<?php echo base_url(); ?>Photos/placeholder.png" alt="">
@@ -28,8 +28,8 @@
 			</div>
 			<div role="tabpanel" class="tab-pane container-fluid" id="2">
 				<center>
-					<?php if($accepted != NULL) : ?>
-						<?php foreach ($accepted as $value) : ?>
+					<?php if($pending != NULL) : ?>
+						<?php foreach ($pending as $value) : ?>
 							<div class="person-box">
 							<?php if (is_null($value->link_foto)): ?>
 								<img src="<?php echo base_url(); ?>Photos/placeholder.png" alt="">

@@ -4,10 +4,10 @@
 
 <div class="wrapper-for-all cf">
 	<div class="col-sm-4">
-		<center>
-			<img src="<?php echo $result->link_foto_peserta; ?>" class="myImg img-thumbnail"><br>
+		<div class="myImg">
+			<img src="<?php echo $result->link_foto_peserta; ?>" class="img-thumbnail">
 			<p>Profile Photo</p>
-		</center>
+		</div>
 	</div>
 	<div class="col-sm-4">
 		<div class="profile-box">
@@ -26,23 +26,25 @@
 				</tr>
 			</table>
 		</div>
+	</div>
+	<div class="col-sm-4">
+		<div class="myImg">
+			<img src="<?php echo $result->link_foto; ?>" class="img-thumbnail"><br>
+			<p>Required Photo (selfie)</p>
+		</div>
+	</div>
+	<div class="single-box cf">
 		<div class="verification-action-box">
 			<a href="<?php echo base_url().'reject_perkenalan/'.$result->id_perkenalan_kating; ?>" class="btn btn-danger btn-block" type="submit">
 				<span>Decline</span>
 			</a>
 			<a href="<?php echo base_url().'profile/'.$result->id_user_maba; ?>" class="btn btn-warning" type="submit">
-				<span>See Profile</span>
+				<span>Profile</span>
 			</a>
-			<a href="<?php echo base_url().'approve_perkenalan/'.$result->id_perkenalan_kating; ?>" class="btn btn-success btn-block" type="submit">
-				<span>Approve this Request</span>
+			<a href="<?php echo base_url().'approve_perkenalan/'.$result->id_perkenalan_kating; ?>" class="btn btn-success btn-block" id="approve-request"type="submit">
+				<span>Approve</span>
 			</a>
 		</div>
-	</div>
-	<div class="col-sm-4">
-		<center>
-			<img src="<?php echo $result->link_foto; ?>" class="myImg img-thumbnail"><br>
-			<p>Required Photo (selfie)</p>
-		</center>
 	</div>
 	<!-- <div class="col-sm-4"></div> -->
 </div>

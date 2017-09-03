@@ -22,9 +22,9 @@
 		</div>
 	<div id="header-content" class="row">
 		<div class="header-title" id="kuis">
-			<h1 id="nama-header">YOUR LATEST QUIZ SUBMISSION (<?php echo $npm; ?>)</h1>
+			<h1 id="nama-header">QUIZ SHEET (<?php echo $npm; ?>)</h1>
 		</div>
-		<a href="<?php echo base_url(); ?>kuis/jawaban" class="btn btn-primary" target="_blank">See my latest submission</a>
+		<a href="<?php echo base_url(); ?>kuis/jawaban" class="btn btn-primary" id="see-latest" target="_blank">See my last answer</a>
 		<div class="btn btn-success" id="btn_kirim">Click to Finish!</div>
 	</div>
 	<!-- End of Page Header -->

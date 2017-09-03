@@ -5,7 +5,7 @@
 	<div class="header-title" id="kuis">
 		<h1>YOUR LATEST SUBMISSION (<?php echo $npm; ?>)</h1>
 	</div>
-	<a href="<?php echo base_url(); ?>kuis/isi" class="btn btn-success" target="_blank">Take your Quiz!</a>
+	<a href="<?php echo base_url(); ?>kuis/isi" class="btn btn-success" id="take-quiz" target="_blank">Take your Quiz!</a>
 </div>
 
 <div id="navigation-panel" class="col-sm-12 col-md-12 col-lg-12">
