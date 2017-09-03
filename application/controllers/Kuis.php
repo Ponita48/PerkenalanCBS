@@ -1,8 +1,5 @@
 <?php 
 
-/**
-* 
-*/
 class Kuis extends CI_Controller
 {
 	
@@ -213,7 +210,7 @@ class Kuis extends CI_Controller
 
 		$this->load->view('header');
 		$this->load->view('kuis_admin', $data);
-		// $this->load->view('footer');
+		$this->load->view('footer');
 	
 	}
 

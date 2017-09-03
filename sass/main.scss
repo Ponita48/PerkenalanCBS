@@ -25,6 +25,7 @@ $abuhimatif: #393639;
 html{
 	width: 100%;
 	height: 100%;
+	// height: calc(100% + 50px);
 }
 body{
 	height: 100%;
@@ -80,6 +81,7 @@ img.img-responsive {
 	border-color: #e7e7e7;
 
 	.cbs-logo-wrapper{
+		cursor: pointer;
 		float: left;
 		position: relative;
 	    margin-left: -5px;

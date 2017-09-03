@@ -1,6 +1,11 @@
 // Smartphone (180 - 600 px)
 
 @media only screen and (max-device-width: 800px){
+
+	html{
+		width: 100%;
+		height: calc(100% + 50px);
+	}
 	.navbar-nav{
 		display: none;
 	}
@@ -217,6 +222,14 @@
 				margin-top: 10px;
 				width: 100%;
 			}
+		}
+		#req-teman{
+			width: 50%;
+			left: 25%;
+		}
+		.form-box{
+			margin-top: 10px;
+			width: 100%;
 		}
 		.myImg{
 			left: 0;

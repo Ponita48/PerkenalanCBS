@@ -45,6 +45,7 @@
 		<div class="main-menu"> <!-- MAIN MENU -->
 	        <div class="main-menu-container">
 	            <div class="main-menu-header">
+	            	<div class="close-menu-btn"></div>
 	                <center><img class="main-menu-img" src="<?php echo base_url(); ?>/img/logo-delphi.png"></center>
 		            <?php if (isset($this->session->userdata['logged_in'])): ?>
 						<?php if ($this->session->userdata['logged_in']['role'] != "admin"): ?>

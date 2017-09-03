@@ -13,14 +13,21 @@ $(document).ready(function(){
 	        $(".main-menu").removeClass("show")
 	    },100);
     });
+    $('.close-menu-btn').click(function(){
+        $('.main-menu').removeClass('slide')
+
+        window.setTimeout(function(){
+            $(".main-menu").removeClass("show")
+        },100);
+    })
     
     $('#search_icon').click(function() {
-		$('#search').slideToggle();
-	});
+        $('#search').slideToggle();
+    });
 
-	$('#tgl_lahir').datepicker();
+    $('#tgl_lahir').datepicker();
     // $('span.close').click(function(){ //backup close alert
-    // 	$(this).parent().remove();
+    //  $(this).parent().remove();
     // });
     $('#navigation-panel').show();
         $('#toggleNav').click(function(){
