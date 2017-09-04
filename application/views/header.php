@@ -20,7 +20,7 @@
 		<script src="<?php echo base_url(); ?>assets/js/jquery.min.js" type="text/javascript"></script>
 		<script src="<?php echo base_url(); ?>assets/js/jquery-ui.min.js" type="text/javascript"></script>
 		<script src="<?php echo base_url(); ?>assets/js/bootstrap.min.js"></script>
-		<script src="<?php echo base_url(); ?>assets/js/bootstrap.js"></script>
+		<!-- <script src="<?php echo base_url(); ?>assets/js/bootstrap.js"></script> -->
 		<script src="<?php echo base_url(); ?>assets/js/bootstrap-datepicker.js"></script>
 		<script>
 			function hint(str) {

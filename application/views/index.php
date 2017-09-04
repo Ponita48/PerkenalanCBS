@@ -57,7 +57,7 @@ Sebagai mahasiswa, kita haruslah memberikan yang terbaik untuk Bangsa Indonesia 
 					</div>
 				</div>
 				<div class="item">
-					<img src="http://hda2.jux.in/foto/2015/72.jpg" alt="" class="img-responsive img-thumbnail">
+					<img src="<?php echo base_url(); ?>Photos/72.jpg" alt="" class="img-responsive img-thumbnail">
 					<div class="carousel-caption">
 						<p class="sambutan">Assalamualaikum Wr. Wb.</p>
 						<p class="sambutan">Puji syukur kita panjatkan kepada Allah SWT, karena berkat Rahmat dan hidayahnya lah kita masih bisa menikmati nikmat Islam dan nikmat iman hingga saat ini. Tak lupa, shalawat dan salam semoga senantiasa tercurah kepada junjungan kita Rasulullah SAW, kepada keluarga nya, sahabat, serta kepada kita selaku umatnya hingga akhir zaman. Aamiin.</p>
@@ -87,6 +87,16 @@ Sebagai mahasiswa, kita haruslah memberikan yang terbaik untuk Bangsa Indonesia 
 					</div>
 				</div>
 				<div class="item">
+					<img src="http://hda2.jux.in/foto/2016/56.jpg" alt="" class="img-responsive img-thumbnail">
+					<div class="carousel-caption">
+						<p class="sambutan">"Mahasiswa bukan hanya status sebagai peserta didik di perguruan tinggi. Lebih dari itu, mahasiswa merupakan calon-calon pemimpin masa depan. Jadilah aktivis, praktisi, dan/atau akademisi alih alih menjadi buruh berdasi. CBS dan Himatif siap membimbing dan membersamai kita menuju cita-cita."</p>
+						<div class="name-badge">
+							<p class="big-name">Muhammad Ihza Triyanto,</p>
+							<p class="jabatan">Presidium 1 HIMATIF FMIPA UNPAD</p>
+						</div>
+					</div>
+				</div>
+				<div class="item">
 					<img src="http://hda2.jux.in/foto/2015/01.jpg" alt="" class="img-responsive img-thumbnail">
 					<div class="carousel-caption">
 						<p class="sambutan">Assalamu'alaikum Wr. Wb.</p>
@@ -101,16 +111,6 @@ Sebagai mahasiswa, kita haruslah memberikan yang terbaik untuk Bangsa Indonesia 
 						<div class="name-badge">
 							<p class="big-name">Mohammad Gilang Akbar Hikmawan,</p>
 							<p class="jabatan">Ketua Character Building Season 2017</p>
-						</div>
-					</div>
-				</div>
-				<div class="item">
-					<img src="http://hda2.jux.in/foto/2016/56.jpg" alt="" class="img-responsive img-thumbnail">
-					<div class="carousel-caption">
-						<p class="sambutan">"Mahasiswa bukan hanya status sebagai peserta didik di perguruan tinggi. Lebih dari itu, mahasiswa merupakan calon-calon pemimpin masa depan. Jadilah aktivis, praktisi, dan/atau akademisi alih alih menjadi buruh berdasi. CBS dan Himatif siap membimbing dan membersamai kita menuju cita-cita."</p>
-						<div class="name-badge">
-							<p class="big-name">Muhammad Ihza Triyanto,</p>
-							<p class="jabatan">Presidium 1 HIMATIF FMIPA UNPAD</p>
 						</div>
 					</div>
 				</div>
