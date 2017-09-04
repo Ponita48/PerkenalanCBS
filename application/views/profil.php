@@ -71,19 +71,18 @@
 						<?php endif ?>
 					<?php endif ?>
 				<?php endif ?>
-				<!-- INI APA AING GANGERTI -->
+				<!-- Ganti Foto Profil -->
 				<div class="modal fade" id="modalFoto" role="dialog">
 					<div class="modal-dialog modal-lg">
 						<div class="modal-content">
 						<form action="<?php echo base_url(); ?>profile/<?php echo $this->session->userdata['logged_in']['id_user']; ?>/change_pp" method="POST" enctype="multipart/form-data">
 							<div class="modal-header">
 								<button type="button" class="close" data-dismiss="modal" aria-hidden="true" style="color: white;">&times;</button> 
-								<h4 class="modal-title">Change Photo</h4>
+								<h4 class="modal-title">Change Profile Photo</h4>
 							</div>
 							<div class="modal-body">
 								<input type="file" name="pp" placeholder="Choose your new photo">
 								<p></p>
-								<p>Are you sure to change your profile photo?</p>
 							</div>
 							<div class="modal-footer">			
 								<br>
