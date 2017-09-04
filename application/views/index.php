@@ -42,14 +42,14 @@ Sebagai mahasiswa, kita haruslah memberikan yang terbaik untuk Bangsa Indonesia 
 <p class="sambutan">Selamat datang Mahasiswa Baru S-1 Teknik Informatika Unpad di Himatif FMIPA Unpad. Selamat mengikuti rangkaian acara Character Building Season 2017 yang diharapkan menjadi momentum untuk melakukan perubahan yang positif untuk diri kalian serta lingkungan sekitar. Tetap semangat dalam mencari pengalaman dan ilmu, serta dalam mengembangkan softskill dan hardskill kalian melalui rangkaian acara Character Building Season 2017 ini."</p>
 						<div class="name-badge">
 							<p class="big-name">Dr. Setiawan Hadi, M.Sc.CS.,</p>
-							<span class="jabatan">Kepala Departemen Ilmu Komputer FMIPA UNPAD</span>
+							<p class="jabatan">Kepala Departemen Ilmu Komputer FMIPA UNPAD</p>
 						</div>
 					</div>
 				</div>
 				<div class="item">
-					<img src="<?php echo base_url(); ?>img/img1.jpg" alt="" class="img-responsive img-thumbnail">
+					<img src="http://informatika.unpad.ac.id/new/wp-content/uploads/2017/04/Pa-Juli-237x300.jpg" alt="" class="img-responsive img-thumbnail">
 					<div class="carousel-caption">
-						<p class="sambutan">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Non eligendi magnam consequatur ut, corporis consectetur aspernatur quae numquam aperiam porro nesciunt debitis possimus animi reprehenderit vero ad quod dicta omnis?</p>
+						<p class="sambutan">"Selamat datang di Program Studi S1 Teknik Informatika FMIPA Unpad. Jadilah mahasiswa yang mampu memberikan kontribusi nyata di bidang yang Anda minati."</p>
 						<div class="name-badge">
 							<p class="big-name">Dr. Juli Rejito,</p>
 							<p class="jabatan">Ketua Program Studi S1 Teknik Informatika FMIPA UNPAD</p>
@@ -59,9 +59,14 @@ Sebagai mahasiswa, kita haruslah memberikan yang terbaik untuk Bangsa Indonesia 
 				<div class="item">
 					<img src="http://hda2.jux.in/foto/2015/72.jpg" alt="" class="img-responsive img-thumbnail">
 					<div class="carousel-caption">
-						<p class="sambutan">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Non eligendi magnam consequatur ut, corporis consectetur aspernatur quae numquam aperiam porro nesciunt debitis possimus animi reprehenderit vero ad quod dicta omnis?</p>
+						<p class="sambutan">Assalamualaikum Wr. Wb.</p>
+						<p class="sambutan">Puji syukur kita panjatkan kepada Allah SWT, karena berkat Rahmat dan hidayahnya lah kita masih bisa menikmati nikmat Islam dan nikmat iman hingga saat ini. Tak lupa, shalawat dan salam semoga senantiasa tercurah kepada junjungan kita Rasulullah SAW, kepada keluarga nya, sahabat, serta kepada kita selaku umatnya hingga akhir zaman. Aamiin.</p>
+						<p class="sambutan">Yang terhormat, bapak kepala prodi, serta jajaran civitas akademika Teknik informatika FMIPA Unpad, yang saya banggakan pula, teman-teman panitia yang selalu berusaha keras dan memberikan yang terbaik untuk kelancaran kegiatan CBS 2017, serta yang saya cinta teman-teman Delphi 2017 yang saya cintai</p>
+						<p class="sambutan">Selamat datang mahasiswa-mahasiswa terbaik prodi teknik informatika FMIPA UNPAD, selamat menjalankan rangkaian kegiatan CBS 2017, lakukan yang terbaik, berikan yang terbaik pula, dan jangan pernah main-main dalam mengikuti kegiatannya. Semoga diberikan kelancaran dan kesuksesan dalam mengikuti rangkaiannya. Sekali lagi saya ucapkan selamat datang, mahasiswa pilihan!</p>
+						<p class="sambutan">Sekian yang dapat saya sampaikan, mohon maaf atas segala kelebihan dan kekurangannya.</p>
+						<p class="sambutan">Akhir kata, Wabillahitaufik wal hidayah, Wassalamu'alaikum Wr. Wb.</p>
 						<div class="name-badge">
-							<p class="big-name">Denny Febri Prayogo,</p>
+							<p class="big-name">Denny Febry Prayogo,</p>
 							<p class="jabatan">Ketua Badan Eksekutif HIMATIF FMIPA UNPAD 2017</p>
 						</div>
 					</div>

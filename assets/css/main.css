@@ -127,7 +127,7 @@
   }
   /* line 139, ../../sass/_responsive.scss */
   .carousel-inner p {
-    font-size: 14px;
+    font-size: 12px;
   }
 
   /* line 144, ../../sass/_responsive.scss */
@@ -733,7 +733,7 @@ img.img-responsive {
 
 /* line 145, ../../sass/main.scss */
 .big-name, .jabatan {
-  text-align: center;
+  text-align: right;
   font-size: 20px;
   font-weight: bold;
 }
