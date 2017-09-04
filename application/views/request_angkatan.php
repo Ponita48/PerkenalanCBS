@@ -56,13 +56,14 @@
 					<input type="text" class="form-control" name="no_hp" placeholder="Nomor HP teman anda">
 				</div>
 				<div class="form-group">
-					<input type="hidden" class="form-control" name="link_foto" placeholder="link foto teman anda" id="link-foto" id="linkPoto">
+					<label for="link_foto">Link Foto</label>
+					<input type="text" class="form-control" name="link_foto" placeholder="link foto teman anda" id="link-foto" id="linkPoto">
 				</div>
 				<input type="submit" value="Submit" class="btn btn-warning" >
 			</form>
 		</div>
 	</div>
-	<div class="modal fade" id="modalFoto" role="dialog">
+	<div class="modal fade" id="modalFoto" role="dialog"> <!-- gangerti .js, fadenya ngga ketahan langsung ilang lagi -->
 		<div class="modal-dialog modal-lg">
 			<div class="modal-content">
 				<div class="modal-header">

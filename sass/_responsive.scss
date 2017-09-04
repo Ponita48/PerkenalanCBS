@@ -157,7 +157,11 @@
 			font-size: 14px;
 		}
 	}
-
+	.modal-body{
+		p{
+	    	margin-top: 30px;
+		}
+	}
 	.modal-lg{
 		.modal-content{
 			width: 100%;
@@ -223,6 +227,13 @@
 				width: 100%;
 			}
 		}
+		.col-sm-4{
+			.modal-lg{
+				width: 80%;
+				left: 7%;
+			}
+		}
+
 		#req-teman{
 			width: 50%;
 			left: 25%;

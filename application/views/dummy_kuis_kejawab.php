@@ -3,7 +3,14 @@
 <!-- TODO: bikin responsive -->
 <div id="header-content" class="row">
 	<div class="header-title" id="kuis">
-		<h1>YOUR LATEST SUBMISSION (<?php echo $npm; ?>)</h1>
+		<h1>
+		<?php if (isset($this->session->userdata['logged_in'])): ?>
+			<?php if ($this->session->userdata['logged_in']['role'] == "admin"): ?>
+				QUIZ SUBMISSION: NPM <?php echo $npm; ?></h1>
+			<?php else: ?>
+				YOUR LATEST SUBMISSION</h1>
+			<?php endif ?>
+		<?php endif ?>
 	</div>
 	<a href="<?php echo base_url(); ?>kuis/isi" class="btn btn-success" id="take-quiz" target="_blank">Take your Quiz!</a>
 </div>

@@ -5806,13 +5806,18 @@ button.close {
   margin-top: -2px;
 }
 .modal-title {
+  text-align: center;
+  font-weight: bold;
   margin: 0;
   line-height: 1.42857143;
 }
 .modal-body {
+  text-align: center;
+  font-weight: bold;
   position: relative;
   padding: 15px;
 }
+
 .modal-footer {
   padding: 15px;
   text-align: right;

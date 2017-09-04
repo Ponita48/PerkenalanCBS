@@ -1,25 +1,22 @@
 <form action="<?php echo base_url(); ?>kuis/submit" method="post" accept-charset="utf-8">
 	<!-- Page Header -->
-	<div class="modal fade" id="modalConf" role="dialog">
-			<div class="modal-dialog modal-lg">
-			<center>
-				<div class="modal-content">
-					<div class="modal-header">
-						<button type="button" class="close" data-dismiss="modal" aria-hidden="true" style="color: white;">&times;</button> 
-						<h4 class="modal-title">Confirmation</h4>
-					</div>
-					<div class="modal-body">
-						<p>Your latest submission will be replaced.</p>
-						<p>Are you sure?</p>
-					</div>
-					<div class="modal-footer">
-						<input class="btn btn-success" type="submit" name="Kirim">
-						<!-- <button type="button" class="btn btn-default" data-dismiss="modal">Close</button> -->
-					</div>
+	<div class="modal fade" id="modalConf" role="dialog"> <!-- POPUP SUBMIT QUIZ -->
+		<div class="modal-dialog modal-lg">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-hidden="true" style="color: white;">&times;</button> 
+					<h4 class="modal-title">Submit your Answer</h4>
 				</div>
-			</center>
+				<div class="modal-body">
+					<p>Are you sure to replace your last submission?</p>
+				</div>
+				<div class="modal-footer">
+					<input class="btn btn-success" type="submit" name="Kirim">
+					<!-- <button type="button" class="btn btn-default" data-dismiss="modal">Close</button> -->
+				</div>
 			</div>
-		</div>
+		</div> 
+	</div>
 	<div id="header-content" class="row">
 		<div class="header-title" id="kuis">
 			<h1 id="nama-header">QUIZ SHEET (<?php echo $npm; ?>)</h1>
