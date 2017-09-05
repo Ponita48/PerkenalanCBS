@@ -42,7 +42,7 @@
 					<td><?php echo $key->no_hp; ?></td>
 					<?php if ($this->session->userdata['logged_in']['role'] != "admin"): ?>
 						<!-- TAMBAHIN LINK BUAT EDIT -->
-						<td><a href="#" class="btn btn-success">Click Here</a></td>
+						<td><a href="<?php echo base_url().'perkenalan_angkatan/'.$key->id_perkenalan_angkatan.'/edit'; ?>" class="btn btn-success">Click Here</a></td>
 					<?php endif	?>
 				</tr>
 			<?php endforeach; ?>

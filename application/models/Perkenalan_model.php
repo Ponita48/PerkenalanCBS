@@ -132,6 +132,25 @@ class Perkenalan_model extends CI_Model {
 		}
 	}
 
+	public function get_perkenalan_angkatan($id_perkenalan)
+	{
+		$q = $this->db
+			->get_where('perkenalan_angkatan', array('id_user1' => $this->session->userdata['logged_in']['id_user'], 'id_perkenalan_angkatan' => $id_perkenalan));
+
+		return $q->result();
+	}
+
+	public function edit_perkenalan_angkatan($id_perkenalan, $input)
+	{
+		$q = $this->db->where(array(
+				'id_perkenalan_angkatan' => $id_perkenalan,
+				'id_user1' => $this->session->userdata['logged_in']['id_user']
+		))->update('perkenalan_angkatan', $input);
+
+		return $q;
+
+	}
+
 }
 
  ?>

@@ -76,7 +76,8 @@ $route['request_keluarga/(:any)'] = 'Perkenalan/request_keluarga/$1'; //$1 = $id
 $route['request_peserta/(:any)'] = 'Perkenalan/request_peserta/$1'; //$1 = $id
 $route['my_request'] = 'Perkenalan/my_request';
 $route['request/(:any)'] = 'Perkenalan/request/$1'; //$1 = $id_user keluarga / peserta (yang akan dimintai request)
-
+$route['perkenalan_angkatan/(:any)/edit'] = 'Perkenalan/edit_perkenalan/$1'; //$1 = $id_perkenalan_angkatan
+$route['perkenalan_angkatan/(:any)/submit'] = 'Perkenalan/edit_perkenalan_submit/$1'; //$1 = $id_perkenalan_angkatan
 
 //A
 $route['perkenalan_keluarga'] = 'A/perkenalanKeluarga';
