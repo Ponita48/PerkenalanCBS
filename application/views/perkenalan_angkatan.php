@@ -20,6 +20,10 @@
 					<th>Alamat Kos</th>
 					<th>ID LINE</th>
 					<th>No HP</th>
+					<?php if ($this->session->userdata['logged_in']['role'] != "admin"): ?>
+						<!-- TAMBAHIN LINK BUAT EDIT -->
+						<th></th>
+					<?php endif	?>
 				</tr>
 			</thead>
 			<tbody>
@@ -36,6 +40,10 @@
 					<td><?php echo $key->alamat_kos; ?></td>
 					<td><?php echo $key->id_line; ?></td>
 					<td><?php echo $key->no_hp; ?></td>
+					<?php if ($this->session->userdata['logged_in']['role'] != "admin"): ?>
+						<!-- TAMBAHIN LINK BUAT EDIT -->
+						<td><a href="<?php echo base_url().'perkenalan_angkatan/'.$key->id_perkenalan_angkatan.'/edit'; ?>" class="btn btn-warning"><i class="glyphicon glyphicon-pencil"></i>&nbsp; Edit</a></td>
+					<?php endif	?>
 				</tr>
 			<?php endforeach; ?>
 			</tbody>

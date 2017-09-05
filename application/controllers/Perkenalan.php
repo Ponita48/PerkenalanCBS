@@ -247,5 +247,70 @@ class Perkenalan extends CI_Controller
 		}
 	}
 
+	public function edit_perkenalan($id_perkenalan)
+	{
+
+		$perkenalan = $this->Perkenalan_model->get_perkenalan_angkatan($id_perkenalan);
+
+		if ($perkenalan == NULL) {
+			$this->session->set_flashdata('error_message', 'id perkenalan is not correct!');
+			redirect('/');
+		}
+
+		$perkenalan[0]->tgl_lahir = date("m/d/Y", strtotime($perkenalan[0]->tgl_lahir));
+		$data['detailPerkenalan'] = $perkenalan[0];
+
+		//get pp from database
+		$pp = $this->Perkenalan_model->get_pp();
+		$data['pp'] = $pp;
+		$this->load->view('header');
+		$this->load->view('request_angkatan', $data);
+		$this->load->view('footer');
+	}
+
+	public function edit_perkenalan_submit($id_perkenalan)
+	{
+
+		date_default_timezone_set('Asia/Jakarta');
+		$date = date("Y-m-d H:i:s", time());
+
+		$this->form_validation->set_rules('nama', 'Nama', 'required');
+		$this->form_validation->set_rules('tempat_lahir', 'Tempat Lahir', 'required');
+		$this->form_validation->set_rules('tgl_lahir', 'Tanggal Lahir', 'required');
+		$this->form_validation->set_rules('alamat_kos', 'Alamat Kos', 'required');
+		$this->form_validation->set_rules('id_line', 'Id Line', 'required');
+		$this->form_validation->set_rules('no_hp', 'No HP', 'required');
+		$this->form_validation->set_rules('link_foto', 'Link Foto', 'required');
+
+		if ($this->form_validation->run() == FALSE) {
+			/*$error_message = "Every+Fields+are+Required";
+			redirect('../request/'.$id.'?err='.$error_message);*/
+			$this->session->set_flashdata('error_message', 'All forms must be filled!');
+			redirect(base_url().'perkenalan_angkatan/'.$id_perkenalan.'/edit');
+		}else {
+			$input = array(
+				'nama' => $this->input->post('nama'),
+				'tempat_lahir' => $this->input->post('tempat_lahir'),
+				'tgl_lahir' => date("Y-m-d", strtotime($this->input->post('tgl_lahir'))),
+				'alamat_kos' => $this->input->post('alamat_kos'),
+				'id_line' => $this->input->post('id_line'),
+				'no_hp' => $this->input->post('no_hp'),
+				'link_foto' => $this->input->post('link_foto'),
+				'request_time' => $date
+			);
+
+			$result = $this->Perkenalan_model->edit_perkenalan_angkatan($id_perkenalan, $input);
+
+			if ($result) {
+				$this->session->set_flashdata('message_display', 'Friends List has successfully changed!');
+				redirect('/');
+			}else {
+				$this->session->set_flashdata('error_message', 'Id_perkenalan is error!');
+				redirect('/');
+			}
+
+		}
+	}
+
 }
  ?>
