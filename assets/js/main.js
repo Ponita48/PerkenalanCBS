@@ -23,7 +23,13 @@ $(document).ready(function(){
             $(".main-menu").removeClass("show")
         },100);
         console.log("close main menu");
-    })
+    });
+
+    // function change_photo(el) { // replace link foto using uploaded img src di request ke angkatan (INACTIVE, disimpen di view)
+    //     document.getElementById('poto').src = el;
+    //     document.getElementById('link-foto').value = el;
+    //     document.getElementById('linkPoto').value = el;
+    // }
     
     $('#search_icon').click(function() {
         $('#search').slideToggle();

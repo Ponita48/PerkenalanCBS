@@ -221,7 +221,7 @@ class Perkenalan extends CI_Controller
 		if ($angkatan == $max_angkatan) {
 			$cek = $this->Perkenalan_model->check_perkenalan($id_user_maba, $id_user, 'perkenalan_angkatan');
 			if ($cek == TRUE) {
-				$this->session->set_flashdata('error_message', 'Request sent!');
+				$this->session->set_flashdata('error_message', 'Failed: Request already sent before!');
 				redirect(base_url());	
 			}else {
 
@@ -237,7 +237,7 @@ class Perkenalan extends CI_Controller
 		}else {
 			$cek = $this->Perkenalan_model->check_perkenalan($id_user_maba, $id_user, 'perkenalan_kating');
 			if ($cek == TRUE) {
-				$this->session->set_flashdata('error_message', 'Request approved!');
+				$this->session->set_flashdata('error_message', 'Failed: Request already approved!');
 				redirect(base_url(''));
 			}else {
 				$this->load->view('header');

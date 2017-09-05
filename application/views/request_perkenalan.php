@@ -20,7 +20,7 @@
 <?php endif; ?>
 
 <div class="header-title">
-	<h1 id="nama-header">SEND REQUEST</h1>
+	<h1 id="nama-header">INTRODUCTION REQUEST</h1>
 </div>
 
 <div class="wrapper-for-all cf">
@@ -37,6 +37,6 @@
 			<label for="foto" class="control-label">Photo Requirement</label>
 			<input type="text" class="form-control" id="foto" placeholder="Masukkan link" name="link_foto">
 		</div>
-		<input class="btn btn-warning" type="submit" value="Submit" >
+		<input class="btn btn-success" type="submit" value="Send Request" id="send-request">
 	</form>
 </div>

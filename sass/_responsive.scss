@@ -44,6 +44,10 @@
 		display: none;
 	}
 
+	#send-request{
+		width: 100%;
+	}
+
 	.tab-content{
 		.active{
 			overflow: auto;
@@ -175,6 +179,16 @@
 		}
 	}
 
+	.app-body{
+		.footer {
+			margin: 50px 10px 0 10px;
+			p{
+				font-size: 10px
+			}
+		}
+	}
+
+
 	.login-box{
 		.login-container{
 			width: 100%;
@@ -196,6 +210,15 @@
 			}
 		}
 	}
+	.wrapper-for-all#edit-profile-form{
+		padding: 20px 30px 0 30px;
+	}
+	.wrapper-for-all#request-angkatan-form{
+		padding: 20px 15px 0 15px;
+		.btn{
+			font-size: 14px;
+		}
+	}
 	.wrapper-for-all#my-request{
 		padding: 20px 30px 0 30px;
 		.nav-tabs{
@@ -213,18 +236,30 @@
 			position: relative;
 			width: 100%;
 			left: 0;
+
+			#chg_photo{
+				font-size: 12px;
+				left: 25%;
+			}
 			.img-thumbnail{
 				width: 150px;
 			}
-			.btn-primary, .btn-success{
+			#save-edit{
+				width: 100%;
+			}
+			.btn-primary, .btn-success, .btn-warning, .btn-info{
 				position: relative;
-				left: 25%;
+				// left: 25%;
 				width: 50%;
 				height: 30px;
 			}
 			.identity-box{
 				margin-top: 10px;
 				width: 100%;
+				.action-box{
+					position: relative;
+					top: -30px;
+				}
 			}
 		}
 		.col-sm-4{
@@ -241,6 +276,14 @@
 		.form-box{
 			margin-top: 10px;
 			width: 100%;
+			.modal-lg{
+				top: 30px;
+				left: 0;
+				width: 95%;
+				.modal-content{
+					// left: 25%;
+				}
+			}
 		}
 		.myImg{
 			left: 0;

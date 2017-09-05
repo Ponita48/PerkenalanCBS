@@ -1,3 +1,5 @@
+
+
 	<?php if ($this->session->flashdata('error_message')): ?>
 		<div class="alert alert-danger alert-dismissable">
 			<span class="close" data-dismiss="alert">x</span>
@@ -23,10 +25,10 @@
 <div class="header-title">
 	<h1 id="nama-header">REQUEST TO DELPHI 2017</h1>
 </div>
-<div class="wrapper-for-all cf">
+<div class="wrapper-for-all cf" id="request-angkatan-form">
 	<div class="person-box" id="req-teman">
 		<img src="<?php echo base_url(); ?>Photos/placeholder.png" alt="" class="img-thumbnail" id="poto">
-		<button type="button" class="btn btn-info" data-toggle="modal" data-target="#modalFoto">Change Photo</button>
+		<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalFoto"><i class="glyphicon glyphicon-picture"></i>&nbsp; Change Photo</button>
 	</div>
 	<div class="form-box"> <!-- Form isi biodata -->
 		<div class="well well-lg" style="vertical-align: middle">
@@ -59,35 +61,27 @@
 					<!-- <label for="link_foto" type="hidden">Link Foto</label> -->
 					<input type="hidden" class="form-control" name="link_foto" placeholder="link foto teman anda" id="link-foto" id="linkPoto">
 				</div>
-				<input type="submit" value="Submit" class="btn btn-warning" >
+				<input type="submit" value="Add to Friends List" class="btn btn-success" >
 			</form>
 		</div>
-	</div>
-	<div class="modal fade" id="modalFoto" role="dialog"> <!-- gangerti .js, fadenya ngga ketahan langsung ilang lagi -->
-		<div class="modal-dialog modal-lg">
-			<div class="modal-content">
-				<div class="modal-header">
-					<button type="button" class="close" data-dismiss="modal" aria-hidden="true" style="color: white;">&times;</button> 
-					<h4 class="modal-title">Change Photo</h4>
-				</div>
-				<div class="modal-body">
-					<div class="container">
-						<?php foreach ($pp as $data) : ?>
-						<div class="col-sm-4">
-							<img src="<?php echo $data->link_foto; ?>" alt="No Photo!" class="img-responsive img-thumbnail" onclick="change_photo(this.src);">
-						</div>
-						<?php endforeach; ?>
+		<div class="modal fade" id="modalFoto" role="dialog"> <!-- gangerti .js, fadenya ngga ketahan langsung ilang lagi -->
+			<div class="modal-dialog modal-lg">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" aria-hidden="true" style="color: white;">&times;</button> 
+						<h4 class="modal-title">Change Photo</h4>
 					</div>
+					<div class="modal-body">
+						<div class="container">
+							<div class="col-sm-4">
+							<?php foreach ($pp as $data) : ?>
+								<img src="<?php echo $data->link_foto; ?>" alt="No Photo!" class="img-responsive img-thumbnail" onclick="change_photo(this.src);">
+							</div>
+							<?php endforeach; ?>
+						</div>
+					</div>
+					<div class="modal-footer"></div>
 				</div>
-				<div class="modal-footer"></div>
 			</div>
 		</div>
 	</div>
-</div>
-<script>
-	function change_photo(el) {
-		document.getElementById('poto').src = el;
-		document.getElementById('link-foto').value = el;
-		document.getElementById('linkPoto').value = el;
-	}
-</script>

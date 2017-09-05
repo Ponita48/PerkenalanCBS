@@ -3,7 +3,7 @@
 		<?php if ($this->session->userdata['logged_in']['role'] != "admin"): ?> <!-- npm di session = npm yang dilihat -->
 			MY
 		<?php endif ?>
-		FRIENDS</h1>
+		FRIENDS LIST</h1>
 	</div>
 	<div class="table-responsive">
 		<table class="table">
@@ -12,9 +12,9 @@
 					<?php if ($this->session->userdata['logged_in']['role'] == "admin"): ?>
 						<th>NPM Peserta</th>
 					<?php endif ?>
-					<th>NPM Teman</th>
-					<th>Nama Teman</th>
-					<th>Foto Teman</th>
+					<th>NPM</th>
+					<th>Nama</th>
+					<th>Foto</th>
 					<th>Tempat Lahir</th>
 					<th>Tanggal Lahir</th>
 					<th>Alamat Kos</th>

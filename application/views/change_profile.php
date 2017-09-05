@@ -35,9 +35,9 @@
 	<?php endif ?>
 
 	<div class="header-title">
-		<h1 id="nama-header">EDIT PROFILE</h1>
+		<h1 id="nama-header">EDIT MY PROFILE</h1>
 	</div>
-	<div class="wrapper-for-all">
+	<div class="wrapper-for-all" id="edit-profile-form">
 		<div class="single-mid-box cf">
 			<div class="well well-lg">
 				<form class="form-horizontal" action="<?php echo base_url(); ?>edit_profile" method="POST">
@@ -99,9 +99,7 @@
 						<label class="control-label" for="motto_hidup">Motto Hidup</label>
 						<input type="text" name="motto_hidup" class="form-control" id="motto_hidup" placeholder="Motto Hidup" value="<?php echo $result->motto_hidup; ?>">
 					</div>
-					<center>
-						<input type="submit" class="btn btn-warning">
-					</center>
+					<input type="submit" value="Save Changes" class="btn btn-success" id="save-edit">
 				</form>
 			</div>
 		</div>

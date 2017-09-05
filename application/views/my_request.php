@@ -3,8 +3,8 @@
 	</div>
 	<div class="wrapper-for-all" id="my-request">
 		<ul class="nav nav-tabs" role="tablist">
-			<li role="presentation" class="active"><a href="#1" aria-controls="1" role="tab" data-toggle="tab">Accepted</a></li>
-			<li role="presentation"><a href="#2" aria-controls="2" role="tab" data-toggle="tab">Pending</a></li>
+			<li role="presentation" class="active"><a href="#1" aria-controls="1" role="tab" data-toggle="tab"><i class="glyphicon glyphicon-ok"></i>&nbsp; Accepted</a></li>
+			<li role="presentation"><a href="#2" aria-controls="2" role="tab" data-toggle="tab"><i class="glyphicon glyphicon-time"></i>&nbsp; Pending</a></li>
 		</ul><br>
 		<div class="tab-content">
 			<div role="tabpanel" class="tab-pane container-fluid active" id="1">
