@@ -895,7 +895,7 @@ img.img-responsive {
 /* line 309, ../../sass/main.scss */
 .single-mid-box .action-box {
   position: absolute;
-  bottom: -5px;
+  bottom: -30px;
   width: 100%;
 }
 /* line 316, ../../sass/main.scss */
@@ -956,6 +956,7 @@ img.img-responsive {
 /* line 377, ../../sass/main.scss */
 .single-mid-box #progress {
   margin-top: 10px;
+  height: 30px;
 }
 
 /* line 384, ../../sass/main.scss */

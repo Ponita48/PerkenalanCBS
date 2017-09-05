@@ -141,7 +141,7 @@ class Perkenalan extends CI_Controller
 				$this->load->view('index', $data);
 				$this->load->view('footer');
 			}else {
-				$data['message_display'] = "Request telah dikirim";
+				$data['message_display'] = "Request sent!";
 				$this->load->view('header');
 				$this->load->view('index', $data);
 				$this->load->view('footer');
@@ -221,7 +221,7 @@ class Perkenalan extends CI_Controller
 		if ($angkatan == $max_angkatan) {
 			$cek = $this->Perkenalan_model->check_perkenalan($id_user_maba, $id_user, 'perkenalan_angkatan');
 			if ($cek == TRUE) {
-				$this->session->set_flashdata('error_message', 'Request telah dikirim');
+				$this->session->set_flashdata('error_message', 'Request sent!');
 				redirect(base_url());	
 			}else {
 

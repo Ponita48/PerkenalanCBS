@@ -43,20 +43,20 @@
 				<center>
 					<table class="table">
 						<tr>
-							<th>Nama Keluarga</th>
-							<th>NPM Keluarga</th>
-							<th>Nama Peserta</th>
 							<th>NPM Peserta</th>
+							<th>Nama Peserta</th>
+							<th>NPM Keluarga</th>
+							<th>Nama Keluarga</th>
 							<th>Details</th>
 						</tr>
 					<?php if (isset($result)) : ?>
 						<?php foreach ($result as $key) : ?>
 							<?php if ($key->angkatan_keluarga == 2016) : ?>
 								<tr class="item">
-									<td><?php echo $key->nama; ?></td>
-									<td><?php echo $key->npm_keluarga; ?></td>
-									<td><?php echo $key->nama_peserta; ?></td>
 									<td class="npm"><?php echo $key->npm_peserta; ?></td>
+									<td><?php echo $key->nama_peserta; ?></td>
+									<td><?php echo $key->npm_keluarga; ?></td>
+									<td><?php echo $key->nama; ?></td>
 									<td><a href="<?php echo base_url().'detail_perkenalan/'.$key->id_perkenalan_kating; ?>">
 										<button class="btn btn-primary">Click Here</button>
 									</a></td>
@@ -71,20 +71,20 @@
 				<center>
 					<table class="table">
 						<tr>
-							<th>Nama Keluarga</th>
-							<th>NPM Keluarga</th>
-							<th>Nama Peserta</th>
 							<th>NPM Peserta</th>
+							<th>Nama Peserta</th>
+							<th>NPM Keluarga</th>
+							<th>Nama Keluarga</th>
 							<th>Details</th>
 						</tr>
 					<?php if (isset($result)) : ?>
 						<?php foreach ($result as $key) : ?>
 							<?php if ($key->angkatan_keluarga == 2015) : ?>
 								<tr class="item">
-									<td><?php echo $key->nama; ?></td>
-									<td><?php echo $key->npm_keluarga; ?></td>
-									<td><?php echo $key->nama_peserta; ?></td>
 									<td class="npm"><?php echo $key->npm_peserta; ?></td>
+									<td><?php echo $key->nama_peserta; ?></td>
+									<td><?php echo $key->npm_keluarga; ?></td>
+									<td><?php echo $key->nama; ?></td>
 									<td><a href="<?php echo base_url().'detail_perkenalan/'.$key->id_perkenalan_kating; ?>">
 										<button class="btn btn-primary">Click Here</button>
 									</a></td>
@@ -99,20 +99,20 @@
 				<center>
 					<table class="table">
 						<tr>
-							<th>Nama Keluarga</th>
-							<th>NPM Keluarga</th>
-							<th>Nama Peserta</th>
 							<th>NPM Peserta</th>
+							<th>Nama Peserta</th>
+							<th>NPM Keluarga</th>
+							<th>Nama Keluarga</th>
 							<th>Details</th>
 						</tr>
 					<?php if (isset($result)) : ?>
 						<?php foreach ($result as $key) : ?>
 							<?php if ($key->angkatan_keluarga == 2014) : ?>
 								<tr class="item">
-									<td><?php echo $key->nama; ?></td>
-									<td><?php echo $key->npm_keluarga; ?></td>
-									<td><?php echo $key->nama_peserta; ?></td>
 									<td class="npm"><?php echo $key->npm_peserta; ?></td>
+									<td><?php echo $key->nama_peserta; ?></td>
+									<td><?php echo $key->npm_keluarga; ?></td>
+									<td><?php echo $key->nama; ?></td>
 									<td><a href="<?php echo base_url().'detail_perkenalan/'.$key->id_perkenalan_kating; ?>">
 										<button class="btn btn-primary">Click Here</button>
 									</a></td>
@@ -127,20 +127,20 @@
 				<center>
 					<table class="table">
 						<tr>
-							<th>Nama Keluarga</th>
-							<th>NPM Keluarga</th>
-							<th>Nama Peserta</th>
 							<th>NPM Peserta</th>
+							<th>Nama Peserta</th>
+							<th>NPM Keluarga</th>
+							<th>Nama Keluarga</th>
 							<th>Details</th>
 						</tr>
 					<?php if (isset($result)) : ?>
 						<?php foreach ($result as $key) : ?>
 							<?php if ($key->angkatan_keluarga == 2013) : ?>
 								<tr class="item">
-									<td><?php echo $key->nama; ?></td>
-									<td><?php echo $key->npm_keluarga; ?></td>
-									<td><?php echo $key->nama_peserta; ?></td>
 									<td class="npm"><?php echo $key->npm_peserta; ?></td>
+									<td><?php echo $key->nama_peserta; ?></td>
+									<td><?php echo $key->npm_keluarga; ?></td>
+									<td><?php echo $key->nama; ?></td>
 									<td><a href="<?php echo base_url().'detail_perkenalan/'.$key->id_perkenalan_kating; ?>">
 										<button class="btn btn-primary">Click Here</button>
 									</a></td>
@@ -155,20 +155,20 @@
 			<center>
 					<table class="table">
 						<tr>
-							<th>Nama Keluarga</th>
-							<th>NPM Keluarga</th>
-							<th>Nama Peserta</th>
 							<th>NPM Peserta</th>
+							<th>Nama Peserta</th>
+							<th>NPM Keluarga</th>
+							<th>Nama Keluarga</th>
 							<th>Details</th>
 						</tr>
 					<?php if (isset($result)) : ?>
 						<?php foreach ($result as $key) : ?>
 							<?php if ($key->angkatan_keluarga == 2012) : ?>
 								<tr class="item">
-									<td><?php echo $key->nama; ?></td>
-									<td><?php echo $key->npm_keluarga; ?></td>
-									<td><?php echo $key->nama_peserta; ?></td>
 									<td class="npm"><?php echo $key->npm_peserta; ?></td>
+									<td><?php echo $key->nama_peserta; ?></td>
+									<td><?php echo $key->npm_keluarga; ?></td>
+									<td><?php echo $key->nama; ?></td>
 									<td><a href="<?php echo base_url().'detail_perkenalan/'.$key->id_perkenalan_kating; ?>">
 										<button class="btn btn-primary">Click Here</button>
 									</a></td>

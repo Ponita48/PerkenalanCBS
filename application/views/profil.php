@@ -67,7 +67,7 @@
 						<!-- cek apakah yang dilihat peserta atau kating -->
 						<?php if ($result->role == "2017"): ?>
 							<!-- ADMIN MELIHAT MABA -->
-							<a href="<?php echo base_url().'perkenalan_angkatan/'.$result->id_user; ?>"><button class="btn btn-warning" type="submit">See Request</button></a><br><br>
+							<a href="<?php echo base_url().'perkenalan_angkatan/'.$result->id_user; ?>"><button class="btn btn-warning" type="submit">See Friends</button></a><br><br>
 						<?php endif ?>
 					<?php endif ?>
 				<?php endif ?>
@@ -117,7 +117,10 @@
 						<?php if ($this->session->userdata['logged_in']['npm'] == $result->npm): ?>
 							<a href="<?php echo base_url(); ?>my_request">
 								<button class="btn btn-warning" id="progress" type="submit">See My Requests</button>
-							</a> 
+							</a>
+							<a href="<?php echo base_url().'perkenalan_angkatan/'.$result->id_user; ?>">
+								<button class="btn btn-warning" id="progress" type="submit">See My Friends</button>
+							</a>
 						<?php endif ?>
 					<?php endif ?>
 				</div>
