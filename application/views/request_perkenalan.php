@@ -35,7 +35,7 @@
 		</div>
 		<div class="form-group">
 			<label for="foto" class="control-label">Photo Requirement</label>
-			<input type="text" class="form-control" id="foto" placeholder="Masukkan link" name="link_foto">
+			<input type="url" class="form-control" id="foto" placeholder="Masukkan link" name="link_foto">
 		</div>
 		<input class="btn btn-success" type="submit" value="Send Request" id="send-request">
 	</form>
