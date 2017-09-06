@@ -47,6 +47,9 @@
 	#send-request{
 		width: 100%;
 	}
+	#profile-single-btn{ //buat admin
+		@extend #send-request;
+	}
 
 	.tab-content{
 		.active{

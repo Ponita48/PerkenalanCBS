@@ -87,7 +87,7 @@ class A extends CI_Controller {
 
 		}
 		if ($result == FALSE) {
-			$this->session->set_flashdata('error_message', 'Friend list empty!');
+			$this->session->set_flashdata('error_message', 'Friends list is empty!');
 			redirect(base_url());
 		}else {
 			$data['result'] = $result;
