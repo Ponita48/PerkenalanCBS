@@ -39,103 +39,103 @@
   }
 
   /* line 47, ../../sass/_responsive.scss */
-  #send-request {
+  #send-request, #profile-single-btn {
     width: 100%;
   }
 
-  /* line 52, ../../sass/_responsive.scss */
+  /* line 55, ../../sass/_responsive.scss */
   .tab-content .active {
     overflow: auto;
   }
-  /* line 55, ../../sass/_responsive.scss */
+  /* line 58, ../../sass/_responsive.scss */
   .tab-content .person-box {
     width: 33.3333%;
     height: 250px;
   }
-  /* line 60, ../../sass/_responsive.scss */
+  /* line 63, ../../sass/_responsive.scss */
   .tab-content .person-box .identity p {
     font-weight: bold;
     margin: 0;
     font-size: 12px;
   }
-  /* line 67, ../../sass/_responsive.scss */
+  /* line 70, ../../sass/_responsive.scss */
   .tab-content #field_bagan {
     width: 100%;
   }
 
-  /* line 72, ../../sass/_responsive.scss */
+  /* line 75, ../../sass/_responsive.scss */
   #open-quiz {
     left: 0;
     width: 100%;
   }
 
-  /* line 78, ../../sass/_responsive.scss */
+  /* line 81, ../../sass/_responsive.scss */
   #header-content #kuis {
     width: 100%;
     margin: 0;
   }
-  /* line 82, ../../sass/_responsive.scss */
+  /* line 85, ../../sass/_responsive.scss */
   #header-content #take-quiz {
     float: left;
     left: 10px;
     width: 95%;
     margin: 0;
   }
-  /* line 89, ../../sass/_responsive.scss */
+  /* line 92, ../../sass/_responsive.scss */
   #header-content .btn-primary {
     width: 100%;
   }
-  /* line 92, ../../sass/_responsive.scss */
+  /* line 95, ../../sass/_responsive.scss */
   #header-content #btn_kirim, #header-content #see-latest {
     width: 100%;
   }
 
-  /* line 97, ../../sass/_responsive.scss */
+  /* line 100, ../../sass/_responsive.scss */
   .container {
     padding: 0 15px;
   }
-  /* line 102, ../../sass/_responsive.scss */
+  /* line 105, ../../sass/_responsive.scss */
   .container .nav-tabs li a {
     width: 160px;
   }
 
-  /* line 109, ../../sass/_responsive.scss */
+  /* line 112, ../../sass/_responsive.scss */
   .container-fluid {
     padding: 0;
   }
 
-  /* line 117, ../../sass/_responsive.scss */
+  /* line 120, ../../sass/_responsive.scss */
   .app-header #search_icon {
     display: none;
   }
 
-  /* line 123, ../../sass/_responsive.scss */
+  /* line 126, ../../sass/_responsive.scss */
   .header-title h1 {
     text-align: center;
   }
 
-  /* line 127, ../../sass/_responsive.scss */
+  /* line 130, ../../sass/_responsive.scss */
   #nama-header {
     font-size: 18px;
   }
 
-  /* line 131, ../../sass/_responsive.scss */
+  /* line 134, ../../sass/_responsive.scss */
   .carousel-inner {
     position: relative;
     width: 100%;
     height: 400px;
     overflow: auto;
   }
-  /* line 138, ../../sass/_responsive.scss */
+  /* line 141, ../../sass/_responsive.scss */
   .carousel-inner .item .img-responsive {
     height: 100px;
   }
-  /* line 143, ../../sass/_responsive.scss */
+  /* line 146, ../../sass/_responsive.scss */
   .carousel-inner p {
     font-size: 12px;
   }
 
-  /* line 148, ../../sass/_responsive.scss */
+  /* line 151, ../../sass/_responsive.scss */
   .carousel-caption {
     position: absolute;
     width: 70%;
@@ -143,168 +143,168 @@
     left: 15%;
   }
 
-  /* line 155, ../../sass/_responsive.scss */
+  /* line 158, ../../sass/_responsive.scss */
   .carousel-indicators {
     display: none;
   }
 
-  /* line 160, ../../sass/_responsive.scss */
+  /* line 163, ../../sass/_responsive.scss */
   .name-badge .big-name, .name-badge .jabatan, .name-badge .jabatan {
     font-size: 14px;
   }
 
-  /* line 165, ../../sass/_responsive.scss */
+  /* line 168, ../../sass/_responsive.scss */
   .modal-body p {
     margin-top: 30px;
   }
 
-  /* line 170, ../../sass/_responsive.scss */
+  /* line 173, ../../sass/_responsive.scss */
   .modal-lg .modal-content {
     width: 100%;
     left: 0;
   }
-  /* line 174, ../../sass/_responsive.scss */
+  /* line 177, ../../sass/_responsive.scss */
   .modal-lg .modal-content .modal-footer .btn-success, .modal-lg .modal-content .modal-footer #header-content .btn-primary, #header-content .modal-lg .modal-content .modal-footer .btn-primary {
     width: 100%;
     left: 0;
   }
 
-  /* line 183, ../../sass/_responsive.scss */
+  /* line 186, ../../sass/_responsive.scss */
   .app-body .footer {
     margin: 50px 10px 0 10px;
   }
-  /* line 185, ../../sass/_responsive.scss */
+  /* line 188, ../../sass/_responsive.scss */
   .app-body .footer p {
     font-size: 10px;
   }
 
-  /* line 193, ../../sass/_responsive.scss */
+  /* line 196, ../../sass/_responsive.scss */
   .login-box .login-container {
     width: 100%;
     left: 0;
   }
 
-  /* line 200, ../../sass/_responsive.scss */
+  /* line 203, ../../sass/_responsive.scss */
   .all-person-box .person-box {
     width: 33.333%;
     height: 250px;
   }
-  /* line 206, ../../sass/_responsive.scss */
+  /* line 209, ../../sass/_responsive.scss */
   .all-person-box .identity p {
     margin: 0;
     font-size: 12px;
     font-weight: bold;
   }
 
-  /* line 213, ../../sass/_responsive.scss */
+  /* line 216, ../../sass/_responsive.scss */
   .wrapper-for-all#edit-profile-form {
     padding: 20px 30px 0 30px;
   }
 
-  /* line 216, ../../sass/_responsive.scss */
+  /* line 219, ../../sass/_responsive.scss */
   .wrapper-for-all#request-angkatan-form {
     padding: 20px 15px 0 15px;
   }
-  /* line 218, ../../sass/_responsive.scss */
+  /* line 221, ../../sass/_responsive.scss */
   .wrapper-for-all#request-angkatan-form .btn {
     font-size: 14px;
   }
 
-  /* line 222, ../../sass/_responsive.scss */
+  /* line 225, ../../sass/_responsive.scss */
   .wrapper-for-all#my-request {
     padding: 20px 30px 0 30px;
   }
-  /* line 225, ../../sass/_responsive.scss */
+  /* line 228, ../../sass/_responsive.scss */
   .wrapper-for-all#my-request .nav-tabs li {
     position: relative;
     float: left;
   }
 
-  /* line 235, ../../sass/_responsive.scss */
+  /* line 238, ../../sass/_responsive.scss */
   .wrapper-for-all .single-mid-box {
     position: relative;
     width: 100%;
     left: 0;
   }
-  /* line 240, ../../sass/_responsive.scss */
+  /* line 243, ../../sass/_responsive.scss */
   .wrapper-for-all .single-mid-box #chg_photo {
     font-size: 12px;
     left: 25%;
   }
-  /* line 244, ../../sass/_responsive.scss */
+  /* line 247, ../../sass/_responsive.scss */
   .wrapper-for-all .single-mid-box .img-thumbnail {
     width: 150px;
   }
-  /* line 247, ../../sass/_responsive.scss */
+  /* line 250, ../../sass/_responsive.scss */
   .wrapper-for-all .single-mid-box #save-edit {
     width: 100%;
   }
-  /* line 250, ../../sass/_responsive.scss */
+  /* line 253, ../../sass/_responsive.scss */
   .wrapper-for-all .single-mid-box .btn-primary, .wrapper-for-all .single-mid-box .btn-success, .wrapper-for-all .single-mid-box #header-content .btn-primary, #header-content .wrapper-for-all .single-mid-box .btn-primary, .wrapper-for-all .single-mid-box .btn-warning, .wrapper-for-all .single-mid-box .btn-info, .wrapper-for-all .single-mid-box .person-box .btn, .wrapper-for-all .person-box .single-mid-box .btn {
     position: relative;
     width: 50%;
     height: 30px;
   }
-  /* line 256, ../../sass/_responsive.scss */
+  /* line 259, ../../sass/_responsive.scss */
   .wrapper-for-all .single-mid-box .identity-box {
     margin-top: 10px;
     width: 100%;
   }
-  /* line 259, ../../sass/_responsive.scss */
+  /* line 262, ../../sass/_responsive.scss */
   .wrapper-for-all .single-mid-box .identity-box .action-box {
     position: relative;
     top: -30px;
   }
-  /* line 266, ../../sass/_responsive.scss */
+  /* line 269, ../../sass/_responsive.scss */
   .wrapper-for-all .col-sm-4 .modal-lg {
     width: 80%;
     left: 7%;
   }
-  /* line 272, ../../sass/_responsive.scss */
+  /* line 275, ../../sass/_responsive.scss */
   .wrapper-for-all #req-teman {
     width: 50%;
     left: 25%;
   }
-  /* line 276, ../../sass/_responsive.scss */
+  /* line 279, ../../sass/_responsive.scss */
   .wrapper-for-all .form-box {
     margin-top: 10px;
     width: 100%;
   }
-  /* line 279, ../../sass/_responsive.scss */
+  /* line 282, ../../sass/_responsive.scss */
   .wrapper-for-all .form-box .modal-lg {
     top: 30px;
     left: 0;
     width: 95%;
   }
-  /* line 288, ../../sass/_responsive.scss */
+  /* line 291, ../../sass/_responsive.scss */
   .wrapper-for-all .myImg {
     left: 0;
   }
-  /* line 291, ../../sass/_responsive.scss */
+  /* line 294, ../../sass/_responsive.scss */
   .wrapper-for-all .single-box {
     bottom: 13%;
     width: 100%;
     left: 0;
   }
 
-  /* line 299, ../../sass/_responsive.scss */
+  /* line 302, ../../sass/_responsive.scss */
   .single-box .verification-action-box {
     width: 100%;
     left: 0;
   }
 
-  /* line 306, ../../sass/_responsive.scss */
+  /* line 309, ../../sass/_responsive.scss */
   .single-mid-box .table-responsive {
     padding: 0;
     width: 100%;
     border: none;
   }
 
-  /* line 314, ../../sass/_responsive.scss */
+  /* line 317, ../../sass/_responsive.scss */
   .verification-action-box {
     width: 100%;
   }
-  /* line 316, ../../sass/_responsive.scss */
+  /* line 319, ../../sass/_responsive.scss */
   .verification-action-box #approve-request {
     left: 0;
     height: 50px;
