@@ -65,19 +65,17 @@
                         <input type="submit" value="Add to Friends List" class="btn btn-warning" >
 			            <div class="modal fade" id="modalFoto" role="dialog"> <!-- gangerti .js, fadenya ngga ketahan langsung ilang lagi -->
 			                <div class="modal-dialog modal-lg">
-			                    <div class="modal-content">
+			                    <div class="modal-content cf">
 			                        <div class="modal-header">
 			                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true" style="color: white;">&times;</button> 
 			                            <h4 class="modal-title">Change Photo</h4>
 			                        </div>
 			                        <div class="modal-body">
-			                            <div class="container">
-			                                <?php foreach ($pp as $data) : ?>
-			                                <div class="col-sm-4">
-			                                    <img src="<?php echo $data->link_foto; ?>" alt="No Photo!" class="img-responsive img-thumbnail" onclick="change_photo(this.src);">
-			                                </div>
-			                                <?php endforeach; ?>
-			                            </div>
+		                                <?php foreach ($pp as $data) : ?>
+		                                <!-- <div class="col-md-4"> -->
+		                                    <img src="<?php echo $data->link_foto; ?>" alt="No Photo!" class="img-responsive img-thumbnail" onclick="change_photo(this.src);">
+		                                <!-- </div> -->
+		                                <?php endforeach; ?>
 			                        </div>
 			                        <div class="modal-footer"></div>
 			                    </div>
@@ -130,20 +128,19 @@
         </div>
         <div class="modal fade" id="modalFoto" role="dialog"> <!-- gangerti .js, fadenya ngga ketahan langsung ilang lagi -->
             <div class="modal-dialog modal-lg">
-                <div class="modal-content">
+                <div class="modal-content cf">
                     <div class="modal-header">
                         <button type="button" class="close" data-dismiss="modal" aria-hidden="true" style="color: white;">&times;</button> 
                         <h4 class="modal-title">Change Photo</h4>
                     </div>
                     <div class="modal-body">
-                        <div class="container">
-                            <?php foreach ($pp as $data) : ?>
-	                            <div class="col-sm-4">
-	                                <img src="<?php echo $data->link_foto; ?>" alt="No Photo!" class="img-responsive img-thumbnail" onclick="change_photo(this.src);">
-	                            </div>
-                            <?php endforeach; ?>
-                        </div>
+                        <?php foreach ($pp as $data) : ?>
+                            <!-- <div class="col-md-4"> -->
+                                <img src="<?php echo $data->link_foto; ?>" alt="No Photo!" class="img-responsive img-thumbnail" onclick="change_photo(this.src);">
+                            <!-- </div> -->
+                        <?php endforeach; ?>
                     </div>
+                    <div class="modal-footer"></div>
                 </div>
             </div>
         </div>
