@@ -16,7 +16,7 @@ class Admin_model extends CI_Model {
 	}
 
 	public function getPerkenalanAngkatan($id) {
-		$q = $this->db->query("SELECT p.id_perkenalan_angkatan, (SELECT u.npm FROM users u WHERE u.id_user = p.id_user1) AS 'npm_peserta', (SELECT u.npm FROM users u WHERE u.id_user = p.id_user2) AS 'npm_angkatan', p.nama, p.tempat_lahir, p.tgl_lahir, p.alamat_kos, p.id_line, p.no_hp, p.link_foto FROM users u, perkenalan_angkatan p WHERE p.id_user1 = '$id' GROUP BY p.id_perkenalan_angkatan");
+		$q = $this->db->query("SELECT p.id_perkenalan_angkatan, (SELECT u.npm FROM users u WHERE u.id_user = p.id_user1) AS 'npm_peserta', (SELECT u.npm FROM users u WHERE u.id_user = p.id_user2) AS 'npm_angkatan', p.nama, p.tempat_lahir, p.tgl_lahir, p.alamat_kos, p.id_line, p.no_hp, p.link_foto, p.request_time FROM users u, perkenalan_angkatan p WHERE p.id_user1 = '$id' AND p.id_perkenalan_angkatan IN (SELECT MIN(p.id_perkenalan_angkatan) FROM perkenalan_angkatan p WHERE p.request_time = (SELECT MAX(p.request_time) FROM perkenalan_angkatan x WHERE x.id_user1 = p.id_user1 AND x.id_user2 = p.id_user2) GROUP BY p.id_user1, p.id_user2)  GROUP BY p.id_perkenalan_angkatan");
 
 		if ($q->num_rows() == 0) {
 			return FALSE;
