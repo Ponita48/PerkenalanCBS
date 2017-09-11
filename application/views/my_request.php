@@ -12,7 +12,7 @@
 				<center>
 				<?php if($accepted != NULL) : ?>
 					<?php foreach ($accepted as $value) : ?>
-						<div class="person-box">
+						<div class="person-box" id="my_request">
 							<?php if (is_null($value->link_foto)): ?>
 								<img src="<?php echo base_url(); ?>Photos/placeholder.png" alt="">
 							<?php else: ?>
@@ -31,7 +31,7 @@
 				<center>
 				<?php if($declined != NULL) : ?>
 					<?php foreach ($declined as $value) : ?>
-						<div class="person-box">
+						<div class="person-box" id="my_request">
 							<?php if (is_null($value->link_foto)): ?>
 								<img src="<?php echo base_url(); ?>Photos/placeholder.png" alt="">
 							<?php else: ?>
@@ -50,7 +50,7 @@
 				<center>
 					<?php if($pending != NULL) : ?>
 						<?php foreach ($pending as $value) : ?>
-							<div class="person-box">
+							<div class="person-box" id="my_request">
 							<?php if (is_null($value->link_foto)): ?>
 								<img src="<?php echo base_url(); ?>Photos/placeholder.png" alt="">
 							<?php else: ?>

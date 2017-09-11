@@ -186,6 +186,7 @@
 		.footer {
 			margin: 50px 10px 0 10px;
 			p{
+				text-align: center;
 				font-size: 10px
 			}
 		}
@@ -234,6 +235,14 @@
 			}
 		}
 	}
+	.wrapper-for-all#request_angkatan{
+		@extend .wrapper-for-all#my-request;
+
+		.btn-success{
+			font-size: 14px;
+		}
+	}
+
 	.wrapper-for-all{
 		.single-mid-box{
 			position: relative;

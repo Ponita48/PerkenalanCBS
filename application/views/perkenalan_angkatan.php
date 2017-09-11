@@ -12,9 +12,9 @@
 					<?php if ($this->session->userdata['logged_in']['role'] == "admin"): ?>
 						<th>NPM Peserta</th>
 					<?php endif ?>
+					<th>Foto</th>
 					<th>NPM</th>
 					<th>Nama</th>
-					<th>Foto</th>
 					<th>Tempat Lahir</th>
 					<th>Tanggal Lahir</th>
 					<th>Alamat Kos</th>
@@ -32,9 +32,9 @@
 					<?php if ($this->session->userdata['logged_in']['role'] == "admin"): ?>
 						<td><?php echo $key->npm_peserta; ?></td>
 					<?php endif ?>
+					<td><center><img src="<?php echo $key->link_foto; ?>" class="img-responsive"></center></td>
 					<td><?php echo $key->npm_angkatan; ?></td>
 					<td><?php echo $key->nama; ?></td>
-					<td><center><img src="<?php echo $key->link_foto; ?>" class="img-responsive"></center></td>
 					<td><?php echo $key->tempat_lahir; ?></td>
 					<td><?php echo $key->tgl_lahir; ?></td>
 					<td><?php echo $key->alamat_kos; ?></td>

@@ -26,10 +26,10 @@
 	<h1 id="nama-header">REQUEST TO DELPHI 2017</h1>
 </div>
 <?php if ( ! isset($detailPerkenalan)) : ?>
-        <div class="wrapper-for-all cf">
+        <div class="wrapper-for-all cf" id="request_angkatan">
             <div class="person-box" id="req-teman">
                 <img src="<?php echo base_url(); ?>Photos/placeholder.png" alt="" class="img-thumbnail" id="poto">
-                <button type="button" class="btn btn-info" data-toggle="modal" data-target="#modalFoto">Change Photo</button>
+                <button type="button" class="btn btn-info" data-toggle="modal" data-target="#modalFoto"><i class="glyphicon glyphicon-picture"></i>&nbsp; Change Photo</button>
             </div>
             <div class="form-box"> <!-- Form isi biodata -->
                 <div class="well well-lg" style="vertical-align: middle">
@@ -62,7 +62,7 @@
                             <!-- <label for="link_foto" type="hidden">Link Foto</label> -->
                             <input type="hidden" class="form-control" name="link_foto" placeholder="link foto teman anda" id="link-foto" id="linkPoto">
                         </div>
-                        <input type="submit" value="Add to Friends List" class="btn btn-warning" >
+                        <input type="submit" value="Add to Friends List" class="btn btn-success" >
 			            <div class="modal fade" id="modalFoto" role="dialog"> <!-- gangerti .js, fadenya ngga ketahan langsung ilang lagi -->
 			                <div class="modal-dialog modal-lg">
 			                    <div class="modal-content cf">
@@ -86,10 +86,10 @@
             </div>
         </div>
 <?php else : ?>
-    <div class="wrapper-for-all cf">
+    <div class="wrapper-for-all cf" id="request_angkatan">
         <div class="person-box" id="req-teman">
             <img src="<?php echo $detailPerkenalan->link_foto; ?>" alt="" class="img-thumbnail" id="poto">
-            <button type="button" class="btn btn-info" data-toggle="modal" data-target="#modalFoto">Change Photo</button>
+            <button type="button" class="btn btn-info" data-toggle="modal" data-target="#modalFoto"><i class="glyphicon glyphicon-picture"></i>&nbsp; Change Photo</button>
         </div>
         <div class="form-box"> <!-- Form isi biodata -->
             <div class="well well-lg" style="vertical-align: middle">

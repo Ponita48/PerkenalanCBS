@@ -239,6 +239,7 @@ img.img-responsive {
 	border-top: solid 2px $himatif;
 	font-style: italic;
 	p{
+		text-align: center;
 		font-size: 12px;
 		line-height: 40px;
 	}
@@ -451,6 +452,10 @@ img.img-responsive {
 
 #req-teman{
 	width: 28%;
+}
+
+#my_request{
+	height: 300px;
 }
 
 .profile-box{
