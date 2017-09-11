@@ -168,6 +168,7 @@ class Perkenalan extends CI_Controller
 
 		$pending = $this->Perkenalan_model->getPendingRequest($id_user);
 		$accepted = $this->Perkenalan_model->getAcceptedRequest($id_user);
+		$declined = $this->Perkenalan_model->getDeclinedRequest($id_user);
 
 		if ($pending == FALSE) {
 			$pending = NULL;
@@ -179,6 +180,7 @@ class Perkenalan extends CI_Controller
 
 		$data['pending'] = $pending;
 		$data['accepted'] = $accepted;
+		$data['declined'] = $declined;
 
 		$this->load->view('header');
 		$this->load->view('my_request', $data);

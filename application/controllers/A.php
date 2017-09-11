@@ -221,7 +221,8 @@ class A extends CI_Controller {
 
 		$data = array(
 			'status' => 2,
-			'approve_time' => $date
+			'approve_time' => $date,
+			'message' => $this->input->post('message')
 		);
 
 		$result = $this->Admin_model->approveRejectPerkenalan($id_perkenalan, $data);

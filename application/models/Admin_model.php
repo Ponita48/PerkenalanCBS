@@ -69,6 +69,7 @@ class Admin_model extends CI_Model {
 			$res = $q->result()[0];
 			$peserta = $this->db->query("SELECT link_foto FROM profile_maba WHERE id_user = '$res->id_user_maba'");
 			$kating = $this->db->query("SELECT npm FROM users WHERE id_user = '$res->id_user_kating'");
+			$pp_kating = $this->db->query("SELECT link_foto FROM profile_kating WHERE id_user = '$res->id_user_kating'");
 			
 			if ($peserta->num_rows() == 0) {
 				$res->link_foto_peserta = NULL;
@@ -80,6 +81,12 @@ class Admin_model extends CI_Model {
 				$res->npm_keluarga = NULL;
 			}else {
 				$res->npm_keluarga = $kating->result()[0]->npm;
+			}
+
+			if ($kating->num_rows() == 0) {
+				$res->pp_keluarga = NULL;
+			}else {
+				$res->pp_keluarga = $pp_kating->result()[0]->link_foto;
 			}
 			
 			return $res;
