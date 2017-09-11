@@ -32,7 +32,7 @@
 					<?php if ($this->session->userdata['logged_in']['role'] == "admin"): ?>
 						<td><?php echo $key->npm_peserta; ?></td>
 					<?php endif ?>
-					<td><center><img src="<?php echo $key->link_foto; ?>" class="img-responsive"></center></td>
+					<td><center><img src="<?php echo $key->link_foto; ?>" class="img-responsive img-thumbnail"></center></td>
 					<td><?php echo $key->npm_angkatan; ?></td>
 					<td><?php echo $key->nama; ?></td>
 					<td><?php echo $key->tempat_lahir; ?></td>

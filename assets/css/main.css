@@ -874,76 +874,77 @@ img.img-responsive {
   background-color: transparent;
   border-top: solid 2px #FFD51E;
   font-style: italic;
+  text-align: center;
 }
-/* line 241, ../../sass/main.scss */
+/* line 242, ../../sass/main.scss */
 .footer p {
   text-align: center;
   font-size: 12px;
   line-height: 40px;
 }
-/* line 246, ../../sass/main.scss */
+/* line 247, ../../sass/main.scss */
 .footer a {
   color: #FFD51E;
 }
 
-/* line 252, ../../sass/main.scss */
+/* line 253, ../../sass/main.scss */
 .all-in-one-box, .all-person-box, .wrapper-for-all {
   position: relative;
   padding: 10px;
   width: 100%;
 }
 
-/* line 262, ../../sass/main.scss */
+/* line 263, ../../sass/main.scss */
 .wrapper-for-all {
   padding: 20px 50px 0 50px;
 }
-/* line 266, ../../sass/main.scss */
+/* line 267, ../../sass/main.scss */
 .wrapper-for-all .person-box {
   position: relative;
   height: 100%;
 }
-/* line 269, ../../sass/main.scss */
+/* line 270, ../../sass/main.scss */
 .wrapper-for-all .person-box .btn-info, .wrapper-for-all .person-box .btn {
   position: relative;
   top: 15px;
   width: 100%;
 }
-/* line 278, ../../sass/main.scss */
+/* line 279, ../../sass/main.scss */
 .wrapper-for-all .modal-lg {
   position: absolute;
   width: 50%;
   top: 20%;
   left: 25%;
 }
-/* line 284, ../../sass/main.scss */
+/* line 285, ../../sass/main.scss */
 .wrapper-for-all .col-sm-12, .wrapper-for-all .col-sm-4 {
   padding: 0;
 }
-/* line 287, ../../sass/main.scss */
+/* line 288, ../../sass/main.scss */
 .wrapper-for-all .control-label {
   margin-top: 10px;
 }
 
-/* line 292, ../../sass/main.scss */
+/* line 293, ../../sass/main.scss */
 .single-mid-box {
   position: relative;
   width: 50%;
   left: 25%;
 }
-/* line 297, ../../sass/main.scss */
+/* line 298, ../../sass/main.scss */
 .single-mid-box .form-horizontal {
   width: 100%;
 }
-/* line 300, ../../sass/main.scss */
+/* line 301, ../../sass/main.scss */
 .single-mid-box .form-horizontal .control-label {
   margin-top: 5px;
   text-align: left;
 }
-/* line 306, ../../sass/main.scss */
+/* line 307, ../../sass/main.scss */
 .single-mid-box .form-group {
   margin: 0;
 }
-/* line 310, ../../sass/main.scss */
+/* line 311, ../../sass/main.scss */
 .single-mid-box .btn {
   height: 40px;
   width: 100%;
@@ -952,13 +953,13 @@ img.img-responsive {
   border: none;
   font-size: 12px;
 }
-/* line 319, ../../sass/main.scss */
+/* line 320, ../../sass/main.scss */
 .single-mid-box .action-box {
   position: relative;
   top: -30px;
   width: 100%;
 }
-/* line 324, ../../sass/main.scss */
+/* line 325, ../../sass/main.scss */
 .single-mid-box .action-box .btn {
   height: 30px;
   width: 100%;
@@ -966,13 +967,13 @@ img.img-responsive {
   margin-top: 10px;
   border: none;
 }
-/* line 333, ../../sass/main.scss */
+/* line 334, ../../sass/main.scss */
 .single-mid-box .well-lg {
   background-color: #666;
   border: none;
 }
 
-/* line 339, ../../sass/main.scss */
+/* line 340, ../../sass/main.scss */
 .single-box {
   position: relative;
   bottom: 13%;
@@ -980,7 +981,7 @@ img.img-responsive {
   left: 25%;
 }
 
-/* line 346, ../../sass/main.scss */
+/* line 347, ../../sass/main.scss */
 .verification-action-box {
   float: left;
   position: relative;
@@ -988,43 +989,43 @@ img.img-responsive {
   left: 13%;
   width: 80%;
 }
-/* line 353, ../../sass/main.scss */
+/* line 354, ../../sass/main.scss */
 .verification-action-box .btn {
   height: 40px;
   font-weight: bold;
 }
-/* line 359, ../../sass/main.scss */
+/* line 360, ../../sass/main.scss */
 .verification-action-box .btn-warning, .verification-action-box .btn-danger {
   float: left;
   position: relative;
   width: calc(50% - 4px);
   margin: 2px;
 }
-/* line 365, ../../sass/main.scss */
+/* line 366, ../../sass/main.scss */
 .verification-action-box .btn-warning span, .verification-action-box .btn-danger span {
   line-height: 25px;
 }
-/* line 376, ../../sass/main.scss */
+/* line 377, ../../sass/main.scss */
 .verification-action-box .btn-success, .verification-action-box #header-content .btn-primary, #header-content .verification-action-box .btn-primary {
   float: left;
   position: relative;
   height: 50px;
   margin-top: 3px;
 }
-/* line 382, ../../sass/main.scss */
+/* line 383, ../../sass/main.scss */
 .verification-action-box .btn-success span, .verification-action-box #header-content .btn-primary span, #header-content .verification-action-box .btn-primary span {
   font-size: 18px;
   line-height: 35px;
 }
 
-/* line 391, ../../sass/main.scss */
+/* line 392, ../../sass/main.scss */
 .single-mid-box #edit, .single-mid-box #progress {
   float: left;
   position: relative;
   font-size: 12px;
   margin-top: 5px;
 }
-/* line 397, ../../sass/main.scss */
+/* line 398, ../../sass/main.scss */
 .single-mid-box #progress {
   width: calc(50% - 2px);
   height: 30px;
@@ -1033,26 +1034,26 @@ img.img-responsive {
   font-size: 12px;
 }
 
-/* line 408, ../../sass/main.scss */
+/* line 409, ../../sass/main.scss */
 #open-quiz {
   margin: 0;
 }
 
-/* line 412, ../../sass/main.scss */
+/* line 413, ../../sass/main.scss */
 .small {
   position: relative;
   width: 25%;
   left: 37.5%;
 }
 
-/* line 418, ../../sass/main.scss */
+/* line 419, ../../sass/main.scss */
 .form-box {
   float: right;
   position: relative;
   width: 70%;
   padding: 10px;
 }
-/* line 424, ../../sass/main.scss */
+/* line 425, ../../sass/main.scss */
 .form-box .btn-warning, .form-box .btn-success, .form-box #header-content .btn-primary, #header-content .form-box .btn-primary {
   width: 100%;
   height: 50px;
@@ -1060,62 +1061,62 @@ img.img-responsive {
   font-weight: bold;
 }
 
-/* line 432, ../../sass/main.scss */
+/* line 433, ../../sass/main.scss */
 .person-box {
   float: left;
   width: 16.6667%;
   height: 300px;
   padding: 10px;
 }
-/* line 438, ../../sass/main.scss */
+/* line 439, ../../sass/main.scss */
 .person-box .identity {
   margin-top: 10px;
 }
-/* line 440, ../../sass/main.scss */
+/* line 441, ../../sass/main.scss */
 .person-box .identity p {
   text-align: center;
   margin: 0;
   color: #FFD51E;
 }
-/* line 448, ../../sass/main.scss */
+/* line 449, ../../sass/main.scss */
 .person-box img {
   width: 100%;
 }
 
-/* line 453, ../../sass/main.scss */
+/* line 454, ../../sass/main.scss */
 #req-teman {
   width: 28%;
 }
 
-/* line 457, ../../sass/main.scss */
+/* line 458, ../../sass/main.scss */
 #my_request {
   height: 300px;
 }
 
-/* line 461, ../../sass/main.scss */
+/* line 462, ../../sass/main.scss */
 .profile-box {
   position: relative;
   float: left;
   width: 100%;
 }
 
-/* line 468, ../../sass/main.scss */
+/* line 469, ../../sass/main.scss */
 .photo-box {
   position: relative;
   max-height: 200px;
 }
-/* line 472, ../../sass/main.scss */
+/* line 473, ../../sass/main.scss */
 .photo-box .img-thumbnail {
   background-color: #FFFFFF;
   padding: 2px;
   border: none;
 }
-/* line 477, ../../sass/main.scss */
+/* line 478, ../../sass/main.scss */
 .photo-box :hover {
   box-shadow: 10px 10px 10px #0c0c0c;
 }
 
-/* line 482, ../../sass/main.scss */
+/* line 483, ../../sass/main.scss */
 .identity-box {
   float: right;
   position: relative;
@@ -1123,7 +1124,7 @@ img.img-responsive {
   padding: 10px 0;
 }
 
-/* line 489, ../../sass/main.scss */
+/* line 490, ../../sass/main.scss */
 .login-box {
   position: relative;
   width: 100%;
@@ -1131,12 +1132,12 @@ img.img-responsive {
   height: 400px;
 }
 
-/* line 498, ../../sass/main.scss */
+/* line 499, ../../sass/main.scss */
 #new-login {
   height: 500px;
 }
 
-/* line 501, ../../sass/main.scss */
+/* line 502, ../../sass/main.scss */
 .login-container {
   position: relative;
   left: 35%;
@@ -1145,7 +1146,7 @@ img.img-responsive {
   border-radius: 4px;
   background-color: #666;
 }
-/* line 509, ../../sass/main.scss */
+/* line 510, ../../sass/main.scss */
 .login-container .title {
   display: block;
   width: 100%;
@@ -1154,7 +1155,7 @@ img.img-responsive {
   font-weight: bold;
   padding: 20px 0;
 }
-/* line 517, ../../sass/main.scss */
+/* line 518, ../../sass/main.scss */
 .login-container .forgot {
   display: block;
   width: 100%;
@@ -1162,7 +1163,7 @@ img.img-responsive {
   margin: 10px 0;
   font-size: 12px;
 }
-/* line 524, ../../sass/main.scss */
+/* line 525, ../../sass/main.scss */
 .login-container .btn-login {
   width: 100%;
   height: 40px;
@@ -1170,13 +1171,13 @@ img.img-responsive {
   font-weight: bold;
 }
 
-/* line 531, ../../sass/main.scss */
+/* line 532, ../../sass/main.scss */
 .myImg {
   width: 200px;
   position: relative;
   left: 25%;
 }
-/* line 535, ../../sass/main.scss */
+/* line 536, ../../sass/main.scss */
 .myImg p {
   text-align: center;
 }
