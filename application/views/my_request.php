@@ -27,7 +27,7 @@
 				<?php endif; ?>
 				</center>
 			</div>
-			<div role="tabpanel" class="tab-pane container-fluid active" id="2">
+			<div role="tabpanel" class="tab-pane container-fluid" id="2">
 				<center>
 				<?php if($declined != NULL) : ?>
 					<?php foreach ($declined as $value) : ?>
@@ -40,6 +40,31 @@
 							<div class="identity">
 								<p id="nama"><?php echo $value->nama; ?></p>
 								<p id="npm"><?php echo $value->npm_keluarga; ?></p>
+							</div>
+            				<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#reason-<?php echo $value->id_perkenalan_kating; ?>">&nbsp; <span>Alasan</span></button>
+							<div class="modal fade" id="reason-<?php echo $value->id_perkenalan_kating; ?>" role="dialog"> <!-- POPUP ALASAN DECLINE -->
+								<div class="modal-dialog modal-lg">
+									<div class="modal-content" style="left: 0;">
+										<div class="modal-header">
+											<button type="button" class="close" data-dismiss="modal" aria-hidden="true" style="color: white;">&times;</button> 
+											<h4 class="modal-title">My Request</h4>
+										</div>
+										<div class="modal-body">
+											<label for="message">Alasan: </label>
+											<textarea name="message" id="message" rows="5" class="form-control" disabled>
+											<?php if (is_null($value->message)): ?>
+												Silahkan Coba Lagi
+											<?php else: ?>
+												<?php echo $value->message; ?>
+											<?php endif ?>
+											</textarea>
+										</div>
+										<div class="modal-footer">
+											<!-- <input class="btn btn-success" type="submit" name="Kirim"> -->
+											<!-- <button type="button" class="btn btn-default" data-dismiss="modal">Close</button> -->
+										</div>
+									</div>
+								</div> 
 							</div>
 						</div>
 					<?php endforeach; ?>
@@ -66,4 +91,5 @@
 				</center>
 			</div>
 		</div>
+		
 	</div>
