@@ -27,7 +27,7 @@ class Admin_model extends CI_Model {
 	}
 
 	public function getJumlahPerkenalan() {
-		$q = $this->db->query("SELECT (SELECT u.npm FROM users u WHERE u.id_user = p.id_user_maba) AS 'npm_peserta', (SELECT COUNT(*) FROM perkenalan_kating p WHERE p.id_user_maba = u.id_user) AS 'jumlah' FROM perkenalan_kating p, users u WHERE p.id_user_maba = u.id_user AND p.status = 1 GROUP BY u.npm");
+		$q = $this->db->query("SELECT (SELECT u.npm FROM users u WHERE u.id_user = p.id_user_maba) AS 'npm_peserta', (SELECT COUNT(*) FROM perkenalan_kating p WHERE p.id_user_maba = u.id_user  AND p.id_perkenalan_kating IN (SELECT MAX(p.id_perkenalan_kating) FROM  perkenalan_kating p WHERE p.status = 1 GROUP BY p.id_user_maba, p.id_user_kating)) AS 'jumlah' FROM perkenalan_kating p, users u WHERE p.id_user_maba = u.id_user AND p.status = 1 GROUP BY u.npm");
 
 		if ($q->num_rows() == 0) {
 			return FALSE;
