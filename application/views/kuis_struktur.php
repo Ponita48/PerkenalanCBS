@@ -55,7 +55,7 @@
 			                  					<td>
 			                  						<center>
 			                  							<div id="jawaban1" class="receiver" ondrop="drop1(event,this)" ondragover="allowDrop(event)"></div>
-			                  							<input type="hidden" name="panitia[po_cbs][link_foto]" value="" id="foto_po_cbs"><br>	
+			                  							<input type="hidden" name="panitia[po_cbs][link_foto]" value="" id="foto_po_cbs"><br>
 			                  						</center>
 			                  					</td>
 			                  				</tr>

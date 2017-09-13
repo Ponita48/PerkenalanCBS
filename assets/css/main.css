@@ -623,7 +623,9 @@
 .receiver {
   width: 90px;
   height: 120px;
-  background-color: white;
+  background-image: url("../../Photos/placeholder.png");
+  background-repeat: no-repeat;
+  background-size: 100%;
 }
 
 /* line 95, ../../sass/_kuis.scss */
