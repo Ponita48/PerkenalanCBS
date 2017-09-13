@@ -37,7 +37,7 @@
 					</div>
 				<?php } ?>
 				<div class="form-group">
-					<input type="submit" value="Log In" class="btn btn-warning btn-login">
+					<input type="submit" value="Log In" class="btn btn-success btn-login">
 				</div>
 				<a href="#" class="forgot">Forgot Password?</a>
 			</form>

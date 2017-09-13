@@ -34,7 +34,7 @@
 	<div class="col-sm-4">
 		<div class="myImg">
 			<img src="<?php echo $result->link_foto; ?>" class="img-thumbnail"><br>
-			<p>Required Photo (selfie)</p>
+			<p>Required Photo</p>
 		</div>
 	</div>
 	<div class="single-box cf">
@@ -57,11 +57,11 @@
 			<div class="modal-content">
 				<div class="modal-header">
 					<button type="button" class="close" data-dismiss="modal" aria-hidden="true" style="color: white;">&times;</button> 
-					<h4 class="modal-title">Decline This Submission?</h4>
+					<h4 class="modal-title">Decline this Submission?</h4>
 				</div>
 				<div class="modal-body">
 						<div class="form-group">
-							<label for="message">Alasan: </label>
+							<label for="message">Reason: </label>
 							<textarea name="message" id="message" rows="5" class="form-control"></textarea>
 						</div>
 				</div>

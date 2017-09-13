@@ -54,7 +54,7 @@
 						</div>
 					<?php } ?>
 					<div class="form-group">
-						<input type="submit" value="Submit" class="btn btn-warning btn-login" name="submit">
+						<input type="submit" value="Submit" class="btn btn-success btn-login" name="submit">
 					</div>
 				</form>
 			</div>

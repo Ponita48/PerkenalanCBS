@@ -332,3 +332,9 @@
 		}
 	}
 }
+
+@media only screen and (max-device-width: 450px){
+	.person-box#my_request{
+		height: 250px;
+	}
+}

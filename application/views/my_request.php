@@ -16,7 +16,7 @@
 							<?php if (is_null($value->link_foto)): ?>
 								<img src="<?php echo base_url(); ?>Photos/placeholder.png" alt="">
 							<?php else: ?>
-								<img src="<?php echo $value->link_foto; ?>" alt="" class="img-responsive">
+								<img src="<?php echo $value->link_foto; ?>" alt="" class="img-responsive img-thumbnail">
 							<?php endif ?>
 							<div class="identity">
 								<p id="nama"><?php echo $value->nama; ?></p>
@@ -35,13 +35,13 @@
 							<?php if (is_null($value->link_foto)): ?>
 								<img src="<?php echo base_url(); ?>Photos/placeholder.png" alt="">
 							<?php else: ?>
-								<img src="<?php echo $value->link_foto; ?>" alt="" class="img-responsive">
+								<img src="<?php echo $value->link_foto; ?>" alt="" class="img-responsive img-thumbnail">
 							<?php endif ?>
 							<div class="identity">
 								<p id="nama"><?php echo $value->nama; ?></p>
 								<p id="npm"><?php echo $value->npm_keluarga; ?></p>
 							</div>
-            				<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#reason-<?php echo $value->id_perkenalan_kating; ?>">&nbsp; <span>Alasan</span></button>
+            				<button type="button" class="btn btn-warning" data-toggle="modal" data-target="#reason-<?php echo $value->id_perkenalan_kating; ?>">See Why</button>
 							<div class="modal fade" id="reason-<?php echo $value->id_perkenalan_kating; ?>" role="dialog"> <!-- POPUP ALASAN DECLINE -->
 								<div class="modal-dialog modal-lg">
 									<div class="modal-content" style="left: 0;">
@@ -50,14 +50,14 @@
 											<h4 class="modal-title">My Request</h4>
 										</div>
 										<div class="modal-body">
-											<label for="message">Alasan: </label>
-											<textarea name="message" id="message" rows="5" class="form-control" disabled>
-											<?php if (is_null($value->message)): ?>
-												Silahkan Coba Lagi
-											<?php else: ?>
-												<?php echo $value->message; ?>
-											<?php endif ?>
-											</textarea>
+											<label for="message">Declined: </label>
+											<div name="message" id="message" rows="5" class="message-area">
+												<?php if ($value->message == ""): ?>
+													<span>Incorrect requirements. Please try again.</span>
+												<?php else: ?>
+													<span><?php echo $value->message; ?></span>
+												<?php endif ?>
+											</div>
 										</div>
 										<div class="modal-footer">
 											<!-- <input class="btn btn-success" type="submit" name="Kirim"> -->
@@ -79,7 +79,7 @@
 							<?php if (is_null($value->link_foto)): ?>
 								<img src="<?php echo base_url(); ?>Photos/placeholder.png" alt="">
 							<?php else: ?>
-								<img src="<?php echo $value->link_foto; ?>" alt="" class="img-responsive">
+								<img src="<?php echo $value->link_foto; ?>" alt="" class="img-responsive img-thumbnail">
 							<?php endif ?>
 							<div class="identity">
 								<p id="nama"><?php echo $value->nama; ?></p>

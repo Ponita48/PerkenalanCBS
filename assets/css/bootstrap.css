@@ -1138,7 +1138,7 @@ img {
   display: inline-block;
   max-width: 100%;
   height: auto;
-  padding: 4px;
+  padding: 1px;
   line-height: 1.42857143;
   background-color: #fff;
   border: 1px solid #ddd;
@@ -3924,6 +3924,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   border-bottom: 2px solid #f8f8f8;
 }
 .nav-tabs > li {
+  cursor: pointer;
   float: left;
   margin-bottom: -1px;
 }
