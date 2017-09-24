@@ -78,6 +78,8 @@ $route['my_request'] = 'Perkenalan/my_request';
 $route['request/(:any)'] = 'Perkenalan/request/$1'; //$1 = $id_user keluarga / peserta (yang akan dimintai request)
 $route['perkenalan_angkatan/(:any)/edit'] = 'Perkenalan/edit_perkenalan/$1'; //$1 = $id_perkenalan_angkatan
 $route['perkenalan_angkatan/(:any)/submit'] = 'Perkenalan/edit_perkenalan_submit/$1'; //$1 = $id_perkenalan_angkatan
+$route['perkenalan/declined/(:num)'] = 'Perkenalan/showRejected';
+$route['perkenalan/accepted/(:num)'] = 'Perkenalan/showAccepted';
 
 //A
 $route['perkenalan_keluarga'] = 'A/perkenalanKeluarga';
@@ -104,3 +106,6 @@ $route['kuis/kuis_mubes'] = 'Kuis/kuis_mubes';
 
 //ajax
 $route['ajax/(:any)'] = 'UserController/hintSearch/$1';
+
+//password
+$route['resetPassword'] = 'A/hashPass';

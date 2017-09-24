@@ -60,6 +60,21 @@ class Auth
 		}	
 	}
 
+	public function cek_login_admin_warga()
+	{
+		$result = $this->cek_login();
+
+		if ($result['result'] == FALSE) {
+			return $result;
+		}else {
+			if ($this->CI->session->userdata['logged_in']['role'] == 'admin' || $this->CI->session->userdata['logged_in']['role'] == 'warga') {
+				return array('result' => TRUE);
+			}else {
+				return array('result' => FALSE, 'code' => 'home', 'message' => 'Forbidden content, Admin and Warga only!');
+			}
+		}	
+	}
+
 	public function cek_pernah_login()
 	{
 		if ( ! isset($this->CI->session->userdata['logged_in'])) {

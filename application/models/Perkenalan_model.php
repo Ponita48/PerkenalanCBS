@@ -6,7 +6,7 @@
 class Perkenalan_model extends CI_Model {
 
 	public function aihihi() {
-		$max_angkatan = $this->db->query("SELECT MAX(role) as 'max' FROM users WHERE role != 'admin'")->result()[0]->max;
+		$max_angkatan = $this->db->query("SELECT MAX(role) as 'max' FROM users WHERE role != 'admin' AND role != 'warga'")->result()[0]->max;
 
 		echo "<pre>";
 		var_dump($max_angkatan);
@@ -25,7 +25,7 @@ class Perkenalan_model extends CI_Model {
 			->where(array('id_user' => $id_keluarga, ''))
 			->limit(1)
 			->get();*/
-		$max_angkatan = $this->db->query("SELECT MAX(role) as 'max' FROM users WHERE role != 'admin'")->result()[0]->max;
+		$max_angkatan = $this->db->query("SELECT MAX(role) as 'max' FROM users WHERE role != 'admin' AND role != 'warga'")->result()[0]->max;
 		$query = $this->db->query("SELECT * FROM users WHERE id_user = '$id_keluarga' AND role != $max_angkatan");
 
 		if ($query->num_rows() == 0) {
@@ -58,7 +58,7 @@ class Perkenalan_model extends CI_Model {
 	public function request_angkatan($data) {
 		$id_user2 = $data['id_user2'];
 		
-		$max_angkatan = $this->db->query("SELECT MAX(role) as 'max' FROM users WHERE role != 'admin'")->result()[0]->max;
+		$max_angkatan = $this->db->query("SELECT MAX(role) as 'max' FROM users WHERE role != 'admin' AND role != 'warga'")->result()[0]->max;
 		$query = $this->db->query("SELECT * FROM users WHERE id_user = '$id_user2' AND role = $max_angkatan");
 
 		if ($query->num_rows() == 0) {
@@ -159,6 +159,48 @@ class Perkenalan_model extends CI_Model {
 			return FALSE;
 		}else {
 			return $q->result();
+		}
+	}
+
+	public function getAllAcceptedRequest($number, $offset) {
+		$q = $this->db->query("SELECT p.id_perkenalan_kating, (SELECT u.npm FROM users u WHERE u.id_user = p.id_user_maba) AS 'npm_peserta', (SELECT u.npm FROM users u WHERE u.id_user = p.id_user_kating) AS 'npm_keluarga', p.nama, p.ciri_khas, p.link_foto, p.request_time, (SELECT u.role FROM users u WHERE u.id_user = p.id_user_kating) AS 'angkatan_keluarga', (SELECT prof.nama FROM profile_maba prof WHERE prof.id_user = p.id_user_maba) AS 'nama_peserta' FROM users u, perkenalan_kating p WHERE status = 1 AND p.id_perkenalan_kating IN (SELECT MAX(p.id_perkenalan_kating) FROM  perkenalan_kating p WHERE p.status = 1 GROUP BY p.id_user_maba, p.id_user_kating) GROUP BY p.id_perkenalan_kating LIMIT $number OFFSET $offset");
+
+		if ($q->num_rows() == 0) {
+			return FALSE;
+		}else {
+			return $q->result();
+		}
+	}
+
+	public function getAllAcceptedRequestRow() {
+		$q = $this->db->query("SELECT p.id_perkenalan_kating, (SELECT u.npm FROM users u WHERE u.id_user = p.id_user_maba) AS 'npm_peserta', (SELECT u.npm FROM users u WHERE u.id_user = p.id_user_kating) AS 'npm_keluarga', p.nama, p.ciri_khas, p.link_foto, p.request_time, (SELECT u.role FROM users u WHERE u.id_user = p.id_user_kating) AS 'angkatan_keluarga', (SELECT prof.nama FROM profile_maba prof WHERE prof.id_user = p.id_user_maba) AS 'nama_peserta' FROM users u, perkenalan_kating p WHERE status = 1 AND p.id_perkenalan_kating IN (SELECT MAX(p.id_perkenalan_kating) FROM  perkenalan_kating p WHERE p.status = 1 GROUP BY p.id_user_maba, p.id_user_kating) GROUP BY p.id_perkenalan_kating");
+		
+		if ($q->num_rows() == 0) {
+			return 0;
+		}else {
+			return $q->num_rows();
+		}
+	}
+
+	public function getAllDeclinedRequest($number, $offset) {
+		$q = $this->db->query("SELECT p.id_perkenalan_kating, (SELECT u.npm FROM users u WHERE u.id_user = p.id_user_maba) AS 'npm_peserta', (SELECT u.npm FROM users u WHERE u.id_user = p.id_user_kating) AS 'npm_keluarga', p.nama, p.ciri_khas, p.link_foto, p.request_time, (SELECT u.role FROM users u WHERE u.id_user = p.id_user_kating) AS 'angkatan_keluarga', (SELECT prof.nama FROM profile_maba prof WHERE prof.id_user = p.id_user_maba) AS 'nama_peserta', p.message FROM users u, perkenalan_kating p WHERE status = 2 GROUP BY p.id_perkenalan_kating LIMIT $number OFFSET $offset");
+
+		
+		if ($q->num_rows() == 0) {
+			return FALSE;
+		}else {
+			return $q->result();
+		}
+	}
+
+	public function getAllDeclinedRequestRow() {
+		$q = $this->db->query("SELECT p.id_perkenalan_kating, (SELECT u.npm FROM users u WHERE u.id_user = p.id_user_maba) AS 'npm_peserta', (SELECT u.npm FROM users u WHERE u.id_user = p.id_user_kating) AS 'npm_keluarga', p.nama, p.ciri_khas, p.link_foto, p.request_time, (SELECT u.role FROM users u WHERE u.id_user = p.id_user_kating) AS 'angkatan_keluarga', (SELECT prof.nama FROM profile_maba prof WHERE prof.id_user = p.id_user_maba) AS 'nama_peserta', p.message FROM users u, perkenalan_kating p WHERE status = 2 GROUP BY p.id_perkenalan_kating");
+
+		
+		if ($q->num_rows() == 0) {
+			return 0;
+		}else {
+			return $q->num_rows();
 		}
 	}
 
