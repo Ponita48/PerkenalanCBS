@@ -1,11 +1,32 @@
+	<?php 
+		$jml_accept = 0;
+		$jml_decline = 0;
+		$jml_pending = 0;
+		if ($accepted != NULL) {
+			foreach ($accepted as $key) {
+				$jml_accept++;
+			}
+		}
+		if ($declined != NULL) {
+			foreach ($declined as $key) {
+				$jml_decline++;
+			}
+		}
+		if ($pending != NULL) {
+			foreach ($pending as $key) {
+				$jml_pending++;
+			}
+		}
+	 ?>
 	<div class="header-title">
+		<!-- TODO: tambah if jadi npm kalo admin/warga -->
 		<h1 id="nama-header">MY REQUESTS</h1> <!--BUAT MABA-->
 	</div>
 	<div class="wrapper-for-all" id="my-request">
 		<ul class="nav nav-tabs" role="tablist">
-			<li role="presentation" class="active"><a href="#1" aria-controls="1" role="tab" data-toggle="tab"><i class="glyphicon glyphicon-ok"></i>&nbsp; Accepted</a></li>
-			<li role="presentation"><a href="#2" aria-controls="2" role="tab" data-toggle="tab"><i class="glyphicon glyphicon-remove"></i>&nbsp; Declined</a></li>
-			<li role="presentation"><a href="#3" aria-controls="3" role="tab" data-toggle="tab"><i class="glyphicon glyphicon-time"></i>&nbsp; Pending</a></li>
+			<li role="presentation" class="active"><a href="#1" aria-controls="1" role="tab" data-toggle="tab"><i class="glyphicon glyphicon-ok"></i>&nbsp; Accepted <span class="badge"><?php echo $jml_accept; ?></span></a></li>
+			<li role="presentation"><a href="#2" aria-controls="2" role="tab" data-toggle="tab"><i class="glyphicon glyphicon-remove"></i>&nbsp; Declined <span class="badge"><?php echo $jml_decline; ?></span></a></li>
+			<li role="presentation"><a href="#3" aria-controls="3" role="tab" data-toggle="tab"><i class="glyphicon glyphicon-time"></i>&nbsp; Pending <span class="badge"><?php echo $jml_pending; ?></span></a></li>
 		</ul><br>
 		<div class="tab-content">
 			<div role="tabpanel" class="tab-pane container-fluid active" id="1">

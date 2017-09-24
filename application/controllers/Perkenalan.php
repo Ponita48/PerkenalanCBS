@@ -1,14 +1,15 @@
 <?php 
 
 class Perkenalan extends CI_Controller
-{
-	
+{	
 	function __construct() {
 		parent::__construct();
 		$this->load->helper('url');
 		$this->load->library(array('form_validation', 'session', 'auth'));
 		$this->load->database();
 		$this->load->model(array('Perkenalan_model', 'User_model'));
+		ini_set('max_execution_time', 0); 
+		ini_set('memory_limit','2048M');
 	}
 
 	public function cek_login_peserta()
