@@ -6,7 +6,7 @@
 class User_model extends CI_Model {
 
 	public function aihihi() {
-		$max_angkatan = $this->db->query("SELECT MAX(role) as 'max' FROM users WHERE role != 'admin'")->result()[0]->max;
+		$max_angkatan = $this->db->query("SELECT MAX(role) as 'max' FROM users WHERE role != 'admin' AND role != 'warga'")->result()[0]->max;
 
 		echo "<pre>";
 		var_dump($max_angkatan);
@@ -18,7 +18,7 @@ class User_model extends CI_Model {
 	}
 
 	public function max_angkatan() {
-		$max_angkatan = $this->db->query("SELECT MAX(role) as 'max' FROM users WHERE role != 'admin'")->result()[0]->max;
+		$max_angkatan = $this->db->query("SELECT MAX(role) as 'max' FROM users WHERE role != 'admin' AND role != 'warga'")->result()[0]->max;
 		return $max_angkatan;
 	}
 	
@@ -42,8 +42,7 @@ class User_model extends CI_Model {
 				}elseif ($query->row('role') == 'admin') {
 					$role = 'admin';
 				}else {
-					//$role = 'keluarga';
-					return FALSE;
+					$role = 'warga';
 				}
 
 				/*$session_data['role'] = $role;
@@ -81,8 +80,7 @@ class User_model extends CI_Model {
 				}elseif ($query->row('role') == 'admin') {
 					$role = 'admin';
 				}else {
-					//$role = 'keluarga';
-					return FALSE;
+					$role = 'warga';
 				}
 
 				/*$session_data['role'] = $role;

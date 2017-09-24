@@ -11,8 +11,8 @@ class Perkenalan extends CI_Controller
 		$this->load->model(array('Perkenalan_model', 'User_model'));
 	}
 
-	public function request_keluarga($id) {
-
+	public function cek_login_peserta()
+	{
 		$cek = $this->auth->cek_login_peserta();
 
 		if ($cek['result'] != TRUE) {
@@ -35,6 +35,78 @@ class Perkenalan extends CI_Controller
 					break;
 			}
 		}
+	}
+
+	public function cek_login()
+	{
+		$cek = $this->auth->cek_login();
+
+		if ($cek['result'] == FALSE) {
+			if ($cek['code'] == 'login') {
+				$this->session->set_flashdata('error_message', $cek['message']);
+				redirect(base_url().'login');
+			}else {
+				$this->session->set_flashdata('error_message', $cek['message']);
+				redirect(base_url().'new_login');
+			}
+		}
+	}
+
+	public function cek_login_admin()
+	{
+		$cek = $this->auth->cek_login_admin();
+
+		if ($cek['result'] != TRUE) {
+			switch ($cek['code']) {
+				case 'login':
+					/*$message = array('type' => 'error_message', 'message' => $cek['message']);
+					return $this->login($message);*/
+					$this->session->set_flashdata('error_message', $cek['message']);
+					redirect(base_url().'login');
+					break;
+				case 'new_login':
+					$this->session->set_flashdata('error_message', $cek['message']);
+					redirect(base_url().'new_login');
+					break;
+				case 'home':
+					/*$message = array('type' => 'error_message', 'message' => $cek['message']);
+					return $this->index($message);*/
+					$this->session->set_flashdata('error_message', $cek['message']);
+					redirect(base_url());
+					break;
+			}
+		}
+	}
+
+	public function cek_login_admin_warga()
+	{
+		$cek = $this->auth->cek_login_admin_warga();
+
+		if ($cek['result'] != TRUE) {
+			switch ($cek['code']) {
+				case 'login':
+					/*$message = array('type' => 'error_message', 'message' => $cek['message']);
+					return $this->login($message);*/
+					$this->session->set_flashdata('error_message', $cek['message']);
+					redirect(base_url().'login');
+					break;
+				case 'new_login':
+					$this->session->set_flashdata('error_message', $cek['message']);
+					redirect(base_url().'new_login');
+					break;
+				case 'home':
+					/*$message = array('type' => 'error_message', 'message' => $cek['message']);
+					return $this->index($message);*/
+					$this->session->set_flashdata('error_message', $cek['message']);
+					redirect(base_url());
+					break;
+			}
+		}
+	}
+
+	public function request_keluarga($id) {
+
+		$this->cek_login_peserta();
 
 		date_default_timezone_set('Asia/Jakarta');
 		$date = date("Y-m-d H:i:s", time());
@@ -79,28 +151,7 @@ class Perkenalan extends CI_Controller
 
 	public function request_peserta($id) {
 
-		$cek = $this->auth->cek_login_peserta();
-
-		if ($cek['result'] != TRUE) {
-			switch ($cek['code']) {
-				case 'login':
-					/*$message = array('type' => 'error_message', 'message' => $cek['message']);
-					return $this->login($message);*/
-					$this->session->set_flashdata('error_message', $cek['message']);
-					redirect(base_url().'login');
-					break;
-				case 'new_login':
-					$this->session->set_flashdata('error_message', $cek['message']);
-					redirect(base_url().'new_login');
-					break;
-				case 'home':
-					/*$message = array('type' => 'error_message', 'message' => $cek['message']);
-					return $this->index($message);*/
-					$this->session->set_flashdata('error_message', $cek['message']);
-					redirect(base_url());
-					break;
-			}
-		}
+		$this->cek_login_peserta();
 			
 		date_default_timezone_set('Asia/Jakarta');
 		$date = date("Y-m-d H:i:s", time());
@@ -152,17 +203,7 @@ class Perkenalan extends CI_Controller
 
 	public function my_request() {
 
-		$cek = $this->auth->cek_login();
-
-		if ($cek['result'] == FALSE) {
-			if ($cek['code'] == 'login') {
-				$this->session->set_flashdata('error_message', $cek['message']);
-				redirect(base_url().'login');
-			}else {
-				$this->session->set_flashdata('error_message', $cek['message']);
-				redirect(base_url().'new_login');
-			}
-		}
+		$this->cek_login();
 
 		$id_user = $this->session->userdata['logged_in']['id_user'];
 
@@ -191,28 +232,7 @@ class Perkenalan extends CI_Controller
 
 	public function request($id_user) {
 
-		$cek = $this->auth->cek_login_peserta();
-
-		if ($cek['result'] != TRUE) {
-			switch ($cek['code']) {
-				case 'login':
-					/*$message = array('type' => 'error_message', 'message' => $cek['message']);
-					return $this->login($message);*/
-					$this->session->set_flashdata('error_message', $cek['message']);
-					redirect(base_url().'login');
-					break;
-				case 'new_login':
-					$this->session->set_flashdata('error_message', $cek['message']);
-					redirect(base_url().'new_login');
-					break;
-				case 'home':
-					/*$message = array('type' => 'error_message', 'message' => $cek['message']);
-					return $this->index($message);*/
-					$this->session->set_flashdata('error_message', $cek['message']);
-					redirect(base_url());
-					break;
-			}
-		}
+		$this->cek_login_peserta();
 
 		$id_user_maba = $this->session->userdata['logged_in']['id_user'];
 		$angkatan = $this->User_model->get_role($id_user);
@@ -252,6 +272,8 @@ class Perkenalan extends CI_Controller
 	public function edit_perkenalan($id_perkenalan)
 	{
 
+		$this->cek_login_peserta();
+
 		$perkenalan = $this->Perkenalan_model->get_perkenalan_angkatan($id_perkenalan);
 
 		if ($perkenalan == NULL) {
@@ -272,6 +294,8 @@ class Perkenalan extends CI_Controller
 
 	public function edit_perkenalan_submit($id_perkenalan)
 	{
+
+		$this->cek_login_peserta();
 
 		date_default_timezone_set('Asia/Jakarta');
 		$date = date("Y-m-d H:i:s", time());
@@ -312,6 +336,54 @@ class Perkenalan extends CI_Controller
 			}
 
 		}
+	}
+
+	public function showAccepted()
+	{
+		$this->cek_login_admin_warga();
+
+		$num_rows = $this->Perkenalan_model->getAllAcceptedRequestRow();
+
+
+		$this->load->library('pagination');
+
+		$config['base_url'] = base_url().'perkenalan/accepted/';
+		$config['total_rows'] = $num_rows;
+		$config['per_page'] = 50;
+
+		$from = $this->uri->segment(3);
+
+		$this->pagination->initialize($config);
+
+		echo "<pre>";
+		var_dump($this->Perkenalan_model->getAllAcceptedRequest($config['per_page'],$from));
+		echo "</pre>";
+
+		echo $this->pagination->create_links();
+	}
+
+	public function showRejected()
+	{
+		$this->cek_login_admin_warga();
+
+		$num_rows = $this->Perkenalan_model->getAllDeclinedRequestRow();
+
+
+		$this->load->library('pagination');
+
+		$config['base_url'] = base_url().'perkenalan/declined/';
+		$config['total_rows'] = $num_rows;
+		$config['per_page'] = 50;
+
+		$from = $this->uri->segment(3);
+
+		$this->pagination->initialize($config);
+
+		echo "<pre>";
+		var_dump($this->Perkenalan_model->getAllDeclinedRequest($config['per_page'],$from));
+		echo "</pre>";
+
+		echo $this->pagination->create_links();
 	}
 
 }

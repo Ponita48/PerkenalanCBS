@@ -75,7 +75,7 @@ class UserController extends CI_Controller
 				$email = $this->User_model->cek_email($data['npm'], "npm");
 				
 				//check username and password
-				if ($role == 'admin' || $email == NULL) {
+				if ($role == 'admin' || $email == NULL || $role == 'warga') {
 					$result = $this->User_model->loginNoHash($data);
 				}else {
 					$result = $this->User_model->login($data);
