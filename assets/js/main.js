@@ -47,4 +47,8 @@ $(document).ready(function(){
         $('#modalConf').modal('show');
     });
 
+    $('#foto').change( function() {
+        $('#photoSelfie').attr('src', $('#foto').val());
+    });
+
 });
