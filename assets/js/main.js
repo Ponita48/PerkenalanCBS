@@ -48,7 +48,7 @@ $(document).ready(function(){
     });
 
     $('#foto').change( function() {
-        $('#photoSelfie').attr('src', $('#foto').val());
+        $('#load-photo').attr('src', $('#foto').val());
     });
 
 });

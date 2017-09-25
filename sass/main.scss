@@ -260,6 +260,15 @@ img.img-responsive {
 	@extend .all-in-one-box;
 }
 
+#photoSelfie{
+	position: relative;
+	top: 20px;
+}
+
+#requestPerkenalan{
+	left: 5%;
+	float: left;
+}
 .wrapper-for-all{
 	@extend .all-in-one-box;
 	// padding: 0 50px;

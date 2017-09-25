@@ -51,6 +51,11 @@
 		@extend #send-request;
 	}
 
+	#requestPerkenalan{
+		margin-top: 20px;
+		width: 100%;
+	}
+
 	.tab-content{
 		.active{
 			overflow: auto;
@@ -320,6 +325,9 @@
 			width: 100%;
 			border: none;
 		}
+		#requestPerkenalan{
+			left: 0;
+		}
 	}
 	
 
@@ -336,5 +344,18 @@
 @media only screen and (max-device-width: 450px){
 	.person-box#my_request{
 		height: 250px;
+	}
+}
+@media only screen and (min-device-width: 300px) and (max-device-width: 450px){
+	.all-person-box{
+		.person-box{
+			height: 200px;
+		}
+	}
+}
+
+@media only screen and (min-device-width: 800px){
+	#photoSelfie{
+		float: left;
 	}
 }

@@ -53,7 +53,7 @@
 			                <div class="main-menu-title" id="npm-menu"><?php echo $this->session->userdata('logged_in')['role']; ?> (Delphi <?php echo $this->session->userdata('logged_in')['npm']; ?>)</div>
 			                <!-- <div class="main-menu-title" id="npm">(<?php echo $this->session->userdata('logged_in')['npm']; ?>)</div> -->
 		                <?php else: ?>
-		                	<div class="main-menu-title" id="admin">Admin CBS 2017</div>
+		                	<div class="main-menu-title" id="admin">Administrator CBS 2017</div>
 		                <?php endif ?>
 					<?php endif ?>
 	            </div>
@@ -118,11 +118,11 @@
 					<img class="header-img" src="<?php echo base_url(); ?>img/logo-delphi.png">
 					<div class="title">
 						<?php if (!isset($this->session->userdata['logged_in'])): ?>
-							&nbsp; CBS 2017
+							CBS 2017
 						<?php else: ?>
 							<?php if (isset($this->session->userdata['logged_in'])): ?>
 								<?php if ($this->session->userdata['logged_in']['role'] == "admin"): ?>
-									Admin CBS 2017
+									Administrator CBS 2017
 								<?php else: ?>
 									CBS 2017
 								<?php endif ?>

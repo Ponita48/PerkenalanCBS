@@ -5,12 +5,12 @@
 <div class="wrapper-for-all cf">
 	<div class="col-sm-4">
 		<div class="myImg">
-			<img src="<?php echo $result->link_foto_peserta; ?>" class="img-thumbnail">
-			<p>Foto Maba</p>
+			<img src="<?php echo $result->pp_keluarga; ?>" class="img-thumbnail">
+			<p>Foto Keluarga</p>
 		</div>
 		<div class="myImg">
-			<img src="<?php echo $result->pp_keluarga; ?>" class="img-thumbnail">
-			<p>Foto Kating</p>
+			<img src="<?php echo $result->link_foto_peserta; ?>" class="img-thumbnail">
+			<p>Foto Profil Peserta</p>
 		</div>
 	</div>
 	<div class="col-sm-4">
@@ -34,7 +34,7 @@
 	<div class="col-sm-4">
 		<div class="myImg">
 			<img src="<?php echo $result->link_foto; ?>" class="img-thumbnail"><br>
-			<p>Required Photo</p>
+			<p>Foto Perkenalan</p>
 		</div>
 	</div>
 	<div class="single-box cf">
