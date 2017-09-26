@@ -41,8 +41,10 @@ class User_model extends CI_Model {
 					$role = 'peserta';
 				}elseif ($query->row('role') == 'admin') {
 					$role = 'admin';
-				}else {
+				}elseif ($query->row('role') == 'warga') {
 					$role = 'warga';
+				}else {
+					return FALSE;
 				}
 
 				/*$session_data['role'] = $role;
@@ -79,8 +81,10 @@ class User_model extends CI_Model {
 					$role = 'peserta';
 				}elseif ($query->row('role') == 'admin') {
 					$role = 'admin';
-				}else {
+				}elseif ($query->row('role') == 'warga') {
 					$role = 'warga';
+				}else {
+					return FALSE;
 				}
 
 				/*$session_data['role'] = $role;
