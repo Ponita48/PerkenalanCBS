@@ -1,17 +1,14 @@
 	<div class="header-title">
-		<?php if ($this->session->userdata('logged_in')['role'] == "admin"): ?>
-			<?php $i = 0; ?>
-			<?php foreach ($result as $key): ?>
-				$i++;
-			<?php endforeach ?>
-		<?php endif ?>
-		)
 		<h1>
 		<?php if ($this->session->userdata['logged_in']['role'] != "admin"): ?> <!-- npm di session = npm yang dilihat -->
 			MY
 		<?php endif ?>
 		FRIENDS LIST 
 			<?php if ($this->session->userdata('logged_in')['role'] == "admin"): ?>	
+				<?php $i = 0; ?>
+				<?php foreach ($result as $key): ?>
+					<?php $i++; ?>
+				<?php endforeach ?>
 				(<?php echo $i; ?>)
 			<?php endif ?>
 		</h1>
