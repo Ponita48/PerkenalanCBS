@@ -204,6 +204,14 @@ class Perkenalan_model extends CI_Model {
 		}
 	}
 
+	public function CreateViewPerkenalanKeluargaAccepted()
+	{
+		//query belum termasuk untuk export
+		$q = $this->db->query("CREATE VIEW v_perkenalan_accepted AS SELECT p.id_perkenalan_kating, (SELECT u.npm FROM users u WHERE u.id_user = p.id_user_maba) AS 'npm_peserta', (SELECT prof.nama FROM profile_maba prof WHERE prof.id_user = p.id_user_maba) AS 'nama_peserta', (SELECT u.npm FROM users u WHERE u.id_user = p.id_user_kating) AS 'npm_keluarga', (SELECT prof.nama FROM profile_kating prof WHERE prof.id_user = p.id_user_kating) AS 'nama_keluarga', p.nama AS 'nama_keluarga_(maba)', p.ciri_khas, p.link_foto, p.request_time, (SELECT u.role FROM users u WHERE u.id_user = p.id_user_kating) AS 'angkatan_keluarga', p.status FROM users u, perkenalan_kating p WHERE status = 1 AND p.id_perkenalan_kating IN (SELECT MAX(p.id_perkenalan_kating) FROM  perkenalan_kating p WHERE p.status = 1 GROUP BY p.id_user_maba, p.id_user_kating) GROUP BY p.id_perkenalan_kating");
+
+		return FALSE;
+	}
+
 }
 
  ?>

@@ -160,6 +160,9 @@
 							<a href="<?php echo base_url().'kuis'; ?>">Quiz Submission</a>
 						</li>
 					<?php endif ?>
+					<li>
+						<a href="<?php echo base_url().'nominasi'; ?>">Nominasi Panitia CBS</a>
+					</li>
 				<?php endif ?>
 			</ul>
 			<!-- <ul class="nav navbar-nav">

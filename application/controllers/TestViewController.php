@@ -88,6 +88,13 @@ class TestViewController extends CI_Controller {
 		$this->load->view('footer');
 	}
 
+	public function nominasi()
+	{
+		$this->load->view('header');
+		$this->load->view('nominasi');
+		$this->load->view('footer');
+	}
+
 
 }
 
