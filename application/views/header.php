@@ -97,6 +97,10 @@
 								<div class="icon-account"></div>
 								<a href="<?php echo base_url().'profile/'.$this->session->userdata['logged_in']['id_user']; ?>">My Profile</a>
 							</li>
+			            	<li class="main-menu-list">
+			            		<div class="icon-tugas"></div>
+								<a href="<?php echo base_url().'nominasi'; ?>">Nominasi Panitia</a>
+							</li>
 						<?php endif ?>
 					<?php endif ?>
 	            </div>
