@@ -53,7 +53,7 @@ $route['default_controller'] = 'UserController';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
 
-$route['nominasi'] = 'TestViewController/nominasi';
+$route['nominasi'] = 'UserController/nominasi';
 
 //UserController
 $route['login'] = 'UserController/login';

@@ -584,5 +584,36 @@ class UserController extends CI_Controller
 	
 	}
 
+	public function nominasi()
+	{
+
+		$cek = $this->auth->cek_login_peserta();
+
+		if ($cek['result'] != TRUE) {
+			switch ($cek['code']) {
+				case 'login':
+					/*$message = array('type' => 'error_message', 'message' => $cek['message']);
+					return $this->login($message);*/
+					$this->session->set_flashdata('error_message', $cek['message']);
+					redirect(base_url().'login');
+					break;
+				case 'new_login':
+					$message = array('type' => 'error_message', 'message' => $cek['message']);
+					return $this->new_login($message);
+					break;
+				case 'home':
+					/*$message = array('type' => 'error_message', 'message' => $cek['message']);
+					return $this->index($message);*/
+					$this->session->set_flashdata('error_message', $cek['message']);
+					redirect(base_url());
+					break;
+			}
+		}
+
+		$this->load->view('header');
+		$this->load->view('nominasi');
+		$this->load->view('footer');
+	}
+
 }
  ?>
